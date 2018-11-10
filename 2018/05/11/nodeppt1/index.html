@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>nodeppt(一) | linjiad_个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="梧桐更兼细雨到黄昏点点滴滴" />
+  
+  <meta name="description" content="是时候放弃微软的PPT,改用一款够装X够D的利器，nodeppt 0.导言0.1 nodeppt好处基于markdown编写,支持HTML混编对于程序员来说更方便 1.开始1.1 安装前准备不多说了，既然是nodeppt，顾名思义需要安装node，去官网下载即可,好无悬念下一步下一步，安装成功后再控制台查看版本，出现版本号即为安装成功。 1.2 安装nodepptnodeppt需要全局安装  np">
+<meta name="keywords" content="nodeppt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nodeppt(一)">
+<meta property="og:url" content="http://linjiad.github.io/2018/05/11/nodeppt1/index.html">
+<meta property="og:site_name" content="linjiad_个人博客">
+<meta property="og:description" content="是时候放弃微软的PPT,改用一款够装X够D的利器，nodeppt 0.导言0.1 nodeppt好处基于markdown编写,支持HTML混编对于程序员来说更方便 1.开始1.1 安装前准备不多说了，既然是nodeppt，顾名思义需要安装node，去官网下载即可,好无悬念下一步下一步，安装成功后再控制台查看版本，出现版本号即为安装成功。 1.2 安装nodepptnodeppt需要全局安装  np">
+<meta property="og:locale" content="JS">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/11/nodeppt1/2.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/11/nodeppt1/3.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/11/nodeppt1/8.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/11/nodeppt1/4.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/11/nodeppt1/5.png">
+<meta property="og:updated_time" content="2018-11-10T08:58:48.813Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nodeppt(一)">
+<meta name="twitter:description" content="是时候放弃微软的PPT,改用一款够装X够D的利器，nodeppt 0.导言0.1 nodeppt好处基于markdown编写,支持HTML混编对于程序员来说更方便 1.开始1.1 安装前准备不多说了，既然是nodeppt，顾名思义需要安装node，去官网下载即可,好无悬念下一步下一步，安装成功后再控制台查看版本，出现版本号即为安装成功。 1.2 安装nodepptnodeppt需要全局安装  np">
+<meta name="twitter:image" content="http://linjiad.github.io/2018/05/11/nodeppt1/2.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">云销雨霁彩彻区明</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        云销雨霁彩彻区明
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        林花谢了春红太匆匆
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="linjiad_个人微博" target="_blank" href="//linjiad.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/linjiad">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-nodeppt1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      nodeppt(一)
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/产品办公/">产品办公</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-05-11
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>是时候放弃微软的PPT,改用一款够装X够D的利器，nodeppt</p>
+<h2 id="0-导言"><a href="#0-导言" class="headerlink" title="0.导言"></a>0.导言</h2><h3 id="0-1-nodeppt好处"><a href="#0-1-nodeppt好处" class="headerlink" title="0.1 nodeppt好处"></a>0.1 nodeppt好处</h3><p>基于markdown编写,支持HTML混编对于程序员来说更方便</p>
+<h2 id="1-开始"><a href="#1-开始" class="headerlink" title="1.开始"></a>1.开始</h2><h3 id="1-1-安装前准备"><a href="#1-1-安装前准备" class="headerlink" title="1.1 安装前准备"></a>1.1 安装前准备</h3><p>不多说了，既然是nodeppt，顾名思义需要安装node，<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">去官网下载即可</a>,好无悬念下一步下一步，安装成功后再控制台查看版本<img src="/2018/05/11/nodeppt1/2.png" alt="如图所示">，出现版本号即为安装成功。</p>
+<h3 id="1-2-安装nodeppt"><a href="#1-2-安装nodeppt" class="headerlink" title="1.2 安装nodeppt"></a>1.2 安装nodeppt</h3><p>nodeppt需要全局安装</p>
+<blockquote>
+<p>npm install -g nodeppt</p>
+</blockquote>
+<p>同样安装之后查看版本号</p>
+<blockquote>
+<p>nodeppt -v</p>
+</blockquote>
+<p>效果如图<img src="/2018/05/11/nodeppt1/3.png" alt="如图所示"><br>这样nodeppt就安装成功，安装成功后可以在控制台打开任意位置的markdown文件，开始表演真正的技术啦！Show Time！</p>
+<h2 id="2-nodeppt命令"><a href="#2-nodeppt命令" class="headerlink" title="2.nodeppt命令"></a>2.nodeppt命令</h2><h3 id="2-1-获取帮助"><a href="#2-1-获取帮助" class="headerlink" title="2.1 获取帮助"></a>2.1 获取帮助</h3><p>通过命令获取帮助，查看更多命令</p>
+<blockquote>
+<p>nodeppt start -h</p>
+</blockquote>
+<h3 id="2-2-启动nodeppt"><a href="#2-2-启动nodeppt" class="headerlink" title="2.2 启动nodeppt"></a>2.2 启动nodeppt</h3><p>-p为端口号<br>-d为路径</p>
+<blockquote>
+<p>nodeppt start -p <port> -d path/for/ppts</port></p>
+</blockquote>
+<p>例如：</p>
+<blockquote>
+<p>nodeppt start -p 8080 -d E:\私人办公\ppts</p>
+</blockquote>
+<h3 id="2-3-启动成功"><a href="#2-3-启动成功" class="headerlink" title="2.3 启动成功"></a>2.3 启动成功</h3><p>启动成功后弹出页面如图所示<img src="/2018/05/11/nodeppt1/8.png" alt="如图所示"><br>点击即可弹出页面</p>
+<h2 id="3-nodeppt基本操作"><a href="#3-nodeppt基本操作" class="headerlink" title="3.nodeppt基本操作"></a>3.nodeppt基本操作</h2><h3 id="3-0-页面菜单"><a href="#3-0-页面菜单" class="headerlink" title="3.0 页面菜单"></a>3.0 页面菜单</h3><p>如图所示<img src="/2018/05/11/nodeppt1/4.png" alt="如图所示">，在该位置分别有按钮上一页，下一页，画笔，浏览模式。可分别点击进行操作</p>
+<h3 id="3-1-翻页"><a href="#3-1-翻页" class="headerlink" title="3.1 翻页"></a>3.1 翻页</h3><p>可以按 <strong>空格</strong> ，<strong>向右</strong> 进行下一页/下一步。<strong>向左</strong> 上一步/上一页</p>
+<h3 id="3-2-画笔"><a href="#3-2-画笔" class="headerlink" title="3.2 画笔"></a>3.2 画笔</h3><p>按 <strong>P</strong> 打开画笔 ，再次按 <strong>P</strong> 清空画板 ，按 <strong>C</strong> 清空画板并关闭画笔<br>画板打开期间可以用 <strong>1-4</strong> 来选择画笔粗细， <strong>B Y G</strong>等颜色首字母选择颜色</p>
+<h3 id="3-3-表格放大"><a href="#3-3-表格放大" class="headerlink" title="3.3 表格放大"></a>3.3 表格放大</h3><p>在展示表格的页面按 <strong>w</strong> 使表格放大</p>
+<h3 id="3-4-浏览模式"><a href="#3-4-浏览模式" class="headerlink" title="3.4 浏览模式"></a>3.4 浏览模式</h3><p>按 <strong>O</strong> 打开浏览模式，如图所示：<img src="/2018/05/11/nodeppt1/5.png" alt="如图所示">，可以浏览选择需要的PPT页面</p>
+<h3 id="3-5-多窗口演示"><a href="#3-5-多窗口演示" class="headerlink" title="3.5 多窗口演示"></a>3.5 多窗口演示</h3><p>可以电脑分屏，自己看一个窗口，分享另一个窗口，这样演讲起来可以预先组织语言。</p>
+<blockquote>
+<p>网址改成url?_multiscreen=1,</p>
+</blockquote>
+<p>这里有个坑，这时候可能多窗口无法使用，请看浏览器右上角收藏旁边，点开，点允许即可。</p>
+<h3 id="3-6-打开note笔记"><a href="#3-6-打开note笔记" class="headerlink" title="3.6 打开note笔记"></a>3.6 打开note笔记</h3><p>按下键盘【N】打开note笔记</p>
+<h3 id="3-7-手机控制"><a href="#3-7-手机控制" class="headerlink" title="3.7 手机控制"></a>3.7 手机控制</h3><p>目前还没成功</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年11月10日 16:58</p>
+        <p>原始链接： <a class="post-url" href="/2018/05/11/nodeppt1/" title="nodeppt(一)">http://linjiad.github.io/2018/05/11/nodeppt1/</a></p>
+        <footer>
+            <a href="http://linjiad.github.io">
+                <img src="/images/logo.png" alt="linjiad">
+                linjiad
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/weixin.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/weixin.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/zhifubao.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://linjiad.github.io/2018/05/11/nodeppt1/&title=《nodeppt(一)》 — linjiad_个人博客&pic=2018/05/11/nodeppt1/menu.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://linjiad.github.io/2018/05/11/nodeppt1/&title=《nodeppt(一)》 — linjiad_个人博客&source=这个人很懒什么也没写" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://linjiad.github.io/2018/05/11/nodeppt1/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《nodeppt(一)》 — linjiad_个人博客&url=http://linjiad.github.io/2018/05/11/nodeppt1/&via=http://linjiad.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://linjiad.github.io/2018/05/11/nodeppt1/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://linjiad.github.io/2018/05/11/nodeppt1/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/nodeppt/" class="color3">nodeppt</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0-导言"><span class="post-toc-text">0.导言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-1-nodeppt好处"><span class="post-toc-text">0.1 nodeppt好处</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-开始"><span class="post-toc-text">1.开始</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-安装前准备"><span class="post-toc-text">1.1 安装前准备</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-安装nodeppt"><span class="post-toc-text">1.2 安装nodeppt</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-nodeppt命令"><span class="post-toc-text">2.nodeppt命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-获取帮助"><span class="post-toc-text">2.1 获取帮助</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-启动nodeppt"><span class="post-toc-text">2.2 启动nodeppt</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-启动成功"><span class="post-toc-text">2.3 启动成功</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-nodeppt基本操作"><span class="post-toc-text">3.nodeppt基本操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-0-页面菜单"><span class="post-toc-text">3.0 页面菜单</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-翻页"><span class="post-toc-text">3.1 翻页</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-画笔"><span class="post-toc-text">3.2 画笔</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-表格放大"><span class="post-toc-text">3.3 表格放大</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-4-浏览模式"><span class="post-toc-text">3.4 浏览模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-5-多窗口演示"><span class="post-toc-text">3.5 多窗口演示</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-6-打开note笔记"><span class="post-toc-text">3.6 打开note笔记</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-7-手机控制"><span class="post-toc-text">3.7 手机控制</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2018/05/11/nodeppt2/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          nodeppt(二)
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/05/11/nodeppt3/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">nodeppt(三)</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'linjiad',
+            repo: 'linjiad.github.io',
+            oauth: {
+                client_id: '9b8f5415215f1aef0b2c',
+                client_secret: 'dea7335a3cd2d8e380b0279a5f1f7245797579d7',
+            },
+        })
+        gitment.render('comments')
+    </script>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 linjiad<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://linjiad.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/tags/echarts/" style="font-size: 15px;">echarts</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 20px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/tags/echarts/" style="font-size: 15px;">echarts</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 20px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

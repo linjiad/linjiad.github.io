@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>nodeppt(二) | linjiad_个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="梧桐更兼细雨到黄昏点点滴滴" />
+  
+  <meta name="description" content="4.nodeppt书写nodeppt只要是符合markdown语法即可，也支持HTML混编 4.2 总的配置title: 这是title，网页名称speaker: 演讲者名称url:transition: 全局转场动效files: 引入的js和css文件，多个以半角逗号隔开theme: 皮肤样式highlightStyle: 代码高亮样式，默认monokai_sublimeusemathjax:">
+<meta name="keywords" content="nodeppt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nodeppt(二)">
+<meta property="og:url" content="http://linjiad.github.io/2018/05/11/nodeppt2/index.html">
+<meta property="og:site_name" content="linjiad_个人博客">
+<meta property="og:description" content="4.nodeppt书写nodeppt只要是符合markdown语法即可，也支持HTML混编 4.2 总的配置title: 这是title，网页名称speaker: 演讲者名称url:transition: 全局转场动效files: 引入的js和css文件，多个以半角逗号隔开theme: 皮肤样式highlightStyle: 代码高亮样式，默认monokai_sublimeusemathjax:">
+<meta property="og:locale" content="JS">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/11/nodeppt2/6.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/11/nodeppt2/7.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/11/nodeppt2/8.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/11/nodeppt2/9.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/11/nodeppt2/10.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/11/nodeppt2/11.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/11/nodeppt2/12.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/11/nodeppt2/13.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/11/nodeppt2/14.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/11/nodeppt2/15.png">
+<meta property="og:updated_time" content="2018-11-10T08:58:48.864Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nodeppt(二)">
+<meta name="twitter:description" content="4.nodeppt书写nodeppt只要是符合markdown语法即可，也支持HTML混编 4.2 总的配置title: 这是title，网页名称speaker: 演讲者名称url:transition: 全局转场动效files: 引入的js和css文件，多个以半角逗号隔开theme: 皮肤样式highlightStyle: 代码高亮样式，默认monokai_sublimeusemathjax:">
+<meta name="twitter:image" content="http://linjiad.github.io/2018/05/11/nodeppt2/6.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">云销雨霁彩彻区明</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        云销雨霁彩彻区明
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        林花谢了春红太匆匆
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="linjiad_个人微博" target="_blank" href="//linjiad.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/linjiad">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-nodeppt2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      nodeppt(二)
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/产品办公/">产品办公</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-05-11
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="4-nodeppt书写"><a href="#4-nodeppt书写" class="headerlink" title="4.nodeppt书写"></a>4.nodeppt书写</h2><p>nodeppt只要是符合markdown语法即可，也支持HTML混编</p>
+<h3 id="4-2-总的配置"><a href="#4-2-总的配置" class="headerlink" title="4.2 总的配置"></a>4.2 总的配置</h3><p>title: 这是title，网页名称<br>speaker: 演讲者名称<br>url:<br>transition: 全局转场动效<br>files: 引入的js和css文件，多个以半角逗号隔开<br>theme: 皮肤样式<br>highlightStyle: 代码高亮样式，默认monokai_sublime<br>usemathjax: yes 启用MathJax渲染公式</p>
+<h3 id="4-2-每一页间隔-slide"><a href="#4-2-每一页间隔-slide" class="headerlink" title="4.2 每一页间隔[slide]"></a>4.2 每一页间隔[slide]</h3><p>nodeppt用[slide]来区分每一页PPT</p>
+<blockquote>
+<p>[slide]<br>第一页<br>[slide]<br>第二页<br>[slide]</p>
+</blockquote>
+<h3 id="4-3-样式"><a href="#4-3-样式" class="headerlink" title="4.3 样式"></a>4.3 样式</h3><p>基于GFM的markdown语法编写 {:&amp;.rollIn}</p>
+<blockquote>
+<p>需要改变样式的话后面直接加{:&amp;.flexbox.vleft}(该样式为居左)</p>
+</blockquote>
+<h3 id="4-4-背景图片"><a href="#4-4-背景图片" class="headerlink" title="4.4 背景图片"></a>4.4 背景图片</h3><p>完全style写法，更加灵活，视频背景、repeat背景更不在话下</p>
+<blockquote>
+<p>[slide style=”background-image:url(‘/img/bg1.png’)”]</p>
+</blockquote>
+<h3 id="4-5-上下分界线"><a href="#4-5-上下分界线" class="headerlink" title="4.5 上下分界线"></a>4.5 上下分界线</h3><p> 四个”-“是上下分界线</p>
+<blockquote>
+<hr>
+</blockquote>
+<h3 id="4-6-表格"><a href="#4-6-表格" class="headerlink" title="4.6 表格"></a>4.6 表格</h3><table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:center">Less</th>
+<th style="text-align:right">Sass</th>
+<th>Stylus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">环境</td>
+<td style="text-align:center">js/nodejs</td>
+<td style="text-align:right">Ruby(这列右对齐)</td>
+<td>nodejs(高亮) {:.highlight}</td>
+</tr>
+<tr>
+<td style="text-align:left">扩展名</td>
+<td style="text-align:center">.less</td>
+<td style="text-align:right">.scss/.sass</td>
+<td>.styl</td>
+</tr>
+<tr>
+<td style="text-align:left">特点</td>
+<td style="text-align:center">老牌，用户多，支持js解析</td>
+<td style="text-align:right">功能全，有成型框架，发展快</td>
+<td>语法多样，小众</td>
+</tr>
+<tr>
+<td style="text-align:left">案例/框架</td>
+<td style="text-align:center"><a href="http://getbootstrap.com/" target="_blank" rel="noopener">Bootstrap</a></td>
+<td style="text-align:right"><a href="http://beta.compass-style.org" target="_blank" rel="noopener">Compass</a> <a href="http://getbootstrap.com/css/#sass" target="_blank" rel="noopener">Bootstrap</a> <a href="http://foundation.zurb.com/" target="_blank" rel="noopener">Foundation</a> <a href="http://bourbon.io" target="_blank" rel="noopener">Bourbon</a> <a href="https://github.com/jsw0528/base.sass" target="_blank" rel="noopener">Base.Sass</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">| Less | Sass | Stylus</span><br><span class="line">:-------|:------:|-------:|--------</span><br><span class="line">环境 |js/nodejs | Ruby(这列右对齐) | nodejs(高亮) &#123;:.highlight&#125;</span><br><span class="line">扩展名 | .less | .scss/.sass | .styl</span><br><span class="line">特点 | 老牌，用户多，支持js解析 | 功能全，有成型框架，发展快 | 语法多样，小众</span><br><span class="line">案例/框架 | [Bootstrap](http://getbootstrap.com/) | [Compass](http://beta.compass-style.org) [Bootstrap](http://getbootstrap.com/css/#sass) [Foundation](http://foundation.zurb.com/) [Bourbon](http://bourbon.io) [Base.Sass](https://github.com/jsw0528/base.sass) |</span><br></pre></td></tr></table></figure>
+<h3 id="4-7-text文字样式"><a href="#4-7-text文字样式" class="headerlink" title="4.7 text文字样式"></a>4.7 text文字样式</h3><p>如图所示：<img src="/2018/05/11/nodeppt2/6.png" alt="如图所示"><br>展示如图效果<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"text-danger"</span>&gt;</span>.text-danger<span class="tag">&lt;/<span class="name">span</span>&gt;</span> <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"text-success"</span>&gt;</span>.text-success<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"text-primary"</span>&gt;</span>.text-primary<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"text-warning"</span>&gt;</span>.text-warning<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"text-info"</span>&gt;</span>.text-info<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"text-white"</span>&gt;</span>.text-white<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"text-dark"</span>&gt;</span>.text-dark<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"blue"</span>&gt;</span>.blue<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"blue2"</span>&gt;</span>.blue2<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"blue3"</span>&gt;</span>.blue3<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"gray"</span>&gt;</span>.gray<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"gray2"</span>&gt;</span>.gray2<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"gray3"</span>&gt;</span>.gray3<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"red"</span>&gt;</span>.red<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"red2"</span>&gt;</span>.red2<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"red3"</span>&gt;</span>.red3<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"yellow"</span>&gt;</span>.yellow<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"yellow2"</span>&gt;</span>.yellow2<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"yellow3"</span>&gt;</span>.yellow3<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"green"</span>&gt;</span>.green<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"green2"</span>&gt;</span>.green2<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"green3"</span>&gt;</span>.green3<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="4-8-label"><a href="#4-8-label" class="headerlink" title="4.8 label"></a>4.8 label</h3><p>如图所示：<img src="/2018/05/11/nodeppt2/7.png" alt="如图所示"><br>展示如图效果<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"label label-primary"</span>&gt;</span>.label.label-primary<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"label label-warning"</span>&gt;</span>.label.label-warning<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"label label-danger"</span>&gt;</span>.label.label-danger<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"label label-default"</span>&gt;</span>.label.label-default<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"label label-success"</span>&gt;</span>.label.label-success<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"label label-info"</span>&gt;</span>.label.label-info<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>link style<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;<span class="name">mark</span>&gt;</span>mark<span class="tag">&lt;/<span class="name">mark</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="4-9-blockquote"><a href="#4-9-blockquote" class="headerlink" title="4.9 blockquote"></a>4.9 blockquote</h3><p>blockquote ：<br>如图所示：<img src="/2018/05/11/nodeppt2/8.png" alt="如图所示"><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nodeppt可能是迄今为止最好用的web presentation <span class="tag">&lt;<span class="name">small</span>&gt;</span>三水清<span class="tag">&lt;/<span class="name">small</span>&gt;</span></span><br><span class="line">这是一个class是：pull-right的blockquote <span class="tag">&lt;<span class="name">small</span>&gt;</span>small一下<span class="tag">&lt;/<span class="name">small</span>&gt;</span> &#123;:&amp;.pull-right&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-10-buttons"><a href="#4-10-buttons" class="headerlink" title="4.10 buttons"></a>4.10 buttons</h3><p>如图所示：<img src="/2018/05/11/nodeppt2/9.png" alt="如图所示"><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-default"</span>&gt;</span>.btn .btn-default<span class="tag">&lt;/<span class="name">button</span>&gt;</span>  <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span>.btn.btn-lg.btn-primary<span class="tag">&lt;/<span class="name">button</span>&gt;</span> <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-warning"</span>&gt;</span>.btn.btn-waring<span class="tag">&lt;/<span class="name">button</span>&gt;</span> <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-success"</span>&gt;</span>.btn.btn-success<span class="tag">&lt;/<span class="name">button</span>&gt;</span> <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-danger"</span>&gt;</span>.btn.btn-danger<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-lg btn-default"</span>&gt;</span>.btn.btn-lg.btn-default<span class="tag">&lt;/<span class="name">button</span>&gt;</span> <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-xs btn-success"</span>&gt;</span>.btn.btn-xs.btn-success<span class="tag">&lt;/<span class="name">button</span>&gt;</span> <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-sm btn-primary"</span>&gt;</span>.btn.btn-sm.btn-primary<span class="tag">&lt;/<span class="name">button</span>&gt;</span> <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-rounded btn-warning"</span>&gt;</span>.btn.btn-rounded.btn-waring<span class="tag">&lt;/<span class="name">button</span>&gt;</span>  <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-danger"</span> <span class="attr">disabled</span>=<span class="string">"disabled"</span>&gt;</span>disabled.btn.btn-danger<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-success"</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-share mr5"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="4-11-icons"><a href="#4-11-icons" class="headerlink" title="4.11 icons"></a>4.11 icons</h3><p>如图所示：<img src="/2018/05/11/nodeppt2/10.png" alt="如图所示"><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-apple"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-android"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-github"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-google"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-linux"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-css3"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-html5"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-usd"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-pie-chart"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-file-video-o"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-cog"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="4-12-代码格式化"><a href="#4-12-代码格式化" class="headerlink" title="4.12 代码格式化"></a>4.12 代码格式化</h3><p>使用 <code>highlightjs</code> 进行语法高亮<br>如图所示：<img src="/2018/05/11/nodeppt2/11.png" alt="如图所示"><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"columns-2"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">pre</span>&gt;</span><span class="tag">&lt;<span class="name">code</span> <span class="attr">class</span>=<span class="string">"javascript"</span>&gt;</span>(function(window, document)&#123;</span><br><span class="line">    var a = 1;</span><br><span class="line">    var test = function()&#123;</span><br><span class="line">        var b = 1;</span><br><span class="line">        alert(b);</span><br><span class="line">    &#125;;</span><br><span class="line">    //泛数组转换为数组</span><br><span class="line">    function toArray(arrayLike) &#123;</span><br><span class="line">        return [].slice.call(arrayLike);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;(window, document));</span><br><span class="line">    <span class="tag">&lt;/<span class="name">code</span>&gt;</span><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">pre</span>&gt;</span><span class="tag">&lt;<span class="name">code</span> <span class="attr">class</span>=<span class="string">"javascript"</span>&gt;</span>(function(window, document)&#123;</span><br><span class="line">    var a = 1;</span><br><span class="line">    var test = function()&#123;</span><br><span class="line">        var b = 1;</span><br><span class="line">        alert(b);</span><br><span class="line">    &#125;;</span><br><span class="line">    //泛数组转换为数组</span><br><span class="line">    function toArray(arrayLike) &#123;</span><br><span class="line">        return [].slice.call(arrayLike);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;(window, document));</span><br><span class="line">    <span class="tag">&lt;/<span class="name">code</span>&gt;</span><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="4-13-语法混编"><a href="#4-13-语法混编" class="headerlink" title="4.13 语法混编"></a>4.13 语法混编</h3><p>使用 <code>highlightjs</code> 进行语法高亮<br>如图所示：<img src="/2018/05/11/nodeppt2/12.png" alt="如图所示"><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"file-setting"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是html<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"css-demo"</span>&gt;</span>这是css样式<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>将html代码直接混编到**markdown**文件中即可<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">我是js控制的颜色 black &#123;:#testScriptTag&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">testScriptTag</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.getElementById(<span class="string">'testScriptTag'</span>).style.color = <span class="string">'black'</span>;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">#css-demo&#123;</span></span><br><span class="line"><span class="undefined">    color: red;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="4-14-iframe"><a href="#4-14-iframe" class="headerlink" title="4.14 iframe"></a>4.14 iframe</h3><p>如图所示：<img src="/2018/05/11/nodeppt2/13.png" alt="如图所示"><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">data-src</span>=<span class="string">"http://www.baidu.com"</span> <span class="attr">src</span>=<span class="string">"about:blank;"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="4-15-链接标签"><a href="#4-15-链接标签" class="headerlink" title="4.15 链接标签"></a>4.15 链接标签</h3><p><a href="https://www.baidu.com" target="_blank" rel="noopener">链接到百度</a><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[链接到百度](https://www.baidu.com)</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-效果设置"><a href="#5-效果设置" class="headerlink" title="5.效果设置"></a>5.效果设置</h2><h3 id="5-1-多种皮肤"><a href="#5-1-多种皮肤" class="headerlink" title="5.1 多种皮肤"></a>5.1 多种皮肤</h3><p>修改url可以改变皮肤<br>如图所示：<img src="/2018/05/11/nodeppt2/14.png" alt="如图所示"><br>也可以通过代码点击实现<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"columns6"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"?theme=color"</span> &gt;</span>color<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"?theme=blue"</span>&gt;</span>blue<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"?theme=dark"</span>&gt;</span>dark<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"?theme=green"</span>&gt;</span>green<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"?theme=light"</span>&gt;</span>light<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="5-1-单页面转场设置"><a href="#5-1-单页面转场设置" class="headerlink" title="5.1 单页面转场设置"></a>5.1 单页面转场设置</h3><p>[magic]中data-transition属性设置转场效果<br>[magic][/magic]中间用========隔开两个div<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[magic data-transition="earthquake"]</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"columns3"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/girl.jpg"</span> <span class="attr">height</span>=<span class="string">"450"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/girl.jpg"</span> <span class="attr">height</span>=<span class="string">"450"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/girl.jpg"</span> <span class="attr">height</span>=<span class="string">"450"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">========</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"columns4"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/girl.jpg"</span> <span class="attr">height</span>=<span class="string">"320"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/girl.jpg"</span> <span class="attr">height</span>=<span class="string">"320"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/girl.jpg"</span> <span class="attr">height</span>=<span class="string">"320"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/girl.jpg"</span> <span class="attr">height</span>=<span class="string">"320"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">[/magic]</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-2-相同页面转场设置"><a href="#5-2-相同页面转场设置" class="headerlink" title="5.2 相同页面转场设置"></a>5.2 相同页面转场设置</h3><ul>
+<li>列表支持渐显动效哦 {:&amp;.动效类型}<ul>
+<li>markdown列表第一条加上：{:&amp;.动效类型}</li>
+<li>markdown列表第一条加上：</li>
+<li>markdown列表第一条加上：</li>
+</ul>
+</li>
+<li>动效类型 <ul>
+<li>fadeIn淡出淡入 {:&amp;.动效类型}</li>
+<li>rollIn从后向前放大</li>
+<li>bounceIn弹出并震动</li>
+<li>moveIn</li>
+<li>zoomIn从后向前放大</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-3-全局设置"><a href="#5-3-全局设置" class="headerlink" title="5.3 全局设置"></a>5.3 全局设置</h3><p>前面说过在PPT开头</p>
+<blockquote>
+<p>transition: glue</p>
+</blockquote>
+<h3 id="5-4-页面之间设置"><a href="#5-4-页面之间设置" class="headerlink" title="5.4 页面之间设置"></a>5.4 页面之间设置</h3><p>在每个页面可以设置自己的转场效果</p>
+<blockquote>
+<p>[slide data-transition=”zoomin”]</p>
+</blockquote>
+<h3 id="5-5-转场url设置"><a href="#5-5-转场url设置" class="headerlink" title="5.5 转场url设置"></a>5.5 转场url设置</h3><p>在url后加上?transition=newspaper<br>如图所示<img src="/2018/05/11/nodeppt2/15.png" alt="如图所示"></p>
+<blockquote>
+<p>slide/slide2/slide3<br>newspaper<br>glue<br>kontext/vkontext<br>move/circle<br>horizontal/horizontal3d<br>vertical3d<br>zoomin/zoomout<br>cards<br>earthquake/pulse/stick</p>
+</blockquote>
+<p>这些转场效果慢慢试吧</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年11月10日 16:58</p>
+        <p>原始链接： <a class="post-url" href="/2018/05/11/nodeppt2/" title="nodeppt(二)">http://linjiad.github.io/2018/05/11/nodeppt2/</a></p>
+        <footer>
+            <a href="http://linjiad.github.io">
+                <img src="/images/logo.png" alt="linjiad">
+                linjiad
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/weixin.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/weixin.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/zhifubao.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://linjiad.github.io/2018/05/11/nodeppt2/&title=《nodeppt(二)》 — linjiad_个人博客&pic=2018/05/11/nodeppt2/menu.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://linjiad.github.io/2018/05/11/nodeppt2/&title=《nodeppt(二)》 — linjiad_个人博客&source=这个人很懒什么也没写" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://linjiad.github.io/2018/05/11/nodeppt2/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《nodeppt(二)》 — linjiad_个人博客&url=http://linjiad.github.io/2018/05/11/nodeppt2/&via=http://linjiad.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://linjiad.github.io/2018/05/11/nodeppt2/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://linjiad.github.io/2018/05/11/nodeppt2/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/nodeppt/" class="color3">nodeppt</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-nodeppt书写"><span class="post-toc-text">4.nodeppt书写</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2-总的配置"><span class="post-toc-text">4.2 总的配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2-每一页间隔-slide"><span class="post-toc-text">4.2 每一页间隔[slide]</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-3-样式"><span class="post-toc-text">4.3 样式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-4-背景图片"><span class="post-toc-text">4.4 背景图片</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-5-上下分界线"><span class="post-toc-text">4.5 上下分界线</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-6-表格"><span class="post-toc-text">4.6 表格</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-7-text文字样式"><span class="post-toc-text">4.7 text文字样式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-8-label"><span class="post-toc-text">4.8 label</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-9-blockquote"><span class="post-toc-text">4.9 blockquote</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-10-buttons"><span class="post-toc-text">4.10 buttons</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-11-icons"><span class="post-toc-text">4.11 icons</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-12-代码格式化"><span class="post-toc-text">4.12 代码格式化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-13-语法混编"><span class="post-toc-text">4.13 语法混编</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-14-iframe"><span class="post-toc-text">4.14 iframe</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-15-链接标签"><span class="post-toc-text">4.15 链接标签</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-效果设置"><span class="post-toc-text">5.效果设置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-1-多种皮肤"><span class="post-toc-text">5.1 多种皮肤</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-1-单页面转场设置"><span class="post-toc-text">5.1 单页面转场设置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-2-相同页面转场设置"><span class="post-toc-text">5.2 相同页面转场设置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-3-全局设置"><span class="post-toc-text">5.3 全局设置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-4-页面之间设置"><span class="post-toc-text">5.4 页面之间设置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-5-转场url设置"><span class="post-toc-text">5.5 转场url设置</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2018/05/11/hexo1/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          个人微博——hexo(一)
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/05/11/nodeppt1/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">nodeppt(一)</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'linjiad',
+            repo: 'linjiad.github.io',
+            oauth: {
+                client_id: '9b8f5415215f1aef0b2c',
+                client_secret: 'dea7335a3cd2d8e380b0279a5f1f7245797579d7',
+            },
+        })
+        gitment.render('comments')
+    </script>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 linjiad<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://linjiad.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/tags/echarts/" style="font-size: 15px;">echarts</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 20px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/tags/echarts/" style="font-size: 15px;">echarts</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 20px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

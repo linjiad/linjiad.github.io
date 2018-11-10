@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>css3-grid网格化布局 | linjiad_个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="梧桐更兼细雨到黄昏点点滴滴" />
+  
+  <meta name="description" content="1.第一个 Grid 布局CSS Grid 布局由两个核心组成部分是: wrapper（父元素）和 items（子元素）。下面是一个 wrapper 元素，内部包含6个 items ：HTML部分12345678&amp;lt;div class=&amp;quot;wrapper&amp;quot;&amp;gt;  &amp;lt;div&amp;gt;1&amp;lt;/div&amp;gt;  &amp;lt;div&amp;gt;2&amp;lt;/div&amp;gt;  &amp;lt">
+<meta name="keywords" content="CSS3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css3-grid网格化布局">
+<meta property="og:url" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/index.html">
+<meta property="og:site_name" content="linjiad_个人博客">
+<meta property="og:description" content="1.第一个 Grid 布局CSS Grid 布局由两个核心组成部分是: wrapper（父元素）和 items（子元素）。下面是一个 wrapper 元素，内部包含6个 items ：HTML部分12345678&amp;lt;div class=&amp;quot;wrapper&amp;quot;&amp;gt;  &amp;lt;div&amp;gt;1&amp;lt;/div&amp;gt;  &amp;lt;div&amp;gt;2&amp;lt;/div&amp;gt;  &amp;lt">
+<meta property="og:locale" content="JS">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/2.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/3.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/4.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/5.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/6.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/7.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/8.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/9.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/10.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/11.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/12.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/13.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/16.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/17.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/14.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/15.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/18.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/19.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/20.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/21.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/22.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/23.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/24.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/25.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/26.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/27.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/28.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/29.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/30.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/31.png">
+<meta property="og:updated_time" content="2018-11-10T08:58:48.530Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css3-grid网格化布局">
+<meta name="twitter:description" content="1.第一个 Grid 布局CSS Grid 布局由两个核心组成部分是: wrapper（父元素）和 items（子元素）。下面是一个 wrapper 元素，内部包含6个 items ：HTML部分12345678&amp;lt;div class=&amp;quot;wrapper&amp;quot;&amp;gt;  &amp;lt;div&amp;gt;1&amp;lt;/div&amp;gt;  &amp;lt;div&amp;gt;2&amp;lt;/div&amp;gt;  &amp;lt">
+<meta name="twitter:image" content="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/2.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">云销雨霁彩彻区明</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        云销雨霁彩彻区明
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        林花谢了春红太匆匆
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="linjiad_个人微博" target="_blank" href="//linjiad.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/linjiad">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-css3-grid网格化布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      css3-grid网格化布局
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/前端技术/">前端技术</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-05-17
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="1-第一个-Grid-布局"><a href="#1-第一个-Grid-布局" class="headerlink" title="1.第一个 Grid 布局"></a>1.第一个 Grid 布局</h2><p>CSS Grid 布局由两个核心组成部分是: <em>wrapper（父元素）</em>和 <em>items（子元素）</em>。<br>下面是一个 wrapper 元素，内部包含6个 items ：<br>HTML部分<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">  &lt;div&gt;1&lt;/div&gt;</span><br><span class="line">  &lt;div&gt;2&lt;/div&gt;</span><br><span class="line">  &lt;div&gt;3&lt;/div&gt;</span><br><span class="line">  &lt;div&gt;4&lt;/div&gt;</span><br><span class="line">  &lt;div&gt;5&lt;/div&gt;</span><br><span class="line">  &lt;div&gt;6&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>要把 wrapper 元素变成一个 grid(网格)，只要简单地把其 display 属性设置为 grid 即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.wrapper &#123;</span><br><span class="line">    display: grid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>仅仅是这样并没有什么用处结果如图所示：<br><img src="/2018/05/17/css3-grid网格化布局/2.png" alt="如图所示"></p>
+<h2 id="2-Columns-列-和-rows-行"><a href="#2-Columns-列-和-rows-行" class="headerlink" title="2.Columns(列) 和 rows(行)"></a>2.Columns(列) 和 rows(行)</h2><p>为了使其成为二维的网格容器，我们需要定义列和行。让我们创建3列和2行。我们将使用 <em>grid-template-row</em> 和 <em>grid-template-column</em> 属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.wrapper &#123;</span><br><span class="line">    display: grid;</span><br><span class="line">    grid-template-columns: 100px 100px 100px; //设置三列（1-4条线）</span><br><span class="line">    grid-template-rows: 50px 50px;//设置两行（1-3条线）</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>记住几条线是接下来需要用的<br>这些值决定了我们希望我们的列有多宽（ 100px ），以及我们希望行数是多高（ 50px ）<br><img src="/2018/05/17/css3-grid网格化布局/3.png" alt="如图所示"><br>如果这样设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.wrapper &#123;</span><br><span class="line">    display: grid;</span><br><span class="line">    grid-template-columns: 200px 50px 100px;</span><br><span class="line">    grid-template-rows: 100px 30px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果就是这样<br><img src="/2018/05/17/css3-grid网格化布局/4.png" alt="如图所示"><br>注意这里评分宽度尽量用（可以自适应）</p>
+<blockquote>
+<p>grid-template-columns: repeat(6, 1fr);</p>
+</blockquote>
+<p>页面宽度平均分成6份，每个占一份</p>
+<h2 id="3-放置-items-子元素"><a href="#3-放置-items-子元素" class="headerlink" title="3.放置 items(子元素)"></a>3.放置 items(子元素)</h2><h3 id="3-1行"><a href="#3-1行" class="headerlink" title="3.1行"></a>3.1行</h3><p>要定位和调整 items(子元素) 大小，我们将使用 grid-column 和 grid-row 属性来设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.item1 &#123;</span><br><span class="line">    grid-column-start: 1;</span><br><span class="line">    grid-column-end: 4;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当然也可以这么写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.item1 &#123;</span><br><span class="line">    grid-column: 1 / 4;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>item1 占据从第一条网格线开始，到第四条网格线结束换句话说，它将独立占据整行.<br>结果如图所示：<br><img src="/2018/05/17/css3-grid网格化布局/5.png" alt="如图所示"><br>这是怎么回事呢？为啥是1,4呢，原因如图<br><img src="/2018/05/17/css3-grid网格化布局/6.png" alt="如图所示"></p>
+<h3 id="3-2列"><a href="#3-2列" class="headerlink" title="3.2列"></a>3.2列</h3><p>同理。列也就不用多说了，直接看代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.item1 &#123;</span><br><span class="line">    grid-column-start: 1;</span><br><span class="line">    grid-column-end: 3;</span><br><span class="line">&#125;</span><br><span class="line">.item3 &#123;</span><br><span class="line">    grid-row-start: 2;</span><br><span class="line">    grid-row-end: 4;</span><br><span class="line">&#125;</span><br><span class="line">.item4 &#123;</span><br><span class="line">    grid-column-start: 2;</span><br><span class="line">    grid-column-end: 4;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果如下：<br><img src="/2018/05/17/css3-grid网格化布局/7.png" alt="如图所示"><br>基本布局这些就够了</p>
+<h2 id="4-矩阵布局——grid-template-areas"><a href="#4-矩阵布局——grid-template-areas" class="headerlink" title="4.矩阵布局——grid-template-areas"></a>4.矩阵布局——grid-template-areas</h2><p>直接代码讲解吧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">.item-1 &#123;</span><br><span class="line">  grid-area: header;</span><br><span class="line">&#125;</span><br><span class="line">.item-2 &#123;</span><br><span class="line">  grid-area: main;</span><br><span class="line">&#125;</span><br><span class="line">.item-3 &#123;</span><br><span class="line">  grid-area: sidebar;</span><br><span class="line">&#125;</span><br><span class="line">.item-4 &#123;</span><br><span class="line">  grid-area: footer;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.wrapper &#123;</span><br><span class="line">  grid-template-columns: 50px 50px 50px 50px;</span><br><span class="line">  grid-template-rows: auto;</span><br><span class="line">  grid-template-areas: </span><br><span class="line">    &quot;header header header header&quot;</span><br><span class="line">    &quot;main main . sidebar&quot;</span><br><span class="line">    &quot;footer footer footer footer&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>把每个div起一个别名：</p>
+<blockquote>
+<p>.item-a {<br> grid-area: header;<br>}</p>
+</blockquote>
+<p>开始布局</p>
+<blockquote>
+<p>grid-template-areas:<br>   “header header header header”<br>   “main main . sidebar”<br>  “footer footer footer footer”;</p>
+</blockquote>
+<p>其中.代表空占位<br>结果如图所示：<br><img src="/2018/05/17/css3-grid网格化布局/8.png" alt="如图所示"></p>
+<h2 id="5指定网格线-grid-lines-的大小"><a href="#5指定网格线-grid-lines-的大小" class="headerlink" title="5指定网格线(grid lines)的大小"></a>5指定网格线(grid lines)的大小</h2><p>属性这么设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.wrapper &#123;</span><br><span class="line">  grid-column-gap: &lt;line-size&gt;;</span><br><span class="line">  grid-row-gap: &lt;line-size&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>具体事例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  grid-template-columns: 100px 50px 100px;</span><br><span class="line">  grid-template-rows: 80px auto 80px; </span><br><span class="line">  grid-column-gap: 10px;</span><br><span class="line">  grid-row-gap: 15px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/9.png" alt="如图所示"></p>
+<h2 id="6-每个网格中的格式"><a href="#6-每个网格中的格式" class="headerlink" title="6 每个网格中的格式"></a>6 每个网格中的格式</h2><h3 id="6-1整体设置-justify-items"><a href="#6-1整体设置-justify-items" class="headerlink" title="6.1整体设置 -justify-items"></a>6.1整体设置 -justify-items</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  align-items: start | end | center | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>start：将内容对齐到网格区域(grid area)的顶部<br>end：将内容对齐到网格区域的底部<br>center：将内容对齐到网格区域的中间（垂直居中）<br>stretch：填满网格区域高度（默认值）<br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  align-items: start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/10.png" alt="如图所示"><br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  align-items: end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/11.png" alt="如图所示"><br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  align-items: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/12.png" alt="如图所示"><br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  align-items: stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/13.png" alt="如图所示"></p>
+<h3 id="6-2单个设置-justify-self"><a href="#6-2单个设置-justify-self" class="headerlink" title="6.2单个设置 -justify-self"></a>6.2单个设置 -justify-self</h3><p>规则和上面一样，这里就不多说了<br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.item-a &#123;</span><br><span class="line">    justify-self: start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/16.png" alt="如图所示"><br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.item-a &#123;</span><br><span class="line">  justify-self: end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/17.png" alt="如图所示"><br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.item-a &#123;</span><br><span class="line">    justify-self: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/14.png" alt="如图所示"><br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.item-a &#123;</span><br><span class="line">    justify-self: stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/15.png" alt="如图所示"></p>
+<h2 id="7-非自适应布局对齐方式"><a href="#7-非自适应布局对齐方式" class="headerlink" title="7.非自适应布局对齐方式"></a>7.非自适应布局对齐方式</h2><h3 id="7-1沿—X轴线"><a href="#7-1沿—X轴线" class="headerlink" title="7.1沿—X轴线"></a>7.1沿—X轴线</h3><p>有时，你的网格合计大小可能小于其 网格容器(grid container) 大小。 如果你的所有 网格项(grid items) 都使用像px这样的非灵活单位设置大小，在这种情况下，您可以设置网格容器内的网格的对齐方式<br>start：将网格对齐到 网格容器(grid container) 的左边<br>end：将网格对齐到 网格容器 的右边<br>center：将网格对齐到 网格容器 的中间（水平居中）<br>stretch：调整 网格项(grid items) 的宽度，允许该网格填充满整个 网格容器 的宽度<br>space-around：在每个网格项之间放置一个均匀的空间，左右两端放置一半的空间<br>space-between：在每个网格项之间放置一个均匀的空间，左右两端没有空间<br>space-evenly：在每个栅格项目之间放置一个均匀的空间，左右两端放置一个均匀的空间<br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  justify-content: start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/18.png" alt="如图所示"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  justify-content: end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/19.png" alt="如图所示"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  justify-content: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/20.png" alt="如图所示"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  justify-content: stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/21.png" alt="如图所示"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  justify-content: space-around;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/22.png" alt="如图所示"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  justify-content: space-between;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/23.png" alt="如图所示"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  justify-content: space-evenly;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/24.png" alt="如图所示"></p>
+<h3 id="7-2沿—Y轴线"><a href="#7-2沿—Y轴线" class="headerlink" title="7.2沿—Y轴线"></a>7.2沿—Y轴线</h3><p>和x轴基本一样<br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  align-content: start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/25.png" alt="如图所示"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  align-content: end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/26.png" alt="如图所示"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  align-content: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/27.png" alt="如图所示"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  align-content: stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/28.png" alt="如图所示"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  align-content: space-around;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/29.png" alt="如图所示"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  align-content: space-between;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/30.png" alt="如图所示"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  align-content: space-evenly;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/17/css3-grid网格化布局/31.png" alt="如图所示"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>常用的基本就这些了如果需要了解更多，<a href="http://www.css88.com/archives/8510#prop-align-items" target="_blank" rel="noopener">这儿啦</a></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年11月10日 16:58</p>
+        <p>原始链接： <a class="post-url" href="/2018/05/17/css3-grid网格化布局/" title="css3-grid网格化布局">http://linjiad.github.io/2018/05/17/css3-grid网格化布局/</a></p>
+        <footer>
+            <a href="http://linjiad.github.io">
+                <img src="/images/logo.png" alt="linjiad">
+                linjiad
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/weixin.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/weixin.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/zhifubao.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://linjiad.github.io/2018/05/17/css3-grid网格化布局/&title=《css3-grid网格化布局》 — linjiad_个人博客&pic=2018/05/17/css3-grid网格化布局/menu.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://linjiad.github.io/2018/05/17/css3-grid网格化布局/&title=《css3-grid网格化布局》 — linjiad_个人博客&source=这个人很懒什么也没写" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://linjiad.github.io/2018/05/17/css3-grid网格化布局/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《css3-grid网格化布局》 — linjiad_个人博客&url=http://linjiad.github.io/2018/05/17/css3-grid网格化布局/&via=http://linjiad.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://linjiad.github.io/2018/05/17/css3-grid网格化布局/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://linjiad.github.io/2018/05/17/css3-grid网格化布局/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/CSS3/" class="color5">CSS3</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-第一个-Grid-布局"><span class="post-toc-text">1.第一个 Grid 布局</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-Columns-列-和-rows-行"><span class="post-toc-text">2.Columns(列) 和 rows(行)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-放置-items-子元素"><span class="post-toc-text">3.放置 items(子元素)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1行"><span class="post-toc-text">3.1行</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2列"><span class="post-toc-text">3.2列</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-矩阵布局——grid-template-areas"><span class="post-toc-text">4.矩阵布局——grid-template-areas</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5指定网格线-grid-lines-的大小"><span class="post-toc-text">5指定网格线(grid lines)的大小</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-每个网格中的格式"><span class="post-toc-text">6 每个网格中的格式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-1整体设置-justify-items"><span class="post-toc-text">6.1整体设置 -justify-items</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-2单个设置-justify-self"><span class="post-toc-text">6.2单个设置 -justify-self</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-非自适应布局对齐方式"><span class="post-toc-text">7.非自适应布局对齐方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-1沿—X轴线"><span class="post-toc-text">7.1沿—X轴线</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-2沿—Y轴线"><span class="post-toc-text">7.2沿—Y轴线</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-text">总结</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2018/05/18/websocket/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          websocket+Springboot
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/05/17/echarts-字符云/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">echarts-字符云</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'linjiad',
+            repo: 'linjiad.github.io',
+            oauth: {
+                client_id: '9b8f5415215f1aef0b2c',
+                client_secret: 'dea7335a3cd2d8e380b0279a5f1f7245797579d7',
+            },
+        })
+        gitment.render('comments')
+    </script>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 linjiad<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://linjiad.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/tags/echarts/" style="font-size: 15px;">echarts</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 20px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/tags/echarts/" style="font-size: 15px;">echarts</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 20px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

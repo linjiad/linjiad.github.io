@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>css3-文字特效和背景透明 | linjiad_个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="梧桐更兼细雨到黄昏点点滴滴" />
+  
+  <meta name="description" content="直接上图，需要用CSS3实现这样的效果 1.html部分html这里需要一个  标签包含  之后每组字都是自己的  之所以是div是需要给每组字限定大小。1234567891011&amp;lt;ul&amp;gt;          &amp;lt;li class = &amp;quot;li_title&amp;quot;&amp;gt;&amp;lt;div&amp;gt;公司名称&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;区域占有率&amp;lt;/div">
+<meta name="keywords" content="CSS3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css3-文字特效和背景透明">
+<meta property="og:url" content="http://linjiad.github.io/2018/05/16/css3-文字特效和背景透明/index.html">
+<meta property="og:site_name" content="linjiad_个人博客">
+<meta property="og:description" content="直接上图，需要用CSS3实现这样的效果 1.html部分html这里需要一个  标签包含  之后每组字都是自己的  之所以是div是需要给每组字限定大小。1234567891011&amp;lt;ul&amp;gt;          &amp;lt;li class = &amp;quot;li_title&amp;quot;&amp;gt;&amp;lt;div&amp;gt;公司名称&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;区域占有率&amp;lt;/div">
+<meta property="og:locale" content="JS">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/16/css3-文字特效和背景透明/menu.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/16/css3-文字特效和背景透明/2.png">
+<meta property="og:updated_time" content="2018-11-10T08:58:48.672Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css3-文字特效和背景透明">
+<meta name="twitter:description" content="直接上图，需要用CSS3实现这样的效果 1.html部分html这里需要一个  标签包含  之后每组字都是自己的  之所以是div是需要给每组字限定大小。1234567891011&amp;lt;ul&amp;gt;          &amp;lt;li class = &amp;quot;li_title&amp;quot;&amp;gt;&amp;lt;div&amp;gt;公司名称&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;区域占有率&amp;lt;/div">
+<meta name="twitter:image" content="http://linjiad.github.io/2018/05/16/css3-文字特效和背景透明/menu.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">云销雨霁彩彻区明</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        云销雨霁彩彻区明
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        林花谢了春红太匆匆
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="linjiad_个人微博" target="_blank" href="//linjiad.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/linjiad">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-css3-文字特效和背景透明" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      css3-文字特效和背景透明
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/前端技术/">前端技术</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-05-16
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>直接上图，需要用CSS3实现这样的效果<br><img src="/2018/05/16/css3-文字特效和背景透明/menu.png" alt="如图所示"></p>
+<h2 id="1-html部分"><a href="#1-html部分" class="headerlink" title="1.html部分"></a>1.html部分</h2><p>html这里需要一个 <strong><ul></ul></strong> 标签包含 <em><li></li></em> 之后每组字都是自己的 <em><div></div></em> 之所以是div是需要给每组字限定大小。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">          &lt;li class = &quot;li_title&quot;&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;div&gt;区域占有率&lt;/div&gt;&lt;div&gt;主营产品&lt;/div&gt;&lt;div&gt;来源&lt;/div&gt;&lt;/li&gt;</span><br><span class="line">          &lt;li class = &quot;li_list&quot;&gt;&lt;div&gt;公司名称公司名称公司名称公司名称公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;/li&gt;</span><br><span class="line">          &lt;li class = &quot;li_list&quot;&gt;&lt;div&gt;公司名称公司名称公司名称公司名称公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;/li&gt;</span><br><span class="line">          &lt;li class = &quot;li_list&quot;&gt;&lt;div&gt;公司名称公司名称公司名称公司名称公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;/li&gt;</span><br><span class="line">          &lt;li class = &quot;li_list&quot;&gt;&lt;div&gt;公司名称公司名称公司名称公司名称公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;/li&gt;</span><br><span class="line">          &lt;li class = &quot;li_list&quot;&gt;&lt;div&gt;公司名称公司名称公司名称公司名称公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;/li&gt;</span><br><span class="line">          &lt;li class = &quot;li_list&quot;&gt;&lt;div&gt;公司名称公司名称公司名称公司名称公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;/li&gt;</span><br><span class="line">          &lt;li class = &quot;li_list&quot;&gt;&lt;div&gt;公司名称公司名称公司名称公司名称公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;/li&gt;</span><br><span class="line">          &lt;li class = &quot;li_list&quot;&gt;&lt;div&gt;公司名称公司名称公司名称公司名称公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-CSS部分"><a href="#2-CSS部分" class="headerlink" title="2.CSS部分"></a>2.CSS部分</h2><h3 id="2-1-li背景"><a href="#2-1-li背景" class="headerlink" title="2.1 li背景"></a>2.1 li背景</h3><p>这里的li分为两部分，标题部分和其他行，这里如果用less的话就非常方便，less以后会在less专题中说，这里还是用css<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.li_title&#123;</span><br><span class="line">  margin-left: -50px; //内边距向左50</span><br><span class="line">  height: 30px; //每行高30px</span><br><span class="line">  list-style-type : none; //去掉li前面的·</span><br><span class="line">  background-color: rgb(46,154,254,0.6); //设置背景颜色，并且透明度为0.6</span><br><span class="line">  border-radius:10px; //拐角度为10px</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>后面的行无非就是改个颜色<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.li_list&#123;</span><br><span class="line">  margin-left: -50px;</span><br><span class="line">  height: 30px;</span><br><span class="line">  margin-top: 15px;</span><br><span class="line">  list-style-type : none;</span><br><span class="line">  background-color: rgb(28,28,28,0.6);</span><br><span class="line">  border-radius:10px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-2-文字特效"><a href="#2-2-文字特效" class="headerlink" title="2.2 文字特效"></a>2.2 文字特效</h3><p>这里的特效就是多余的文字变成…<br>直接代码讲解吧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ul div&#123;</span><br><span class="line">  color : #FFFFFF; //文字颜色白色</span><br><span class="line">  font-size : 18px; //字体大小18px</span><br><span class="line">  float:left; //文字靠左浮动</span><br><span class="line">  margin-left: 8%; //左边距为8%，也就是每个字之间的间距</span><br><span class="line">  width:110px;  //规定div大小，也就是文字框大小（主要）</span><br><span class="line">  white-space:nowrap; //规定文字不能换行（主要）</span><br><span class="line">  overflow:hidden;  //规定多余的文字隐藏（主要）</span><br><span class="line">  text-overflow:ellipsis; //规定文字超出的话···（主要）</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这些之后图片的效果就回显现</p>
+<h2 id="3-左侧按钮特效"><a href="#3-左侧按钮特效" class="headerlink" title="3.左侧按钮特效"></a>3.左侧按钮特效</h2><p>直接上图，需要用CSS3实现这样的效果<br><img src="/2018/05/16/css3-文字特效和背景透明/2.png" alt="如图所示"><br>要实现这个效果首先要在左面定义一个<div></div></p>
+<h3 id="3-1左侧div-html"><a href="#3-1左侧div-html" class="headerlink" title="3.1左侧div_html"></a>3.1左侧div_html</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class = &quot;menu&quot;&gt;</span><br><span class="line">       &lt;ul&gt;</span><br><span class="line">         &lt;li value = &quot;reaches&quot;&gt;行业上下游&lt;/li&gt;</span><br><span class="line">         &lt;li class=&quot;menu_select&quot; value = &quot;xiehui&quot;&gt;协会理事会&lt;/li&gt;</span><br><span class="line">         &lt;li class=&quot;menu_select&quot; value = &quot;gongxu&quot;&gt;供需平台&lt;/li&gt;</span><br><span class="line">         &lt;li class=&quot;menu_select&quot; value = &quot;shejiao&quot;&gt;社交平台&lt;/li&gt;</span><br><span class="line">         &lt;li class=&quot;menu_select&quot; value = &quot;qita&quot;&gt;其他&lt;/li&gt;</span><br><span class="line">      &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-左侧CSS样式"><a href="#3-2-左侧CSS样式" class="headerlink" title="3.2.左侧CSS样式"></a>3.2.左侧CSS样式</h3><p>首先是menu的样式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.menu&#123;</span><br><span class="line">  width: 13%;  //定义宽度</span><br><span class="line">  height: 736px; //定义高度</span><br><span class="line">  float:left; //浮动到左侧</span><br><span class="line">  transform:skew(0deg,20deg); //敲黑板划重点，倾斜，两个参数，这里是沿着x轴向下倾斜20度</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>之后设定ul样式，这个样式没有什么好说的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.menu ul &#123;</span><br><span class="line">  float:left;</span><br><span class="line">  margin-top: 25%;</span><br><span class="line">  margin-left: -20%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>再之后设置li样式，划重点<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.menu li &#123;</span><br><span class="line">  width: 100%; //li宽度</span><br><span class="line">  height: 100px; //高度</span><br><span class="line">  margin-top: 5%; //内置上边距</span><br><span class="line">  color : #FFFFFF; //颜色（字体）</span><br><span class="line">  font-size : 20px; //字体大小</span><br><span class="line">  border:1px solid #ffffff; //边界线粗细为1px。边界线颜色为白色</span><br><span class="line">  list-style-type : none; //不显示·</span><br><span class="line">  float:left; //左浮动</span><br><span class="line">  display: flex; //（划重点）用flex布局，这样设置里面字居中</span><br><span class="line">  align-items:center; // 上下居中</span><br><span class="line">  justify-content: center;// 左右居中</span><br><span class="line">  cursor: pointer; //鼠标经过变成手指</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>未被选择的li需要一个透明的背景色，如同前面一样，直接上代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.menu_select&#123;</span><br><span class="line">  background-color: rgb(110,110,110,0.3);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-3实现点击切换效果js"><a href="#3-3实现点击切换效果js" class="headerlink" title="3.3实现点击切换效果js"></a>3.3实现点击切换效果js</h3><p>循环ul的children，如果和点击的li相同则删除menu_select样式，否则添加menu_select样式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;.menu li&quot;).on(&apos;click&apos;, function() &#123;</span><br><span class="line">      for (let child of $(&quot;.menu ul&quot;).children()) &#123;</span><br><span class="line">        if(child.innerHTML != this.innerHTML)&#123;</span><br><span class="line">          $(child).addClass(&quot;menu_select&quot;);</span><br><span class="line">          $(&quot;#&quot;+child.attributes.value.value).hide()</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">          $(child).removeClass(&quot;menu_select&quot;);</span><br><span class="line">          $(&quot;#&quot;+child.attributes.value.value).show()</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年11月10日 16:58</p>
+        <p>原始链接： <a class="post-url" href="/2018/05/16/css3-文字特效和背景透明/" title="css3-文字特效和背景透明">http://linjiad.github.io/2018/05/16/css3-文字特效和背景透明/</a></p>
+        <footer>
+            <a href="http://linjiad.github.io">
+                <img src="/images/logo.png" alt="linjiad">
+                linjiad
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/weixin.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/weixin.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/zhifubao.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://linjiad.github.io/2018/05/16/css3-文字特效和背景透明/&title=《css3-文字特效和背景透明》 — linjiad_个人博客&pic=2018/05/16/css3-文字特效和背景透明/menu.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://linjiad.github.io/2018/05/16/css3-文字特效和背景透明/&title=《css3-文字特效和背景透明》 — linjiad_个人博客&source=这个人很懒什么也没写" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://linjiad.github.io/2018/05/16/css3-文字特效和背景透明/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《css3-文字特效和背景透明》 — linjiad_个人博客&url=http://linjiad.github.io/2018/05/16/css3-文字特效和背景透明/&via=http://linjiad.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://linjiad.github.io/2018/05/16/css3-文字特效和背景透明/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://linjiad.github.io/2018/05/16/css3-文字特效和背景透明/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/CSS3/" class="color5">CSS3</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-html部分"><span class="post-toc-text">1.html部分</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-CSS部分"><span class="post-toc-text">2.CSS部分</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-li背景"><span class="post-toc-text">2.1 li背景</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-文字特效"><span class="post-toc-text">2.2 文字特效</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-左侧按钮特效"><span class="post-toc-text">3.左侧按钮特效</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1左侧div-html"><span class="post-toc-text">3.1左侧div_html</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-左侧CSS样式"><span class="post-toc-text">3.2.左侧CSS样式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3实现点击切换效果js"><span class="post-toc-text">3.3实现点击切换效果js</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2018/05/17/echarts-字符云/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          echarts-字符云
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/05/16/echarts-地图/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">echarts_地图</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'linjiad',
+            repo: 'linjiad.github.io',
+            oauth: {
+                client_id: '9b8f5415215f1aef0b2c',
+                client_secret: 'dea7335a3cd2d8e380b0279a5f1f7245797579d7',
+            },
+        })
+        gitment.render('comments')
+    </script>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 linjiad<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://linjiad.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/tags/echarts/" style="font-size: 15px;">echarts</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 20px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/tags/echarts/" style="font-size: 15px;">echarts</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 20px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>个人微博——hexo(一) | linjiad_个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="梧桐更兼细雨到黄昏点点滴滴" />
+  
+  <meta name="description" content="用hexo和github搭建个人 免费 博客免费 对我我这种穷人来说显得弥足珍贵 0.导言0.1 个人微博技术个人微博技术有很对，4-12日尤大神发布了VuePress，大神本来想写文档，结果码出了一套框架（容我做一个悲伤的表情），大神就是大神。不过新框架还在不断完善，存在太多坑，这里就先不说VuePress，以后框架完善后再说。这里就聊一聊老牌的微博框架hexo 0.2 hexohexo是一个框">
+<meta name="keywords" content="hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="个人微博——hexo(一)">
+<meta property="og:url" content="http://linjiad.github.io/2018/05/11/hexo1/index.html">
+<meta property="og:site_name" content="linjiad_个人博客">
+<meta property="og:description" content="用hexo和github搭建个人 免费 博客免费 对我我这种穷人来说显得弥足珍贵 0.导言0.1 个人微博技术个人微博技术有很对，4-12日尤大神发布了VuePress，大神本来想写文档，结果码出了一套框架（容我做一个悲伤的表情），大神就是大神。不过新框架还在不断完善，存在太多坑，这里就先不说VuePress，以后框架完善后再说。这里就聊一聊老牌的微博框架hexo 0.2 hexohexo是一个框">
+<meta property="og:locale" content="JS">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/11/hexo1/2.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/11/hexo1/3.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/11/hexo1/4.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/11/hexo1/5.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/11/hexo1/6.png">
+<meta property="og:updated_time" content="2018-11-10T08:58:48.727Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="个人微博——hexo(一)">
+<meta name="twitter:description" content="用hexo和github搭建个人 免费 博客免费 对我我这种穷人来说显得弥足珍贵 0.导言0.1 个人微博技术个人微博技术有很对，4-12日尤大神发布了VuePress，大神本来想写文档，结果码出了一套框架（容我做一个悲伤的表情），大神就是大神。不过新框架还在不断完善，存在太多坑，这里就先不说VuePress，以后框架完善后再说。这里就聊一聊老牌的微博框架hexo 0.2 hexohexo是一个框">
+<meta name="twitter:image" content="http://linjiad.github.io/2018/05/11/hexo1/2.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">云销雨霁彩彻区明</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        云销雨霁彩彻区明
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        林花谢了春红太匆匆
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="linjiad_个人微博" target="_blank" href="//linjiad.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/linjiad">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-hexo1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      个人微博——hexo(一)
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/博客/">博客</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-05-11
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>用hexo和github搭建个人 <strong>免费</strong> 博客<br><strong>免费</strong> 对我我这种穷人来说显得弥足珍贵</p>
+<h2 id="0-导言"><a href="#0-导言" class="headerlink" title="0.导言"></a>0.导言</h2><h3 id="0-1-个人微博技术"><a href="#0-1-个人微博技术" class="headerlink" title="0.1 个人微博技术"></a>0.1 个人微博技术</h3><p>个人微博技术有很对，4-12日尤大神发布了VuePress，大神本来想写文档，结果码出了一套框架（容我做一个悲伤的表情），大神就是大神。不过新框架还在不断完善，存在太多坑，这里就先不说VuePress，以后框架完善后再说。这里就聊一聊老牌的微博框架hexo</p>
+<h3 id="0-2-hexo"><a href="#0-2-hexo" class="headerlink" title="0.2 hexo"></a>0.2 hexo</h3><p>hexo是一个框架，简洁明朗，基于node，一键部署，并且支持MarkDown，现在微博基本上内容都是用MarkDown来写，而且还有很多 <strong>免费</strong> 框架哦！<br>之前想写一个微博，用nodejs后台，前端用vue来写，还得弄服务器什么的，超级麻烦。后来学了下hexo，真的超级轻量！(我的废话真多)。</p>
+<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><h3 id="1-1-安装nodejs"><a href="#1-1-安装nodejs" class="headerlink" title="1.1 安装nodejs"></a>1.1 安装nodejs</h3><p>hexo是基于nodejs，需要nodejs，还不会可以面壁了</p>
+<h3 id="1-2-安装hexo"><a href="#1-2-安装hexo" class="headerlink" title="1.2 安装hexo"></a>1.2 安装hexo</h3><p>hexo需要安装全局变量</p>
+<blockquote>
+<p>npm install hexo-cli -g</p>
+</blockquote>
+<h3 id="1-3-安装git"><a href="#1-3-安装git" class="headerlink" title="1.3 安装git"></a>1.3 安装git</h3><p>去这里<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a>毫无压力的进行安装吧</p>
+<h2 id="2-快速在本地开始"><a href="#2-快速在本地开始" class="headerlink" title="2.快速在本地开始"></a>2.快速在本地开始</h2><h3 id="2-1-开始命令"><a href="#2-1-开始命令" class="headerlink" title="2.1 开始命令"></a>2.1 开始命令</h3><blockquote>
+<p>hexo i blog //init的缩写 blog是项目名</p>
+</blockquote>
+<p>hexo初始化hexo</p>
+<blockquote>
+<p>cd blog //切换到站点根目录</p>
+</blockquote>
+<p>切换到该目录下，或者直接在该目录下打开控制台</p>
+<blockquote>
+<p>hexo g //generetor的缩写</p>
+</blockquote>
+<p>在此之前可以先clean下，然后生成项目</p>
+<blockquote>
+<p>hexo s //server的缩写</p>
+</blockquote>
+<p>启动本地服务器</p>
+<h3 id="2-2-查看成果"><a href="#2-2-查看成果" class="headerlink" title="2.2 查看成果"></a>2.2 查看成果</h3><blockquote>
+<p>打开浏览器输入localhost:4000查看：<br><img src="/2018/05/11/hexo1/2.png" alt="如图所示"></p>
+</blockquote>
+<h3 id="2-3-目录结构"><a href="#2-3-目录结构" class="headerlink" title="2.3 目录结构"></a>2.3 目录结构</h3><p>在初始化的目录下会看到该目录结构<br>一个崭新的博客页面出现在面前<br><img src="/2018/05/11/hexo1/3.png" alt="如图所示"><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">node_modules：是依赖包</span><br><span class="line">public：存放的是生成的页面;clean会删除;generetor会生成</span><br><span class="line">scaffolds：命令生成文章等的模板</span><br><span class="line">source：用命令创建的各种文章，以后都在这里写自己的文章</span><br><span class="line">themes：主题；存放自己喜欢的主题并使用</span><br><span class="line">_config.yml：整个博客的配置</span><br><span class="line">db.json：source解析所得到的(我也不大清楚)</span><br><span class="line">package.json：项目所需模块项目的配置信息</span><br><span class="line">package-lock.json：nodejs升级后存储更细节的包版本，以后写nodejs会详细说明</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-4-安装hexo-server"><a href="#2-4-安装hexo-server" class="headerlink" title="2.4 安装hexo-server"></a>2.4 安装hexo-server</h3><p>这里需要踩个坑，exo 3.0把服务器独立成个别模块，需要单独安装：</p>
+<blockquote>
+<p>npm i hexo-server</p>
+</blockquote>
+<h2 id="3-配置github"><a href="#3-配置github" class="headerlink" title="3.配置github"></a>3.配置github</h2><h3 id="3-1-在github上创建项目"><a href="#3-1-在github上创建项目" class="headerlink" title="3.1 在github上创建项目"></a>3.1 在github上创建项目</h3><p>没有账号的自己<a href="https://github.com/join?source=header-home" target="_blank" rel="noopener">注册</a><br>创建新的项目<br><img src="/2018/05/11/hexo1/4.png" alt="如图所示"><br>创建项目，输入地址<br><img src="/2018/05/11/hexo1/5.png" alt="如图所示"><br>名称为<font color="#00ffff" size="5">yourname.github.io</font>, 其中yourname是你的github名称，按照这个规则创建才有用！并且以后yourname.github.io就是你的博客地址，之后点击2创建</p>
+<h3 id="3-2-配置github私钥"><a href="#3-2-配置github私钥" class="headerlink" title="3.2 配置github私钥"></a>3.2 配置github私钥</h3><p>个人觉得这个配置后只能在该电脑使用，像我一样在公司台式机的朋友梦用其他电脑配置会哭的，这里就先不用私钥的办法，后面会说一个更好的方法。</p>
+<h3 id="3-2-安装deployer"><a href="#3-2-安装deployer" class="headerlink" title="3.2 安装deployer"></a>3.2 安装deployer</h3><p>安装deployer后才能美美哒配置发布到网上</p>
+<blockquote>
+<p>npm install hexo-deployer-git –save</p>
+</blockquote>
+<p>之后需要在_config.yml末尾处加入一段代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/YourgithubName/YourgithubName.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<p>重点说明一下repo:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://+用户名:密码+@+github.com/+</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/05/11/hexo1/6.png" alt="如图所示"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+.git</span><br></pre></td></tr></table></figure></p>
+<p>这里可以接刚才说的更好的方法</p>
+<h3 id="3-2-发布博客"><a href="#3-2-发布博客" class="headerlink" title="3.2 发布博客"></a>3.2 发布博客</h3><p>这时候小伙伴可以愉快的发布了<br>建议执行命令按顺序执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-4-查看博客"><a href="#3-4-查看博客" class="headerlink" title="3.4 查看博客"></a>3.4 查看博客</h3><p>在浏览器中输入https://刚才的名字.github.io/<br>进行访问</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年11月10日 16:58</p>
+        <p>原始链接： <a class="post-url" href="/2018/05/11/hexo1/" title="个人微博——hexo(一)">http://linjiad.github.io/2018/05/11/hexo1/</a></p>
+        <footer>
+            <a href="http://linjiad.github.io">
+                <img src="/images/logo.png" alt="linjiad">
+                linjiad
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/weixin.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/weixin.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/zhifubao.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://linjiad.github.io/2018/05/11/hexo1/&title=《个人微博——hexo(一)》 — linjiad_个人博客&pic=2018/05/11/hexo1/menu.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://linjiad.github.io/2018/05/11/hexo1/&title=《个人微博——hexo(一)》 — linjiad_个人博客&source=这个人很懒什么也没写" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://linjiad.github.io/2018/05/11/hexo1/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《个人微博——hexo(一)》 — linjiad_个人博客&url=http://linjiad.github.io/2018/05/11/hexo1/&via=http://linjiad.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://linjiad.github.io/2018/05/11/hexo1/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://linjiad.github.io/2018/05/11/hexo1/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/hexo/" class="color5">hexo</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0-导言"><span class="post-toc-text">0.导言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-1-个人微博技术"><span class="post-toc-text">0.1 个人微博技术</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-2-hexo"><span class="post-toc-text">0.2 hexo</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-安装"><span class="post-toc-text">1.安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-安装nodejs"><span class="post-toc-text">1.1 安装nodejs</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-安装hexo"><span class="post-toc-text">1.2 安装hexo</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-安装git"><span class="post-toc-text">1.3 安装git</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-快速在本地开始"><span class="post-toc-text">2.快速在本地开始</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-开始命令"><span class="post-toc-text">2.1 开始命令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-查看成果"><span class="post-toc-text">2.2 查看成果</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-目录结构"><span class="post-toc-text">2.3 目录结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-4-安装hexo-server"><span class="post-toc-text">2.4 安装hexo-server</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-配置github"><span class="post-toc-text">3.配置github</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-在github上创建项目"><span class="post-toc-text">3.1 在github上创建项目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-配置github私钥"><span class="post-toc-text">3.2 配置github私钥</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-安装deployer"><span class="post-toc-text">3.2 安装deployer</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-发布博客"><span class="post-toc-text">3.2 发布博客</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-4-查看博客"><span class="post-toc-text">3.4 查看博客</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2018/05/11/hexo2/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          个人微博——hexo(二)
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/05/11/nodeppt2/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">nodeppt(二)</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'linjiad',
+            repo: 'linjiad.github.io',
+            oauth: {
+                client_id: '9b8f5415215f1aef0b2c',
+                client_secret: 'dea7335a3cd2d8e380b0279a5f1f7245797579d7',
+            },
+        })
+        gitment.render('comments')
+    </script>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 linjiad<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://linjiad.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/tags/echarts/" style="font-size: 15px;">echarts</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 20px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/tags/echarts/" style="font-size: 15px;">echarts</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 20px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

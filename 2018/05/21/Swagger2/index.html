@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Swagger2 | linjiad_个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="梧桐更兼细雨到黄昏点点滴滴" />
+  
+  <meta name="description" content="Swagger2主要解决接口文档，有了它妈妈再也不用担心接口太多不方便管理了，只需要在写代码时候简单加入些注解即可，方便简单。 0.安装pom文件直接在pom中用Maven下载jar包12345678910&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;io.springfox&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;springfox-">
+<meta name="keywords" content="swagger2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swagger2">
+<meta property="og:url" content="http://linjiad.github.io/2018/05/21/Swagger2/index.html">
+<meta property="og:site_name" content="linjiad_个人博客">
+<meta property="og:description" content="Swagger2主要解决接口文档，有了它妈妈再也不用担心接口太多不方便管理了，只需要在写代码时候简单加入些注解即可，方便简单。 0.安装pom文件直接在pom中用Maven下载jar包12345678910&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;io.springfox&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;springfox-">
+<meta property="og:locale" content="JS">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/21/Swagger2/1.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/21/Swagger2/2.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/21/Swagger2/3.png">
+<meta property="og:updated_time" content="2018-11-10T08:58:48.500Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Swagger2">
+<meta name="twitter:description" content="Swagger2主要解决接口文档，有了它妈妈再也不用担心接口太多不方便管理了，只需要在写代码时候简单加入些注解即可，方便简单。 0.安装pom文件直接在pom中用Maven下载jar包12345678910&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;io.springfox&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;springfox-">
+<meta name="twitter:image" content="http://linjiad.github.io/2018/05/21/Swagger2/1.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">云销雨霁彩彻区明</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        云销雨霁彩彻区明
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        林花谢了春红太匆匆
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="linjiad_个人微博" target="_blank" href="//linjiad.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/linjiad">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-Swagger2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Swagger2
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/后端技术/">后端技术</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-05-21
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>Swagger2主要解决接口文档，有了它妈妈再也不用担心接口太多不方便管理了，只需要在写代码时候简单加入些注解即可，方便简单。</p>
+<h2 id="0-安装pom文件"><a href="#0-安装pom文件" class="headerlink" title="0.安装pom文件"></a>0.安装pom文件</h2><p>直接在pom中用Maven下载jar包<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger-ui<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="1-创建Swagger2配置类"><a href="#1-创建Swagger2配置类" class="headerlink" title="1.创建Swagger2配置类"></a>1.创建Swagger2配置类</h2><p>在Application.java同级创建Swagger2的配置类Swagger2<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dataacquisition;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> springfox.documentation.builders.ApiInfoBuilder;</span><br><span class="line"><span class="keyword">import</span> springfox.documentation.builders.PathSelectors;</span><br><span class="line"><span class="keyword">import</span> springfox.documentation.builders.RequestHandlerSelectors;</span><br><span class="line"><span class="keyword">import</span> springfox.documentation.service.ApiInfo;</span><br><span class="line"><span class="keyword">import</span> springfox.documentation.spi.DocumentationType;</span><br><span class="line"><span class="keyword">import</span> springfox.documentation.spring.web.plugins.Docket;</span><br><span class="line"><span class="keyword">import</span> springfox.documentation.swagger2.annotations.EnableSwagger2;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> colin</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 17/10/24 下午12:02.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableSwagger</span>2</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Swagger2</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Docket <span class="title">createRestApi</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         ParameterBuilder parameterBuilder = <span class="keyword">new</span> ParameterBuilder();</span><br><span class="line">        List&lt;Parameter&gt; parameters = <span class="keyword">new</span> ArrayList&lt;Parameter&gt;();</span><br><span class="line">        parameterBuilder.name(<span class="string">"Content-Type"</span>)</span><br><span class="line">                .description(<span class="string">"header"</span>)</span><br><span class="line">                .modelRef(<span class="keyword">new</span> ModelRef(<span class="string">"string"</span>))</span><br><span class="line">                .parameterType(<span class="string">"header"</span>)</span><br><span class="line">                .required(<span class="keyword">false</span>).build();</span><br><span class="line">        parameters.add(parameterBuilder.build());</span><br><span class="line"></span><br><span class="line">        parameterBuilder.name(<span class="string">"Accept"</span>)</span><br><span class="line">                .description(<span class="string">"header"</span>)</span><br><span class="line">                .modelRef(<span class="keyword">new</span> ModelRef(<span class="string">"string"</span>))</span><br><span class="line">                .parameterType(<span class="string">"header"</span>)</span><br><span class="line">                .required(<span class="keyword">false</span>).build();</span><br><span class="line">        parameters.add(parameterBuilder.build());</span><br><span class="line">                <span class="comment">//上面是设置header</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2)</span><br><span class="line">                .apiInfo(apiInfo())</span><br><span class="line">                .select()<span class="comment">// 选择那些路径和api会生成document</span></span><br><span class="line">                .apis(RequestHandlerSelectors.basePackage(<span class="string">"com.iss.rest"</span>))<span class="comment">// 对所有api进行监控</span></span><br><span class="line"><span class="comment">//                .apis(RequestHandlerSelectors.any())// 对所有路径进行监控</span></span><br><span class="line">                .paths(PathSelectors.any())</span><br><span class="line">                .build()</span><br><span class="line">                .globalOperationParameters(parameters)</span><br><span class="line">                .apiInfo(apiInfo());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> ApiInfo <span class="title">apiInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ApiInfoBuilder()</span><br><span class="line">                .title(<span class="string">"经济运行大数据API"</span>)</span><br><span class="line">                .description(<span class="string">"经济大数据"</span>)</span><br><span class="line">                .termsOfServiceUrl(<span class="string">"www.baidu.com"</span>)</span><br><span class="line">                .contact(<span class="string">"colin"</span>)</span><br><span class="line">                .version(<span class="string">"1.0"</span>)</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如上代码所示，通过@Configuration注解，让Spring来加载该类配置。<br>再通过@EnableSwagger2注解来启用Swagger2。<br>看一下这个目录结构<br><img src="/2018/05/21/Swagger2/1.png" alt="如图所示"><br>这里还要说明一下引包 <em>PathSelectors</em></p>
+<blockquote>
+<p>import springfox.documentation.builders.PathSelectors;</p>
+</blockquote>
+<h2 id="1-添加文档内容"><a href="#1-添加文档内容" class="headerlink" title="1.添加文档内容"></a>1.添加文档内容</h2><p>在完成了上述配置后，其实已经可以生产文档内容，但是这样的文档主要针对请求本身，而描述主要来源于函数等命名产生，对用户并不友好，我们通常需要自己增加一些说明来丰富文档内容<br>GET接口  对于传统参数为？的<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ApiOperation</span>(value = <span class="string">"上传Excel"</span>, notes = <span class="string">"上传Excel并存入数据库"</span>, code = <span class="number">200</span>, produces = <span class="string">"application/json"</span>)</span><br><span class="line"><span class="meta">@ApiImplicitParams</span>(&#123;<span class="meta">@ApiImplicitParam</span>(name = <span class="string">"userId"</span>,value = <span class="string">"用户ID"</span>,required = <span class="keyword">true</span>,paramType = <span class="string">"query"</span>, dataType = <span class="string">"String"</span>),</span><br><span class="line">        <span class="meta">@ApiImplicitParam</span>( name = <span class="string">"filepath"</span>, value = <span class="string">"上传文件路径地址用“/”"</span>,paramType = <span class="string">"query"</span>, required = <span class="keyword">true</span>, dataType = <span class="string">"String"</span>),</span><br><span class="line">        <span class="meta">@ApiImplicitParam</span>( name = <span class="string">"type"</span>, value = <span class="string">"上传文件类型"</span>, required = <span class="keyword">true</span>,paramType = <span class="string">"query"</span>, dataType = <span class="string">"String"</span>),</span><br><span class="line">        <span class="meta">@ApiImplicitParam</span>( name = <span class="string">"productId"</span>, value = <span class="string">"上传文件productId"</span>, required = <span class="keyword">true</span>,paramType = <span class="string">"query"</span>, dataType = <span class="string">"String"</span>),</span><br><span class="line">        <span class="meta">@ApiImplicitParam</span>( name = <span class="string">"version"</span>, value = <span class="string">"上传文件版本"</span>, required = <span class="keyword">false</span>,paramType = <span class="string">"query"</span>, dataType = <span class="string">"String"</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/uploadExcel"</span>, method = RequestMethod.GET)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">uploadExcel</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line">    String filepath = WebUtils.findParameterValue(request, <span class="string">"filepath"</span>);</span><br><span class="line">    String productId = WebUtils.findParameterValue(request, <span class="string">"productId"</span>);</span><br><span class="line">    <span class="keyword">if</span>(StringUtils.isBlank(filepath)||!<span class="keyword">new</span> File(filepath).exists())&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"请输入正确文件路径"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!configProductService.selectProductByProductId(productId))&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"productId不存在，请输入正确的productId"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    String userId = WebUtils.findParameterValue(request, <span class="string">"userId"</span>);</span><br><span class="line">    String type = WebUtils.findParameterValue(request, <span class="string">"type"</span>);</span><br><span class="line">    <span class="keyword">if</span>(StringUtils.isBlank(type))&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"请输入上传Excel的种类（type=）"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    String version = WebUtils.findParameterValue(request, <span class="string">"version"</span>);</span><br><span class="line">    String result = uploadExcelService.uploadExcel(filepath,userId,type,version,productId);</span><br><span class="line">    String result2 = uploadExcelService.upload(filepath);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>GET接口  对于参数为/的<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ApiOperation</span>(value = <span class="string">"获取所有新闻"</span>, notes = <span class="string">"获取所有新闻"</span>, code = <span class="number">200</span>, produces = <span class="string">"application/json"</span>)</span><br><span class="line">    <span class="meta">@ApiImplicitParams</span>(&#123;<span class="meta">@ApiImplicitParam</span>(name = <span class="string">"infoType"</span>,value = <span class="string">"行业动态等类别"</span>,required = <span class="keyword">true</span>,paramType = <span class="string">"query"</span>, dataType = <span class="string">"String"</span>),</span><br><span class="line">            <span class="meta">@ApiImplicitParam</span>( name = <span class="string">"type"</span>, value = <span class="string">"所属行业"</span>,paramType = <span class="string">"query"</span>, required = <span class="keyword">true</span>, dataType = <span class="string">"String"</span>),</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/queryAllNewsNew/&#123;infoType&#125;/&#123;type&#125;/&#123;startTime&#125;/&#123;endTime&#125;/&#123;region&#125;/&#123;pageNum&#125;/&#123;pageSize&#125;"</span>,</span><br><span class="line">            method = RequestMethod.GET, produces = &#123;<span class="string">"application/json"</span>&#125;, consumes = &#123;<span class="string">"application/json"</span>&#125;)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Result <span class="title">queryAllNewsNew</span><span class="params">(@PathVariable(<span class="string">"infoType"</span>)</span> String infoType,</span></span><br><span class="line"><span class="function">                                  @<span class="title">PathVariable</span><span class="params">(<span class="string">"type"</span>)</span> String type,</span></span><br><span class="line"><span class="function">                                  @<span class="title">PathVariable</span><span class="params">(<span class="string">"startTime"</span>)</span> String startTime,</span></span><br><span class="line"><span class="function">                                  @<span class="title">PathVariable</span><span class="params">(<span class="string">"endTime"</span>)</span> String endTime,</span></span><br><span class="line"><span class="function">                                  @<span class="title">PathVariable</span><span class="params">(<span class="string">"region"</span>)</span> String region,</span></span><br><span class="line"><span class="function">                                  @<span class="title">PathVariable</span><span class="params">(<span class="string">"pageNum"</span>)</span> String pageNum,</span></span><br><span class="line"><span class="function">                                  @<span class="title">PathVariable</span><span class="params">(<span class="string">"pageSize"</span>)</span> String pageSize) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (StringUtils.isBlank(pageNum)) &#123;</span><br><span class="line">            pageNum = <span class="string">"1"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (StringUtils.isBlank(pageSize)) &#123;</span><br><span class="line">            pageSize = <span class="string">"10"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        ResultEducationInfo resultEducationInfo = <span class="keyword">new</span> ResultEducationInfo();</span><br><span class="line">        resultEducationInfo.setRegion(region);</span><br><span class="line">        resultEducationInfo.setCityName(region);</span><br><span class="line">        resultEducationInfo.setInfoType(infoType);</span><br><span class="line">        resultEducationInfo.setCrawlType(type);</span><br><span class="line"><span class="comment">//        resultEducationInfo.setTime(time);</span></span><br><span class="line">        resultEducationInfo.setStartTime(startTime);</span><br><span class="line">        resultEducationInfo.setEndTime(endTime);</span><br><span class="line">        resultEducationInfo.setPageNum(pageNum);</span><br><span class="line">        resultEducationInfo.setPageSize(pageSize);</span><br><span class="line">        Result result = jsonSearchService.queryAllNews(resultEducationInfo);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">        <span class="comment">//Result.success(result);</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>POST接口<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ApiOperation</span>(value = <span class="string">"解析Excel"</span>, notes = <span class="string">"解析Excel"</span>, code = <span class="number">200</span>, produces = <span class="string">"application/json"</span>)</span><br><span class="line"><span class="meta">@ApiImplicitParam</span>(name = <span class="string">"filepath"</span>, value = <span class="string">"上传文件路径地址用“/”"</span>,paramType = <span class="string">"query"</span>, required = <span class="keyword">true</span>, dataType = <span class="string">"String"</span>)</span><br><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/analysisExcel"</span>, method = RequestMethod.POST)</span><br><span class="line"><span class="function"><span class="keyword">public</span> Map <span class="title">analysisExcel</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line">    String filepath = WebUtils.findParameterValue(request, <span class="string">"filepath"</span>);</span><br><span class="line">    <span class="keyword">if</span>(StringUtils.isBlank(filepath)||!<span class="keyword">new</span> File(filepath).exists())&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Map result = uploadExcelService.analysisExcel(filepath);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果如图所示<br><img src="/2018/05/21/Swagger2/2.png" alt="如图所示"><br><img src="/2018/05/21/Swagger2/3.png" alt="如图所示"></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年11月10日 16:58</p>
+        <p>原始链接： <a class="post-url" href="/2018/05/21/Swagger2/" title="Swagger2">http://linjiad.github.io/2018/05/21/Swagger2/</a></p>
+        <footer>
+            <a href="http://linjiad.github.io">
+                <img src="/images/logo.png" alt="linjiad">
+                linjiad
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/weixin.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/weixin.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/zhifubao.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://linjiad.github.io/2018/05/21/Swagger2/&title=《Swagger2》 — linjiad_个人博客&pic=2018/05/21/Swagger2/menu.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://linjiad.github.io/2018/05/21/Swagger2/&title=《Swagger2》 — linjiad_个人博客&source=这个人很懒什么也没写" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://linjiad.github.io/2018/05/21/Swagger2/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Swagger2》 — linjiad_个人博客&url=http://linjiad.github.io/2018/05/21/Swagger2/&via=http://linjiad.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://linjiad.github.io/2018/05/21/Swagger2/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://linjiad.github.io/2018/05/21/Swagger2/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/swagger2/" class="color4">swagger2</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0-安装pom文件"><span class="post-toc-text">0.安装pom文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-创建Swagger2配置类"><span class="post-toc-text">1.创建Swagger2配置类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-添加文档内容"><span class="post-toc-text">1.添加文档内容</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2018/05/24/weex/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          weex
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/05/18/jQuery生成二维码/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">jQuery生成二维码</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'linjiad',
+            repo: 'linjiad.github.io',
+            oauth: {
+                client_id: '9b8f5415215f1aef0b2c',
+                client_secret: 'dea7335a3cd2d8e380b0279a5f1f7245797579d7',
+            },
+        })
+        gitment.render('comments')
+    </script>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 linjiad<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://linjiad.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/tags/echarts/" style="font-size: 15px;">echarts</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 20px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/tags/echarts/" style="font-size: 15px;">echarts</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 20px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

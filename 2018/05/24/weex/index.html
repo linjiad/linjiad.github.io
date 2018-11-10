@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>weex | linjiad_个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="梧桐更兼细雨到黄昏点点滴滴" />
+  
+  <meta name="description" content="0.安装0.1 安装nodejs这个不多说了不会的面壁吧。 0.2 安装weex-toolkit这个是个坑啊，官方给出的安装是  npm install weex-toolkit -g  不过这个安装可能会各种失败，失败之后再安装就无法安装了。即使再用淘宝镜像。那怎么办呢？首先我们需要卸载一下weex-toolkit  npm uninstall weex-toolkit -g  其次我们需要去电">
+<meta name="keywords" content="weex">
+<meta property="og:type" content="article">
+<meta property="og:title" content="weex">
+<meta property="og:url" content="http://linjiad.github.io/2018/05/24/weex/index.html">
+<meta property="og:site_name" content="linjiad_个人博客">
+<meta property="og:description" content="0.安装0.1 安装nodejs这个不多说了不会的面壁吧。 0.2 安装weex-toolkit这个是个坑啊，官方给出的安装是  npm install weex-toolkit -g  不过这个安装可能会各种失败，失败之后再安装就无法安装了。即使再用淘宝镜像。那怎么办呢？首先我们需要卸载一下weex-toolkit  npm uninstall weex-toolkit -g  其次我们需要去电">
+<meta property="og:locale" content="JS">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/2.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/3.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/4.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/6.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/7.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/8.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/9.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/10.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/11.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/12.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/13.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/14.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/15.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/16.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/17.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/18.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/19.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/20.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/21.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/22.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/23.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/24.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/26.png">
+<meta property="og:image" content="http://linjiad.github.io/2018/05/24/weex/25.png">
+<meta property="og:updated_time" content="2018-11-10T08:58:48.976Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="weex">
+<meta name="twitter:description" content="0.安装0.1 安装nodejs这个不多说了不会的面壁吧。 0.2 安装weex-toolkit这个是个坑啊，官方给出的安装是  npm install weex-toolkit -g  不过这个安装可能会各种失败，失败之后再安装就无法安装了。即使再用淘宝镜像。那怎么办呢？首先我们需要卸载一下weex-toolkit  npm uninstall weex-toolkit -g  其次我们需要去电">
+<meta name="twitter:image" content="http://linjiad.github.io/2018/05/24/weex/2.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">云销雨霁彩彻区明</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        云销雨霁彩彻区明
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        林花谢了春红太匆匆
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="linjiad_个人微博" target="_blank" href="//linjiad.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/linjiad">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-weex" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      weex
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/前端技术/">前端技术</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-05-24
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="0-安装"><a href="#0-安装" class="headerlink" title="0.安装"></a>0.安装</h2><h3 id="0-1-安装nodejs"><a href="#0-1-安装nodejs" class="headerlink" title="0.1 安装nodejs"></a>0.1 安装nodejs</h3><p>这个不多说了不会的面壁吧。</p>
+<h3 id="0-2-安装weex-toolkit"><a href="#0-2-安装weex-toolkit" class="headerlink" title="0.2 安装weex-toolkit"></a>0.2 安装weex-toolkit</h3><p>这个是个坑啊，官方给出的安装是</p>
+<blockquote>
+<p>npm install weex-toolkit -g</p>
+</blockquote>
+<p>不过这个安装可能会各种失败，失败之后再安装就无法安装了。即使再用淘宝镜像。<br>那怎么办呢？<br>首先我们需要卸载一下weex-toolkit</p>
+<blockquote>
+<p>npm uninstall weex-toolkit -g</p>
+</blockquote>
+<p>其次我们需要去电脑中删除些文件<br><img src="/2018/05/24/weex/2.png" alt="如图所示"><br>还有这个也需要删除<br><img src="/2018/05/24/weex/3.png" alt="如图所示"><br>删除了这些，我们再安装，注意要用管理员运行cmd<br>这次我们用淘宝镜像，没有cnpm自己安装下就可以了</p>
+<blockquote>
+<p>cnpm install -g weex-toolkit</p>
+</blockquote>
+<p>安装之后查看版本</p>
+<blockquote>
+<p>npm uninstall weex-toolkit -g<br><img src="/2018/05/24/weex/4.png" alt="如图所示"></p>
+</blockquote>
+<p>出现版本号既可以了</p>
+<h3 id="0-3-安装java及配置"><a href="#0-3-安装java及配置" class="headerlink" title="0.3 安装java及配置"></a>0.3 安装java及配置</h3><h3 id="0-4-安装git"><a href="#0-4-安装git" class="headerlink" title="0.4 安装git"></a>0.4 安装git</h3><h3 id="0-5-安装webpack"><a href="#0-5-安装webpack" class="headerlink" title="0.5 安装webpack"></a>0.5 安装webpack</h3><h3 id="0-6-安装android-studio"><a href="#0-6-安装android-studio" class="headerlink" title="0.6 安装android-studio"></a>0.6 安装android-studio</h3><p>安装android-studio<a href="http://www.android-studio.org/" target="_blank" rel="noopener">这儿啦</a><br>下一步下一步就好啦<br><img src="/2018/05/24/weex/6.png" alt="如图所示"><br>现在安装android-studio不带android-sdk，所以需要<a href="http://tools.android-studio.org/index.php/sdk" target="_blank" rel="noopener">自己装</a><br><img src="/2018/05/24/weex/7.png" alt="如图所示"><br>之后还会安装一起android包，这时候需要翻墙，要访问谷歌<br><img src="/2018/05/24/weex/8.png" alt="如图所示"><br>这里强烈建议用国内镜像如图所示<br><img src="/2018/05/24/weex/9.png" alt="如图所示"><br><img src="/2018/05/24/weex/10.png" alt="如图所示"></p>
+<blockquote>
+<p>大连东软信息学院镜像服务器地址:<br><a href="http://mirrors.neusoft.edu.cn" target="_blank" rel="noopener">http://mirrors.neusoft.edu.cn</a> 端口：80</p>
+</blockquote>
+<p>接着点击close，关闭对话框，再重新启动SDK Manager就行啦。<br><img src="/2018/05/24/weex/11.png" alt="如图所示"><br>经过漫长的下载安装过程后，我们可以看到，之前选中安装的项目后面的状态都由之前的“Not installed”变为了如今的“Installed”，这就表示我们已经安装成功了！<br><img src="/2018/05/24/weex/12.png" alt="如图所示"><br>之后再配置android-sdk<br>打开环境变量路径：控制面板-&gt;系统和安全-&gt;系统-&gt;高级系统设置-&gt;环境变量。<br>新建：ANDROID_HOME 并把我们刚才赋值的sdk路径作为值插入<br><img src="/2018/05/24/weex/13.png" alt="如图所示"><br>添加path值，与配置java相同</p>
+<blockquote>
+<p>;%ANDROID_SDK_HOME%\platform-tools;</p>
+</blockquote>
+<p>保证系统能找到platform-tools下的adb.exe即可<br>输入adb查看，出现下面情况即配置成功<br><img src="/2018/05/24/weex/14.png" alt="如图所示">。<br>接着刚才安装android-studio<br><img src="/2018/05/24/weex/15.png" alt="如图所示"><br>由于本机没有安装过Android Studio，因此这里也没有可导入的配置信息。点击OK。<br><img src="/2018/05/24/weex/16.png" alt="如图所示"><br>点击Setup Proxy。<br><img src="/2018/05/24/weex/17.png" alt="如图所示"><br>按上图设置代理。点击OK。<br><img src="/2018/05/24/weex/18.png" alt="如图所示"><br>点击Next。<br><img src="/2018/05/24/weex/19.png" alt="如图所示"><br>安装类型选择为”Custom”，并点击Next。<br><img src="/2018/05/24/weex/20.png" alt="如图所示"><br>将UI主题选择为Darcula(此风格看起来更加极客)。点击Next。<br><img src="/2018/05/24/weex/21.png" alt="如图所示"><br>选择之前安装Android Studio的路径，可以看到看下上图所述提示。点击Next。<br><img src="/2018/05/24/weex/22.png" alt="如图所示"><br>点击Finish<br><img src="/2018/05/24/weex/23.png" alt="如图所示"><br>Android SDK已经是最新。点击Finish。<br><img src="/2018/05/24/weex/24.png" alt="如图所示"><br>点击”Start a new Android Studio project”即可开始第一个Android程序的开发。</p>
+<h2 id="1-开启weex之旅吧"><a href="#1-开启weex之旅吧" class="headerlink" title="1.开启weex之旅吧"></a>1.开启weex之旅吧</h2><h3 id="1-1建立weex项目目录"><a href="#1-1建立weex项目目录" class="headerlink" title="1.1建立weex项目目录"></a>1.1建立weex项目目录</h3><p>建立weex项目名称为helloWeex</p>
+<blockquote>
+<p>weex create helloWeex</p>
+</blockquote>
+<p>建立时和vue一样，输入项目名称是否为helloWeex<br>项目描述<br>项目作者<br>是否用eslint，一个js语法标准<br>是否测试<br>之后项目就建好了,目录结构如下<br><img src="/2018/05/24/weex/26.png" alt="如图所示"><br>添加Android应用支持</p>
+<blockquote>
+<p>weex platform add android</p>
+</blockquote>
+<p>如果你要支持IOS平台的话，你还要添加IOS应用，但是抱歉的是我没有苹果电脑，所以这里就不演示苹果的添加了。<br><img src="/2018/05/24/weex/25.png" alt="如图所示"></p>
+<h3 id="1-2在Android-Studio里运行weex"><a href="#1-2在Android-Studio里运行weex" class="headerlink" title="1.2在Android Studio里运行weex"></a>1.2在Android Studio里运行weex</h3>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年11月10日 16:58</p>
+        <p>原始链接： <a class="post-url" href="/2018/05/24/weex/" title="weex">http://linjiad.github.io/2018/05/24/weex/</a></p>
+        <footer>
+            <a href="http://linjiad.github.io">
+                <img src="/images/logo.png" alt="linjiad">
+                linjiad
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/weixin.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/weixin.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/zhifubao.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://linjiad.github.io/2018/05/24/weex/&title=《weex》 — linjiad_个人博客&pic=2018/05/24/weex/menu.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://linjiad.github.io/2018/05/24/weex/&title=《weex》 — linjiad_个人博客&source=这个人很懒什么也没写" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://linjiad.github.io/2018/05/24/weex/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《weex》 — linjiad_个人博客&url=http://linjiad.github.io/2018/05/24/weex/&via=http://linjiad.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://linjiad.github.io/2018/05/24/weex/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://linjiad.github.io/2018/05/24/weex/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/weex/" class="color5">weex</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0-安装"><span class="post-toc-text">0.安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-1-安装nodejs"><span class="post-toc-text">0.1 安装nodejs</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-2-安装weex-toolkit"><span class="post-toc-text">0.2 安装weex-toolkit</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-3-安装java及配置"><span class="post-toc-text">0.3 安装java及配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-4-安装git"><span class="post-toc-text">0.4 安装git</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-5-安装webpack"><span class="post-toc-text">0.5 安装webpack</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-6-安装android-studio"><span class="post-toc-text">0.6 安装android-studio</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-开启weex之旅吧"><span class="post-toc-text">1.开启weex之旅吧</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1建立weex项目目录"><span class="post-toc-text">1.1建立weex项目目录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2在Android-Studio里运行weex"><span class="post-toc-text">1.2在Android Studio里运行weex</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2018/05/26/商业模式新生代/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          商业模式新生代
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/05/21/Swagger2/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Swagger2</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'linjiad',
+            repo: 'linjiad.github.io',
+            oauth: {
+                client_id: '9b8f5415215f1aef0b2c',
+                client_secret: 'dea7335a3cd2d8e380b0279a5f1f7245797579d7',
+            },
+        })
+        gitment.render('comments')
+    </script>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 linjiad<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://linjiad.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/tags/echarts/" style="font-size: 15px;">echarts</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 20px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/tags/echarts/" style="font-size: 15px;">echarts</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 20px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
