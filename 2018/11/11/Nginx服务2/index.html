@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Nginx服务2 | linjiad_个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="梧桐更兼细雨到黄昏点点滴滴" />
+  
+  <meta name="description" content="5 权限管理5.1 简单权限控制有时候我们的服务器只允许特定主机访问，比如内部OA系统，或者应用的管理后台系统，更或者是某些应用接口，这时候我们就需要控制一些IP访问，我们可以直接在location里进行配置。可以直接在default.conf里进行配置。1234location / &amp;#123;   deny   123.9.51.42;   allow  45.76.202.231;&amp;#125">
+<meta name="keywords" content="前端服务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx服务2">
+<meta property="og:url" content="http://linjiad.github.io/2018/11/11/Nginx服务2/index.html">
+<meta property="og:site_name" content="linjiad_个人博客">
+<meta property="og:description" content="5 权限管理5.1 简单权限控制有时候我们的服务器只允许特定主机访问，比如内部OA系统，或者应用的管理后台系统，更或者是某些应用接口，这时候我们就需要控制一些IP访问，我们可以直接在location里进行配置。可以直接在default.conf里进行配置。1234location / &amp;#123;   deny   123.9.51.42;   allow  45.76.202.231;&amp;#125">
+<meta property="og:locale" content="JS">
+<meta property="og:image" content="http://linjiad.github.io/2018/11/11/Nginx服务2/01.jpg">
+<meta property="og:image" content="http://linjiad.github.io/2018/11/11/Nginx服务2/02.jpg">
+<meta property="og:image" content="http://linjiad.github.io/2018/11/11/Nginx服务2/04.jpg">
+<meta property="og:image" content="http://linjiad.github.io/2018/11/11/Nginx服务2/03.jpg">
+<meta property="og:image" content="http://linjiad.github.io/2018/11/11/Nginx服务2/05.jpg">
+<meta property="og:image" content="http://linjiad.github.io/2018/11/11/Nginx服务2/06.jpg">
+<meta property="og:updated_time" content="2018-11-11T01:57:12.436Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nginx服务2">
+<meta name="twitter:description" content="5 权限管理5.1 简单权限控制有时候我们的服务器只允许特定主机访问，比如内部OA系统，或者应用的管理后台系统，更或者是某些应用接口，这时候我们就需要控制一些IP访问，我们可以直接在location里进行配置。可以直接在default.conf里进行配置。1234location / &amp;#123;   deny   123.9.51.42;   allow  45.76.202.231;&amp;#125">
+<meta name="twitter:image" content="http://linjiad.github.io/2018/11/11/Nginx服务2/01.jpg">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">云销雨霁彩彻区明</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        云销雨霁彩彻区明
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        林花谢了春红太匆匆
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="linjiad_个人微博" target="_blank" href="//linjiad.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/linjiad">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-Nginx服务2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Nginx服务2
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/Linux服务器/">Linux服务器</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-11-11
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="5-权限管理"><a href="#5-权限管理" class="headerlink" title="5 权限管理"></a>5 权限管理</h2><h3 id="5-1-简单权限控制"><a href="#5-1-简单权限控制" class="headerlink" title="5.1 简单权限控制"></a>5.1 简单权限控制</h3><p>有时候我们的服务器只允许特定主机访问，比如内部OA系统，或者应用的管理后台系统，更或者是某些应用接口，这时候我们就需要控制一些IP访问，我们可以直接在location里进行配置。<br>可以直接在default.conf里进行配置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">   deny   123.9.51.42;</span><br><span class="line">   allow  45.76.202.231;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-2-复杂访问控制权限匹配"><a href="#5-2-复杂访问控制权限匹配" class="headerlink" title="5.2 复杂访问控制权限匹配"></a>5.2 复杂访问控制权限匹配</h3><p>在工作中，访问权限的控制需求更加复杂，例如，对于网站下的img（图片目录）是运行所有用户访问，但对于网站下的admin目录则只允许公司内部固定IP访问。这时候仅靠deny和allow这两个指令，是无法实现的。我们需要location块来完成相关的需求匹配。<br>上面的需求，配置代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">location =/img&#123;</span><br><span class="line">   allow all;</span><br><span class="line">   &#125;</span><br><span class="line">location =/admin&#123;</span><br><span class="line">   deny all;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>=号代表精确匹配，使用了=后是根据其后的模式进行精确匹配。这个直接关系到我们网站的安全。</p>
+<h3 id="5-3-使用正则表达式设置访问权限"><a href="#5-3-使用正则表达式设置访问权限" class="headerlink" title="5.3 使用正则表达式设置访问权限"></a>5.3 使用正则表达式设置访问权限</h3><p>只有精确匹配有时是完不成我们的工作任务的，比如现在我们要禁止访问所有php的页面，php的页面大多是后台的管理或者接口代码，所以为了安全我们经常要禁止所有用户访问，而只开放公司内部访问的。<br>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location ~\.php$ &#123;</span><br><span class="line">   deny all;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="6-Nginx设置虚拟主机"><a href="#6-Nginx设置虚拟主机" class="headerlink" title="6 Nginx设置虚拟主机"></a>6 Nginx设置虚拟主机</h2><h3 id="6-1基于端口号配置虚拟主机"><a href="#6-1基于端口号配置虚拟主机" class="headerlink" title="6.1基于端口号配置虚拟主机"></a>6.1基于端口号配置虚拟主机</h3><p>基于端口号来配置虚拟主机，算是Nginx中最简单的一种方式了。原理就是Nginx监听多个端口，根据不同的端口号，来区分不同的网站。<br>我们可以直接配置在主文件里etc/nginx/nginx.conf文件里， 也可以配置在子配置文件里etc/nginx/conf.d/default.conf。我这里为了配置方便，就配置在子文件里了。当然你也可以再新建一个文件，只要在conf.d文件夹下就可以了。<br>添加配置文件中的server选项，这时候就会有两个server。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">	 listen 8001;</span><br><span class="line">	 server_name localhost;</span><br><span class="line">	 root /usr/share/nginx/html/html8001;</span><br><span class="line">	 index index.html;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编在usr/share/nginx/html/html8001/目录下的index.html文件并查看结果。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>welcome port 8001<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>最后在浏览器中分别访问地址和带端口的地址。看到的结果是不同的。<br>然后我们就可以在浏览器中访问<a href="http://112.74.164.244:8001了。" target="_blank" rel="noopener">http://112.74.164.244:8001了。</a></p>
+<h3 id="6-2基于IP的虚拟主机"><a href="#6-2基于IP的虚拟主机" class="headerlink" title="6.2基于IP的虚拟主机"></a>6.2基于IP的虚拟主机</h3><p>基于IP和基于端口的配置几乎一样，只是把server_name选项，配置成IP就可以了。<br>比如上面的配置，我们可以修改为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">	 listen 80;</span><br><span class="line">	 server_name 112.74.164.244;</span><br><span class="line">	 root /usr/share/nginx/html/html8001;</span><br><span class="line">	 index index.html;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="7-Nginx使用域名"><a href="#7-Nginx使用域名" class="headerlink" title="7 Nginx使用域名"></a>7 Nginx使用域名</h2><p>这里我购买的是腾讯云，所以根据提示直接在腾讯云上进行配置<br><img src="/2018/11/11/Nginx服务2/01.jpg" alt="如图所示"><br><img src="/2018/11/11/Nginx服务2/02.jpg" alt="如图所示"><br>按照提示填写即可<br>修改配置即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">	 listen 80;</span><br><span class="line">	 server_name www.linjiad.cn;</span><br><span class="line">	 root /usr/share/nginx/html/html8001;</span><br><span class="line">	 index index.html;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/11/11/Nginx服务2/04.jpg" alt="如图所示"></p>
+<h2 id="8Nginx反向代理"><a href="#8Nginx反向代理" class="headerlink" title="8Nginx反向代理"></a>8Nginx反向代理</h2><h3 id="8-1正向代理和反向代理"><a href="#8-1正向代理和反向代理" class="headerlink" title="8.1正向代理和反向代理"></a>8.1正向代理和反向代理</h3><p>大家都知道，我们现在的web模式基本的都是标准的CS结构，即Client端到Server端。那代理就是在Client端和Server端之间增加一个提供特定功能的服务器，这个服务器就是我们说的代理服务器。<br><b>正向代理:</b>如果你觉的反向代理不好理解，那先来了解一下正向代理。我相信作为一个手速远超正常人的程序员来说，你一定用过翻墙工具（我这里说的不是物理梯子），它就是一个典型的正向代理工具。它会把我们不让访问的服务器的网页请求，代理到一个可以访问该网站的代理服务器上来，一般叫做proxy服务器，再转发给客户。<br><img src="/2018/11/11/Nginx服务2/03.jpg" alt="如图所示"><br>简单来说就是你想访问目标服务器的权限，但是没有权限。这时候代理服务器有权限访问服务器，并且你有访问代理服务器的权限，这时候你就可以通过访问代理服务器，代理服务器访问真实服务器，把内容给你呈现出来。</p>
+<hr>
+<hr>
+<p><b>反向代理:</b>反向代理跟代理正好相反（需要说明的是，现在基本所有的大型网站的页面都是用了反向代理），客户端发送的请求，想要访问server服务器上的内容。发送的内容被发送到代理服务器上，这个代理服务器再把请求发送到自己设置好的内部服务器上，而用户真实想获得的内容就在这些设置好的服务器上。<br><img src="/2018/11/11/Nginx服务2/05.jpg" alt="如图所示"><br><b>反向代理的用途和好处:</b></p>
+<ul>
+<li>安全性：正向代理的客户端能够在隐藏自身信息的同时访问任意网站，这个给网络安全代理了极大的威胁。因此，我们必须把服务器保护起来，使用反向代理客户端用户只能通过外来网来访问代理服务器，并且用户并不知道自己访问的真实服务器是那一台，可以很好的提供安全保护。</li>
+<li>功能性：反向代理的主要用途是为多个服务器提供负债均衡、缓存等功能。负载均衡就是一个网站的内容被部署在若干服务器上，可以把这些机子看成一个集群，那Nginx可以将接收到的客户端请求“均匀地”分配到这个集群中所有的服务器上，从而实现服务器压力的平均分配，也叫负载均衡<h3 id="8-2最简单的反向代理"><a href="#8-2最简单的反向代理" class="headerlink" title="8.2最简单的反向代理"></a>8.2最简单的反向代理</h3>现在我们要访问<a href="http://www.linjiad.cn:8002/然后反向代理到http://www.linjiad.cn这个网站。我们直接到etc/nginx/con.d/8001.conf进行修改。" target="_blank" rel="noopener">http://www.linjiad.cn:8002/然后反向代理到http://www.linjiad.cn这个网站。我们直接到etc/nginx/con.d/8001.conf进行修改。</a><br>添加个配置文件如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">   listen 8002;</span><br><span class="line">   server_name localhost;</span><br><span class="line">   location / &#123;</span><br><span class="line">       proxy_pass http://www.linjiad.cn;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>一般我们反向代理的都是一个IP，但是我这里代理了一个域名也是可以的。其实这时候我们反向代理就算成功了，我们可以在浏览器中打开</p>
+<h3 id="8-3其它反向代理指令"><a href="#8-3其它反向代理指令" class="headerlink" title="8.3其它反向代理指令"></a>8.3其它反向代理指令</h3><p>反向代理还有些常用的指令，我在这里给大家列出：</p>
+<ul>
+<li>proxy_set_header :在将客户端请求发送给后端服务器之前，更改来自客户端的请求头信息。</li>
+<li>proxy_connect_timeout:配置Nginx与后端代理服务器尝试建立连接的超时时间。</li>
+<li>proxy_read_timeout : 配置Nginx向后端服务器组发出read请求后，等待相应的超时时间。</li>
+<li>proxy_send_timeout：配置Nginx向后端服务器组发出write请求后，等待相应的超时时间。</li>
+<li>proxy_redirect :用于修改后端服务器返回的响应头中的Location和Refresh。<h2 id="9Nginx适配PC或移动设备"><a href="#9Nginx适配PC或移动设备" class="headerlink" title="9Nginx适配PC或移动设备"></a>9Nginx适配PC或移动设备</h2>现在很多网站都是有了PC端和H5站点的，因为这样就可以根据客户设备的不同，显示出体验更好的，不同的页面了。<br>$http_user_agent的使用：<br>Nginx通过内置变量$http_user_agent，可以获取到请求客户端的userAgent，就可以用户目前处于移动端还是PC端，进而展示不同的页面给用户。<br>操作步骤如下：</li>
+</ul>
+<ol>
+<li>在/usr/share/nginx/目录下新建两个文件夹，分别为：pc和mobile目录</li>
+<li>输入命令如下<blockquote>
+<p>cd /usr/share/nginx<br>  mkdir pc<br>  mkdir mobile</p>
+</blockquote>
+</li>
+<li><p>在pc和miblic目录下，新建两个index.html文件，文件里下面内容</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>I am pc!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>I am mobile!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入etc/nginx/conf.d目录下，修改8001.conf文件，改为下面的形式:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">     listen 80;</span><br><span class="line">     server_name nginx2.jspang.com;</span><br><span class="line">     location / &#123;</span><br><span class="line">      root /usr/share/nginx/pc;</span><br><span class="line">      if ($http_user_agent ~* &apos;(Android|webOS|iPhone|iPod|BlackBerry)&apos;) &#123;</span><br><span class="line">         root /usr/share/nginx/mobile;</span><br><span class="line">      &#125;</span><br><span class="line">      index index.html;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="10Nginx的Gzip压缩配置"><a href="#10Nginx的Gzip压缩配置" class="headerlink" title="10Nginx的Gzip压缩配置"></a>10Nginx的Gzip压缩配置</h2><h3 id="10-1Gzip技术"><a href="#10-1Gzip技术" class="headerlink" title="10.1Gzip技术"></a>10.1Gzip技术</h3><p>Gzip是网页的一种网页压缩技术，经过gzip压缩后，页面大小可以变为原来的30%甚至更小。更小的网页会让用户浏览的体验更好，速度更快。gzip网页压缩的实现需要浏览器和服务器的支持<br><img src="/2018/11/11/Nginx服务2/06.jpg" alt="如图所示"><br>从上图可以清楚的明白，gzip是需要服务器和浏览器同事支持的。当浏览器支持gzip压缩时，会在请求消息中包含Accept-Encoding:gzip,这样Nginx就会向浏览器发送听过gzip后的内容，同时在相应信息头中加入Content-Encoding:gzip，声明这是gzip后的内容，告知浏览器要先解压后才能解析输出。</p>
+<h3 id="10-2gzip的配置项"><a href="#10-2gzip的配置项" class="headerlink" title="10.2gzip的配置项"></a>10.2gzip的配置项</h3><p>Nginx提供了专门的gzip模块，并且模块中的指令非常丰富。</p>
+<ul>
+<li>gzip : 该指令用于开启或 关闭gzip模块。</li>
+<li>gzip_buffers : 设置系统获取几个单位的缓存用于存储gzip的压缩结果数据流。</li>
+<li>gzip_comp_level : gzip压缩比，压缩级别是1-9，1的压缩级别最低，9的压缩级别最高。压缩级别越高压缩率越大，压缩时间越长。</li>
+<li>gzip_disable : 可以通过该指令对一些特定的User-Agent不使用压缩功能。</li>
+<li>gzip_min_length:设置允许压缩的页面最小字节数，页面字节数从相应消息头的Content-length中进行获取。</li>
+<li>gzip_http_version：识别HTTP协议版本，其值可以是1.1.或1.0.</li>
+<li>gzip_proxied : 用于设置启用或禁用从代理服务器上收到相应内容gzip压缩。</li>
+<li>gzip_vary : 用于在响应消息头中添加Vary：Accept-Encoding,使代理服务器根据请求头中的Accept-Encoding识别是否启用gzip压缩。<h3 id="10-3gzip最简单的配置"><a href="#10-3gzip最简单的配置" class="headerlink" title="10.3gzip最简单的配置"></a>10.3gzip最简单的配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">http &#123;</span><br><span class="line">   .....</span><br><span class="line">    gzip on;</span><br><span class="line">    gzip_types text/plain application/javascript text/css;</span><br><span class="line">   .....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>gzip on是启用gizp模块，下面的一行是用于在客户端访问网页时，对文本、JavaScript 和CSS文件进行压缩输出。<br>配置好后，我们就可以重启Nginx服务，让我们的gizp生效了。<br>如果你是windows操作系统，你可以按F12键打开开发者工具，单机当前的请求，在标签中选择Headers，查看HTTP响应头信息。你可以清楚的看见Content-Encoding为gzip类型。</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年11月11日 09:57</p>
+        <p>原始链接： <a class="post-url" href="/2018/11/11/Nginx服务2/" title="Nginx服务2">http://linjiad.github.io/2018/11/11/Nginx服务2/</a></p>
+        <footer>
+            <a href="http://linjiad.github.io">
+                <img src="/images/logo.png" alt="linjiad">
+                linjiad
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/weixin.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/weixin.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/zhifubao.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://linjiad.github.io/2018/11/11/Nginx服务2/&title=《Nginx服务2》 — linjiad_个人博客&pic=2018/11/11/Nginx服务2/menu.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://linjiad.github.io/2018/11/11/Nginx服务2/&title=《Nginx服务2》 — linjiad_个人博客&source=这个人很懒什么也没写" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://linjiad.github.io/2018/11/11/Nginx服务2/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Nginx服务2》 — linjiad_个人博客&url=http://linjiad.github.io/2018/11/11/Nginx服务2/&via=http://linjiad.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://linjiad.github.io/2018/11/11/Nginx服务2/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://linjiad.github.io/2018/11/11/Nginx服务2/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/前端服务/" class="color5">前端服务</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-权限管理"><span class="post-toc-text">5 权限管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-1-简单权限控制"><span class="post-toc-text">5.1 简单权限控制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-2-复杂访问控制权限匹配"><span class="post-toc-text">5.2 复杂访问控制权限匹配</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-3-使用正则表达式设置访问权限"><span class="post-toc-text">5.3 使用正则表达式设置访问权限</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-Nginx设置虚拟主机"><span class="post-toc-text">6 Nginx设置虚拟主机</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-1基于端口号配置虚拟主机"><span class="post-toc-text">6.1基于端口号配置虚拟主机</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-2基于IP的虚拟主机"><span class="post-toc-text">6.2基于IP的虚拟主机</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-Nginx使用域名"><span class="post-toc-text">7 Nginx使用域名</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8Nginx反向代理"><span class="post-toc-text">8Nginx反向代理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-1正向代理和反向代理"><span class="post-toc-text">8.1正向代理和反向代理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-2最简单的反向代理"><span class="post-toc-text">8.2最简单的反向代理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-3其它反向代理指令"><span class="post-toc-text">8.3其它反向代理指令</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#9Nginx适配PC或移动设备"><span class="post-toc-text">9Nginx适配PC或移动设备</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#10Nginx的Gzip压缩配置"><span class="post-toc-text">10Nginx的Gzip压缩配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#10-1Gzip技术"><span class="post-toc-text">10.1Gzip技术</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#10-2gzip的配置项"><span class="post-toc-text">10.2gzip的配置项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#10-3gzip最简单的配置"><span class="post-toc-text">10.3gzip最简单的配置</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2018/11/11/构建cli脚手架/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          构建cli脚手架
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/11/10/Nginx服务1/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Nginx服务1</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'linjiad',
+            repo: 'linjiad.github.io',
+            oauth: {
+                client_id: '9b8f5415215f1aef0b2c',
+                client_secret: 'dea7335a3cd2d8e380b0279a5f1f7245797579d7',
+            },
+        })
+        gitment.render('comments')
+    </script>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 linjiad<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://linjiad.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Linux服务器/">Linux服务器</a><a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/echarts/" style="font-size: 13.33px;">echarts</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 16.67px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/前端服务/" style="font-size: 20px;">前端服务</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/echarts/" style="font-size: 13.33px;">echarts</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 16.67px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/前端服务/" style="font-size: 20px;">前端服务</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

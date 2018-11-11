@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>构建cli脚手架 | linjiad_个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="梧桐更兼细雨到黄昏点点滴滴" />
+  
+  <meta name="description" content="0搭建前准备环境0.1创建项目nodejs环境是必备的，这里不多说了，首先需要 npm init -y初始化一个项目。然后创建一个index.js,整个项目结构如下.之后我们需要写的部分都在index.js中。 0.2配置项目 这里注意下为了系统能识别为node脚本，需要在index首行声明如下  #!/usr/bin/env node   配置package.json在末尾加上这段配置  “li">
+<meta name="keywords" content="前端服务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="构建cli脚手架">
+<meta property="og:url" content="http://linjiad.github.io/2018/11/11/构建cli脚手架/index.html">
+<meta property="og:site_name" content="linjiad_个人博客">
+<meta property="og:description" content="0搭建前准备环境0.1创建项目nodejs环境是必备的，这里不多说了，首先需要 npm init -y初始化一个项目。然后创建一个index.js,整个项目结构如下.之后我们需要写的部分都在index.js中。 0.2配置项目 这里注意下为了系统能识别为node脚本，需要在index首行声明如下  #!/usr/bin/env node   配置package.json在末尾加上这段配置  “li">
+<meta property="og:locale" content="JS">
+<meta property="og:image" content="http://linjiad.github.io/2018/11/11/构建cli脚手架/01.jpg">
+<meta property="og:image" content="http://linjiad.github.io/2018/11/11/构建cli脚手架/02.png">
+<meta property="og:updated_time" content="2018-11-11T11:27:11.356Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="构建cli脚手架">
+<meta name="twitter:description" content="0搭建前准备环境0.1创建项目nodejs环境是必备的，这里不多说了，首先需要 npm init -y初始化一个项目。然后创建一个index.js,整个项目结构如下.之后我们需要写的部分都在index.js中。 0.2配置项目 这里注意下为了系统能识别为node脚本，需要在index首行声明如下  #!/usr/bin/env node   配置package.json在末尾加上这段配置  “li">
+<meta name="twitter:image" content="http://linjiad.github.io/2018/11/11/构建cli脚手架/01.jpg">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">云销雨霁彩彻区明</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        云销雨霁彩彻区明
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        林花谢了春红太匆匆
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="linjiad_个人微博" target="_blank" href="//linjiad.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/linjiad">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-构建cli脚手架" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      构建cli脚手架
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/前端技术/">前端技术</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-11-11
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="0搭建前准备环境"><a href="#0搭建前准备环境" class="headerlink" title="0搭建前准备环境"></a>0搭建前准备环境</h2><h3 id="0-1创建项目"><a href="#0-1创建项目" class="headerlink" title="0.1创建项目"></a>0.1创建项目</h3><p>nodejs环境是必备的，这里不多说了，首先需要 npm init -y初始化一个项目。<br>然后创建一个index.js,整个项目结构如下<br><img src="/2018/11/11/构建cli脚手架/01.jpg" alt="如图所示">.<br>之后我们需要写的部分都在index.js中。</p>
+<h3 id="0-2配置项目"><a href="#0-2配置项目" class="headerlink" title="0.2配置项目"></a>0.2配置项目</h3><ul>
+<li><p>这里注意下为了系统能识别为node脚本，需要在index首行声明如下</p>
+<blockquote>
+<p>#!/usr/bin/env node</p>
+</blockquote>
+</li>
+<li><p>配置package.json<br>在末尾加上这段配置</p>
+<blockquote>
+<p>“license”: “ISC”,<br> “bin”: {<br>   “cli”: “index.js”<br> },</p>
+</blockquote>
+<p>说明一下cli即为我们的命令，可以理解为vue-cli<br>index则为我们需要执行的脚本</p>
+<h3 id="0-3生成全局命令"><a href="#0-3生成全局命令" class="headerlink" title="0.3生成全局命令"></a>0.3生成全局命令</h3><p>在index.js的目录下输入</p>
+<blockquote>
+<p>npm link</p>
+</blockquote>
+<p>这样就生成了全局变量，在任何地方只要输入cli就会执行index.js中的脚本。可以写一个console.log试试</p>
+<h2 id="1命令包安装commander-js"><a href="#1命令包安装commander-js" class="headerlink" title="1命令包安装commander.js"></a>1命令包安装commander.js</h2><h3 id="1-1commander说明"><a href="#1-1commander说明" class="headerlink" title="1.1commander说明"></a>1.1commander说明</h3><p>commander是一个轻巧的nodejs模块，提供了用户命令行输入和参数解析强大功能<br>可以在github上直接搜索这个项目<a href="https://github.com/tj/commander.js" target="_blank" rel="noopener">传送门</a><br>下载</p>
+<blockquote>
+<p>npm install commander -s</p>
+</blockquote>
+</li>
+</ul>
+<p>引用</p>
+<blockquote>
+<p>const program = require(‘commander’);</p>
+</blockquote>
+<h3 id="1-2commander配置"><a href="#1-2commander配置" class="headerlink" title="1.2commander配置"></a>1.2commander配置</h3><p>直接复制Examples下的代码到index中<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">program</span><br><span class="line">  .command(<span class="string">'exec &lt;cmd&gt;'</span>)</span><br><span class="line">  .alias(<span class="string">'ex'</span>)</span><br><span class="line">  .description(<span class="string">'execute the given remote cmd'</span>)</span><br><span class="line">  .option(<span class="string">"-e, --exec_mode &lt;mode&gt;"</span>, <span class="string">"Which exec mode to use"</span>)</span><br><span class="line">  .action(<span class="function"><span class="keyword">function</span>(<span class="params">cmd, options</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'exec "%s" using %s mode'</span>, cmd, options.exec_mode);</span><br><span class="line">  &#125;).on(<span class="string">'--help'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">''</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Examples:'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">''</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'  $ deploy exec sequential'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'  $ deploy exec async'</span>);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>这些就是一个命令全部内容<br>命令名称为：</p>
+<blockquote>
+<p>.command(‘exec [env]’)</p>
+</blockquote>
+<p>list代表命令名称  [env]代表参数<br><span style="color:red;font-size:20px"><br>其中[]内的参数为可选参数<br>其中&lt;&gt;内的参数为必填参数<br></span><br>命令说明为：</p>
+<blockquote>
+<p>.description(‘execute the given remote cmd’)</p>
+</blockquote>
+<p>操作方法为：</p>
+<blockquote>
+<p>.action(function(template, project){}</p>
+</blockquote>
+<p>输入–help操作为：</p>
+<blockquote>
+<p>.on(‘–help’, function() {})</p>
+</blockquote>
+<p>其中 –help命令不需要额外配置，它会根据配置自动生成</p>
+<h3 id="1-3commander错误命令提示"><a href="#1-3commander错误命令提示" class="headerlink" title="1.3commander错误命令提示"></a>1.3commander错误命令提示</h3><p>错误配置代码如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">program</span><br><span class="line">  .command(<span class="string">'*'</span>)</span><br><span class="line">  .action(<span class="function"><span class="keyword">function</span>(<span class="params">env</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'deploying "%s"'</span>, env);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="1-4commander配置版本号"><a href="#1-4commander配置版本号" class="headerlink" title="1.4commander配置版本号"></a>1.4commander配置版本号</h3><p>版本号配置代码如下<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">program</span><br><span class="line">    .version(<span class="string">'0.1.0'</span>) <span class="comment">//调用-v或者 --version的时候输出该版本号</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="2下载包download-git-repo-js"><a href="#2下载包download-git-repo-js" class="headerlink" title="2下载包download-git-repo.js"></a>2下载包download-git-repo.js</h2><h3 id="2-1准备模板"><a href="#2-1准备模板" class="headerlink" title="2.1准备模板"></a>2.1准备模板</h3><p>这里我准备了三个模板供下载，在github上创建三个空项目，自动生成README.md出来如图所示：<br><img src="/2018/11/11/构建cli脚手架/02.png" alt="如图所示">.<br>创建项目这里就不多说了。</p>
+<h3 id="2-2下载download-git-repo-js"><a href="#2-2下载download-git-repo-js" class="headerlink" title="2.2下载download-git-repo.js"></a>2.2下载download-git-repo.js</h3><p>用npm下载</p>
+<blockquote>
+<p>npm install download-git-repo -s</p>
+</blockquote>
+<p>引用</p>
+<blockquote>
+<p>const download = require(‘download-git-repo’)</p>
+</blockquote>
+<p><a href="https://github.com/flipxfx/download-git-repo" target="_blank" rel="noopener">传送门</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">download(downloadUrl,project,&#123;<span class="attr">clone</span>:<span class="literal">true</span>&#125;,(err)=&gt;&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err?<span class="string">'err'</span>:<span class="string">'success'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>downloadUrl 为仓库地址路径</li>
+<li>project 为创建项目的名称，即我本地想叫什么名</li>
+<li>{clone:true} 进行克隆</li>
+<li>err=&gt;{}错误原因并在下载结束后执行方法<h3 id="2-3完成下载"><a href="#2-3完成下载" class="headerlink" title="2.3完成下载"></a>2.3完成下载</h3>我们希望输入命令 cli vue new_vue 生成一个new_vue的项目并应用我们的vue_template模板，同理其他模板也用相应命令进行创建</li>
+</ul>
+<ol>
+<li>首先我们创建一个对象来放我们的模板名称和路径和简介<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">templates=&#123;</span><br><span class="line">    <span class="string">'vue'</span>:&#123;</span><br><span class="line">        url:<span class="string">"https://github.com/linjiad/vue_template.git"</span>,</span><br><span class="line">        description:<span class="string">"vue模板"</span>,</span><br><span class="line">        downloadUrl:<span class="string">"https://github.com:linjiad/vue_template#master"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'react'</span>:&#123;</span><br><span class="line">        url:<span class="string">"https://github.com/linjiad/react_template.git"</span>,</span><br><span class="line">        description:<span class="string">"react模板"</span>,</span><br><span class="line">        downloadUrl:<span class="string">"https://github.com:linjiad/react_template#master"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'angular'</span>:&#123;</span><br><span class="line">        url:<span class="string">"https://github.com/linjiad/angular_template.git"</span>,</span><br><span class="line">        description:<span class="string">"angular模板"</span>,</span><br><span class="line">        downloadUrl:<span class="string">"https://github.com:linjiad/angular_template#master"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这里开始写program命令<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">program</span><br><span class="line">    .command(<span class="string">'init &lt;template&gt; &lt;project&gt;'</span>) <span class="comment">//命令</span></span><br><span class="line">    .description(<span class="string">'初始化项目模板'</span>)</span><br><span class="line">    .action(<span class="function"><span class="keyword">function</span>(<span class="params">template, project</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">const</span> &#123;downloadUrl&#125; = templates[template];</span><br><span class="line">        <span class="comment">//根据模板名(template)下载对应模板，并命名为(project)</span></span><br><span class="line">        <span class="comment">//第一个参数：仓库地址</span></span><br><span class="line">        <span class="comment">//第二个参数：下载路径,下载到哪</span></span><br><span class="line">        download(downloadUrl,project,&#123;<span class="attr">clone</span>:<span class="literal">true</span>&#125;,(err)=&gt;&#123;</span><br><span class="line">            <span class="keyword">if</span>(err)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">'下载失败：'</span>+err);</span><br><span class="line">            &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">'下载成功'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>这样简单的模板下载就成功了</p>
+<h2 id="3交互handlebars和inquirer"><a href="#3交互handlebars和inquirer" class="headerlink" title="3交互handlebars和inquirer"></a>3交互handlebars和inquirer</h2><h3 id="3-1配置模板中的package-json"><a href="#3-1配置模板中的package-json" class="headerlink" title="3.1配置模板中的package.json"></a>3.1配置模板中的package.json</h3><p>在模板中创建package.json,同时把需要客户填写的地方配置成可变的,代码如下<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"&#123;&#123; name &#125;&#125;"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">"&#123;&#123; description &#125;&#125;"</span>,</span><br><span class="line">  <span class="attr">"main"</span>: <span class="string">"index.js"</span>,</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"keywords"</span>: [],</span><br><span class="line">  <span class="attr">"author"</span>: <span class="string">"&#123;&#123; author &#125;&#125;"</span>,</span><br><span class="line">  <span class="attr">"license"</span>: <span class="string">"ISC"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>其中”name”: ““为用户输入的项目名</li>
+<li>“description”: ““,为项目说明</li>
+<li>“author”: “linjiad“,为作者姓名<h3 id="3-2下载handlebars和inquirer"><a href="#3-2下载handlebars和inquirer" class="headerlink" title="3.2下载handlebars和inquirer"></a>3.2下载handlebars和inquirer</h3></li>
+<li>handlebars:模板引擎<a href="https://github.com/wycats/handlebars.js" target="_blank" rel="noopener">传送门</a><blockquote>
+<p>npm install handlebars -s </p>
+</blockquote>
+</li>
+</ul>
+<p>引用</p>
+<blockquote>
+<p>const handlebars = require(‘handlebars’);</p>
+</blockquote>
+<ul>
+<li>inquirer:向导<a href="https://github.com/SBoudrias/Inquirer.js" target="_blank" rel="noopener">传送门</a><blockquote>
+<p>npm install inquirer -s </p>
+</blockquote>
+</li>
+</ul>
+<p>引用</p>
+<blockquote>
+<p>const handlebars = require(‘inquirer’);</p>
+</blockquote>
+<h3 id="3-2修改program命令"><a href="#3-2修改program命令" class="headerlink" title="3.2修改program命令"></a>3.2修改program命令</h3><p>我们的思路分为以下几部</p>
+<ul>
+<li>把项目下的 package.json 文件读取出来</li>
+<li>使用想到的方式采集用户输入的值</li>
+<li>使用模板引擎把用户输入的数据解析到package.json中</li>
+<li>解析完毕，把解析之后的结果重新写入package.json中<br>在此之前我们要用的nodejs中的读写fs模块<blockquote>
+<p>const fs = require(‘fs’);</p>
+</blockquote>
+</li>
+</ul>
+<p>修改后代码如下<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">program</span><br><span class="line">    .command(<span class="string">'init &lt;template&gt; &lt;project&gt;'</span>) <span class="comment">//命令</span></span><br><span class="line">    .description(<span class="string">'初始化项目模板'</span>)</span><br><span class="line">    .action(<span class="function"><span class="keyword">function</span>(<span class="params">template, project</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">const</span> &#123;downloadUrl&#125; = templates[template];</span><br><span class="line">        <span class="comment">//根据模板名(template)下载对应模板，并命名为(project)</span></span><br><span class="line">        <span class="comment">//第一个参数：仓库地址</span></span><br><span class="line">        <span class="comment">//第二个参数：下载路径,下载到哪</span></span><br><span class="line">        download(downloadUrl,project,&#123;<span class="attr">clone</span>:<span class="literal">true</span>&#125;,(err)=&gt;&#123;</span><br><span class="line">            <span class="keyword">if</span>(err)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">'下载失败：'</span>+err);</span><br><span class="line">            &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">               <span class="comment">// 把项目下的package.json读取</span></span><br><span class="line">               <span class="comment">// 采取向导方式采集用户输入的值</span></span><br><span class="line">               <span class="comment">// 使用模板引擎把用户输入的数据解析到package.json</span></span><br><span class="line">               <span class="comment">// 解析之后的结果从新写入package.json</span></span><br><span class="line">               inquirer.prompt([</span><br><span class="line">                   &#123;</span><br><span class="line">                       typ: <span class="string">'input'</span>,</span><br><span class="line">                       name: <span class="string">'name'</span>,</span><br><span class="line">                       message: <span class="string">'请输入项目名称'</span></span><br><span class="line">                   &#125;,</span><br><span class="line">                   &#123;</span><br><span class="line">                       typ: <span class="string">'input'</span>,</span><br><span class="line">                       name: <span class="string">'description'</span>,</span><br><span class="line">                       message: <span class="string">'请输入项目简介'</span></span><br><span class="line">                   &#125;,</span><br><span class="line">                   &#123;</span><br><span class="line">                       typ: <span class="string">'input'</span>,</span><br><span class="line">                       name: <span class="string">'author'</span>,</span><br><span class="line">                       message: <span class="string">'请输入作者姓名'</span></span><br><span class="line">                   &#125;,</span><br><span class="line">               ]).then(<span class="function">(<span class="params">answers</span>)=&gt;</span>&#123;</span><br><span class="line">                   <span class="keyword">const</span> packagePath = <span class="string">`<span class="subst">$&#123;project&#125;</span>/package.json`</span>;</span><br><span class="line">                   <span class="comment">//把数据替换到package.json中</span></span><br><span class="line">                   <span class="keyword">const</span> packageContent = fs.readFileSync(packagePath,<span class="string">'utf8'</span>);</span><br><span class="line">                   <span class="keyword">const</span> packageResult = handlebars.compile(packageContent)(answers);</span><br><span class="line">                   fs.writeFileSync(packagePath,packageResult)</span><br><span class="line">                   <span class="built_in">console</span>.log(logSymbols.success,chalk.green(<span class="string">"初始化模板成功"</span>))</span><br><span class="line">               &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>这样整个cli脚本就更加人性化了</p>
+<h2 id="4美化脚本"><a href="#4美化脚本" class="headerlink" title="4美化脚本"></a>4美化脚本</h2><h3 id="4-1添加loading效果-ora-js"><a href="#4-1添加loading效果-ora-js" class="headerlink" title="4.1添加loading效果 ora.js"></a>4.1添加loading效果 ora.js</h3><p>ora:loading美化<a href="https://github.com/sindresorhus/ora" target="_blank" rel="noopener">传送门</a><br>下载</p>
+<blockquote>
+<p>npm install ora -s</p>
+</blockquote>
+<p>引用</p>
+<blockquote>
+<p>var ora = require(‘ora’);</p>
+</blockquote>
+<p>使用：</p>
+<blockquote>
+<p>const spinner = ora(‘正在下载模板…’).start();<br>        spinner.fail(‘下载失败’);//下载失败提示<br>        spinner.succeed(‘下载成功’); //下载成功提示</p>
+</blockquote>
+<h3 id="4-2添加字体颜色-ora-js"><a href="#4-2添加字体颜色-ora-js" class="headerlink" title="4.2添加字体颜色 ora.js"></a>4.2添加字体颜色 ora.js</h3><p>chalk:字体美化<a href="https://github.com/chalk/chalk" target="_blank" rel="noopener">传送门</a><br>下载</p>
+<blockquote>
+<p>npm install chalk -s</p>
+</blockquote>
+<p>引用</p>
+<blockquote>
+<p>var chalk = require(‘chalk’);</p>
+</blockquote>
+<p>使用：</p>
+<blockquote>
+<p>chalk.red(“错误”)<br>chalk.green(“成功”)</p>
+</blockquote>
+<h3 id="4-3特殊符号-log-symbols-js"><a href="#4-3特殊符号-log-symbols-js" class="headerlink" title="4.3特殊符号 log-symbols.js"></a>4.3特殊符号 log-symbols.js</h3><p>log-symbols:特殊符号，如对号错号<a href="https://github.com/sindresorhus/log-symbols" target="_blank" rel="noopener">传送门</a><br>下载</p>
+<blockquote>
+<p>npm install log-symbols -s</p>
+</blockquote>
+<p>引用</p>
+<blockquote>
+<p>var logSymbols = require(‘log-symbols’);</p>
+</blockquote>
+<p>使用：</p>
+<blockquote>
+<p>console.log(logSymbols.erro);<br>console.log(logSymbols.success);</p>
+</blockquote>
+<h3 id="4-4修改program命令"><a href="#4-4修改program命令" class="headerlink" title="4.4修改program命令"></a>4.4修改program命令</h3><p>修改后的代码如下(既全部代码)：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env node</span></span><br><span class="line"><span class="comment">//命令包</span></span><br><span class="line"><span class="keyword">const</span> program = <span class="built_in">require</span>(<span class="string">'commander'</span>);</span><br><span class="line"><span class="comment">//下载包</span></span><br><span class="line"><span class="keyword">const</span> download = <span class="built_in">require</span>(<span class="string">'download-git-repo'</span>)</span><br><span class="line"><span class="comment">//模板引擎</span></span><br><span class="line"><span class="keyword">const</span> handlebars = <span class="built_in">require</span>(<span class="string">'handlebars'</span>);</span><br><span class="line"><span class="comment">//向导</span></span><br><span class="line"><span class="keyword">const</span> inquirer = <span class="built_in">require</span>(<span class="string">'inquirer'</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="comment">//loading美化</span></span><br><span class="line"><span class="keyword">var</span> ora = <span class="built_in">require</span>(<span class="string">'ora'</span>);</span><br><span class="line"><span class="comment">//字体美化</span></span><br><span class="line"><span class="keyword">const</span> chalk = <span class="built_in">require</span>(<span class="string">'chalk'</span>);</span><br><span class="line"><span class="comment">//符号</span></span><br><span class="line"><span class="keyword">const</span> logSymbols = <span class="built_in">require</span>(<span class="string">'log-symbols'</span>)</span><br><span class="line">program</span><br><span class="line">    .version(<span class="string">'0.1.0'</span>) <span class="comment">//调用-v或者 --version的时候输出该版本号</span></span><br><span class="line"><span class="keyword">const</span> templates=&#123;</span><br><span class="line">    <span class="string">'vue'</span>:&#123;</span><br><span class="line">        url:<span class="string">"https://github.com/linjiad/vue_template.git"</span>,</span><br><span class="line">        description:<span class="string">"vue模板"</span>,</span><br><span class="line">        downloadUrl:<span class="string">"https://github.com:linjiad/vue_template#master"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'react'</span>:&#123;</span><br><span class="line">        url:<span class="string">"https://github.com/linjiad/react_template.git"</span>,</span><br><span class="line">        description:<span class="string">"react模板"</span>,</span><br><span class="line">        downloadUrl:<span class="string">"https://github.com:linjiad/react_template#master"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'angular'</span>:&#123;</span><br><span class="line">        url:<span class="string">"https://github.com/linjiad/angular_template.git"</span>,</span><br><span class="line">        description:<span class="string">"angular模板"</span>,</span><br><span class="line">        downloadUrl:<span class="string">"https://github.com:linjiad/angular_template#master"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">program</span><br><span class="line">    .command(<span class="string">'init &lt;template&gt; &lt;project&gt;'</span>) <span class="comment">//命令</span></span><br><span class="line">    .description(<span class="string">'初始化项目模板'</span>)</span><br><span class="line">    .action(<span class="function"><span class="keyword">function</span>(<span class="params">template, project</span>)</span>&#123;</span><br><span class="line">        <span class="comment">//下载之前做loading提示</span></span><br><span class="line">        <span class="keyword">const</span> spinner = ora(<span class="string">'正在下载模板...'</span>).start();</span><br><span class="line">        <span class="keyword">const</span> &#123;downloadUrl&#125; = templates[template];</span><br><span class="line">        <span class="comment">//根据模板名下载对应模板，并命名为project</span></span><br><span class="line">        <span class="comment">//第一个参数：仓库地址</span></span><br><span class="line">        <span class="comment">//第二个参数：下载路径,下载到哪</span></span><br><span class="line">        download(downloadUrl,project,&#123;<span class="attr">clone</span>:<span class="literal">true</span>&#125;,(err)=&gt;&#123;</span><br><span class="line">            <span class="keyword">if</span>(err)&#123;</span><br><span class="line">                spinner.fail(<span class="string">'下载失败'</span>);<span class="comment">//下载失败提示</span></span><br><span class="line">                <span class="keyword">return</span> <span class="built_in">console</span>.log(logSymbols.error,chalk.red(err))</span><br><span class="line">            &#125;</span><br><span class="line">            spinner.succeed(<span class="string">'下载成功'</span>); <span class="comment">//下载成功提示</span></span><br><span class="line">            <span class="comment">// 把项目下的package.json读取</span></span><br><span class="line">            <span class="comment">// 采取向导方式采集用户输入的值</span></span><br><span class="line">            <span class="comment">// 使用模板引擎把用户输入的数据解析到package.json</span></span><br><span class="line">            <span class="comment">// 解析之后的结果从新写入package.json</span></span><br><span class="line">            inquirer.prompt([</span><br><span class="line">                &#123;</span><br><span class="line">                    typ: <span class="string">'input'</span>,</span><br><span class="line">                    name: <span class="string">'name'</span>,</span><br><span class="line">                    message: <span class="string">'请输入项目名称'</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    typ: <span class="string">'input'</span>,</span><br><span class="line">                    name: <span class="string">'description'</span>,</span><br><span class="line">                    message: <span class="string">'请输入项目简介'</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    typ: <span class="string">'input'</span>,</span><br><span class="line">                    name: <span class="string">'author'</span>,</span><br><span class="line">                    message: <span class="string">'请输入作者姓名'</span></span><br><span class="line">                &#125;,</span><br><span class="line">            ]).then(<span class="function">(<span class="params">answers</span>)=&gt;</span>&#123;</span><br><span class="line">                <span class="keyword">const</span> packagePath = <span class="string">`<span class="subst">$&#123;project&#125;</span>/package.json`</span>;</span><br><span class="line">                <span class="comment">//把数据替换到package.json中</span></span><br><span class="line">                <span class="keyword">const</span> packageContent = fs.readFileSync(packagePath,<span class="string">'utf8'</span>);</span><br><span class="line">                <span class="keyword">const</span> packageResult = handlebars.compile(packageContent)(answers);</span><br><span class="line">                fs.writeFileSync(packagePath,packageResult)</span><br><span class="line">                <span class="built_in">console</span>.log(logSymbols.success,chalk.green(<span class="string">"初始化模板成功"</span>))</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">program</span><br><span class="line">    .command(<span class="string">'list'</span>) <span class="comment">//命令</span></span><br><span class="line">    .description(<span class="string">'查看所有可用模板'</span>)</span><br><span class="line">    .action(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">const</span> key <span class="keyword">in</span> templates)&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;key&#125;</span>:<span class="subst">$&#123;templates[key].description&#125;</span>.`</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">program</span><br><span class="line">    .command(<span class="string">'setup [env]'</span>) <span class="comment">//命令</span></span><br><span class="line">    .description(<span class="string">'run setup commands for all envs'</span>)</span><br><span class="line">    .option(<span class="string">"-s, --setup_mode [mode]"</span>, <span class="string">"Which setup mode to use"</span>)</span><br><span class="line">    .action(<span class="function"><span class="keyword">function</span>(<span class="params">env, options</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> mode = options.setup_mode || <span class="string">"normal"</span>;</span><br><span class="line">        env = env || <span class="string">'all'</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'setup for %s env(s) with %s mode'</span>, env, mode);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">program</span><br><span class="line">    .command(<span class="string">'exec &lt;cmd&gt;'</span>)</span><br><span class="line">    .alias(<span class="string">'ex'</span>)</span><br><span class="line">    .description(<span class="string">'execute the given remote cmd'</span>)</span><br><span class="line">    .option(<span class="string">"-e, --exec_mode &lt;mode&gt;"</span>, <span class="string">"Which exec mode to use"</span>)</span><br><span class="line">    .action(<span class="function"><span class="keyword">function</span>(<span class="params">cmd, options</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'exec "%s" using %s mode'</span>, cmd, options.exec_mode);</span><br><span class="line">    &#125;).on(<span class="string">'--help'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">''</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Examples:'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">''</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'  $ deploy exec sequential'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'  $ deploy exec async'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">program</span><br><span class="line">    .command(<span class="string">'*'</span>) <span class="comment">//其他的命令</span></span><br><span class="line">    .action(<span class="function"><span class="keyword">function</span>(<span class="params">env</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'不存在 "%s"命令'</span>, env);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">program.parse(process.argv);</span><br></pre></td></tr></table></figure></p>
+<h2 id="5npm发布包"><a href="#5npm发布包" class="headerlink" title="5npm发布包"></a>5npm发布包</h2><ol>
+<li>打开npm官网</li>
+<li>注册一个npm账号</li>
+<li>在npm官网上搜索是否有重名<br>4.讲package.json中的那么修改为发布到npm上的名<blockquote>
+<p>和本地项目名称没有关系</p>
+</blockquote>
+</li>
+</ol>
+<p>5.打开控制台，执行npm login，在控制台输入登录<br>6.登陆成功后，在项目下执行npm publish进行发布<br>7 在其他电脑上就可以安装成全局变量了</p>
+<p>这样一个脚手架就搭建完毕了</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年11月11日 19:27</p>
+        <p>原始链接： <a class="post-url" href="/2018/11/11/构建cli脚手架/" title="构建cli脚手架">http://linjiad.github.io/2018/11/11/构建cli脚手架/</a></p>
+        <footer>
+            <a href="http://linjiad.github.io">
+                <img src="/images/logo.png" alt="linjiad">
+                linjiad
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/weixin.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/weixin.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/zhifubao.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://linjiad.github.io/2018/11/11/构建cli脚手架/&title=《构建cli脚手架》 — linjiad_个人博客&pic=http://linjiad.github.ioimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://linjiad.github.io/2018/11/11/构建cli脚手架/&title=《构建cli脚手架》 — linjiad_个人博客&source=这个人很懒什么也没写" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://linjiad.github.io/2018/11/11/构建cli脚手架/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《构建cli脚手架》 — linjiad_个人博客&url=http://linjiad.github.io/2018/11/11/构建cli脚手架/&via=http://linjiad.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://linjiad.github.io/2018/11/11/构建cli脚手架/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://linjiad.github.io/2018/11/11/构建cli脚手架/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/前端服务/" class="color5">前端服务</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0搭建前准备环境"><span class="post-toc-text">0搭建前准备环境</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-1创建项目"><span class="post-toc-text">0.1创建项目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-2配置项目"><span class="post-toc-text">0.2配置项目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-3生成全局命令"><span class="post-toc-text">0.3生成全局命令</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1命令包安装commander-js"><span class="post-toc-text">1命令包安装commander.js</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1commander说明"><span class="post-toc-text">1.1commander说明</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2commander配置"><span class="post-toc-text">1.2commander配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3commander错误命令提示"><span class="post-toc-text">1.3commander错误命令提示</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-4commander配置版本号"><span class="post-toc-text">1.4commander配置版本号</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2下载包download-git-repo-js"><span class="post-toc-text">2下载包download-git-repo.js</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1准备模板"><span class="post-toc-text">2.1准备模板</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2下载download-git-repo-js"><span class="post-toc-text">2.2下载download-git-repo.js</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3完成下载"><span class="post-toc-text">2.3完成下载</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3交互handlebars和inquirer"><span class="post-toc-text">3交互handlebars和inquirer</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1配置模板中的package-json"><span class="post-toc-text">3.1配置模板中的package.json</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2下载handlebars和inquirer"><span class="post-toc-text">3.2下载handlebars和inquirer</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2修改program命令"><span class="post-toc-text">3.2修改program命令</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4美化脚本"><span class="post-toc-text">4美化脚本</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-1添加loading效果-ora-js"><span class="post-toc-text">4.1添加loading效果 ora.js</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2添加字体颜色-ora-js"><span class="post-toc-text">4.2添加字体颜色 ora.js</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-3特殊符号-log-symbols-js"><span class="post-toc-text">4.3特殊符号 log-symbols.js</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-4修改program命令"><span class="post-toc-text">4.4修改program命令</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5npm发布包"><span class="post-toc-text">5npm发布包</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/11/Nginx服务2/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Nginx服务2</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'linjiad',
+            repo: 'linjiad.github.io',
+            oauth: {
+                client_id: '9b8f5415215f1aef0b2c',
+                client_secret: 'dea7335a3cd2d8e380b0279a5f1f7245797579d7',
+            },
+        })
+        gitment.render('comments')
+    </script>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 linjiad<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://linjiad.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Linux服务器/">Linux服务器</a><a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/echarts/" style="font-size: 13.33px;">echarts</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 16.67px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/前端服务/" style="font-size: 20px;">前端服务</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/echarts/" style="font-size: 13.33px;">echarts</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 16.67px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/前端服务/" style="font-size: 20px;">前端服务</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
