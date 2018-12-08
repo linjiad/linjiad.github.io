@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>MySQL高级 | linjiad_个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="梧桐更兼细雨到黄昏点点滴滴" />
+  
+  <meta name="description" content="0 视图0.1 视图定义视图是有查询结果形成的一张虚拟表，是表通过某种运算得到的一个投影。同一张表可以创建多个视图创建视图语法：  create view 视图名称 as select 语句  说明：  视图名跟表名是一个级别的名字，隶属于数据库； 该语句的含义可以理解为：就是将该select命名为该名字（视图名） 该视图也可以设定自己的字段名，而不是select语句本身的字段名（通常不设置） 视">
+<meta name="keywords" content="数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL高级">
+<meta property="og:url" content="http://linjiad.github.io/2018/12/04/MySQL高级/index.html">
+<meta property="og:site_name" content="linjiad_个人博客">
+<meta property="og:description" content="0 视图0.1 视图定义视图是有查询结果形成的一张虚拟表，是表通过某种运算得到的一个投影。同一张表可以创建多个视图创建视图语法：  create view 视图名称 as select 语句  说明：  视图名跟表名是一个级别的名字，隶属于数据库； 该语句的含义可以理解为：就是将该select命名为该名字（视图名） 该视图也可以设定自己的字段名，而不是select语句本身的字段名（通常不设置） 视">
+<meta property="og:locale" content="JS">
+<meta property="og:updated_time" content="2018-12-08T02:46:09.156Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL高级">
+<meta name="twitter:description" content="0 视图0.1 视图定义视图是有查询结果形成的一张虚拟表，是表通过某种运算得到的一个投影。同一张表可以创建多个视图创建视图语法：  create view 视图名称 as select 语句  说明：  视图名跟表名是一个级别的名字，隶属于数据库； 该语句的含义可以理解为：就是将该select命名为该名字（视图名） 该视图也可以设定自己的字段名，而不是select语句本身的字段名（通常不设置） 视">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">云销雨霁彩彻区明</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        云销雨霁彩彻区明
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        林花谢了春红太匆匆
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="linjiad_个人微博" target="_blank" href="//linjiad.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/linjiad">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-MySQL高级" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      MySQL高级
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/运维/">运维</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-12-04
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="0-视图"><a href="#0-视图" class="headerlink" title="0 视图"></a>0 视图</h2><h3 id="0-1-视图定义"><a href="#0-1-视图定义" class="headerlink" title="0.1 视图定义"></a>0.1 视图定义</h3><p>视图是有查询结果形成的一张虚拟表，是表通过某种运算得到的一个投影。<br>同一张表可以创建多个视图<br>创建视图语法：</p>
+<blockquote>
+<p>create view 视图名称 as select 语句</p>
+</blockquote>
+<p>说明：</p>
+<ol>
+<li>视图名跟表名是一个级别的名字，隶属于数据库；</li>
+<li>该语句的含义可以理解为：就是将该select命名为该名字（视图名）</li>
+<li>该视图也可以设定自己的字段名，而不是select语句本身的字段名（通常不设置）</li>
+<li>视图的使用几乎和表一样（只不过一般都用做查询，很少增删改，增删改在后面说明）</li>
+</ol>
+<hr>
+<h3 id="0-2-视图的作用"><a href="#0-2-视图的作用" class="headerlink" title="0.2 视图的作用"></a>0.2 视图的作用</h3><ol>
+<li>可以简化查询<br><strong>案例</strong>：1.查询平均价格前3的栏目<br>以前的SQL语句<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select cat_id,avg(shop_price) as pj from ecs_goods group by cat_id order by pj limit 3;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>应用视图的<br>1) 创建一个视图<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create view ecs_goods_v1 as select cat_id,avg(shop_price) as pj from ecs_goods group by cat_id;</span><br></pre></td></tr></table></figure></p>
+<p>2) 查询平均价格前3只需要查询视图即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">selcet * from ecs_goods_v1 order by pj desc limit 3;</span><br></pre></td></tr></table></figure></p>
+<p><strong>案例</strong>：2.查询出商品表，以及所在的栏目名称<br>以前的sql语句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select goods_id,goods_name,b.cat_name,shop_price from ecs_goods a </span><br><span class="line">left join ecs_category b on a.vat_id=b.cat_id</span><br></pre></td></tr></table></figure></p>
+<p>1) 创建视图<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create view ecs_goods_v2 as </span><br><span class="line">select goods_id,goods_name,b.cat_name,shop_price from ecs_goods a </span><br><span class="line">left join ecs_category b on a.vat_id=b.cat_id</span><br></pre></td></tr></table></figure></p>
+<p>2) 查询视图<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">selcet * from ecs_goods_v2;</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>可以进行权限控制<br>把表的权限封闭，但是开放相应的视图权限，视图里只开放部分数据，比如用户表为例，两个网站搞合作，可以查询对方网站的用户，需要向对方开放用户表的权限，但是又不想开放用户表中的密码字段。<br>再比如一个goods表，两个网站搞合作，可以互相查询对方的商品列表，比如进货价格字段不能让对方看到<br><strong>案例</strong><br>1) 创建一个视图，视图中不能包含进价字段（in_price）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">creat view goods_v1 as select id,goods_name,shop_price from goods;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>2) 创建一个用户，授予查询权限，只能操作goods_v1表（视图）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant select on php.goods_v1 to &apos;xiaoming&apos;@&apos;%&apos; identified by &apos;123456&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>3) 这样就把新建的用户给合作方</p>
+<hr>
+<h3 id="0-3-视图操作"><a href="#0-3-视图操作" class="headerlink" title="0.3 视图操作"></a>0.3 视图操作</h3><ol>
+<li>查询视图<br>语法：</li>
+</ol>
+<blockquote>
+<p>select * from 视图名 [where 条件]</p>
+</blockquote>
+<p>视图和表一样，可以添加where条件</p>
+<ol start="2">
+<li>修改视图</li>
+</ol>
+<blockquote>
+<p>alter view 视图名称 as select ….</p>
+</blockquote>
+<ol start="3">
+<li>删除视图</li>
+</ol>
+<blockquote>
+<p>drop view 视图名称</p>
+</blockquote>
+<ol start="4">
+<li>查看视图结构<br>和表一样，语法：</li>
+</ol>
+<blockquote>
+<p>desc 视图名称</p>
+</blockquote>
+<ol start="5">
+<li>查看所有视图<br>和表一样，语法：</li>
+</ol>
+<blockquote>
+<p>show tables;</p>
+</blockquote>
+<p><code>注意：没有show views 语句</code></p>
+<ol start="6">
+<li><p>视图和表得关系<br>表 &gt;&gt;——&gt;&gt; 视图<br>表改变了视图就改变了<br>视图 &gt;&gt;——&gt;&gt; 表<br>修改：<br>1) 如果没有计算的来的值（avg），视图改变可以影响表<br>增加：<br>2) 如果没有不能为空而又刚好没被视图收录的字段，视图创建可以影响创建</p>
+</li>
+<li><p>视图算法<br>algorithm = merge/temptable/undefined</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th style="text-align:center">算法</th>
+<th style="text-align:center">创建方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>merge</td>
+<td style="text-align:center">当引用视图时，引用视图的语句与定义视图的语句合并（默认）</td>
+<td style="text-align:center">意味着视图只是一个语句规则，当查询视图时，吧查询视图的语句与创建时语句where子句等合并，分析，形成一条select语句</td>
+</tr>
+<tr>
+<td>temptable</td>
+<td style="text-align:center">当引用视图时，根据视图语句创建一张临时表</td>
+<td style="text-align:center">根据创建语句，瞬间创建一张临时表，然后查询视图的语句，从该临时表查询数据</td>
+</tr>
+<tr>
+<td>undefined</td>
+<td style="text-align:center">未定义，让系统自动选择</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-SQL编程"><a href="#1-SQL编程" class="headerlink" title="1 SQL编程"></a>1 SQL编程</h2><h3 id="1-1-声明变量"><a href="#1-1-声明变量" class="headerlink" title="1.1 声明变量"></a>1.1 声明变量</h3><ol>
+<li>会话变量<br>定义形式<blockquote>
+<p>set @变量名 = 值;</p>
+</blockquote>
+</li>
+</ol>
+<p>说明：<br>1) 和js类似，第一次给其赋值，就算定义了<br>2) 它可以在变成<strong>环境</strong>和<strong>非编程</strong>环境中使用<br>3) 使用的任何场合都该带“@”符号</p>
+<ol start="2">
+<li>普通变量<br>定义形式：<blockquote>
+<p>declare 变量名 类型 【default 默认值】;</p>
+</blockquote>
+</li>
+</ol>
+<p>说明：<br>1) 他必须先声明（即定义），此时也可以赋值；<br>2) 赋值跟会话变量一样<em>set 变量名 = 值</em>；<br>3) 它只能在编程<code>环境中使用</code>！！！<br>(编程环境指的是：存储过程，函数，触发器)</p>
+<ol start="3">
+<li>变量赋值形式<br>1) 语法1：<blockquote>
+<p>set 变量名 = 表达式;</p>
+</blockquote>
+</li>
+</ol>
+<p>此语法中的变量必须先使用declare声明</p>
+<p>2) 语法2:</p>
+<blockquote>
+<p>set @变量名 = 表达式</p>
+</blockquote>
+<p>此方式可以无需declare语法声明，而是直接赋值，类似js定义变量并赋值；</p>
+<p>3) 语法3：</p>
+<blockquote>
+<p>select @变量名:= 表达式；</p>
+</blockquote>
+<p>此语句会给变量赋值，同时还会作为一个select语句输出结果</p>
+<p>4) 语法4：</p>
+<blockquote>
+<p>select 表达式 into @变量名;</p>
+</blockquote>
+<p>此语句虽然看起来是select语句，但是其实并不输出结果集，而是给变量赋值</p>
+<hr>
+<h3 id="1-2运算符"><a href="#1-2运算符" class="headerlink" title="1.2运算符"></a>1.2运算符</h3><ol>
+<li>算术运算符</li>
+</ol>
+<blockquote>
+<p>+,-,*,/,%</p>
+</blockquote>
+<p><code>注意musql没有++和--</code></p>
+<ol start="2">
+<li>关系运算符</li>
+</ol>
+<blockquote>
+<p>&lt; &lt;= = &lt;&gt; !=</p>
+</blockquote>
+<ol start="3">
+<li>逻辑运算符</li>
+</ol>
+<blockquote>
+<p>and or not </p>
+</blockquote>
+<hr>
+<h3 id="1-3语句包含模块"><a href="#1-3语句包含模块" class="headerlink" title="1.3语句包含模块"></a>1.3语句包含模块</h3><p>所谓语句包含符，在js中，以及大部分其他语言中，大都是<strong>{}</strong><br>它用在很多场合if，switch，for，function<br>而mysql编程包含的语句符是：</p>
+<blockquote>
+<p>begin【什么】 end【什么】</p>
+</blockquote>
+<h3 id="1-4条件判断"><a href="#1-4条件判断" class="headerlink" title="1.4条件判断"></a>1.4条件判断</h3><p>MySQL支持两种判断if判断和case判断</p>
+<ol>
+<li>if<br>单分支语法：</li>
+</ol>
+<blockquote>
+<p>if 条件 then<br>    //代码<br>  end if;</p>
+</blockquote>
+<p>双分支</p>
+<blockquote>
+<p>if 条件 then<br>    //代码1<br>  else<br>    //代码2<br>  end if;</p>
+</blockquote>
+<p>多分枝</p>
+<blockquote>
+<p>if 条件 then<br>    //代码1<br>  elseif 条件 then<br>   //代码2<br>  else<br>    //代码3<br>  end if;</p>
+</blockquote>
+<p>注意：通常情况下<strong>;</strong>表示sql的结束，同时向服务器提交并执行，但存储过程中很多SQL语句每一句都是<strong>;</strong>分开的，这时候我们就需要用其他符号来代替向服务器提交的命令</p>
+<blockquote>
+<p>delimiter 符号</p>
+</blockquote>
+<p>案例：接收4个数字，如果输入1=春天，2=夏天，3=秋天，4=冬天，其他=出错<br>先修改;符号</p>
+<blockquote>
+<p>delimiter $</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">create procedure p1 (n int)</span><br><span class="line">begin </span><br><span class="line">if n=1 then</span><br><span class="line">select &apos;春天&apos; as &apos;季节&apos;;</span><br><span class="line">elseif n=2 then</span><br><span class="line">select &apos;夏天&apos; as &apos;季节&apos;;</span><br><span class="line">elseif n=3 then</span><br><span class="line">select &apos;秋天&apos; as &apos;季节&apos;;</span><br><span class="line">elseif n=4 then</span><br><span class="line">select &apos;冬天&apos; as &apos;季节&apos;;</span><br><span class="line">else</span><br><span class="line">select &apos;错误&apos; as &apos;季节&apos;;</span><br><span class="line">end if;</span><br><span class="line">end$</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>case判断</li>
+</ol>
+<blockquote>
+<p>case 变量<br>when 值 then 语句;<br>when 值 then 语句;<br>else 语句;<br>end case;</p>
+</blockquote>
+<p>上面的例子我们改变如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">create procedure p2 (n int)</span><br><span class="line">begin </span><br><span class="line">case n</span><br><span class="line">when 1 then select &apos;春天&apos; as &apos;季节&apos;;</span><br><span class="line">when 2 then select &apos;夏天&apos; as &apos;季节&apos;;</span><br><span class="line">when 3 then select &apos;秋天&apos; as &apos;季节&apos;;</span><br><span class="line">when 4 then select &apos;冬天&apos; as &apos;季节&apos;;</span><br><span class="line">else select &apos;错误&apos; as &apos;季节&apos;;</span><br><span class="line">end case;</span><br><span class="line">end$</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="1-5循环"><a href="#1-5循环" class="headerlink" title="1.5循环"></a>1.5循环</h3><p>Mysql支持的循环有loop，while，repeat循环</p>
+<ol>
+<li>loop循环</li>
+</ol>
+<blockquote>
+<p>标签名:loop<br>leave 标签名（退出循环）<br>end loop;</p>
+</blockquote>
+<p>案例：循环1到n的和</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">create procedure p3 (n int)</span><br><span class="line">begin </span><br><span class="line">    declare i int default 1;</span><br><span class="line">    declare s int default 0;</span><br><span class="line">    aa:loop</span><br><span class="line">        if i&gt;n then</span><br><span class="line">        leave aa;</span><br><span class="line">        end if;</span><br><span class="line">        set s=s+i;</span><br><span class="line">        set i=i+1;</span><br><span class="line">    end loop;</span><br><span class="line">    select s;</span><br><span class="line">end$</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>while循环</li>
+</ol>
+<blockquote>
+<p>标签名 while 条件 do<br>// 代码<br>end while</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">create procedure p4 (n int)</span><br><span class="line">begin </span><br><span class="line">    declare i int default 1;</span><br><span class="line">    declare s int default 0;</span><br><span class="line">    while i&lt;=n do</span><br><span class="line">        set s=s+i;</span><br><span class="line">        set i=i+1;</span><br><span class="line">    end while;</span><br><span class="line">    select s;</span><br><span class="line">end$</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>repeat循环</li>
+</ol>
+<blockquote>
+<p>repeat<br>// 代码<br>until 条件 end repeat;</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">create procedure p5 (n int)</span><br><span class="line">begin </span><br><span class="line">    declare i int default 1;</span><br><span class="line">    declare s int default 0;</span><br><span class="line">    repeat</span><br><span class="line">        set s=s+i;</span><br><span class="line">        set i=i+1;</span><br><span class="line">    until i&gt;n end repeat;</span><br><span class="line">    select s;</span><br><span class="line">end$</span><br></pre></td></tr></table></figure>
+<h2 id="2-存储过程"><a href="#2-存储过程" class="headerlink" title="2 存储过程"></a>2 存储过程</h2><p>存储过程是在大型数据库系统中，一组为了完成特定功能的SQL语句集，存储在数据库中，经过第一次编译后再次调用<strong>不需要再次编译</strong>，用户通过制定存储过程的名字，并给出参数（如果该存储过程携带参数）来执行。<br>存储过程是数据库中的一个重要对象，任何一个设计良好的数据库应用程序都应该用到存储过程。</p>
+<h3 id="2-1-好处"><a href="#2-1-好处" class="headerlink" title="2.1 好处"></a>2.1 好处</h3><ol>
+<li><p>存储过程只是在创建时进行编译，以后每次执行存储过程不需要再重新编译，而一般SQL语句每执行一次就编译一次，所以使用存储过程可以提高数据库执行速度。</p>
+</li>
+<li><p>当对数据库进行复杂操作时（如对多个表进行增删改时），可以将此复杂操作用存储过程封装起来，与数据库提供的事务结合一起使用</p>
+</li>
+<li><p>存储过程可以重复使用，减少数据库开发人员的工作量</p>
+</li>
+<li><p>安全性提高，可设定只有某些用户才具有对指定的存储过程使用权限</p>
+</li>
+</ol>
+<hr>
+<h3 id="2-2-存储过程操作"><a href="#2-2-存储过程操作" class="headerlink" title="2.2 存储过程操作"></a>2.2 存储过程操作</h3><ol>
+<li>创建存储过程</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create procedure 存储过程名称(参数1,参数2,...)</span><br><span class="line">begin </span><br><span class="line">// 代码</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>存储过程的参数部分为输入参数（in），输出参数（out），输入输出参数（inout），默认是输入参数。<br>如果存储过程中就一条语句，begin和end是可以省略的。</p>
+<p>说明：<br>1) 存储过程中，可有各种变成元素：（变量，流程控制，函数调用）；<br>2) 还可以有：增删改查等各种sql语句<br>3) 其中select（或show，或desc）会作为存储过程执行后的“结果集”返回；<br>4)形参可以设定数据的“进出方向”</p>
+<p>案例1：查询一个表里面某些语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create procedure p10()</span><br><span class="line">begin</span><br><span class="line">select * from ecs_goods;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+<p>案例2：输入一个字符串，如果是h输出价格大于1000商品，其他输出小于1000商品</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">create procedure p11(str char(1))</span><br><span class="line">begin</span><br><span class="line">if str = &apos;h&apos; then</span><br><span class="line">select * from ecs_goods where price&gt;1000;</span><br><span class="line">else</span><br><span class="line">select * from ecs_goods where price&lt;=1000;</span><br><span class="line">end if;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">call p11(&apos;h&apos;);</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>调用存储过程<br>语法：</li>
+</ol>
+<blockquote>
+<p>call 存储过程()</p>
+</blockquote>
+<ol start="3">
+<li>删除存过程</li>
+</ol>
+<p>语法:</p>
+<blockquote>
+<p>drop procedure [if exists] 存储过程名</p>
+</blockquote>
+<ol start="4">
+<li>创建复杂存储过程</li>
+</ol>
+<p>案例1：带输出参数的存储过程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create procedure p12(in n int,out res int)</span><br><span class="line">begin </span><br><span class="line">set res = n*n;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">set @res=0;call p12(100,@res);selcet @res;</span><br></pre></td></tr></table></figure>
+<p>案例2:带有输入输出参数的存储过程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create procedure p13(inout n int)</span><br><span class="line">begin </span><br><span class="line">set n = n*n;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">set @a = 20; call p13(@a);select @a;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="2-3-变量"><a href="#2-3-变量" class="headerlink" title="2.3 变量"></a>2.3 变量</h3><ol>
+<li>系统变量</li>
+</ol>
+<p>MySQL启动的时候就存在的变量，以@@开头的都是系统变量</p>
+<p>查询mysql版本：</p>
+<blockquote>
+<p>select @@version;</p>
+</blockquote>
+<ol start="2">
+<li>用户变量<br>用户变量只要在前面加一个@就可以<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set @name=&apos;linjiad&apos;;</span><br><span class="line">select @name;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="3-函数"><a href="#3-函数" class="headerlink" title="3 函数"></a>3 函数</h2><p>和js中的函数几乎一样：需要先定义，然后调用。只是规定这个函数必须<strong>需要一个返回值</strong>;</p>
+<h3 id="3-1-定义函数"><a href="#3-1-定义函数" class="headerlink" title="3.1 定义函数"></a>3.1 定义函数</h3><p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create function 函数名(参数) </span><br><span class="line">returns 返回值类型</span><br><span class="line">begin</span><br><span class="line">// 代码</span><br><span class="line">return xx值;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+<p>说明：<br>1) 函数内部可以有各种编程语言元素：变量，流程控制，函数调用；<br>2) 函数内部可以有<strong>增删改</strong>等语句<br>3)但：函数内部<strong>不可以有查</strong>（select或show，或desc）这种返回结果集的语句</p>
+<h3 id="3-2-调用"><a href="#3-2-调用" class="headerlink" title="3.2 调用"></a>3.2 调用</h3><p>跟系统函数调用一样：任何需要数据的位置，都可以调用该函数</p>
+<p>案例1：返回两个数的和<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create function he(num1 int,num2 int) return int</span><br><span class="line">begin</span><br><span class="line">return num1+num2;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">select he(100,120);</span><br></pre></td></tr></table></figure></p>
+<p>案例2: 返回1到n的和<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">create function hee(n int) return int</span><br><span class="line">begin</span><br><span class="line">declare i int default 1;</span><br><span class="line">declare s int default 0;</span><br><span class="line">while i &lt;=n do</span><br><span class="line">set s= s + i;</span><br><span class="line">set i= i + 1;</span><br><span class="line">end while;</span><br><span class="line">retuen s;</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">select he(100,120);</span><br></pre></td></tr></table></figure></p>
+<p>注意：创建的函数是属于<strong>数据库</strong>的，只能在创建函数的数据库中才能使用；</p>
+<hr>
+<h3 id="3-3-SQL内部函数"><a href="#3-3-SQL内部函数" class="headerlink" title="3.3 SQL内部函数"></a>3.3 SQL内部函数</h3><ol>
+<li>数字类</li>
+</ol>
+<p>1) <strong>select rand();</strong> //返回0到1之间的随机数<br>2) <strong>select * from it_goods</strong> //随机取出两个商品<br>3) <strong>select floor(3.9)</strong> // 向上取整 4<br>4) <strong>select ceil(3.1)</strong> // 向下取整 3<br>5) <strong>select round(3.5)</strong> // 四舍五入 4</p>
+<ol start="2">
+<li>大小写转换</li>
+</ol>
+<p>1) <strong>select ucase(‘linjiad’)</strong> //转换成大写<br>2) <strong>select icase(‘linjiad’)</strong>//转换成小写</p>
+<ol start="3">
+<li>字符串截取</li>
+</ol>
+<p>1) <strong>select left(‘abcde’,3)</strong> //从左边截取<br>2) <strong>select right(‘abcde’,3)</strong> //从右边截取<br>3) <strong>select substring(‘abcde’,2,3)</strong> //从第二个位置开始，截取3个<br>4) <strong>select concat(‘abc’,’:de’)</strong> //字符串项链 10:abcde<br>5) <strong>coalesce(str1,str2)</strong> //返回参数中的第一个非空表达式<br>select stuname.stusex,coalesce(writtenexam,’缺考’),coalesce(labexam,’缺考’) from stuinfo<br>6) <strong>select length(‘锄禾日当午’)</strong> //显示字节个数 10<br>7) <strong>select char_length(‘锄禾日当午’)</strong> //显示字符个数 5<br>8) <strong>select length(trim(‘ abc ‘))</strong> //trim 用来去除字符串两边空格<br>9) <strong>select replace(‘abc’,’bc’,’pache’)</strong> //将bc替换成pache</p>
+<ol start="4">
+<li>时间类</li>
+</ol>
+<p>1) <strong>select unix_timestamp()</strong> // 时间戳<br>2) <strong>select from unixtime(unix_timestamp())</strong> //将时间戳转换成日期格式<br>select from_unixtime(unix_timestamp(),’%Y-%m-%d’);<br>3) <strong>curdate ();</strong> //返回今天得日期<br>select curdate(); // 2018-12-07<br>4) <strong>select now();</strong>// 去除当前时间<br>select now();// 2018-12-07 15:02:59<br>5) <strong>select year(now()) 年, mouth(now()) 月,day(now()) 天,hour(now()) 小时。minute(now()) 分,second(now()) 秒 </strong><br>6) <strong>select datediff(now(),’1997-7-1’)</strong>// 两个日期相聚多少天<br>7) <strong>if(表达式,值1,值2)</strong> //类似三元云算法<br>select concat(10,if(10%2=0,’偶数’,’奇数’))<br>8) <strong>date_sub 和date_add</strong> //时间加减<br>date_sub(时间日期时间,interval 数字 时间单位)<br>  ①：时间单位：可以是year month day hour minute second<br>  ②数字：可以是正数和负数（具体看案例2）</p>
+<ol start="5">
+<li>案例<br>案例1： 查询今天得电影<br>①curdate()求出今天的日期<br>②把添加的时间戳，转换成日期<br>select title from dede_archives where curdate()=from_unixtime(senddate,’%Y-%m-%d’);</li>
+</ol>
+<p>案例2： 求昨天添加的电影<br>① 去除昨天日期<br>select date_sub(curdate(),interval 1 day)<br>或者<br>select date_add(curdate(),interval -1 day)</p>
+<h2 id="4-触发器"><a href="#4-触发器" class="headerlink" title="4 触发器"></a>4 触发器</h2><h3 id="4-1-简介"><a href="#4-1-简介" class="headerlink" title="4.1 简介"></a>4.1 简介</h3><ol>
+<li>触发器是一个特殊的存储过程，它是Mysql在insert，update，delete的时候自动执行的代码块。</li>
+<li>触发器必须定义在特定表上</li>
+<li>自动执行，不能直接调用<br><strong>作用：监视某种情况并触发某种操作</strong><br>触发器的思路：<br>监视X表，如果X表里面有增删改的操作，则自动触发Y里面增删改操作。<br>比如用户表增加新用户，相应的订单表增加该用户的信息。</li>
+</ol>
+<p>目前mysql不支持多个具有同一个动作，同一时间，同一事件，同一地点，的触发器。</p>
+<hr>
+<h3 id="4-2-创建触发器"><a href="#4-2-创建触发器" class="headerlink" title="4.2 创建触发器"></a>4.2 创建触发器</h3><ol>
+<li>监视地点（table）</li>
+<li>监视事件（insert/update/delete）</li>
+<li>触发时间（after/before）</li>
+<li>触发事件（insert/update/delete）</li>
+</ol>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create trigger 触发器名</span><br><span class="line">after/before inster/update/delete on 表名</span><br><span class="line">for each row </span><br><span class="line">begin </span><br><span class="line">// sql语句及代码（触发的语句可以是一句或多句）</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<h3 id="4-3-案例"><a href="#4-3-案例" class="headerlink" title="4.3 案例"></a>4.3 案例</h3><ol>
+<li>案例1：第一个触发器，购买一个订单表减少一个</li>
+</ol>
+<p>1) 监视地点 it_order表<br>2) 监视事件 it_order表的inset操作<br>3) 触发时间 it_order表的inset之后<br>4) 触发事件 it_goods表减少库存的操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create trigger t1</span><br><span class="line">after inster on it_order</span><br><span class="line">for each row </span><br><span class="line">begin </span><br><span class="line">update it_goods set goods_number=goods_number - 1 where id = 2;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>这个t1是有问题的，我们购买任何商品都是减少id=2的对应库存</p>
+<ol start="2">
+<li><p>案例2: 购买商品，减少对应库存<br>如何在触发器中引用行的值？<br>对于insert而言，新增的行用new来表示，行中的每一列的值，用<strong>new.列名</strong>来表示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create trigger t1</span><br><span class="line">after inster on it_order</span><br><span class="line">for each row </span><br><span class="line">begin </span><br><span class="line">update it_goods set goods_number=goods_number - new.much where id = new.goods_id;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>案例3：取消订单时，减掉的库存要添加回来</p>
+</li>
+</ol>
+<p>删除行我们用old来表示，如果要引用里面的数据，则使用old.列名来表示</p>
+<p>1) 监视地点 it_order表<br>2) 监视事件 it_order表的delete操作<br>3) 触发时间 it_order表的delete之后<br>4) 触发事件 it_goods表减少库存恢复过来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create trigger t3</span><br><span class="line">after delete on it_order</span><br><span class="line">for each row </span><br><span class="line">begin </span><br><span class="line">update it_goods set goods_number=goods_number + old.much where id = old.goods_id;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>案例4：修改订单时，库存也要做对应修改（可以修改购买数量，也可以修改类型）<br>如果是修改操作要引用it_order里面的值<br>修改前的数据用old表示，old.列名引用被修改之前的值<br>修改后的数据用new表示，new.列名引用被修改之后的值</li>
+</ol>
+<p>1) 监视地点 it_order表<br>2) 监视事件 it_order表的update操作<br>3) 触发时间 it_order表的update之后<br>4) 触发事件 it_goods表要修改对应的库存</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create trigger t4</span><br><span class="line">after update on it_order</span><br><span class="line">for each row </span><br><span class="line">begin </span><br><span class="line">update it_goods set goods_number=goods_number + old.much where id = old.goods_id;</span><br><span class="line">update it_goods set goods_number=goods_number - new.much where id = new.goods_id;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="4-4-其他操作"><a href="#4-4-其他操作" class="headerlink" title="4.4 其他操作"></a>4.4 其他操作</h3><ol>
+<li>删除触发器</li>
+</ol>
+<blockquote>
+<p>drop trigger 触发器名称</p>
+</blockquote>
+<ol start="2">
+<li>查看触发器</li>
+</ol>
+<blockquote>
+<p>show triggers</p>
+</blockquote>
+<h3 id="4-5-befor和after"><a href="#4-5-befor和after" class="headerlink" title="4.5 befor和after"></a>4.5 befor和after</h3><p>after是先完成数据的增删改，再出发，触发器中的语句晚于监视的增删改，无法影响前面的增删改动作<br>类似于自助餐，先付钱，在吃饭，无法影响吃多少</p>
+<p>befor是先完成出发，再增删改，触发的语句先于监视的增删改发生，我们有机会判断修改即将发生的操作</p>
+<p>案例：对于已下的订单，进行判断，如果订单数量&gt;5，就认为是恶意订单，强制吧所定的商品数量改成5</p>
+<p>1) 监视地点 it_order表<br>2) 监视事件 it_order表的insert操作<br>3) 触发时间 it_order表的insert之前<br>4) 触发事件 如果购买数量＞5就把购买数量改成5</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create trigger t5</span><br><span class="line">after insert on it_order</span><br><span class="line">for each row </span><br><span class="line">begin </span><br><span class="line">if new.much&gt;5 then</span><br><span class="line">new.much=5;</span><br><span class="line">end if;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年12月08日 10:46</p>
+        <p>原始链接： <a class="post-url" href="/2018/12/04/MySQL高级/" title="MySQL高级">http://linjiad.github.io/2018/12/04/MySQL高级/</a></p>
+        <footer>
+            <a href="http://linjiad.github.io">
+                <img src="/images/logo.png" alt="linjiad">
+                linjiad
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/weixin.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/weixin.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/zhifubao.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://linjiad.github.io/2018/12/04/MySQL高级/&title=《MySQL高级》 — linjiad_个人博客&pic=2018/12/04/MySQL高级/menu.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://linjiad.github.io/2018/12/04/MySQL高级/&title=《MySQL高级》 — linjiad_个人博客&source=这个人很懒什么也没写" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://linjiad.github.io/2018/12/04/MySQL高级/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MySQL高级》 — linjiad_个人博客&url=http://linjiad.github.io/2018/12/04/MySQL高级/&via=http://linjiad.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://linjiad.github.io/2018/12/04/MySQL高级/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://linjiad.github.io/2018/12/04/MySQL高级/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/数据库/" class="color4">数据库</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0-视图"><span class="post-toc-text">0 视图</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-1-视图定义"><span class="post-toc-text">0.1 视图定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-2-视图的作用"><span class="post-toc-text">0.2 视图的作用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-3-视图操作"><span class="post-toc-text">0.3 视图操作</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-SQL编程"><span class="post-toc-text">1 SQL编程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-声明变量"><span class="post-toc-text">1.1 声明变量</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2运算符"><span class="post-toc-text">1.2运算符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3语句包含模块"><span class="post-toc-text">1.3语句包含模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-4条件判断"><span class="post-toc-text">1.4条件判断</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-5循环"><span class="post-toc-text">1.5循环</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-存储过程"><span class="post-toc-text">2 存储过程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-好处"><span class="post-toc-text">2.1 好处</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-存储过程操作"><span class="post-toc-text">2.2 存储过程操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-变量"><span class="post-toc-text">2.3 变量</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-函数"><span class="post-toc-text">3 函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-定义函数"><span class="post-toc-text">3.1 定义函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-调用"><span class="post-toc-text">3.2 调用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-SQL内部函数"><span class="post-toc-text">3.3 SQL内部函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-触发器"><span class="post-toc-text">4 触发器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-1-简介"><span class="post-toc-text">4.1 简介</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2-创建触发器"><span class="post-toc-text">4.2 创建触发器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-3-案例"><span class="post-toc-text">4.3 案例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-4-其他操作"><span class="post-toc-text">4.4 其他操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-5-befor和after"><span class="post-toc-text">4.5 befor和after</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/30/Docker简介/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Docker简介</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'linjiad',
+            repo: 'linjiad.github.io',
+            oauth: {
+                client_id: '9b8f5415215f1aef0b2c',
+                client_secret: 'dea7335a3cd2d8e380b0279a5f1f7245797579d7',
+            },
+        })
+        gitment.render('comments')
+    </script>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 linjiad<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://linjiad.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Linux服务器/">Linux服务器</a><a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a><a class="category-link" href="/categories/运维/">运维</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 13.33px;">echarts</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 16.67px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 13.33px;">echarts</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 16.67px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

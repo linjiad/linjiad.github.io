@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Docker简介 | linjiad_个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="梧桐更兼细雨到黄昏点点滴滴" />
+  
+  <meta name="description" content="0 场景简述0.1虚拟化技术所谓的虚拟化技术实际是一种资源管理技术，他可以将我们计算机中的实体资源进行虚拟化虚拟化技术种类有很多，例如：软件虚拟化，硬件虚拟化，内存虚拟化，网络虚拟化，桌面虚拟化，虚拟机等目的：就是为了提供我们计算机的使用率在实际的生产环境中，虚拟化技术主要用来解决高性能的屋里硬件产能过剩和老的旧的硬件产能过低的重组重用，透明化底层屋里硬件，从而最大化的利用屋里硬件对资源充分利用">
+<meta name="keywords" content="环境部署">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker简介">
+<meta property="og:url" content="http://linjiad.github.io/2018/11/30/Docker简介/index.html">
+<meta property="og:site_name" content="linjiad_个人博客">
+<meta property="og:description" content="0 场景简述0.1虚拟化技术所谓的虚拟化技术实际是一种资源管理技术，他可以将我们计算机中的实体资源进行虚拟化虚拟化技术种类有很多，例如：软件虚拟化，硬件虚拟化，内存虚拟化，网络虚拟化，桌面虚拟化，虚拟机等目的：就是为了提供我们计算机的使用率在实际的生产环境中，虚拟化技术主要用来解决高性能的屋里硬件产能过剩和老的旧的硬件产能过低的重组重用，透明化底层屋里硬件，从而最大化的利用屋里硬件对资源充分利用">
+<meta property="og:locale" content="JS">
+<meta property="og:updated_time" content="2018-11-30T03:42:37.095Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Docker简介">
+<meta name="twitter:description" content="0 场景简述0.1虚拟化技术所谓的虚拟化技术实际是一种资源管理技术，他可以将我们计算机中的实体资源进行虚拟化虚拟化技术种类有很多，例如：软件虚拟化，硬件虚拟化，内存虚拟化，网络虚拟化，桌面虚拟化，虚拟机等目的：就是为了提供我们计算机的使用率在实际的生产环境中，虚拟化技术主要用来解决高性能的屋里硬件产能过剩和老的旧的硬件产能过低的重组重用，透明化底层屋里硬件，从而最大化的利用屋里硬件对资源充分利用">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">云销雨霁彩彻区明</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        云销雨霁彩彻区明
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        林花谢了春红太匆匆
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="linjiad_个人微博" target="_blank" href="//linjiad.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/linjiad">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-Docker简介" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Docker简介
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/Linux服务器/">Linux服务器</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-11-30
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="0-场景简述"><a href="#0-场景简述" class="headerlink" title="0 场景简述"></a>0 场景简述</h2><h3 id="0-1虚拟化技术"><a href="#0-1虚拟化技术" class="headerlink" title="0.1虚拟化技术"></a>0.1虚拟化技术</h3><p>所谓的虚拟化技术实际是一种资源管理技术，他可以将我们计算机中的实体资源进行虚拟化<br>虚拟化技术种类有很多，例如：软件虚拟化，硬件虚拟化，内存虚拟化，网络虚拟化，桌面虚拟化，虚拟机等<br>目的：<code>就是为了提供我们计算机的使用率</code><br>在实际的生产环境中，虚拟化技术主要用来解决高性能的屋里硬件产能过剩和老的旧的硬件产能过低的重组重用，透明化底层屋里硬件，从而最大化的利用屋里硬件对资源充分利用</p>
+<h3 id="0-2-虚拟化技术分类"><a href="#0-2-虚拟化技术分类" class="headerlink" title="0.2 虚拟化技术分类"></a>0.2 虚拟化技术分类</h3><ol>
+<li><p>全虚拟化架构<br>我们的虚拟机VMware就是利用了这种技术<br>操作系统可以和虚拟机系统不相同</p>
+</li>
+<li><p>OS虚拟化架构<br>OS虚拟化架构出来的操作系统要和我们底层的操作系统共享系统内核（即相同的操作系统）<br>我们的Docker就是用了这种架构</p>
+</li>
+<li><p>硬件层虚拟化架构</p>
+</li>
+</ol>
+<h3 id="0-3-Docker容器"><a href="#0-3-Docker容器" class="headerlink" title="0.3 Docker容器"></a>0.3 Docker容器</h3><p>容器主要的作用就是装东西，比如我们的数组，集合也是容器，我们可以使用数组，集合来存储我们的数据<br>我们也可以使用Docker来装我们的软件，比如：我们可以把mysql安装到docker容器中，tomcar，redis，nginx都可以安装到docker中<br>我们把响应的软件安装到docker容器中以后好处：</p>
+<ul>
+<li>方便我们队软件环境进行搬运</li>
+<li>开发环境，测试换件，生产环境————&gt;统一我们的软件，有了docker以后我们可以极大的减少我们的部署成本，可以把mysql安装到dicker中，这样可以直接把容器给他</li>
+<li>各个容器之间是隔离状态：这样就减少了我们软件之间的影响</li>
+</ul>
+<p>docker是os层虚拟化架构的一种体现产品，os层虚拟化架构虚拟出来的操作系统需要和宿主机中的操作系统共享一个内核，docker容器的体积相对较小</p>
+<h3 id="0-4-Docker的组件"><a href="#0-4-Docker的组件" class="headerlink" title="0.4 Docker的组件"></a>0.4 Docker的组件</h3><ol>
+<li>客户端和服务端<br>在宿主机启动的所有docker容器中，启动的虚拟机都是客户端，而我们的宿主机是服务端</li>
+<li>镜像<br>镜像是一组文件的集合，竟像是构建Docker的基石（相当于操作系统镜像，能安装操作系统），其中包括了容器的文件系统结构与内容</li>
+<li>注册中心<br>类似于我们的Maven仓库，在注册中心中存储了很多的常用镜像，docker中的注册中心地址是<a href="https://hub.docker.com/" target="_blank" rel="noopener">docker——hub</a></li>
+<li>容器<br>容器就是镜像的运行实例，镜像和容器之间的关系就类似于类和对象的关系<code>我们的容器创建时需要通过镜像来进行构建的</code></li>
+</ol>
+<h2 id="1-Docker的操作"><a href="#1-Docker的操作" class="headerlink" title="1 Docker的操作"></a>1 Docker的操作</h2><h3 id="1-1安装Docker"><a href="#1-1安装Docker" class="headerlink" title="1.1安装Docker"></a>1.1安装Docker</h3><p>使用yum命令来进行在线安装</p>
+<blockquote>
+<p>yun install docker</p>
+</blockquote>
+<p>[配图]<br>提示信息<br>[配图]<br>输入y进行安装<br>[配图]<br>安装之后我们检查docker版本</p>
+<blockquote>
+<p>docker -v<br>[配图]</p>
+</blockquote>
+<h3 id="1-2卸载Docker"><a href="#1-2卸载Docker" class="headerlink" title="1.2卸载Docker"></a>1.2卸载Docker</h3><p>查看docker的安装包</p>
+<blockquote>
+<p>yum list installed|grep docker</p>
+</blockquote>
+<p>[配图]</p>
+<ol>
+<li>删除安装包，就是删除刚才看到的文件</li>
+</ol>
+<blockquote>
+<p>yum -y remove docker.x86_64<br>yum -y remove docker-client.x86_64<br>yum -y remove docker-common.x86_64</p>
+</blockquote>
+<ol start="2">
+<li><p>删除docker镜像</p>
+<blockquote>
+<p>rm -rf /var/lib/docker/</p>
+</blockquote>
+</li>
+<li><p>再次检查Docke是否删除成功</p>
+<blockquote>
+<blockquote>
+<p>yum list installed|grep docker<br>[配图]</p>
+</blockquote>
+</blockquote>
+</li>
+</ol>
+<hr>
+<h3 id="1-3启动-关闭Docker"><a href="#1-3启动-关闭Docker" class="headerlink" title="1.3启动/关闭Docker"></a>1.3启动/关闭Docker</h3><p>systemctl命令是系统服务管理指令，他是service和chkconfig两个命令组合</p>
+<blockquote>
+<p>systemctl start docker 启动docker<br>systemctl status docker 产看docker的启动状态<br>systemctl stop docker 停止docker<br>systemctl restart docker 重启docker</p>
+</blockquote>
+<blockquote>
+<p>docker info 查看docker的重要信息<br>docker -help 查看docker的帮助文档</p>
+</blockquote>
+<h3 id="1-4启动Docker报错"><a href="#1-4启动Docker报错" class="headerlink" title="1.4启动Docker报错"></a>1.4启动Docker报错</h3><p>有时候我们启动docker会报错如下<br>[配图]<br>我们查看docker状态<br>[配图]<br>这里表示的意思是此linux的内核中的SELinux不支持overlay2 graph driver，解决办法有两个，</p>
+<ol>
+<li>要么升级内核版本（升级操作系统）</li>
+<li>要么在docker里禁用selinux <code>--selinux-enabled=false</code><blockquote>
+<p>vi /etc/sysconfig/docker</p>
+</blockquote>
+</li>
+</ol>
+<p>[配图]<br>再次启动docker，并且查看docker状态</p>
+<h3 id="1-5列出镜像"><a href="#1-5列出镜像" class="headerlink" title="1.5列出镜像"></a>1.5列出镜像</h3><p>列出宿主机上所有存在的镜像</p>
+<blockquote>
+<p>docker images</p>
+</blockquote>
+<p>第一次安装docker的时候是没有镜像的，索引我们看到的镜像信息是空的</p>
+<table>
+<thead>
+<tr>
+<th>列名</th>
+<th>含义</th>
+<th>备注 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PEPOSITORY</td>
+<td>镜像所在的仓库名称</td>
+</tr>
+<tr>
+<td>TAG</td>
+<td>镜像标签</td>
+<td>为了区分同一个仓库下的不同镜像，Docker提供了一种标签(Tag)的功能，每个景祥在列出来的时候都带有一个标签</td>
+</tr>
+<tr>
+<td>IMAGE ID</td>
+<td>镜像ID</td>
+</tr>
+<tr>
+<td>CREATED</td>
+<td>创建时间</td>
+<td>创建镜像的时间（不是获取镜像的时间）</td>
+</tr>
+<tr>
+<td>SIZE</td>
+<td>镜像大小</td>
+<td>90</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>注：<code>这些镜像都是存储在Docker宿主机的/var/lib/docker目录下的</code></p>
+<h3 id="1-6搜索镜像"><a href="#1-6搜索镜像" class="headerlink" title="1.6搜索镜像"></a>1.6搜索镜像</h3><p>去注册中心（docker hub）上去所属需要的镜像</p>
+<blockquote>
+<p>docker search 镜像名</p>
+</blockquote>
+<p>如：搜索tomcat镜像<br>[配图]</p>
+<table>
+<thead>
+<tr>
+<th>列名</th>
+<th>含义 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NAME</td>
+<td>仓库名称</td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>镜像描述</td>
+</tr>
+<tr>
+<td>STARS</td>
+<td>综合评分，反应一个镜像受欢迎程度 </td>
+</tr>
+<tr>
+<td>OFFICIAL</td>
+<td>是否官方</td>
+</tr>
+<tr>
+<td>AUTOMATED</td>
+<td>自动构建，表示该镜像由Docker Hub自动构建流程创建的</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="1-7拉取镜像"><a href="#1-7拉取镜像" class="headerlink" title="1.7拉取镜像"></a>1.7拉取镜像</h3><p>我们拉取镜像默认是从Docker Hub镜像仓库上进行获取的，在Docker Hub的官网上我们可以看到一些信息<br>[配图]</p>
+<p><code>国情原因，国内下载Docker Hub官方的相关镜像比较慢，可以使用国内（docker.io）的一些镜像加速器，镜像保持和官方一致，关键是速度快</code></p>
+<p>常用的镜像加速器有Mirror与Private Registry<br>区别如下</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>Private Registry</th>
+<th>备注 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Private Registry(私有仓库)是开发者或者企业自建的镜像缓存库，通常用来保存企业内部的Docker镜像，用于内部开发流程和产品的发布，版本控制</td>
+<td>Mirror是一种代理中转服务器，我们（比如daocloud）提供的Mirror服务，直接对接Docker Hub的官方Registry。Docker Hbu上有数以十万计的各类Docker镜像</td>
+</tr>
+<tr>
+<td>2</td>
+<td>在使用Private Registry时，需要在Docker Pull或Dockerfile中直接接入Private Registry的地址，通常这样会导致与Private Registry的绑定，缺乏灵活性</td>
+<td>使用Mirror服务，只需要在Docker守护经常（Dacmon）的配置文件中加入Mirror参数，即可在局范围内透明的访问官方的Docker Hub，避免了对Dockerfile镜像引用来源的修改</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><code>ustc镜像</code>是老牌的linux镜像服务提供者<br>配置ustc镜像加速</p>
+<ol>
+<li><p>编辑文件</p>
+<blockquote>
+<p>vi /etc/docker/daemon.json</p>
+</blockquote>
+</li>
+<li><p>在配置文件中配置如下内容</p>
+<blockquote>
+<p>{<br> “registry-mirrors”:[“<a href="https://docker.mirrors.ustc.edu.cn&quot;]" target="_blank" rel="noopener">https://docker.mirrors.ustc.edu.cn&quot;]</a><br>}</p>
+</blockquote>
+</li>
+</ol>
+<p>重启docker</p>
+<blockquote>
+<p>systemctl restart docker</p>
+</blockquote>
+<p>如果重启docker以后还是无法进行加速，可以重启宿主机尝试</p>
+<p>拉取镜像：</p>
+<blockquote>
+<p>docker pull 镜像名称</p>
+</blockquote>
+<p>拉取tomcat镜像</p>
+<blockquote>
+<p>docker pull tomcat</p>
+</blockquote>
+<hr>
+<h3 id="1-8-删除镜像"><a href="#1-8-删除镜像" class="headerlink" title="1.8 删除镜像"></a>1.8 删除镜像</h3><p>我们可以删除指定的镜像也可以删除所有镜像</p>
+<ol>
+<li><p>删除指定镜像</p>
+<blockquote>
+<p>docker rmi 镜像名称/镜像ID</p>
+</blockquote>
+</li>
+<li><p>删除所有镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi `docker images -q`</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><code>注:中间的字符可以被当作linux的命令进行解析执行</code><br>docker images -q 获取所有镜像的ID</p>
+<h2 id="2-Docker容器操作"><a href="#2-Docker容器操作" class="headerlink" title="2 Docker容器操作"></a>2 Docker容器操作</h2><h3 id="2-1-查看容器"><a href="#2-1-查看容器" class="headerlink" title="2.1 查看容器"></a>2.1 查看容器</h3><p>查看正在运行的容器</p>
+<blockquote>
+<p>docker ps</p>
+</blockquote>
+<p>[配图]</p>
+<table>
+<thead>
+<tr>
+<th>列名</th>
+<th>含义 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CONTAINER ID</td>
+<td>容器的id</td>
+</tr>
+<tr>
+<td>IMAGE</td>
+<td>创建容器时所使用的镜像</td>
+</tr>
+<tr>
+<td>COMMAND</td>
+<td>运行容器中的软件执行的命令</td>
+</tr>
+<tr>
+<td>CREATED</td>
+<td>容器创建时间</td>
+</tr>
+<tr>
+<td>STATUS</td>
+<td>容器的状态：UP表示运行状态 Exited表示关闭状态</td>
+</tr>
+<tr>
+<td>PORTS</td>
+<td>宿主机端口和容器中软件的端口的对应关系</td>
+</tr>
+<tr>
+<td>NAMES</td>
+<td>容器名称</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>查看多有的容器（包括正在运行的容器和之前启动过的容器）</p>
+<blockquote>
+<p>docker ps -a</p>
+</blockquote>
+<p>查看最后一次运行的容器</p>
+<blockquote>
+<p>docker ps -l</p>
+</blockquote>
+<p>查看停止的容器</p>
+<blockquote>
+<p>docker ps -f status=exited</p>
+</blockquote>
+<h3 id="2-2-创建容器"><a href="#2-2-创建容器" class="headerlink" title="2.2 创建容器"></a>2.2 创建容器</h3><p>创建容器命令</p>
+<blockquote>
+<p>docker run</p>
+</blockquote>
+<p>创建容器参数介绍</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数含义 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-i</td>
+<td>运行容器</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>表示容器启动后进入命令行，加入这两个参数后，容器创建就能登录进去。分配一个伪终端</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>在run后面加上-d参数，则会创建一个守护模式容器在后台运行（这样创建容器后不会自动登录容器，如果只加-i-t两个参数，创建后就回自动进入容器）</td>
+</tr>
+<tr>
+<td>–name</td>
+<td>为创建的容器命名</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>表示目录映射关系（前者是宿主机目录，后者是映射到宿主机上的目录），可以使用多个-v做多个目录或文件映射。注意：最好做目录映射，在宿主机上做修改，然后共享到宿主机上</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>表示端口映射，前者是宿主机端口，后者是容器内的映射端口，可以使用多个-p做多个端口映射</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="2-3-交互式容器"><a href="#2-3-交互式容器" class="headerlink" title="2.3 交互式容器"></a>2.3 交互式容器</h3><p>创建一个交互式容器取名为mycentos</p>
+<blockquote>
+<p>docker run -it –name=mycentos centos /bin/bash</p>
+</blockquote>
+<p>使用ps查看容器状态<br>[配图]</p>
+<p>使用exit退出容器<br>[配图]<br>然后再查看容器状态<br>[配图]<br>我们退出了容器也就关闭了容器</p>
+<h3 id="2-4-守护式容器"><a href="#2-4-守护式容器" class="headerlink" title="2.4 守护式容器"></a>2.4 守护式容器</h3><p>创建的容器名不能重复</p>
+<blockquote>
+<p>docker run -di –name=mycentos2 centos</p>
+</blockquote>
+<p>创建好后我们进入这个容器</p>
+<blockquote>
+<p>docker exec -it 容器名称/容器ID /bin/bash</p>
+</blockquote>
+<h3 id="2-5-停止与启动容器"><a href="#2-5-停止与启动容器" class="headerlink" title="2.5 停止与启动容器"></a>2.5 停止与启动容器</h3><ol>
+<li><p>停止容器</p>
+<blockquote>
+<p>docker stop 容器名称/容器ID</p>
+</blockquote>
+</li>
+<li><p>启动已经关闭的容器</p>
+<blockquote>
+<p>docker start 容器名称/容器ID</p>
+</blockquote>
+</li>
+</ol>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年11月30日 11:42</p>
+        <p>原始链接： <a class="post-url" href="/2018/11/30/Docker简介/" title="Docker简介">http://linjiad.github.io/2018/11/30/Docker简介/</a></p>
+        <footer>
+            <a href="http://linjiad.github.io">
+                <img src="/images/logo.png" alt="linjiad">
+                linjiad
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/weixin.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/weixin.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/zhifubao.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://linjiad.github.io/2018/11/30/Docker简介/&title=《Docker简介》 — linjiad_个人博客&pic=2018/11/30/Docker简介/menu.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://linjiad.github.io/2018/11/30/Docker简介/&title=《Docker简介》 — linjiad_个人博客&source=这个人很懒什么也没写" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://linjiad.github.io/2018/11/30/Docker简介/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Docker简介》 — linjiad_个人博客&url=http://linjiad.github.io/2018/11/30/Docker简介/&via=http://linjiad.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://linjiad.github.io/2018/11/30/Docker简介/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://linjiad.github.io/2018/11/30/Docker简介/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/环境部署/" class="color5">环境部署</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0-场景简述"><span class="post-toc-text">0 场景简述</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-1虚拟化技术"><span class="post-toc-text">0.1虚拟化技术</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-2-虚拟化技术分类"><span class="post-toc-text">0.2 虚拟化技术分类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-3-Docker容器"><span class="post-toc-text">0.3 Docker容器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-4-Docker的组件"><span class="post-toc-text">0.4 Docker的组件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-Docker的操作"><span class="post-toc-text">1 Docker的操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1安装Docker"><span class="post-toc-text">1.1安装Docker</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2卸载Docker"><span class="post-toc-text">1.2卸载Docker</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3启动-关闭Docker"><span class="post-toc-text">1.3启动/关闭Docker</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-4启动Docker报错"><span class="post-toc-text">1.4启动Docker报错</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-5列出镜像"><span class="post-toc-text">1.5列出镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-6搜索镜像"><span class="post-toc-text">1.6搜索镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-7拉取镜像"><span class="post-toc-text">1.7拉取镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-8-删除镜像"><span class="post-toc-text">1.8 删除镜像</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-Docker容器操作"><span class="post-toc-text">2 Docker容器操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-查看容器"><span class="post-toc-text">2.1 查看容器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-创建容器"><span class="post-toc-text">2.2 创建容器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-交互式容器"><span class="post-toc-text">2.3 交互式容器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-4-守护式容器"><span class="post-toc-text">2.4 守护式容器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-5-停止与启动容器"><span class="post-toc-text">2.5 停止与启动容器</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2018/12/04/MySQL高级/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          MySQL高级
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/11/27/JavaScript对象/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">JavaScript对象</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'linjiad',
+            repo: 'linjiad.github.io',
+            oauth: {
+                client_id: '9b8f5415215f1aef0b2c',
+                client_secret: 'dea7335a3cd2d8e380b0279a5f1f7245797579d7',
+            },
+        })
+        gitment.render('comments')
+    </script>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 linjiad<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://linjiad.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Linux服务器/">Linux服务器</a><a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a><a class="category-link" href="/categories/运维/">运维</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 13.33px;">echarts</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 16.67px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 13.33px;">echarts</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 16.67px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

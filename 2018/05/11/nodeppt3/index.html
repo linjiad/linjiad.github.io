@@ -18,7 +18,7 @@
 <meta property="og:locale" content="JS">
 <meta property="og:image" content="http://linjiad.github.io/2018/05/11/nodeppt3/girl.jpg">
 <meta property="og:image" content="http://linjiad.github.io/2018/05/11/nodeppt3/girl.jpg">
-<meta property="og:updated_time" content="2018-11-10T08:58:48.953Z">
+<meta property="og:updated_time" content="2018-12-01T08:49:47.602Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nodeppt(三)">
 <meta name="twitter:description" content="6.装逼利器文字强调6.1 加粗加粗 6.2 字体闪烁em这时按下 H em会闪烁 6.3 放大增加了zoom.js的支持，在演示过程中使用alt+鼠标点击，则点击的地方就开始放大，再次alt+click则回复原状 6.4 使用note笔记用[note][/note]标签包含笔记文字  [note]这里是note笔记使用n键，才能显示[/note]  按下键盘【N】键打开[note]之中内容，否则">
@@ -159,10 +159,28 @@
 <h3 id="8-2-回调"><a href="#8-2-回调" class="headerlink" title="8.2 回调"></a>8.2 回调</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[slide data-on-leave="fnName"]</span><br><span class="line">进入执行回调incallback函数</span><br><span class="line">[slide data-on-enter="fnName"]</span><br><span class="line">退出执行outcallback函数</span><br><span class="line">亦可以组合写：</span><br><span class="line">[slide data-on-leave="foo" data-on-enter="bar"]</span><br></pre></td></tr></table></figure>
 <h3 id="8-3-远程执行函数"><a href="#8-3-远程执行函数" class="headerlink" title="8.3 远程执行函数"></a>8.3 远程执行函数</h3><p>开玩笑远程现在还不好用呢<br>等以后在更新吧</p>
 <h2 id="9-后记"><a href="#9-后记" class="headerlink" title="9.后记"></a>9.后记</h2><p><a href="https://github.com/ksky521/nodePPT" target="_blank" rel="noopener">了解更多内容请点击源代码</a><br><a href="https://gitee.com/linjiad/noteppt" target="_blank" rel="noopener">下载PPT实例请点击，摘自源代码</a></p>
+<h2 id="10-补充"><a href="#10-补充" class="headerlink" title="10 补充"></a>10 补充</h2><h3 id="10-1-启动项目"><a href="#10-1-启动项目" class="headerlink" title="10.1 启动项目"></a>10.1 启动项目</h3><ol>
+<li>先下建立一个<code>.md</code>文件，nodeppt会找是否有.md文件</li>
+<li>然后再启动命令启动<h3 id="10-2-手机控制"><a href="#10-2-手机控制" class="headerlink" title="10.2 手机控制"></a>10.2 手机控制</h3>目前手机控制还不算完美，只是翻页控制的还行。</li>
+<li>先把本地的防火墙关闭</li>
+<li>查看计算机的ip</li>
+<li>启动项目<blockquote>
+<p>nodeppt start -p 8080 -d D:\MyJob\nodeppt -H 192.168.1.8</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="10-3-导出静态页面"><a href="#10-3-导出静态页面" class="headerlink" title="10.3 导出静态页面"></a>10.3 导出静态页面</h3><p>使用命令</p>
+<blockquote>
+<p>nodeppt generate D:\MyJob\nodeppt\demo.md D:\ppt -a</p>
+</blockquote>
+<ol start="4">
+<li>打开连接选远程控制</li>
+<li>确保手机能连上电脑的情况下用手机扫码（用手机自带的，别用微信）</li>
+</ol>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年11月10日 16:58</p>
+        <p>最后更新： 2018年12月01日 16:49</p>
         <p>原始链接： <a class="post-url" href="/2018/05/11/nodeppt3/" title="nodeppt(三)">http://linjiad.github.io/2018/05/11/nodeppt3/</a></p>
         <footer>
             <a href="http://linjiad.github.io">
@@ -280,7 +298,7 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-装逼利器文字强调"><span class="post-toc-text">6.装逼利器文字强调</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-1-加粗"><span class="post-toc-text">6.1 加粗</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-2-字体闪烁"><span class="post-toc-text">6.2 字体闪烁</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-3-放大"><span class="post-toc-text">6.3 放大</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-4-使用note笔记"><span class="post-toc-text">6.4 使用note笔记</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-图片处理"><span class="post-toc-text">7.图片处理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-1-引入图片"><span class="post-toc-text">7.1 引入图片</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-1-图片禁止放大"><span class="post-toc-text">7.1 图片禁止放大</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-nodeppt的函数和事件"><span class="post-toc-text">8.nodeppt的函数和事件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-1-单个slide事件"><span class="post-toc-text">8.1 单个slide事件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-2-回调"><span class="post-toc-text">8.2 回调</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-3-远程执行函数"><span class="post-toc-text">8.3 远程执行函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#9-后记"><span class="post-toc-text">9.后记</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-装逼利器文字强调"><span class="post-toc-text">6.装逼利器文字强调</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-1-加粗"><span class="post-toc-text">6.1 加粗</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-2-字体闪烁"><span class="post-toc-text">6.2 字体闪烁</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-3-放大"><span class="post-toc-text">6.3 放大</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-4-使用note笔记"><span class="post-toc-text">6.4 使用note笔记</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-图片处理"><span class="post-toc-text">7.图片处理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-1-引入图片"><span class="post-toc-text">7.1 引入图片</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-1-图片禁止放大"><span class="post-toc-text">7.1 图片禁止放大</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-nodeppt的函数和事件"><span class="post-toc-text">8.nodeppt的函数和事件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-1-单个slide事件"><span class="post-toc-text">8.1 单个slide事件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-2-回调"><span class="post-toc-text">8.2 回调</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-3-远程执行函数"><span class="post-toc-text">8.3 远程执行函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#9-后记"><span class="post-toc-text">9.后记</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#10-补充"><span class="post-toc-text">10 补充</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#10-1-启动项目"><span class="post-toc-text">10.1 启动项目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#10-2-手机控制"><span class="post-toc-text">10.2 手机控制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#10-3-导出静态页面"><span class="post-toc-text">10.3 导出静态页面</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
@@ -298,8 +316,8 @@
     </a>
   
   
-    <a href="/2018/05/11/nodeppt2/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">nodeppt(二)</span>
+    <a href="/2018/05/11/nodeppt1/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">nodeppt(一)</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
@@ -376,10 +394,10 @@
 <div class="sidebar-menu-box" id="sidebar-menu-box">
     <div class="sidebar-menu-box-container">
         <div id="sidebar-menu-box-categories">
-            <a class="category-link" href="/categories/Linux服务器/">Linux服务器</a><a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a>
+            <a class="category-link" href="/categories/Linux服务器/">Linux服务器</a><a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a><a class="category-link" href="/categories/运维/">运维</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/echarts/" style="font-size: 13.33px;">echarts</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 16.67px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/前端服务/" style="font-size: 20px;">前端服务</a>
+            <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 13.33px;">echarts</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 16.67px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -412,7 +430,7 @@
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/echarts/" style="font-size: 13.33px;">echarts</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 16.67px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/前端服务/" style="font-size: 20px;">前端服务</a>
+            <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 13.33px;">echarts</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 16.67px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
         </div>
     </div>
 </div>

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript对象 | linjiad_个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="梧桐更兼细雨到黄昏点点滴滴" />
+  
+  <meta name="description" content="0 对象0.1简介JavaScript 中的所有事物都是对象：字符串、数值、数组、函数…此外，JavaScript 允许自定义对象。JavaScript 提供多个内建对象，比如 String、Date、Array 等等。 对象只是带有属性和方法的特殊数据类型。  对象只是一种特殊的数据。对象拥有属性和方法。  0.2创建对象创建新对象有两种不同的方法：  定义并创建对象的实例  12345pers">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript对象">
+<meta property="og:url" content="http://linjiad.github.io/2018/11/27/JavaScript对象/index.html">
+<meta property="og:site_name" content="linjiad_个人博客">
+<meta property="og:description" content="0 对象0.1简介JavaScript 中的所有事物都是对象：字符串、数值、数组、函数…此外，JavaScript 允许自定义对象。JavaScript 提供多个内建对象，比如 String、Date、Array 等等。 对象只是带有属性和方法的特殊数据类型。  对象只是一种特殊的数据。对象拥有属性和方法。  0.2创建对象创建新对象有两种不同的方法：  定义并创建对象的实例  12345pers">
+<meta property="og:locale" content="JS">
+<meta property="og:updated_time" content="2018-12-02T11:16:33.141Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript对象">
+<meta name="twitter:description" content="0 对象0.1简介JavaScript 中的所有事物都是对象：字符串、数值、数组、函数…此外，JavaScript 允许自定义对象。JavaScript 提供多个内建对象，比如 String、Date、Array 等等。 对象只是带有属性和方法的特殊数据类型。  对象只是一种特殊的数据。对象拥有属性和方法。  0.2创建对象创建新对象有两种不同的方法：  定义并创建对象的实例  12345pers">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">云销雨霁彩彻区明</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        云销雨霁彩彻区明
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        林花谢了春红太匆匆
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="linjiad_个人微博" target="_blank" href="//linjiad.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/linjiad">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-JavaScript对象" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      JavaScript对象
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/前端技术/">前端技术</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-11-27
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="0-对象"><a href="#0-对象" class="headerlink" title="0 对象"></a>0 对象</h2><h3 id="0-1简介"><a href="#0-1简介" class="headerlink" title="0.1简介"></a>0.1简介</h3><p>JavaScript 中的所有事物都是对象：字符串、数值、数组、函数…此外，JavaScript 允许自定义对象。<br>JavaScript 提供多个内建对象，比如 String、Date、Array 等等。 对象只是带有属性和方法的特殊数据类型。</p>
+<blockquote>
+<p>对象只是一种特殊的数据。对象拥有属性和方法。</p>
+</blockquote>
+<h3 id="0-2创建对象"><a href="#0-2创建对象" class="headerlink" title="0.2创建对象"></a>0.2创建对象</h3><p>创建新对象有两种不同的方法：</p>
+<ol>
+<li>定义并创建对象的实例</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">person=<span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">person.firstname=<span class="string">"John"</span>;</span><br><span class="line">person.lastname=<span class="string">"Doe"</span>;</span><br><span class="line">person.age=<span class="number">50</span>;</span><br><span class="line">person.eyecolor=<span class="string">"blue"</span>;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>使用函数来定义对象，然后创建新的对象实例</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">person</span>(<span class="params">firstname,lastname,age,eyecolor</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.firstname=firstname;</span><br><span class="line">    <span class="keyword">this</span>.lastname=lastname;</span><br><span class="line">    <span class="keyword">this</span>.age=age;</span><br><span class="line">    <span class="keyword">this</span>.eyecolor=eyecolor;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> myFather=<span class="keyword">new</span> person(<span class="string">"John"</span>,<span class="string">"Doe"</span>,<span class="number">50</span>,<span class="string">"blue"</span>);</span><br><span class="line"><span class="keyword">var</span> myMother=<span class="keyword">new</span> person(<span class="string">"Sally"</span>,<span class="string">"Rally"</span>,<span class="number">48</span>,<span class="string">"green"</span>);</span><br></pre></td></tr></table></figure>
+<p>也可以把方法添加到 JavaScript 对象<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">person</span>(<span class="params">firstname,lastname,age,eyecolor</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.firstname=firstname;</span><br><span class="line">    <span class="keyword">this</span>.lastname=lastname;</span><br><span class="line">    <span class="keyword">this</span>.age=age;</span><br><span class="line">    <span class="keyword">this</span>.eyecolor=eyecolor;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.changeName=changeName;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">changeName</span>(<span class="params">name</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.lastname=name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">myMother.changeName(<span class="string">"Doe"</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="1-Object对象"><a href="#1-Object对象" class="headerlink" title="1 Object对象"></a>1 Object对象</h2><p>Object是javaScript中一切对象的父类对象</p>
+<h3 id="0-1-创建Object对象"><a href="#0-1-创建Object对象" class="headerlink" title="0.1 创建Object对象"></a>0.1 创建Object对象</h3><p>语法</p>
+<blockquote>
+<p>obj = new Object([value])</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>obj</td>
+<td>必需</td>
+<td>Object 对象分配到的变量名称。</td>
+</tr>
+<tr>
+<td>值</td>
+<td>可选</td>
+<td>任一 JavaScript 基元数据类型（数字、布尔值或字符串）。  如果值是一个对象，则返回的对象是未修改的。  如果值是 null、“未定义”或“未提供”，则创建无内容的对象。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="0-2-属性"><a href="#0-2-属性" class="headerlink" title="0.2 属性"></a>0.2 属性</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>__proto__ 属性</code></td>
+<td>指定对象的原型。</td>
+</tr>
+<tr>
+<td>constructor 属性</td>
+<td>指定用于创建对象的函数。</td>
+</tr>
+<tr>
+<td>prototype 属性</td>
+<td>为对象的类返回原型的引用。</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><strong>proto</strong> 属性<br>语法:<blockquote>
+<p>object.<code>__proto__</code></p>
+</blockquote>
+</li>
+</ol>
+<p>object 必需。要对其设置原型的对象。<code>__proto__ 属性名称以两个下划线开始和结束。</code></p>
+<p>1) 下面的代码示例显示如何为对象设置原型。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Rectangle</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> rec = <span class="keyword">new</span> Rectangle();</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">console</span> &amp;&amp; <span class="built_in">console</span>.log) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(rec.__proto__ === Rectangle.prototype);  <span class="comment">// Returns true</span></span><br><span class="line">    rec.__proto__ = <span class="built_in">Object</span>.prototype;</span><br><span class="line">    <span class="built_in">console</span>.log(rec.__proto__ === Rectangle.prototype);  <span class="comment">// Returns false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2) 下面的代码示例演示如何通过将属性添加到原型来将其添加到对象中。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> proto = &#123; <span class="attr">y</span>: <span class="number">2</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">x</span>: <span class="number">10</span> &#125;;</span><br><span class="line">obj.__proto__ = proto;</span><br><span class="line"></span><br><span class="line">proto.y = <span class="number">20</span>;</span><br><span class="line">proto.z = <span class="number">40</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">console</span> &amp;&amp; <span class="built_in">console</span>.log) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(obj.x === <span class="number">10</span>);  <span class="comment">// Returns true</span></span><br><span class="line">    <span class="built_in">console</span>.log(obj.y === <span class="number">20</span>);  <span class="comment">// Returns true</span></span><br><span class="line">    <span class="built_in">console</span>.log(obj.z === <span class="number">40</span>);  <span class="comment">// Returns true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3) 下面的代码示例通过在 String 对象上设置新原型将特性添加到该对象。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> stringProp = &#123; <span class="attr">desc</span>: <span class="string">"description"</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">String</span>.__proto__ = stringProp;</span><br><span class="line"><span class="keyword">var</span> s1 = <span class="string">"333"</span>;</span><br><span class="line"><span class="keyword">var</span> s2 = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"333"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">console</span> &amp;&amp; <span class="built_in">console</span>.log) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">String</span>.desc === <span class="string">"description"</span>); <span class="comment">// Returns true</span></span><br><span class="line">    <span class="built_in">console</span>.log(s1.desc === <span class="string">"description"</span>);     <span class="comment">// Returns false</span></span><br><span class="line">    <span class="built_in">console</span>.log(s2.desc === <span class="string">"description"</span>);     <span class="comment">// Returns false</span></span><br><span class="line"></span><br><span class="line">    s1.__proto__ = <span class="built_in">String</span>;  <span class="comment">// Can't be set.</span></span><br><span class="line">    s2.__proto__ = <span class="built_in">String</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(s1.desc === <span class="string">"description"</span>); <span class="comment">// Returns false</span></span><br><span class="line">    <span class="built_in">console</span>.log(s2.desc === <span class="string">"description"</span>); <span class="comment">// Returns true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年12月02日 19:16</p>
+        <p>原始链接： <a class="post-url" href="/2018/11/27/JavaScript对象/" title="JavaScript对象">http://linjiad.github.io/2018/11/27/JavaScript对象/</a></p>
+        <footer>
+            <a href="http://linjiad.github.io">
+                <img src="/images/logo.png" alt="linjiad">
+                linjiad
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/weixin.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/weixin.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/zhifubao.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://linjiad.github.io/2018/11/27/JavaScript对象/&title=《JavaScript对象》 — linjiad_个人博客&pic=2018/11/27/JavaScript对象/menu.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://linjiad.github.io/2018/11/27/JavaScript对象/&title=《JavaScript对象》 — linjiad_个人博客&source=这个人很懒什么也没写" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://linjiad.github.io/2018/11/27/JavaScript对象/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaScript对象》 — linjiad_个人博客&url=http://linjiad.github.io/2018/11/27/JavaScript对象/&via=http://linjiad.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://linjiad.github.io/2018/11/27/JavaScript对象/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://linjiad.github.io/2018/11/27/JavaScript对象/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/JavaScript/" class="color1">JavaScript</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0-对象"><span class="post-toc-text">0 对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-1简介"><span class="post-toc-text">0.1简介</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-2创建对象"><span class="post-toc-text">0.2创建对象</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-Object对象"><span class="post-toc-text">1 Object对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-1-创建Object对象"><span class="post-toc-text">0.1 创建Object对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-2-属性"><span class="post-toc-text">0.2 属性</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2018/11/30/Docker简介/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          Docker简介
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/11/23/AJAX/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">AJAX</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'linjiad',
+            repo: 'linjiad.github.io',
+            oauth: {
+                client_id: '9b8f5415215f1aef0b2c',
+                client_secret: 'dea7335a3cd2d8e380b0279a5f1f7245797579d7',
+            },
+        })
+        gitment.render('comments')
+    </script>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 linjiad<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://linjiad.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Linux服务器/">Linux服务器</a><a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a><a class="category-link" href="/categories/运维/">运维</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 13.33px;">echarts</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 16.67px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 13.33px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 13.33px;">echarts</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 16.67px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
