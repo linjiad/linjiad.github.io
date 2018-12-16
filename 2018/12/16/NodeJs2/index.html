@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>NodeJs2 | linjiad_个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="梧桐更兼细雨到黄昏点点滴滴" />
+  
+  <meta name="description" content="5 NodeJS的模块系统5.1  require导出 执行被夹在模块中的代码 得到被加载中模块的exports导出接口对象 require特点 require优先从缓存中加载 require路径 ./ 当前目录 ../ 上一级目录 /xxx根目录下某个文件（几乎不用） d:/a/foo.js 绝对路径（几乎不用） 首位/在这里表示当前文件模块所属磁盘根路径   .js可以省略   加载核心模块的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NodeJs2">
+<meta property="og:url" content="http://linjiad.github.io/2018/12/16/NodeJs2/index.html">
+<meta property="og:site_name" content="linjiad_个人博客">
+<meta property="og:description" content="5 NodeJS的模块系统5.1  require导出 执行被夹在模块中的代码 得到被加载中模块的exports导出接口对象 require特点 require优先从缓存中加载 require路径 ./ 当前目录 ../ 上一级目录 /xxx根目录下某个文件（几乎不用） d:/a/foo.js 绝对路径（几乎不用） 首位/在这里表示当前文件模块所属磁盘根路径   .js可以省略   加载核心模块的">
+<meta property="og:locale" content="JS">
+<meta property="og:updated_time" content="2018-12-16T11:52:07.595Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NodeJs2">
+<meta name="twitter:description" content="5 NodeJS的模块系统5.1  require导出 执行被夹在模块中的代码 得到被加载中模块的exports导出接口对象 require特点 require优先从缓存中加载 require路径 ./ 当前目录 ../ 上一级目录 /xxx根目录下某个文件（几乎不用） d:/a/foo.js 绝对路径（几乎不用） 首位/在这里表示当前文件模块所属磁盘根路径   .js可以省略   加载核心模块的">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">云销雨霁彩彻区明</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        云销雨霁彩彻区明
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        林花谢了春红太匆匆
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="linjiad_个人微博" target="_blank" href="//linjiad.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/linjiad">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-NodeJs2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      NodeJs2
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-12-16
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="5-NodeJS的模块系统"><a href="#5-NodeJS的模块系统" class="headerlink" title="5 NodeJS的模块系统"></a>5 NodeJS的模块系统</h2><h3 id="5-1-require导出"><a href="#5-1-require导出" class="headerlink" title="5.1  require导出"></a>5.1  require导出</h3><ul>
+<li>执行被夹在模块中的代码</li>
+<li>得到被加载中模块的exports导出接口对象</li>
+<li>require特点<ol>
+<li>require优先从缓存中加载</li>
+<li>require路径<ul>
+<li>./ 当前目录</li>
+<li>../ 上一级目录</li>
+<li>/xxx根目录下某个文件（几乎不用）</li>
+<li>d:/a/foo.js 绝对路径（几乎不用）</li>
+<li>首位/在这里表示当前文件模块所属磁盘根路径</li>
+</ul>
+</li>
+<li>.js可以省略</li>
+</ol>
+</li>
+<li>加载核心模块的本质也是本地文件</li>
+<li>核心模块文件已经被编译到二进制文件中了，我们只需要按照名字加载就可以了</li>
+</ul>
+<p>下面的例子，main.js引用了a和b，a又引用了b<br>main.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span> (<span class="string">'./a'</span>)</span><br><span class="line"><span class="comment">// 优先从缓存中加载</span></span><br><span class="line"><span class="comment">// 有偶遇在a中已经加载过了，这里不会重复加载</span></span><br><span class="line"><span class="built_in">require</span>(<span class="string">'./b'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>a.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a 被加载了'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>b.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'b 被加载了'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>结果是只输出一次<code>b 被加载了</code>,说明再次调用b时并未真正调用，而是调用的内存</p>
+<h3 id="5-2-exports导出"><a href="#5-2-exports导出" class="headerlink" title="5.2  exports导出"></a>5.2  exports导出</h3><ul>
+<li>Node中是模块作用于，默认文件中所有的成员只在当前文件模块中有效</li>
+<li>对于希望可以被其他模块访问的成员，我们就需要吧这些公开的成员都挂载到exports接口对象中就可以了</li>
+</ul>
+<ol>
+<li>导出多个成员</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">exports.a = <span class="number">123</span></span><br><span class="line">exports.b = <span class="string">'hello'</span></span><br><span class="line">exports.c = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'ccc'</span>)</span><br><span class="line">&#125;</span><br><span class="line">exports.d = &#123;</span><br><span class="line">    foo:<span class="string">'bar'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>导出单个成员</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="string">'hello'</span></span><br></pre></td></tr></table></figure>
+<p>一下情况会覆盖<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="string">'hello'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 这个后者会覆盖前者</span></span><br><span class="line">moudle.exports = <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-3-exports和moudle-exports"><a href="#5-3-exports和moudle-exports" class="headerlink" title="5.3  exports和moudle.exports"></a>5.3  exports和moudle.exports</h3><p>我们可以这么理解</p>
+<ul>
+<li>在Node中，每个模块内部都有一个自己的module</li>
+<li>该moudle对象中，有一个成员叫exports</li>
+<li>并且在node中我们定义一个exports = moudle.exports，让这两个变量指向同一个内存块</li>
+<li>如果你需要对外导出成员，只需要把导出的成员赋到exports中</li>
+<li>默认在代码最后有一句：return moudle.exports</li>
+<li>这样谁require我，我就给谁moudle.exports</li>
+</ul>
+<p>我们现在有两个js，a.js和b.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  fooExport = <span class="built_in">require</span>(<span class="string">'./b'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(fooExport)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="string">'bar'</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y </span><br><span class="line">&#125;</span><br><span class="line">exports = add <span class="comment">//不会被导出</span></span><br><span class="line"><span class="built_in">module</span>.exports = foo<span class="comment">// 这个才会被导出</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-4-模块加载规则"><a href="#5-4-模块加载规则" class="headerlink" title="5.4  模块加载规则"></a>5.4  模块加载规则</h3><p>这里的模块加载主要是第三方模块</p>
+<ul>
+<li>凡是第三方模块都需要npm下载下来，只使用require（’包名’）的方式来进行加载</li>
+<li>并且没有任何一个第三方包和核心包名称相同</li>
+<li>模块加载的心路历程<ol>
+<li>先找到当前文件所处目录中的node_modules目录</li>
+<li>找到node_modules/需要的包/package.json文件</li>
+<li>找到node_modules/需要的包/package.json中的main属性</li>
+<li>main属性中就记录了需要的包的入口模块</li>
+<li>如果没有main属性就会找node_modules/需要的包下的index.js文件</li>
+<li>如果index.js也没有就会去上一级的node_modules去寻找规则同上</li>
+<li>如果上上上很多级直到当前磁盘的跟目录还没找到则会报错</li>
+</ol>
+</li>
+<li>每一个项目有且只有一个node_modules</li>
+</ul>
+<h3 id="5-5-package-json"><a href="#5-5-package-json" class="headerlink" title="5.5 package.json"></a>5.5 package.json</h3><p>每个模块（项目）都需要一个package.json文件，该文件配置了一些模块信息以及项目操作（启动，build等）以及包以来<br>这个文件可以通过<strong>npm init</strong>来初始化<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"hexo-site"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"0.0.0"</span>,</span><br><span class="line">  <span class="attr">"private"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"scripts"</span>:&#123;</span><br><span class="line">    <span class="attr">"start"</span>: <span class="string">"hexo server"</span>,</span><br><span class="line">    <span class="attr">"clean"</span>:<span class="string">"hexo clean"</span>,</span><br><span class="line">    <span class="attr">"build"</span>:<span class="string">"hexo generate"</span>,</span><br><span class="line">    <span class="attr">"deploy"</span>:<span class="string">"hexo deploy"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"hexo"</span>: &#123;</span><br><span class="line">    <span class="attr">"version"</span>: <span class="string">"3.7.1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"gitment"</span>: <span class="string">"0.0.3"</span>,</span><br><span class="line">    <span class="attr">"hexo"</span>: <span class="string">"3.2.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-asset-image"</span>: <span class="string">"0.0.3"</span>,</span><br><span class="line">    <span class="attr">"hexo-deployer-git"</span>: <span class="string">"0.3.1"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-archive"</span>: <span class="string">"0.1.4"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-category"</span>: <span class="string">"0.1.3"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-index"</span>: <span class="string">"0.2.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-json-content"</span>: <span class="string">"3.0.1"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-tag"</span>: <span class="string">"0.2.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-renderer-ejs"</span>: <span class="string">"0.3.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-renderer-marked"</span>: <span class="string">"0.3.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-renderer-stylus"</span>: <span class="string">"0.3.1"</span>,</span><br><span class="line">    <span class="attr">"hexo-server"</span>: <span class="string">"0.2.0"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>scripts该项目的脚本命令，可以自己写</li>
+<li>devDependencies：打包之前依赖</li>
+<li>dependencies：打包之后也需要依赖<br>其他的简单就不说了</li>
+<li>还有<code>package-lock.json</code>是依赖包的依赖</li>
+<li>^版本号，代表最低版本号，为了保持版本一致不建议使用</li>
+</ul>
+<h3 id="5-6-模块构建npm"><a href="#5-6-模块构建npm" class="headerlink" title="5.6 模块构建npm"></a>5.6 模块构建npm</h3><p>npm即代表一个网站，所有js包仓库<br>也代表一个命令<br>模块初始化：</p>
+<blockquote>
+<p>npm init (npm init -y  快速生成)</p>
+</blockquote>
+<p>安装所有包</p>
+<blockquote>
+<p>npm install</p>
+</blockquote>
+<p>安装单个包</p>
+<blockquote>
+<p>npm install 包（@版本号） -s 打包之后也依赖 -d 打包之前依赖 -g 全局</p>
+</blockquote>
+<p>删除包</p>
+<blockquote>
+<p>npm uninstall  包（@版本号） -s 打包之后也依赖 -d 打包之前依赖 -g 全局 </p>
+</blockquote>
+<p>切换源地址</p>
+<blockquote>
+<p>npm install 包 –registry 路径（修改这次下载）<br>npm config set registry 路径(永久修改)</p>
+</blockquote>
+<p>查看npm信息</p>
+<blockquote>
+<p>npm config list</p>
+</blockquote>
+<p>安装淘宝镜像</p>
+<blockquote>
+<p>npm install -g cnpm</p>
+</blockquote>
+<h2 id="6-Express框架"><a href="#6-Express框架" class="headerlink" title="6 Express框架"></a>6 Express框架</h2><p><a href="http://www.expressjs.com.cn/" target="_blank" rel="noopener">express</a>基于 Node.js 平台，快速、开放、极简的 Web 开发框架，<br>它已经帮我们封装好了很多包，我们直接拿来用就可以了<br>express安装</p>
+<blockquote>
+<p>npm install express</p>
+</blockquote>
+<hr>
+<h3 id="6-1-HELLO-WORLD"><a href="#6-1-HELLO-WORLD" class="headerlink" title="6.1 HELLO WORLD"></a>6.1 HELLO WORLD</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 0 安装</span></span><br><span class="line"><span class="comment">// 1 引用</span></span><br><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"><span class="comment">// 2 创建你服务器的应用程序，就是原来的http.createServer</span></span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"><span class="comment">// 当服务器收到get请求的时候，执行处理回调函数</span></span><br><span class="line">app.get(<span class="string">'/'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    res.send(<span class="string">'hello world'</span>);</span><br><span class="line">    <span class="comment">//传统的方法在这里依然可以使用</span></span><br><span class="line">    <span class="comment">//res.write('hello world')</span></span><br><span class="line">    <span class="comment">//res.end()</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 相当于server.listen</span></span><br><span class="line">app.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'服务器已启动'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="6-2-基本路由"><a href="#6-2-基本路由" class="headerlink" title="6.2 基本路由"></a>6.2 基本路由</h3><p>用框架之前我们的代码很丑，各种if嵌套，现在我们可以平行的开发<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"><span class="comment">// 2 创建你服务器的应用程序，就是原来的http.createServer</span></span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line">app.get(<span class="string">'/about'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    res.send(<span class="string">'你好，我是Express'</span>);</span><br><span class="line">&#125;)</span><br><span class="line">app.get(<span class="string">'/'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    res.send(<span class="string">`</span></span><br><span class="line"><span class="string">    &lt;DOCTYPE html&gt;</span></span><br><span class="line"><span class="string">    &lt;html lang='en'&gt;</span></span><br><span class="line"><span class="string">        &lt;head&gt;</span></span><br><span class="line"><span class="string">            &lt;meta charset="UTF-8" /&gt;</span></span><br><span class="line"><span class="string">            &lt;title&gt;Document&lt;/title&gt;</span></span><br><span class="line"><span class="string">        &lt;/head&gt;</span></span><br><span class="line"><span class="string">        &lt;body&gt;</span></span><br><span class="line"><span class="string">            &lt;h1&gt;hello Express&lt;/h1&gt;</span></span><br><span class="line"><span class="string">        &lt;/body&gt;</span></span><br><span class="line"><span class="string">     &lt;/html&gt;</span></span><br><span class="line"><span class="string">    `</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 相当于server.listen</span></span><br><span class="line">app.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'服务器已启动'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>get：get请求处理<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">'/'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  res.send(<span class="string">'hello'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>post：post请求处理<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.post(<span class="string">'/'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  res.send(<span class="string">'hello'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="6-3-public公开资源"><a href="#6-3-public公开资源" class="headerlink" title="6.3 public公开资源"></a>6.3 public公开资源</h3><blockquote>
+<p>var app = express()<br>app.use(‘public’,express.static(‘./public/‘))</p>
+</blockquote>
+<ul>
+<li>第一个public相当于别名，你也可以叫a，不过再访问就需要/a/资源了</li>
+<li>第二个参数express.static(‘./public/‘)，相当于真实的你要公开的资源目录<br>我们在上一个代码基础上进行公开资源<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"><span class="comment">// 2 创建你服务器的应用程序，就是原来的http.createServer</span></span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line">app.use(<span class="string">'public'</span>,express.static(<span class="string">'./public/'</span>))</span><br><span class="line"><span class="comment">// 公开指定目录</span></span><br><span class="line"><span class="comment">// 只要这样做了，你就可以直接通过/public/xx的方式访问public目录中的所有资源了</span></span><br><span class="line">app.get(<span class="string">'/about'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    res.send(<span class="string">'你好，我是Express'</span>);</span><br><span class="line">&#125;)</span><br><span class="line">app.get(<span class="string">'/'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    res.send(<span class="string">`</span></span><br><span class="line"><span class="string">    &lt;DOCTYPE html&gt;</span></span><br><span class="line"><span class="string">    &lt;html lang='en'&gt;</span></span><br><span class="line"><span class="string">        &lt;head&gt;</span></span><br><span class="line"><span class="string">            &lt;meta charset="UTF-8" /&gt;</span></span><br><span class="line"><span class="string">            &lt;title&gt;Document&lt;/title&gt;</span></span><br><span class="line"><span class="string">        &lt;/head&gt;</span></span><br><span class="line"><span class="string">        &lt;body&gt;</span></span><br><span class="line"><span class="string">            &lt;h1&gt;hello Express&lt;/h1&gt;</span></span><br><span class="line"><span class="string">        &lt;/body&gt;</span></span><br><span class="line"><span class="string">     &lt;/html&gt;</span></span><br><span class="line"><span class="string">    `</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 相当于server.listen</span></span><br><span class="line">app.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'服务器已启动'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="6-4-nodemon热更新"><a href="#6-4-nodemon热更新" class="headerlink" title="6.4 nodemon热更新"></a>6.4 nodemon热更新</h3><p>对于nodejs我们每次编译之后都需要重启项目，很烦啊。我们可以用nodemon工具来启动node项目，实现热更新</p>
+<ol>
+<li>安装全局 npm install –g nodemon</li>
+<li>用nodemon启动项目 nodemon app.js</li>
+</ol>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年12月16日 19:52</p>
+        <p>原始链接： <a class="post-url" href="/2018/12/16/NodeJs2/" title="NodeJs2">http://linjiad.github.io/2018/12/16/NodeJs2/</a></p>
+        <footer>
+            <a href="http://linjiad.github.io">
+                <img src="/images/logo.png" alt="linjiad">
+                linjiad
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/weixin.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/weixin.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/zhifubao.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://linjiad.github.io/2018/12/16/NodeJs2/&title=《NodeJs2》 — linjiad_个人博客&pic=http://linjiad.github.ioimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://linjiad.github.io/2018/12/16/NodeJs2/&title=《NodeJs2》 — linjiad_个人博客&source=这个人很懒什么也没写" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://linjiad.github.io/2018/12/16/NodeJs2/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NodeJs2》 — linjiad_个人博客&url=http://linjiad.github.io/2018/12/16/NodeJs2/&via=http://linjiad.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://linjiad.github.io/2018/12/16/NodeJs2/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://linjiad.github.io/2018/12/16/NodeJs2/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-NodeJS的模块系统"><span class="post-toc-text">5 NodeJS的模块系统</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-1-require导出"><span class="post-toc-text">5.1  require导出</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-2-exports导出"><span class="post-toc-text">5.2  exports导出</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-3-exports和moudle-exports"><span class="post-toc-text">5.3  exports和moudle.exports</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-4-模块加载规则"><span class="post-toc-text">5.4  模块加载规则</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-5-package-json"><span class="post-toc-text">5.5 package.json</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-6-模块构建npm"><span class="post-toc-text">5.6 模块构建npm</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-Express框架"><span class="post-toc-text">6 Express框架</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-1-HELLO-WORLD"><span class="post-toc-text">6.1 HELLO WORLD</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-2-基本路由"><span class="post-toc-text">6.2 基本路由</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-3-public公开资源"><span class="post-toc-text">6.3 public公开资源</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-4-nodemon热更新"><span class="post-toc-text">6.4 nodemon热更新</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2018/12/16/产品设计/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          产品设计
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/12/15/NodeJs1/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">NodeJs1</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'linjiad',
+            repo: 'linjiad.github.io',
+            oauth: {
+                client_id: '9b8f5415215f1aef0b2c',
+                client_secret: 'dea7335a3cd2d8e380b0279a5f1f7245797579d7',
+            },
+        })
+        gitment.render('comments')
+    </script>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 linjiad<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://linjiad.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Linux服务器/">Linux服务器</a><a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/产品文档/">产品文档</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a><a class="category-link" href="/categories/运维/">运维</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 15px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/产品/" style="font-size: 17.5px;">产品</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 15px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/产品/" style="font-size: 17.5px;">产品</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

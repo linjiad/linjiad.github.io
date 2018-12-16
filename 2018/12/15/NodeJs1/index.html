@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>NodeJs1 | linjiad_个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="梧桐更兼细雨到黄昏点点滴滴" />
+  
+  <meta name="description" content="0 NodeJS背景0.1 NodeJS是什么我们先看看官网上如何评价  Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。  Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。  首先为什么说是基于Chrome V8 引擎？因为在此之前js只能作为前端开发，并且运行在浏览器中。直到Chrome V8 引擎出现才把js分离出来运行在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NodeJs1">
+<meta property="og:url" content="http://linjiad.github.io/2018/12/15/NodeJs1/index.html">
+<meta property="og:site_name" content="linjiad_个人博客">
+<meta property="og:description" content="0 NodeJS背景0.1 NodeJS是什么我们先看看官网上如何评价  Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。  Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。  首先为什么说是基于Chrome V8 引擎？因为在此之前js只能作为前端开发，并且运行在浏览器中。直到Chrome V8 引擎出现才把js分离出来运行在">
+<meta property="og:locale" content="JS">
+<meta property="og:image" content="http://linjiad.github.io/2018/12/15/NodeJs1/NodeJS/01.jpg">
+<meta property="og:image" content="http://linjiad.github.io/2018/12/15/NodeJs1/03.jpg">
+<meta property="og:image" content="http://linjiad.github.io/2018/12/15/NodeJs1/04.jpg">
+<meta property="og:updated_time" content="2018-12-16T06:09:09.849Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NodeJs1">
+<meta name="twitter:description" content="0 NodeJS背景0.1 NodeJS是什么我们先看看官网上如何评价  Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。  Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。  首先为什么说是基于Chrome V8 引擎？因为在此之前js只能作为前端开发，并且运行在浏览器中。直到Chrome V8 引擎出现才把js分离出来运行在">
+<meta name="twitter:image" content="http://linjiad.github.io/2018/12/15/NodeJs1/NodeJS/01.jpg">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">云销雨霁彩彻区明</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        云销雨霁彩彻区明
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        林花谢了春红太匆匆
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="linjiad_个人微博" target="_blank" href="//linjiad.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/linjiad">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-NodeJs1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      NodeJs1
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-12-15
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="0-NodeJS背景"><a href="#0-NodeJS背景" class="headerlink" title="0 NodeJS背景"></a>0 NodeJS背景</h2><h3 id="0-1-NodeJS是什么"><a href="#0-1-NodeJS是什么" class="headerlink" title="0.1 NodeJS是什么"></a>0.1 NodeJS是什么</h3><p>我们先看看官网上如何评价</p>
+<ul>
+<li>Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 </li>
+<li>Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。</li>
+</ul>
+<p>首先为什么说是基于Chrome V8 引擎？<br>因为在此之前js只能作为前端开发，并且运行在浏览器中。直到Chrome V8 引擎出现才把js分离出来运行在后台。其中Chrome V8 引擎可以理解为JVM，是js的运行环境。</p>
+<h3 id="0-2-NodeJS和JS有什么区别"><a href="#0-2-NodeJS和JS有什么区别" class="headerlink" title="0.2 NodeJS和JS有什么区别"></a>0.2 NodeJS和JS有什么区别</h3><p>其实两者底层基本一样，语法都是基于ECMAScript。</p>
+<ul>
+<li>NodeJS<ol>
+<li>没有BOM和DOM操作。</li>
+<li>提供了一些os(操作系统)、file system(文件系统)、net(网络系统)、database(数据库)的API。</li>
+<li>直接运行在命令窗口，需要NodeJS环境。</li>
+</ol>
+</li>
+<li>WebJS<ol>
+<li>具有BOM和DOM操作。</li>
+<li>不具有其他的服务端API。</li>
+<li>运行在浏览器上。</li>
+</ol>
+</li>
+</ul>
+<p>我们可以在<a href="http://nodejs.cn/api/" target="_blank" rel="noopener">这里</a>查看Node的API。</p>
+<h3 id="0-3-NodeJS安装"><a href="#0-3-NodeJS安装" class="headerlink" title="0.3 NodeJS安装"></a>0.3 NodeJS安装</h3><p>去官网下载之后下一步下一步即可<br>运行脚本方法：</p>
+<blockquote>
+<p>node 文件.js</p>
+</blockquote>
+<h2 id="1-NodeJS基本用法"><a href="#1-NodeJS基本用法" class="headerlink" title="1 NodeJS基本用法"></a>1 NodeJS基本用法</h2><h3 id="1-1-NodeJS读取文件"><a href="#1-1-NodeJS读取文件" class="headerlink" title="1.1 NodeJS读取文件"></a>1.1 NodeJS读取文件</h3><p>在操作文件之前我们先引用包（类似于java中引用jar包）</p>
+<blockquote>
+<p>var fs = require(‘fs’)</p>
+</blockquote>
+<p>这里的<code>fs</code>就是我们的操作文件包</p>
+<ol>
+<li><p>写文件<br>拿到fs对象后调用<code>writeFile</code>方法<br>具体代码参考如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="comment">// 第一个参数：文件路径</span></span><br><span class="line"><span class="comment">// 第二个参数：文件内容</span></span><br><span class="line"><span class="comment">// 第三个参数：回调函数</span></span><br><span class="line">  <span class="comment">// 成功时：error是null</span></span><br><span class="line">  <span class="comment">// 失败时：error是错误对象</span></span><br><span class="line">fs.writeFile(<span class="string">'./data/test.md'</span>,<span class="string">"hello word"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'文件写入成功'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>读文件<br>拿到fs对象后调用<code>readFile</code>方法<br>具体代码参考如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="comment">// 第一个参数：文件路径</span></span><br><span class="line"><span class="comment">// 第二个参数：回调函数</span></span><br><span class="line">  <span class="comment">// 成功时：error是null，data是对象</span></span><br><span class="line">  <span class="comment">// 失败时：error是错误对象，data是空</span></span><br><span class="line">fs.readFile(<span class="string">'./data/test.md'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">error,data</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 这里返回的是二进制数据，我们需要通过toString方法把其转换为我们认识的字符</span></span><br><span class="line">  <span class="keyword">if</span>(error)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'文件读取失败了'</span>)</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(data.toString())</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="1-2-HTTP核心模块"><a href="#1-2-HTTP核心模块" class="headerlink" title="1.2 HTTP核心模块"></a>1.2 HTTP核心模块</h3><ol>
+<li>加载http核心模块</li>
+<li>使用htto.createServer()方法创建一个web服务器，返回一个Server实例</li>
+<li>服务器可以接收请求和发送请求<ul>
+<li>通过request.url判断请求路径</li>
+<li>通过response.write()来发送相应数据（<code>一定要使用end结束，否则客户端会一直等待</code>）</li>
+</ul>
+</li>
+<li>绑定端口号，启动服务</li>
+</ol>
+<p>我们参考下面代码<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加载http核心模块</span></span><br><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</span><br><span class="line"><span class="comment">// 使用http.createSrever()方法创建一个web服务器，返回一个Server实例</span></span><br><span class="line"><span class="keyword">var</span> server = http.createServer();</span><br><span class="line"><span class="comment">// 服务器可以接收请求和发送请求</span></span><br><span class="line">server.on(<span class="string">'request'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">request,response</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'收到客户端的请求了'</span>);</span><br><span class="line">  <span class="comment">// 通过request.url判断请求路径</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'收到客户端的请求路径是'</span>+request.url);</span><br><span class="line">  <span class="comment">// 发送返回数据</span></span><br><span class="line">  response.wirte(<span class="string">'hello'</span>);</span><br><span class="line">  <span class="comment">// 结束会话</span></span><br><span class="line">  response.end();</span><br><span class="line">  <span class="comment">// 上面的方法也可以这么写 response.end('hello');</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 绑定端口号，启动服务</span></span><br><span class="line">server.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'服务启动了'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>根据不同路径判断输出不同的值<br>响应只能是字符串或二进制，所以我们需要把JSON转成字符串<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加载http核心模块</span></span><br><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</span><br><span class="line"><span class="comment">// 使用http.createSrever()方法创建一个web服务器，返回一个Server实例</span></span><br><span class="line"><span class="keyword">var</span> server = http.createServer();</span><br><span class="line"><span class="comment">// 服务器可以接收请求和发送请求</span></span><br><span class="line">server.on(<span class="string">'request'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">request,response</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> url = request.url;</span><br><span class="line">  <span class="keyword">if</span>(url === <span class="string">'/'</span>)&#123;</span><br><span class="line">      response.end(<span class="string">'index'</span>)</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(url === <span class="string">'/login'</span>)&#123;</span><br><span class="line">      response.end(<span class="string">'login'</span>)</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(url === <span class="string">'/products'</span>)&#123;</span><br><span class="line">      <span class="keyword">var</span> products = [</span><br><span class="line">          &#123;</span><br><span class="line">              name:<span class="string">'12'</span>,</span><br><span class="line">              price: <span class="number">12</span>,</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">              name:<span class="string">'22'</span>,</span><br><span class="line">              price: <span class="number">22</span>,</span><br><span class="line">          &#125;,</span><br><span class="line">        ]</span><br><span class="line">        <span class="comment">// 响应只能是字符串或二进制，所以我们需要把JSON转成字符串</span></span><br><span class="line">      response.end(<span class="built_in">JSON</span>.stringify(products));</span><br><span class="line">     &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      response.end(<span class="string">'404'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 绑定端口号，启动服务</span></span><br><span class="line">server.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'服务启动了'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="1-3-其他API"><a href="#1-3-其他API" class="headerlink" title="1.3 其他API"></a>1.3 其他API</h3><ol>
+<li><p>获取机器信息<br>直接看代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用来获取机器信息的</span></span><br><span class="line"><span class="keyword">var</span> os = <span class="built_in">require</span>(<span class="string">'os'</span>);</span><br><span class="line"><span class="comment">//获取当前机器的cpu</span></span><br><span class="line"><span class="built_in">console</span>.log(os.scpus());</span><br><span class="line"><span class="comment">//获取内存</span></span><br><span class="line"><span class="built_in">console</span>.log(os.totalmem());</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>操作路径<br>直接看代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用来获取机器信息的</span></span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="comment">//获取一个路径中的扩展部分</span></span><br><span class="line"><span class="built_in">console</span>.log(path.extname(<span class="string">'c:/a/b/c/d/hello.text'</span>));</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="2-Node中的几点说明"><a href="#2-Node中的几点说明" class="headerlink" title="2 Node中的几点说明"></a>2 Node中的几点说明</h2><h3 id="2-1-模块化编程"><a href="#2-1-模块化编程" class="headerlink" title="2.1 模块化编程"></a>2.1 模块化编程</h3><p>首先现在js无论前端还是后端都是模块化编程，ES6中用<code>import</code>和<code>export</code>来进行模块导入导出<br>在nodeJS中我们用<code>require</code>和<code>export</code>来实现导入导出</p>
+<ol>
+<li>require是一个方法，它是用来加载模块的</li>
+<li>node中有两种模块<ul>
+<li>具名的核心模块（fs,http）</li>
+<li>用户自己编写的的文件模块</li>
+</ul>
+</li>
+<li>相对路径必须加<code>./</code><ul>
+<li>不过可以省略后缀名（.js）</li>
+</ul>
+</li>
+<li>在Node中，没有全局作用域，只有模块作用于<ul>
+<li>外部访问不到内部</li>
+<li>内部也访问不到外部</li>
+</ul>
+</li>
+<li>exports可以把所需要的被外部访问的成员在此定义<ul>
+<li>exports默认是一个空对象<br>我们来看一个例子，创建两个js（a.js，b.js）<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="string">'aaa'</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a start'</span>)</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> ret = <span class="built_in">require</span>(<span class="string">'./b,js'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(ret.foot) <span class="comment">// 调用b中变量</span></span><br><span class="line"><span class="built_in">console</span>.log(ret.add(<span class="number">10</span>,<span class="number">30</span>)) <span class="comment">// 调用b中变量</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a end'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'b start'</span>)</span><br><span class="line"><span class="comment">// console.log(add(10,20)) 这个是错误的，因为b中无法调用a中方法</span></span><br><span class="line">exports.foo=<span class="string">'hello'</span>; <span class="comment">// 交给exports让外部可以调用</span></span><br><span class="line">exports.add = <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'b end'</span>)</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="2-2-模块化编Content-Type"><a href="#2-2-模块化编Content-Type" class="headerlink" title="2.2 模块化编Content-Type"></a>2.2 模块化编Content-Type</h3><p>在我们发送返回消息(response)的时候，我们返回给浏览器信息时通常加上请求头</p>
+<blockquote>
+<p>response.setHeader(‘Content-Type’,’text/html; charset=utf-8’)</p>
+</blockquote>
+<ol>
+<li>Content-Type我们可以理解为header的Key</li>
+<li>text/html传输的文本类型</li>
+<li>charset=utf-8传输的字节编码，这里为utf-8</li>
+</ol>
+<hr>
+<p>这时候我们可以再浏览器返回值值中查看如图所示：<br><img src="/2018/12/15/NodeJs1/NodeJS/01.jpg" alt="如图所示"></p>
+<p>请看下面一段代码<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加载http核心模块</span></span><br><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</span><br><span class="line"><span class="comment">// 使用http.createSrever()方法创建一个web服务器，返回一个Server实例</span></span><br><span class="line"><span class="keyword">var</span> server = http.createServer();</span><br><span class="line"><span class="comment">// 服务器可以接收请求和发送请求</span></span><br><span class="line">server.on(<span class="string">'request'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">request,response</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> url = request.url;</span><br><span class="line">  <span class="keyword">if</span>(url === <span class="string">'/plain'</span>)&#123;</span><br><span class="line">      <span class="comment">// text/plain就是普通文本</span></span><br><span class="line">      res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/plain; charset=utf-8'</span>);</span><br><span class="line">      response.end(<span class="string">'hello 世界'</span>)</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(url === <span class="string">'/html'</span>)&#123;</span><br><span class="line">      <span class="comment">// text/html就是html标记语言，浏览器会进行渲染</span></span><br><span class="line">      res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/html; charset=utf-8'</span>);</span><br><span class="line">      response.end(<span class="string">'&lt;p&gt;hello world &lt;a herf=""&gt;点击&lt;/a&gt;&lt;/p&gt;'</span>)</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      response.end(<span class="string">'404'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 绑定端口号，启动服务</span></span><br><span class="line">server.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'服务启动了'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>而我们通查不把HTML写在js中，而是通过fs模块进行读取.html</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加载http核心模块</span></span><br><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="comment">// 使用http.createSrever()方法创建一个web服务器，返回一个Server实例</span></span><br><span class="line"><span class="keyword">var</span> server = http.createServer();</span><br><span class="line"><span class="comment">// 服务器可以接收请求和发送请求</span></span><br><span class="line">server.on(<span class="string">'request'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">request,response</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> url = request.url;</span><br><span class="line">  <span class="keyword">if</span>(url === <span class="string">'/'</span>)&#123;</span><br><span class="line">      fs.readFile(<span class="string">'./resource/index.html'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(err)&#123;</span><br><span class="line">            res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/plain; charset=utf-8'</span>);</span><br><span class="line">            response.end(<span class="string">'文件读取失败'</span>)</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/html; charset=utf-8'</span>);</span><br><span class="line">                  response.end(data)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      response.end(<span class="string">'404'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 绑定端口号，启动服务</span></span><br><span class="line">server.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'服务启动了'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>Content-Type的更多类型请<a href="http://tool.oschina.net/commons" target="_blank" rel="noopener">点击这里</a></p>
+<h2 id="3-NodeJs实现服务器"><a href="#3-NodeJs实现服务器" class="headerlink" title="3 NodeJs实现服务器"></a>3 NodeJs实现服务器</h2><h3 id="3-1-访问路径访问本地数据"><a href="#3-1-访问路径访问本地数据" class="headerlink" title="3.1 访问路径访问本地数据"></a>3.1 访问路径访问本地数据</h3><p>这里我们可以通过http获取访问的路径，之后用fs来读取我们该路径下固定文件夹下的具体文件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="keyword">var</span> server = http.createServer();</span><br><span class="line"><span class="comment">// 定义访问路径</span></span><br><span class="line"><span class="keyword">var</span> wwwDir = <span class="string">'D:/Movie/www'</span></span><br><span class="line">server.on(<span class="string">'request'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">request,response</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> url = request.url;</span><br><span class="line">  <span class="keyword">var</span> filePath = <span class="string">'/index.html'</span>;</span><br><span class="line">  <span class="keyword">if</span>(url !== <span class="string">'/'</span>)&#123;</span><br><span class="line">      filePath = url;</span><br><span class="line">  &#125;</span><br><span class="line">  fs.readFile(wwwDir + filePath,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>) </span>&#123;</span><br><span class="line">          <span class="keyword">if</span>(err)&#123;</span><br><span class="line">              res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/plain; charset=utf-8'</span>);</span><br><span class="line">              response.end(<span class="string">'文件读取失败'</span>)</span><br><span class="line">          &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">              res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/html; charset=utf-8'</span>);</span><br><span class="line">                    response.end(data)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">server.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'服务启动了'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-2-替换模板文件"><a href="#3-2-替换模板文件" class="headerlink" title="3.2 替换模板文件"></a>3.2 替换模板文件</h3><p>要做到替换模板文件我们需要做两个操作</p>
+<ol>
+<li>得到wwwDir目录列表中的文件名和目录名（fs.readdir）</li>
+<li>将得到的文件名和目录名替换到template.html中<ul>
+<li>在template.html中需要替换的位置预留一个特殊标记</li>
+<li>根据files生成需要的HTML内容</li>
+</ul>
+</li>
+</ol>
+<p>我们创建一个.html，下面是一段代码片段<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">td</span> <span class="attr">data-value</span>=<span class="string">"apple/"</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"icon dir"</span> <span class="attr">herf</span>=<span class="string">"D:/Movie/www/apple/"</span>&gt;</span>^-^<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>我们把^-^特殊标记替换成我们自己想要的名字<br>可以用replace替换<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data = data.toString()</span><br><span class="line">data = data.replace(<span class="string">'^-^'</span>,<span class="string">'苹果'</span>)</span><br><span class="line">res.end(data)</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-3-Art-Template"><a href="#3-3-Art-Template" class="headerlink" title="3.3 Art-Template"></a>3.3 Art-Template</h3><p>我们用art-template插件来完成替换功能，<a href="http://aui.github.io/art-template/zh-cn/index.html" target="_blank" rel="noopener">官网</a><br>art-template既可以用在web上也可以用在Nodejs中<br>art-template是将文件看成字符串，即使在js中的模板也会被替换掉，至于执行js那是浏览器的事儿</p>
+<ol>
+<li><strong>安装</strong><ul>
+<li>npm install art-template</li>
+<li>该命令在哪里执行就会把包下载到哪里。默认下载到node_moudules目录中</li>
+</ul>
+</li>
+<li><strong>web引用</strong></li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>111<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--注意：在浏览器中需要引用/lib/template-web.js文件--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"node_modules/art-template/lib/template-web.js&gt;"</span> </span></span><br><span class="line">    &lt;script type="text/template" id="tp1"&gt;</span><br><span class="line">       名字: &#123;&#123; name &#125;&#125;</span><br><span class="line">       年龄: &#123;&#123; age &#125;&#125;</span><br><span class="line">       来自: &#123;&#123; provice &#125;&#125;</span><br><span class="line">       // 这里是循环</span><br><span class="line">       喜欢: &#123;&#123;each hobbies&#125;&#125; &#123;&#123;$value&#125;&#125; &#123;&#123;/each&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> ret = template(<span class="string">'tp1'</span>,&#123;</span></span><br><span class="line"><span class="javascript">            name : <span class="string">'Jack'</span>,</span></span><br><span class="line"><span class="undefined">            age: 18,</span></span><br><span class="line"><span class="javascript">            provice: <span class="string">'北京'</span>,</span></span><br><span class="line"><span class="javascript">            hobbies:[<span class="string">'写代码'</span>,<span class="string">'唱歌'</span>,<span class="string">'打游戏'</span>]</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(ret)</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><strong>Node引用</strong><ul>
+<li>在需要使用的地方加载art-template模块</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> template = <span class="built_in">require</span>(<span class="string">'art-template'</span>)</span><br><span class="line"><span class="keyword">var</span> tplStr = <span class="string">`&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="string">              &lt;html lang="en"&gt;</span></span><br><span class="line"><span class="string">              &lt;head&gt;</span></span><br><span class="line"><span class="string">                  &lt;meta charset="UTF-8"&gt;</span></span><br><span class="line"><span class="string">                  &lt;title&gt;111&lt;/title&gt;</span></span><br><span class="line"><span class="string">              &lt;/head&gt;</span></span><br><span class="line"><span class="string">              &lt;body&gt;</span></span><br><span class="line"><span class="string">                     &lt;p&gt;名字: &#123;&#123; name &#125;&#125;&lt;/p&gt;</span></span><br><span class="line"><span class="string">                     &lt;p&gt;年龄: &#123;&#123; age &#125;&#125;&lt;/p&gt;</span></span><br><span class="line"><span class="string">                     &lt;p&gt;来自: &#123;&#123; provice &#125;&#125;&lt;/p&gt;</span></span><br><span class="line"><span class="string">                     &lt;p&gt;喜欢: &#123;&#123;each hobbies&#125;&#125; &#123;&#123;$value&#125;&#125; &#123;&#123;/each&#125;&#125;&lt;/p&gt;</span></span><br><span class="line"><span class="string">              &lt;/body&gt;</span></span><br><span class="line"><span class="string">              &lt;/html&gt;`</span></span><br><span class="line">              </span><br><span class="line"> <span class="keyword">var</span> ret = template(tplStr,&#123;</span><br><span class="line">             name : <span class="string">'Jack'</span>,</span><br><span class="line">             age: <span class="number">18</span>,</span><br><span class="line">             provice: <span class="string">'北京'</span>,</span><br><span class="line">             hobbies:[<span class="string">'写代码'</span>,<span class="string">'唱歌'</span>,<span class="string">'打游戏'</span>]</span><br><span class="line">         &#125;)</span><br><span class="line">         <span class="built_in">console</span>.log(ret)</span><br></pre></td></tr></table></figure>
+<h3 id="3-4-改进服务器代码"><a href="#3-4-改进服务器代码" class="headerlink" title="3.4 改进服务器代码"></a>3.4 改进服务器代码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="keyword">var</span> template = <span class="built_in">require</span>(<span class="string">'art-template'</span>)</span><br><span class="line"><span class="keyword">var</span> server = http.createServer();</span><br><span class="line"><span class="comment">// 定义访问路径</span></span><br><span class="line"><span class="keyword">var</span> wwwDir = <span class="string">'D:/Movie/www'</span></span><br><span class="line">server.on(<span class="string">'request'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">request,response</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> url = request.url;</span><br><span class="line">  fs.readFile(<span class="string">'./template'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>) </span>&#123;</span><br><span class="line">          <span class="keyword">if</span>(err)&#123;</span><br><span class="line">              res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/plain; charset=utf-8'</span>);</span><br><span class="line">              response.end(<span class="string">'404 Not Found'</span>)</span><br><span class="line">          &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">              res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/html; charset=utf-8'</span>);</span><br><span class="line">              fs.readdir(wwwDir,<span class="function"><span class="keyword">function</span>(<span class="params">err,files</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(err)&#123;</span><br><span class="line">                   res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/plain; charset=utf-8'</span>);</span><br><span class="line">                   response.end(<span class="string">'Can not find wwDir.'</span>)</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;)</span><br><span class="line">              <span class="comment">// 接下来就是文本替换了</span></span><br><span class="line">              <span class="keyword">var</span> htmlStr = template.render(dara.toString(),&#123;</span><br><span class="line">                  <span class="comment">// 要替换的文本</span></span><br><span class="line">              &#125;)</span><br><span class="line">              res.end(htmlStr)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">server.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'服务启动了'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="3-5-静态文件资源"><a href="#3-5-静态文件资源" class="headerlink" title="3.5 静态文件资源"></a>3.5 静态文件资源</h3><p>作为我们的服务端，不可能让用户能访问我们所有的文件，所以我们需要管理哪些资源用户可以访问，哪些不可以，能访问的就是我们所谓的静态资源</p>
+<p>当我们访问服务器发生了以下几个重大事件</p>
+<blockquote>
+<p>1.浏览器服务器<br>2.服务器读取模板文件<br>3.模板文件替换后在浏览器中渲染<br>4.浏览器运行代码，当读到link，script等标签时需要再去服务器获取资源<br>5.服务器判断请求路径是否可以访问</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="keyword">var</span> server = http.createServer();</span><br><span class="line"><span class="comment">// 定义访问路径</span></span><br><span class="line">server.on(<span class="string">'request'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">request,response</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> url = request.url;</span><br><span class="line">  <span class="keyword">if</span>(url === <span class="string">'/'</span>)&#123;</span><br><span class="line">      fs.readFile(<span class="string">'./views/index.html'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(err)&#123;</span><br><span class="line">          res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/plain; charset=utf-8'</span>);</span><br><span class="line">          response.end(<span class="string">'文件读取失败'</span>)</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">          res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/html; charset=utf-8'</span>);</span><br><span class="line">          response.end(data)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span>(url.indexOf(<span class="string">'/public/'</span>) === <span class="number">0</span> )&#123;</span><br><span class="line">      <span class="comment">// 判断当访问路径含有/public/</span></span><br><span class="line">      fs.readFile(<span class="string">'.'</span>+ url)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line">server.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'服务启动了'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>这里还需要说明一下，我们在模板引擎中的link，script标签，引用地址应该是一个相对路径一个url地址，而不是绝对的了<br>因为在浏览器真正发送请求的时候会把<a href="http://127.0.0.1:3000拼上" target="_blank" rel="noopener">http://127.0.0.1:3000拼上</a><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"/public/lib/...."</span></span></span><br></pre></td></tr></table></figure></p>
+<p>同理我们的a标签引用如果是页面内部调整也需要考虑到服务器，比如跳转到首页我们可以这样写</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-案例整合"><a href="#4-案例整合" class="headerlink" title="4 案例整合"></a>4 案例整合</h2><p>通过这些知识，我们用一个留言板的案例来整合所学习的知识</p>
+<h3 id="4-1-HTML模板部分"><a href="#4-1-HTML模板部分" class="headerlink" title="4.1 HTML模板部分"></a>4.1 HTML模板部分</h3><p>我们用Art-Template来作为我们的模板</p>
+<ol>
+<li>消息列表页面</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"comments container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"list-group"</span>&gt;</span></span><br><span class="line">    &#123;&#123;each comments&#125;&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"list-group-item"</span>&gt;</span></span><br><span class="line">            &#123;&#123;$value.name&#125;&#125;说&#123;&#123;$value.message&#125;&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"pill-right"</span>&gt;</span>&#123;&#123;$value.dataTime&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>添加消息页面</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// 表单中需要提交的元素必须具有name属性</span><br><span class="line">//  1.默认提交行为</span><br><span class="line">//      action 就是表单提交的地址，说白了就是url的请求地址</span><br><span class="line">//      method 请求方法</span><br><span class="line">//  2.表单异步提交（ajax）</span><br><span class="line"><span class="tag">&lt;<span class="name">from</span> <span class="attr">action</span>=<span class="string">"/pinglun"</span> <span class="attr">method</span>=<span class="string">"get"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"from-group"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"input_name"</span>&gt;</span>你的名字<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">required</span> <span class="attr">minlength</span>=<span class="string">"2"</span> <span class="attr">maxlength</span>=<span class="string">"10"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">id</span>=<span class="string">"input_name"</span> <span class="attr">placeholder</span>=<span class="string">"请输入姓名"</span> <span class="attr">name</span>=<span class="string">"name"</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"textarea_message"</span>&gt;</span>留言<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">name</span>=<span class="string">"message"</span> <span class="attr">id</span>=<span class="string">"textarea_message"</span> <span class="attr">cols</span>=<span class="string">"30"</span> <span class="attr">rows</span>=<span class="string">"10"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">required</span> <span class="attr">minlength</span>=<span class="string">"5"</span> <span class="attr">maxlength</span>=<span class="string">"20"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">class</span>=<span class="string">"btn btn-default"</span>&gt;</span>发表<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">from</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-2-url-parse"><a href="#4-2-url-parse" class="headerlink" title="4.2 url.parse()"></a>4.2 url.parse()</h3><p>url.parse()用来解析url和参数<br><code>我们可以在命令行输入node进入node环境测试</code></p>
+<ol>
+<li>node</li>
+<li>url.parse(‘<a href="http://127.0.0.1:3000/pinglun?name=zhangsan&amp;message=1234456&#39;" target="_blank" rel="noopener">http://127.0.0.1:3000/pinglun?name=zhangsan&amp;message=1234456&#39;</a>)</li>
+</ol>
+<p>结果如图所示<img src="/2018/12/15/NodeJs1/03.jpg" alt="如图所示"></p>
+<ol start="3">
+<li>url.parse(‘<a href="http://127.0.0.1:3000/pinglun?name=zhangsan&amp;message=1234456&#39;,true" target="_blank" rel="noopener">http://127.0.0.1:3000/pinglun?name=zhangsan&amp;message=1234456&#39;,true</a>) </li>
+</ol>
+<p>结果如图所示<img src="/2018/12/15/NodeJs1/04.jpg" alt="如图所示"></p>
+<p>可以看出url.parse不近能帮我们解析出url还能帮我们解析出参数</p>
+<h3 id="4-3-NodeJs部分"><a href="#4-3-NodeJs部分" class="headerlink" title="4.3 NodeJs部分"></a>4.3 NodeJs部分</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="keyword">var</span> template = <span class="built_in">require</span>(<span class="string">'art-template'</span>)</span><br><span class="line"><span class="comment">// 引入url解析</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>)</span><br><span class="line"><span class="keyword">var</span> server = http.createServer();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> comments = [</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">"张三"</span>,</span><br><span class="line">        message: <span class="string">'今天天气不错'</span>,</span><br><span class="line">        dataTime: <span class="string">'2015-10-16'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">"张三2"</span>,</span><br><span class="line">        message: <span class="string">'今天天气不错'</span>,</span><br><span class="line">        dataTime: <span class="string">'2015-10-16'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">"张三3"</span>,</span><br><span class="line">        message: <span class="string">'今天天气不错'</span>,</span><br><span class="line">        dataTime: <span class="string">'2015-10-16'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">server.on(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//使用url.parse方法将路径解析为一个方便操作的对象</span></span><br><span class="line">  <span class="keyword">var</span> parseObj = url.parse(req.url,<span class="literal">true</span>);</span><br><span class="line">  <span class="comment">//获取不包含字符串部分路径</span></span><br><span class="line">  <span class="keyword">var</span> pathname = parseObj.pathname;</span><br><span class="line">  <span class="keyword">if</span>(pathname === <span class="string">'/'</span>)&#123;</span><br><span class="line">      fs.readFile(<span class="string">'./views/index.html'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123;</span><br><span class="line">          <span class="keyword">if</span>(err)&#123;</span><br><span class="line">              <span class="keyword">return</span> res.end(<span class="string">'404 Not Found'</span>)</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">var</span> htmlStr = template.render(data.toString(),&#123;</span><br><span class="line">              comments:comments</span><br><span class="line">          &#125;)</span><br><span class="line">          res.end(htmlStr)</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(pathname === <span class="string">'/pinglun'</span>)&#123;</span><br><span class="line">        <span class="comment">// 这里我们需要做到以下几步</span></span><br><span class="line">        <span class="comment">// 1. 获取表单提交的数据</span></span><br><span class="line">        <span class="comment">// 2. 生成日期到数据对象中，然后存储到数组中</span></span><br><span class="line">        <span class="comment">// 3. 让用户重定向跳转到首页/</span></span><br><span class="line">        <span class="keyword">var</span> comment = parseObj.query</span><br><span class="line">        comment.dataTime = <span class="string">'2018-12-12'</span></span><br><span class="line">        comments.push(comment);</span><br><span class="line">        <span class="comment">//这时候服务端已经把数据存储好了，接下来让用户重定向到首页</span></span><br><span class="line">        <span class="comment">//1. 状态码设置为302临时重定向</span></span><br><span class="line">        <span class="comment">//    statusCode</span></span><br><span class="line">        <span class="comment">//2. 在响应头中通过Location告诉客户端往哪从定性</span></span><br><span class="line">        <span class="comment">//    setHeader</span></span><br><span class="line">        <span class="comment">//如果客户端发现收到服务器端的响应状态码是302就会自动去响应头中找Location</span></span><br><span class="line">        <span class="comment">//所以就能看到客户端自动跳转了</span></span><br><span class="line">        res.statusCode = <span class="number">302</span>;</span><br><span class="line">        res.setHeader(<span class="string">'Location'</span>,<span class="string">'/'</span>);</span><br><span class="line">        <span class="comment">// 一次请求对应一次响应结束</span></span><br><span class="line">        res.end();</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="comment">// 其他的都处理成404找不到</span></span><br><span class="line">      fs.readFile(<span class="string">'./vies/post.html'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(err)&#123;</span><br><span class="line">            <span class="keyword">return</span> res.end(<span class="string">'404 Not Found'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        res.end(data)</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">server.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'服务启动了'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年12月16日 14:09</p>
+        <p>原始链接： <a class="post-url" href="/2018/12/15/NodeJs1/" title="NodeJs1">http://linjiad.github.io/2018/12/15/NodeJs1/</a></p>
+        <footer>
+            <a href="http://linjiad.github.io">
+                <img src="/images/logo.png" alt="linjiad">
+                linjiad
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/weixin.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/weixin.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/zhifubao.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://linjiad.github.io/2018/12/15/NodeJs1/&title=《NodeJs1》 — linjiad_个人博客&pic=http://linjiad.github.ioimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://linjiad.github.io/2018/12/15/NodeJs1/&title=《NodeJs1》 — linjiad_个人博客&source=这个人很懒什么也没写" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://linjiad.github.io/2018/12/15/NodeJs1/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NodeJs1》 — linjiad_个人博客&url=http://linjiad.github.io/2018/12/15/NodeJs1/&via=http://linjiad.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://linjiad.github.io/2018/12/15/NodeJs1/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://linjiad.github.io/2018/12/15/NodeJs1/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0-NodeJS背景"><span class="post-toc-text">0 NodeJS背景</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-1-NodeJS是什么"><span class="post-toc-text">0.1 NodeJS是什么</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-2-NodeJS和JS有什么区别"><span class="post-toc-text">0.2 NodeJS和JS有什么区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-3-NodeJS安装"><span class="post-toc-text">0.3 NodeJS安装</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-NodeJS基本用法"><span class="post-toc-text">1 NodeJS基本用法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-NodeJS读取文件"><span class="post-toc-text">1.1 NodeJS读取文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-HTTP核心模块"><span class="post-toc-text">1.2 HTTP核心模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-其他API"><span class="post-toc-text">1.3 其他API</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-Node中的几点说明"><span class="post-toc-text">2 Node中的几点说明</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-模块化编程"><span class="post-toc-text">2.1 模块化编程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-模块化编Content-Type"><span class="post-toc-text">2.2 模块化编Content-Type</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-NodeJs实现服务器"><span class="post-toc-text">3 NodeJs实现服务器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-访问路径访问本地数据"><span class="post-toc-text">3.1 访问路径访问本地数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-替换模板文件"><span class="post-toc-text">3.2 替换模板文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-Art-Template"><span class="post-toc-text">3.3 Art-Template</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-4-改进服务器代码"><span class="post-toc-text">3.4 改进服务器代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-5-静态文件资源"><span class="post-toc-text">3.5 静态文件资源</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-案例整合"><span class="post-toc-text">4 案例整合</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-1-HTML模板部分"><span class="post-toc-text">4.1 HTML模板部分</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2-url-parse"><span class="post-toc-text">4.2 url.parse()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-3-NodeJs部分"><span class="post-toc-text">4.3 NodeJs部分</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2018/12/16/NodeJs2/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          NodeJs2
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/12/09/需求分析/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">需求分析</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'linjiad',
+            repo: 'linjiad.github.io',
+            oauth: {
+                client_id: '9b8f5415215f1aef0b2c',
+                client_secret: 'dea7335a3cd2d8e380b0279a5f1f7245797579d7',
+            },
+        })
+        gitment.render('comments')
+    </script>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 linjiad<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://linjiad.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Linux服务器/">Linux服务器</a><a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/产品文档/">产品文档</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a><a class="category-link" href="/categories/运维/">运维</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 15px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/产品/" style="font-size: 17.5px;">产品</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 15px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/产品/" style="font-size: 17.5px;">产品</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
