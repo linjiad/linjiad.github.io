@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>mui | linjiad_个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="梧桐更兼细雨到黄昏点点滴滴" />
+  
+  <meta name="description" content="0 简介0.1 dcloud企业国内HTML5产业的领军企业，W3C会员，DCloud面向HTML5行业分别推出了开发工具HBuilder、手机强化引擎5+ Runtime、跨平台前端框架mui、应用发行产品流应用，通过系列产品对HTML5的强化支持，使得HTML5能达到原生的功能和体验，同时在发行上更优于原生应用。mui是一套ui层框架，同时结合H5+技术进行混合开发的目的。同时dcloud也目">
+<meta name="keywords" content="混合开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mui">
+<meta property="og:url" content="http://linjiad.github.io/2019/01/13/mui/index.html">
+<meta property="og:site_name" content="linjiad_个人博客">
+<meta property="og:description" content="0 简介0.1 dcloud企业国内HTML5产业的领军企业，W3C会员，DCloud面向HTML5行业分别推出了开发工具HBuilder、手机强化引擎5+ Runtime、跨平台前端框架mui、应用发行产品流应用，通过系列产品对HTML5的强化支持，使得HTML5能达到原生的功能和体验，同时在发行上更优于原生应用。mui是一套ui层框架，同时结合H5+技术进行混合开发的目的。同时dcloud也目">
+<meta property="og:locale" content="JS">
+<meta property="og:image" content="http://linjiad.github.io/2019/01/13/mui/01.jpg">
+<meta property="og:image" content="http://linjiad.github.io/2019/01/13/mui/02.jpg">
+<meta property="og:image" content="http://linjiad.github.io/2019/01/13/mui/03.jpg">
+<meta property="og:image" content="http://linjiad.github.io/2019/01/13/mui/04.jpg">
+<meta property="og:updated_time" content="2019-01-13T11:36:44.572Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mui">
+<meta name="twitter:description" content="0 简介0.1 dcloud企业国内HTML5产业的领军企业，W3C会员，DCloud面向HTML5行业分别推出了开发工具HBuilder、手机强化引擎5+ Runtime、跨平台前端框架mui、应用发行产品流应用，通过系列产品对HTML5的强化支持，使得HTML5能达到原生的功能和体验，同时在发行上更优于原生应用。mui是一套ui层框架，同时结合H5+技术进行混合开发的目的。同时dcloud也目">
+<meta name="twitter:image" content="http://linjiad.github.io/2019/01/13/mui/01.jpg">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">云销雨霁彩彻区明</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        云销雨霁彩彻区明
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        林花谢了春红太匆匆
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="linjiad_个人微博" target="_blank" href="//linjiad.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/linjiad">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-mui" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      mui
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/前端技术/">前端技术</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-01-13
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="0-简介"><a href="#0-简介" class="headerlink" title="0 简介"></a>0 简介</h2><h3 id="0-1-dcloud企业"><a href="#0-1-dcloud企业" class="headerlink" title="0.1 dcloud企业"></a>0.1 dcloud企业</h3><p>国内HTML5产业的领军企业，W3C会员，DCloud面向HTML5行业分别推出了开发工具HBuilder、手机强化引擎5+ Runtime、跨平台前端框架mui、应用发行产品流应用，通过系列产品对HTML5的强化支持，使得HTML5能达到原生的功能和体验，同时在发行上更优于原生应用。<br>mui是一套ui层框架，同时结合H5+技术进行混合开发的目的。<br>同时dcloud也目前主打的uni-app，是一个使用 Vue.js 开发跨平台应用的前端框架，开发者编写一套代码，可编译到iOS、Android、H5、小程序等多个平台。<br>不过目前这个网上资源还很少，也有许多坑，这个需要掌握一下几个技能</p>
+<ul>
+<li>vue</li>
+<li>webpack</li>
+<li>小程序<br>掌握这几个之后上手会比较容易。有兴趣同学可以看一下官网。<br><a href="http://www.dcloud.io/" target="_blank" rel="noopener">dcloudg官网</a><br>这里还是说回来我们的mui<h3 id="0-2-下载Hbuilder"><a href="#0-2-下载Hbuilder" class="headerlink" title="0.2 下载Hbuilder"></a>0.2 下载Hbuilder</h3>Hbuilder是一个免费的开发工具，在官网上可以下载到</li>
+</ul>
+<p><img src="/2019/01/13/mui/01.jpg" alt="如图所示"></p>
+<h3 id="0-3-新建项目"><a href="#0-3-新建项目" class="headerlink" title="0.3 新建项目"></a>0.3 新建项目</h3><p>我们安装好后新建一个项目，选择如下</p>
+<p><img src="/2019/01/13/mui/02.jpg" alt="如图所示"><br><img src="/2019/01/13/mui/03.jpg" alt="如图所示"></p>
+<h3 id="0-4-项目目录"><a href="#0-4-项目目录" class="headerlink" title="0.4 项目目录"></a>0.4 项目目录</h3><p>生成的项目结构如图所示：</p>
+<p><img src="/2019/01/13/mui/04.jpg" alt="如图所示"></p>
+<p>可以看到，这个项目结构目录还是比较简单的，没有形成前端项目模块法开发，这里引用js还是<code>&lt;script&gt;</code>,并非模块化开发。<br>我们的入口页面是index.html；<br>manifest.json是打包配置文件。</p>
+<h3 id="0-5-真机调试"><a href="#0-5-真机调试" class="headerlink" title="0.5 真机调试"></a>0.5 真机调试</h3><p>我们有了初始代码，如何在手机APP调试呢？我们可以首先下载一个手机模拟器，我这里下载的是夜神模拟器。<br>安装过程不必剁手了，之后DOC命令进入夜神模拟器bin目录下，输入命令：</p>
+<blockquote>
+<p>nox_adb connect 127.0.0.1:62001</p>
+</blockquote>
+<blockquote>
+<p>adb devices</p>
+</blockquote>
+<p> 之后再Hbuilder目录下输入命令</p>
+<blockquote>
+<p>adb connect 127.0.0.1:62001</p>
+</blockquote>
+<p> 这样在《运行》/ 《真机运行》下可以看到安卓模拟器，点击运行即可调试代码。<br> 目前有个坑，每次保存完代码需要把模拟器中的APP关掉再打开</p>
+<h3 id="0-6-云打包"><a href="#0-6-云打包" class="headerlink" title="0.6 云打包"></a>0.6 云打包</h3><p> 这里说的云打包就是把代码提交到云端然后在云端打包返回给我们一个APP安装包。<br>点击《发行》/《APP云打包》，这里可以设置证书等打包的选项</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年01月13日 19:36</p>
+        <p>原始链接： <a class="post-url" href="/2019/01/13/mui/" title="mui">http://linjiad.github.io/2019/01/13/mui/</a></p>
+        <footer>
+            <a href="http://linjiad.github.io">
+                <img src="/images/logo.png" alt="linjiad">
+                linjiad
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/weixin.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/weixin.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/zhifubao.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://linjiad.github.io/2019/01/13/mui/&title=《mui》 — linjiad_个人博客&pic=2019/01/13/mui/menu.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://linjiad.github.io/2019/01/13/mui/&title=《mui》 — linjiad_个人博客&source=这个人很懒什么也没写" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://linjiad.github.io/2019/01/13/mui/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《mui》 — linjiad_个人博客&url=http://linjiad.github.io/2019/01/13/mui/&via=http://linjiad.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://linjiad.github.io/2019/01/13/mui/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://linjiad.github.io/2019/01/13/mui/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/混合开发/" class="color5">混合开发</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0-简介"><span class="post-toc-text">0 简介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-1-dcloud企业"><span class="post-toc-text">0.1 dcloud企业</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-2-下载Hbuilder"><span class="post-toc-text">0.2 下载Hbuilder</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-3-新建项目"><span class="post-toc-text">0.3 新建项目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-4-项目目录"><span class="post-toc-text">0.4 项目目录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-5-真机调试"><span class="post-toc-text">0.5 真机调试</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-6-云打包"><span class="post-toc-text">0.6 云打包</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/01/14/WebApi2/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          WebApi2
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/01/07/产品设计2/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">产品设计2</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'linjiad',
+            repo: 'linjiad.github.io',
+            oauth: {
+                client_id: '9b8f5415215f1aef0b2c',
+                client_secret: 'dea7335a3cd2d8e380b0279a5f1f7245797579d7',
+            },
+        })
+        gitment.render('comments')
+    </script>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 linjiad<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://linjiad.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Linux服务器/">Linux服务器</a><a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/产品文档/">产品文档</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a><a class="category-link" href="/categories/运维/">运维</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/Ionic/" style="font-size: 15px;">Ionic</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js/" style="font-size: 12.5px;">js</a> <a href="/tags/nodeppt/" style="font-size: 15px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/产品/" style="font-size: 17.5px;">产品</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/混合开发/" style="font-size: 10px;">混合开发</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/Ionic/" style="font-size: 15px;">Ionic</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js/" style="font-size: 12.5px;">js</a> <a href="/tags/nodeppt/" style="font-size: 15px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/产品/" style="font-size: 17.5px;">产品</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/混合开发/" style="font-size: 10px;">混合开发</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

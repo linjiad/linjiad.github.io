@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>WebApi2 | linjiad_个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="梧桐更兼细雨到黄昏点点滴滴" />
+  
+  <meta name="description" content="3 BOM3.1 概念BOM是指浏览器对象模型浏览器的对象模型提供了独立于内容的，可以与浏览器窗口进行互动的对象结构。BOM由多个对象组成，其中代表浏览器窗口的Window对象是BOM的顶层对象，其他对象都是该对象的子对象 比如：刷新浏览器，后退，前进，在浏览器中输入URL等 window是浏览器的顶级对象，当调用window下的属性和方法时，可以省略window 我们定义的变量都是基于windo">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WebApi2">
+<meta property="og:url" content="http://linjiad.github.io/2019/01/14/WebApi2/index.html">
+<meta property="og:site_name" content="linjiad_个人博客">
+<meta property="og:description" content="3 BOM3.1 概念BOM是指浏览器对象模型浏览器的对象模型提供了独立于内容的，可以与浏览器窗口进行互动的对象结构。BOM由多个对象组成，其中代表浏览器窗口的Window对象是BOM的顶层对象，其他对象都是该对象的子对象 比如：刷新浏览器，后退，前进，在浏览器中输入URL等 window是浏览器的顶级对象，当调用window下的属性和方法时，可以省略window 我们定义的变量都是基于windo">
+<meta property="og:locale" content="JS">
+<meta property="og:image" content="http://linjiad.github.io/2019/01/14/WebApi2/01.png">
+<meta property="og:image" content="http://linjiad.github.io/2019/01/14/WebApi2/02.png">
+<meta property="og:image" content="http://linjiad.github.io/2019/01/14/WebApi2/03.jpg">
+<meta property="og:image" content="http://linjiad.github.io/2019/01/14/WebApi2/04.jpg">
+<meta property="og:image" content="http://linjiad.github.io/2019/01/14/WebApi2/05.png">
+<meta property="og:image" content="http://linjiad.github.io/2019/01/14/WebApi2/windows.jpg">
+<meta property="og:image" content="http://linjiad.github.io/2019/01/14/WebApi2/client.jpg">
+<meta property="og:image" content="http://linjiad.github.io/2019/01/14/WebApi2/offset.jpg">
+<meta property="og:image" content="http://linjiad.github.io/2019/01/14/WebApi2/offset2.jpg">
+<meta property="og:image" content="http://linjiad.github.io/2019/01/14/WebApi2/offset3.jpg">
+<meta property="og:image" content="http://linjiad.github.io/2019/01/14/WebApi2/scroll.jpg">
+<meta property="og:updated_time" content="2019-01-20T10:53:33.632Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WebApi2">
+<meta name="twitter:description" content="3 BOM3.1 概念BOM是指浏览器对象模型浏览器的对象模型提供了独立于内容的，可以与浏览器窗口进行互动的对象结构。BOM由多个对象组成，其中代表浏览器窗口的Window对象是BOM的顶层对象，其他对象都是该对象的子对象 比如：刷新浏览器，后退，前进，在浏览器中输入URL等 window是浏览器的顶级对象，当调用window下的属性和方法时，可以省略window 我们定义的变量都是基于windo">
+<meta name="twitter:image" content="http://linjiad.github.io/2019/01/14/WebApi2/01.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">云销雨霁彩彻区明</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        云销雨霁彩彻区明
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        林花谢了春红太匆匆
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="linjiad_个人微博" target="_blank" href="//linjiad.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/linjiad">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-WebApi2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      WebApi2
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/前端技术/">前端技术</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-01-14
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="3-BOM"><a href="#3-BOM" class="headerlink" title="3 BOM"></a>3 BOM</h2><h3 id="3-1-概念"><a href="#3-1-概念" class="headerlink" title="3.1 概念"></a>3.1 概念</h3><p>BOM是指浏览器对象模型<br>浏览器的对象模型提供了独立于内容的，可以与浏览器窗口进行互动的对象结构。<br>BOM由多个对象组成，其中代表浏览器窗口的Window对象是BOM的顶层对象，其他对象都是该对象的子对象</p>
+<p>比如：刷新浏览器，后退，前进，在浏览器中输入URL等</p>
+<p>window是浏览器的顶级对象，当调用window下的属性和方法时，<code>可以省略window</code></p>
+<p>我们定义的变量都是基于windows的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> abc=<span class="string">"123"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"fn"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.abc)</span><br><span class="line"><span class="built_in">window</span>.fn();</span><br></pre></td></tr></table></figure>
+<p><code>注意：window下一个特殊的属性window.name无法被改变</code><br>window对象本身具有name和top两个属性，其中top属性是只读</p>
+<h3 id="3-2-对话框"><a href="#3-2-对话框" class="headerlink" title="3.2 对话框"></a>3.2 对话框</h3><ul>
+<li>alert()  弹出确定</li>
+<li>prompt()  弹出是否</li>
+<li>confirm()  弹出输入框</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//====================== JS最常用三种弹出对话框 ========================  </span></span><br><span class="line">  </span><br><span class="line">    <span class="comment">//弹出对话框并输出一段提示信息  </span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">ale</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">        <span class="comment">//弹出一个对话框  </span></span><br><span class="line">        alert(<span class="string">"提示信息！"</span>);  </span><br><span class="line">  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">//弹出一个询问框，有确定和取消按钮  </span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">firm</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">        <span class="comment">//利用对话框返回的值 （true 或者 false）  </span></span><br><span class="line">        <span class="keyword">if</span> (confirm(<span class="string">"你确定提交吗？"</span>)) &#123;  </span><br><span class="line">            alert(<span class="string">"点击了确定"</span>);  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">else</span> &#123;  </span><br><span class="line">            alert(<span class="string">"点击了取消"</span>);  </span><br><span class="line">        &#125;  </span><br><span class="line">  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">//弹出一个输入框，输入一段文字，可以提交  </span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">prom</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">        <span class="keyword">var</span> name = prompt(<span class="string">"请输入您的名字"</span>, <span class="string">""</span>); <span class="comment">//将输入的内容赋给变量 name ，  </span></span><br><span class="line">  </span><br><span class="line">        <span class="comment">//这里需要注意的是，prompt有两个参数，前面是提示的话，后面是当对话框出来后，在对话框里的默认值  </span></span><br><span class="line">        <span class="keyword">if</span> (name)<span class="comment">//如果返回的有内容  </span></span><br><span class="line">        &#123;  </span><br><span class="line">            alert(<span class="string">"欢迎您："</span> + name)  </span><br><span class="line">        &#125;  </span><br><span class="line">  </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-3-页面加载和关闭"><a href="#3-3-页面加载和关闭" class="headerlink" title="3.3 页面加载和关闭"></a>3.3 页面加载和关闭</h3><ol>
+<li><strong>页面加载完成后执行</strong></li>
+</ol>
+<blockquote>
+<p>onload</p>
+</blockquote>
+<p>前面说过html是从上往下执行，如果把js写在hrad中，是获取不到页面中的元素的<br>不过加上页面加载后执行的方法就不一样了，可以吧js放到任意位置</p>
+<p><code>页面加载完毕指的是：DOM元素加载完毕，并且外部文件加载完毕</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// onload 页面加载完毕执行</span></span><br><span class="line">onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"box"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li><strong>页面关闭时执行</strong><blockquote>
+<p>onunload </p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">onunload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"再见"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="3-4-定时器"><a href="#3-4-定时器" class="headerlink" title="3.4 定时器"></a>3.4 定时器</h3><ol>
+<li>setTimeout()和clearTimeout()<br>在指定的行描述到到之后执行指定的函数，只执行一次</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个定时器，1000毫秒之后执行</span></span><br><span class="line"><span class="keyword">var</span> timerId = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Hello"</span>)</span><br><span class="line">&#125;,<span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 取消定时器的执行</span></span><br><span class="line">clearTimeout(timerId);</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>setInterval()和clearInterval()<br>定时调用函数，可以按照给定的事件周期调用函数</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个定时器，1000毫秒之后执行</span></span><br><span class="line"><span class="keyword">var</span> timerId = Interval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> <span class="built_in">console</span>.log(<span class="string">"Hello"</span>)</span><br><span class="line">&#125;,<span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 取消定时器的执行</span></span><br><span class="line">clearInterval(timerId);</span><br></pre></td></tr></table></figure>
+<p>案例：十秒后可以点击按钮</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>);</span><br><span class="line"><span class="keyword">var</span> count = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> timerId = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  count -- ;</span><br><span class="line">  <span class="keyword">if</span>(count &gt; <span class="number">0</span>)&#123;</span><br><span class="line">      <span class="comment">// 如果不到10秒，修改按钮上的数字</span></span><br><span class="line">      btn.value = <span class="string">"同意(请继续阅读"</span>+count+<span class="string">"秒)"</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="comment">// 时间到了</span></span><br><span class="line">      btn.value = <span class="string">"同意"</span>;</span><br><span class="line">      btn.disabled = <span class="literal">false</span>;</span><br><span class="line">      <span class="comment">// 停止定时器</span></span><br><span class="line">      clearInterval(timerId);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,<span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+<p>5秒后跳转<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timerId = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 5秒以后跳转</span></span><br><span class="line">  location.href = <span class="string">"www.baidu.com"</span></span><br><span class="line">&#125;,<span class="number">5000</span>);</span><br><span class="line"><span class="built_in">console</span>.log(timerId);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>);</span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  clearTimeout(timerId);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>定时器是典型的异步编程：<br><code>在主线程还没有结束是不会调用其他线程的方法</code></p>
+<h3 id="3-5-内存中数据存储"><a href="#3-5-内存中数据存储" class="headerlink" title="3.5 内存中数据存储"></a>3.5 内存中数据存储</h3><ul>
+<li>栈内存中的变量一般都是已知大小或者有范围上限的，算作一种简单存储</li>
+<li>堆内存存储的对象类型数据对于大小这方面，一般都是未知的</li>
+</ul>
+<p>这也是为什么null作为一个object类型的变量却存储在栈内存中的原因。</p>
+<p>一般来说栈内存线性有序存储，容量小，系统分配效率高。而堆内存首先要在堆内存新分配存储区域，之后又要把指针存储到栈内存中，效率相对就要低一些了。<br>垃圾回收方面，栈内存变量基本上用完就回收了，而推内存中的变量因为存在很多不确定的引用，只有当所有调用的变量全部销毁之后才能回收。</p>
+<p>js中有四个基本类型的数据</p>
+<ul>
+<li>字符串</li>
+<li>数字</li>
+<li>布尔</li>
+<li>null/undifind</li>
+</ul>
+<p>他们的存储如图所示<br><img src="/2019/01/14/WebApi2/01.png" alt="如图所示"></p>
+<p>其他类型，如对象数组存储如下图<br><img src="/2019/01/14/WebApi2/02.png" alt="如图所示"></p>
+<p><code>const定义的基本类型不能改变，但是定义的对象是可以通过修改对象属性等方法来改变的。</code></p>
+<h3 id="3-6-移动div"><a href="#3-6-移动div" class="headerlink" title="3.6 移动div"></a>3.6 移动div</h3><blockquote>
+<p>.offsetLeft 左边距离</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 注册事件</span></span><br><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>);</span><br><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line"></span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 2. 让BOX能往右移动</span></span><br><span class="line">  <span class="keyword">var</span> timerId = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 当前的left</span></span><br><span class="line">    <span class="keyword">var</span> current = box.offsetLeft;</span><br><span class="line">    current +=<span class="number">8</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 3. 停到指定位置500</span></span><br><span class="line">    <span class="keyword">if</span>(current &gt;=<span class="number">500</span>)&#123;</span><br><span class="line">        clearInterval(timerId);</span><br><span class="line">        box.style.left = <span class="string">"500px"</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    box.style.left = current+<span class="string">"px"</span>;</span><br><span class="line">  &#125;,<span class="number">30</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-7-location对象"><a href="#3-7-location对象" class="headerlink" title="3.7 location对象"></a>3.7 location对象</h3><p>location对象是window对象下的一个属性，使用的时候可以省略window对象</p>
+<blockquote>
+<p>location可以获取或者设置浏览器地址的URL</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(location)</span><br><span class="line">    Location &#123;<span class="attr">replace</span>: ƒ, <span class="attr">assign</span>: ƒ, <span class="attr">href</span>: <span class="string">"https://www.baidu.com/"</span>, <span class="attr">ancestorOrigins</span>: DOMStringList, <span class="attr">origin</span>: <span class="string">"https://www.baidu.com"</span>, …&#125;</span><br><span class="line">        ancestorOrigins: DOMStringList &#123;<span class="attr">length</span>: <span class="number">0</span>&#125;</span><br><span class="line">        assign: ƒ ()</span><br><span class="line">        hash: <span class="string">""</span></span><br><span class="line">        host: <span class="string">"www.baidu.com"</span></span><br><span class="line">        hostname: <span class="string">"www.baidu.com"</span></span><br><span class="line">        href: <span class="string">"https://www.baidu.com/"</span></span><br><span class="line">        origin: <span class="string">"https://www.baidu.com"</span></span><br><span class="line">        pathname: <span class="string">"/"</span></span><br><span class="line">        port: <span class="string">""</span></span><br><span class="line">        protocol: <span class="string">"https:"</span></span><br><span class="line">        reload: ƒ reload()</span><br><span class="line">        replace: ƒ ()</span><br><span class="line">        search: <span class="string">""</span></span><br><span class="line">        toString: ƒ toString()</span><br><span class="line">        valueOf: ƒ valueOf()</span><br><span class="line">        <span class="built_in">Symbol</span>(<span class="built_in">Symbol</span>.toPrimitive): <span class="literal">undefined</span></span><br><span class="line">        __proto__: Location</span><br></pre></td></tr></table></figure>
+<p>location的几个方法</p>
+<ul>
+<li>reload  重新加载</li>
+<li>assign  跳转</li>
+<li>replace 替换<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>);</span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 有一个参数</span></span><br><span class="line">  <span class="comment">// false 可能从缓存获取 F5</span></span><br><span class="line">  <span class="comment">// true 强制从服务器获取页面ctrl+r（ctrl+F5）</span></span><br><span class="line">  <span class="comment">// location.reload(true);</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 跳转 会记录历史</span></span><br><span class="line">  location.assign(<span class="string">"http://www.baidu.com"</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 替换地址栏中的地址 不会记录历史</span></span><br><span class="line">    location.replace(<span class="string">"http://www.baidu.com"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-8-history对象"><a href="#3-8-history对象" class="headerlink" title="3.8 history对象"></a>3.8 history对象</h3><ul>
+<li>back() // 后退</li>
+<li>forward() // 前进</li>
+<li><p>go() // 去哪页</p>
+</li>
+<li><p>go(-1): 返回上一页，原页面表单中的内容会丢失；</p>
+</li>
+<li>history.go(-1):后退+刷新；</li>
+<li>history.go(1) ：前进</li>
+<li>back(): 返回上一页，原页表表单中的内容会保留；</li>
+<li>history.back():后退 ；</li>
+<li>history.back(0) 刷新；</li>
+<li>history.back(1)：前进 </li>
+</ul>
+<p>后退<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>);</span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  history.back();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>前进<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>);</span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  history.forward();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-9-navigator对象"><a href="#3-9-navigator对象" class="headerlink" title="3.9 navigator对象"></a>3.9 navigator对象</h3><p>Navigator 对象包含有关浏览器的信息。</p>
+<ul>
+<li>userAgent 浏览器信息<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">navigator.userAgent</span><br><span class="line"><span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在浏览器发送请求的时候会发送给服务器</p>
+<p><img src="/2019/01/14/WebApi2/03.jpg" alt="如图所示"></p>
+<p>如果调成手机模式会给服务器发送手机信息，服务器再判断是手机来源从而提供手机页面（在NGINX中有说明）</p>
+<p><img src="/2019/01/14/WebApi2/04.jpg" alt="如图所示"></p>
+<hr>
+<h3 id="3-9-offsetWidth和offsetLeft"><a href="#3-9-offsetWidth和offsetLeft" class="headerlink" title="3.9 offsetWidth和offsetLeft"></a>3.9 offsetWidth和offsetLeft</h3><p><img src="/2019/01/14/WebApi2/05.png" alt="如图所示"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box1"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box2 = <span class="built_in">document</span>.getElementById(<span class="string">"box2"</span>);</span><br><span class="line"><span class="comment">// 内容 + border + padding</span></span><br><span class="line"><span class="built_in">console</span>.log(box2.offsetWidth);</span><br><span class="line"><span class="built_in">console</span>.log(box2.offsetHeight);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取的相对于offserParent的距离</span></span><br><span class="line"><span class="built_in">console</span>.log(box2.offsetLeft);</span><br><span class="line"><span class="built_in">console</span>.log(box2.offsetTop);</span><br><span class="line"></span><br><span class="line"><span class="comment">// offsetParent 最近的脱离文档流的父元素，如果没有脱离文档流的父元素，就是body</span></span><br><span class="line"><span class="built_in">console</span>.log(box2.offsetParent);</span><br><span class="line"><span class="built_in">console</span>.log(box2.parentNode);</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="3-10-offset-scroll-client"><a href="#3-10-offset-scroll-client" class="headerlink" title="3.10 offset/scroll/client"></a>3.10 offset/scroll/client</h3><ol start="0">
+<li>window相关宽高属性</li>
+</ol>
+<ul>
+<li>window.outerHeight (窗口的外层的高度)</li>
+</ul>
+<p>获取整个浏览器窗口的高度（单位：像素），包括侧边栏（如果存在）、窗口镶边（window chrome）和窗口调正边框。包含调试窗及浏览器边框</p>
+<ul>
+<li>window.outerWidth (窗口的外层的宽度)</li>
+</ul>
+<p>表示整个浏览器窗口的宽度，包括侧边栏（如果存在）、窗口镶边（window chrome）和调正窗口大小的边框。包含调试窗及浏览器边框</p>
+<ul>
+<li>window.screen.width</li>
+</ul>
+<p>声明了显示当前浏览器的屏幕的宽度，以像素计</p>
+<ul>
+<li>window.screen.height</li>
+</ul>
+<p>声明了显示当前浏览器的屏幕的高度，以像素计</p>
+<p><img src="/2019/01/14/WebApi2/windows.jpg" alt="如图所示"></p>
+<ol>
+<li><strong>offset</strong></li>
+</ol>
+<p><img src="/2019/01/14/WebApi2/client.jpg" alt="如图所示"></p>
+<p><img src="/2019/01/14/WebApi2/offset.jpg" alt="如图所示"></p>
+<p><img src="/2019/01/14/WebApi2/offset2.jpg" alt="如图所示"></p>
+<p><img src="/2019/01/14/WebApi2/offset3.jpg" alt="如图所示"></p>
+<p><img src="/2019/01/14/WebApi2/scroll.jpg" alt="如图所示"></p>
+<p>oEvent.clientX是指鼠标到可视区左边框的距离。<br>oEvent.clientY是指鼠标到可视区上边框的距离。</p>
+<p>offsetWidth是指div的宽度（包括div的边框）<br>offsetHeight是指div的高度（包括div的边框）<br>offsetLeft是指div到整个页面左边框的距离（不包括div的边框）<br>offsetTop是指div到整个页面上边框的距离（不包括div的边框）</p>
+<p>scrollTop是指可视区顶部边框与整个页面上部边框的看不到的区域。<br>scrollLeft是指可视区左边边框与整个页面左边边框的看不到的区域。<br>scrollWidth是指左边看不到的区域加可视区加右边看不到的区域即整个页面的宽度（包括边框）<br>scrollHeight是指上边看不到的区域加可视区加右边看不到的区域即整个页面的高度（包括边框）</p>
+<p>clientWidth是指可视区的宽度。<br>clientHeight是指可视区的高度。<br>clientLeft获取左边框的宽度。<br>clientTop获取上边框的宽度。</p>
+<h3 id="3-11-案例"><a href="#3-11-案例" class="headerlink" title="3.11 案例"></a>3.11 案例</h3><p>公共方法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取鼠标在页面上的坐标</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPage</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span>&#123;</span><br><span class="line">        pageX:e.clientX + getScroll().scrollLeft,</span><br><span class="line">        pageY:e.clientY + getScroll().scrollTop</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取页面滚出去的距离（处理兼容性）</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getScroll</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span>&#123;</span><br><span class="line">      scrollTop:<span class="built_in">document</span>.documentElement.scrollTop || <span class="built_in">document</span>.body.scrollTop,</span><br><span class="line">      scrollLeft:<span class="built_in">document</span>.documentElement.scrollLeft || <span class="built_in">document</span>.body.scrollLeft,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><strong>拖拽弹出框</strong></li>
+</ol>
+<blockquote>
+<p>user-select:none CSS样式文本不能被选择</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"nav"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span> <span class="attr">id</span>=<span class="string">"register"</span>&gt;</span>注册信息<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"d-box"</span> <span class="attr">id</span>=<span class="string">"d_box"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"hd"</span> <span class="attr">id</span>=<span class="string">"drop"</span>&gt;</span>注册信息（可拖拽）</span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"box_close"</span>&gt;</span>关闭<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d_box = <span class="built_in">document</span>.getElementById(<span class="string">"d_box"</span>);</span><br><span class="line"><span class="keyword">var</span> drop = <span class="built_in">document</span>.getElementById(<span class="string">"drop"</span>);</span><br><span class="line"><span class="comment">// 1. 鼠标在box中的头部按下的时候，计算鼠标在盒子中的坐标</span></span><br><span class="line"><span class="comment">// 1.1 给头部注册鼠标按下的</span></span><br><span class="line">drop.onmousedown = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  e = e || event;</span><br><span class="line">  <span class="comment">// 1.2 计算鼠标在盒子中的坐标 = 鼠标在页面中的坐标 - 盒子在页面中的坐标</span></span><br><span class="line">  <span class="keyword">var</span> x = getPage(e).pageX - d_box.offsetLeft;</span><br><span class="line">  <span class="keyword">var</span> y = getPage(e).pageY - d_box.offsetTop;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 鼠标在整个页面移动过程中，计算盒子在页面中的坐标</span></span><br><span class="line">  <span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 计算盒子在页面中的坐标 = 鼠标在页面上的坐标 - 鼠标在盒子中的坐标</span></span><br><span class="line">    <span class="keyword">var</span> boxX = getPage(e).pageX - x;</span><br><span class="line">    <span class="keyword">var</span> boxY = getPage(e).pageY - y;</span><br><span class="line">    </span><br><span class="line">    d_box.style.left = boxX + <span class="string">"px"</span>;</span><br><span class="line">    d_box.style.top = boxY + <span class="string">'px'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当鼠标弹起时，移除move事件</span></span><br><span class="line"><span class="built_in">document</span>.onmouseup = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">document</span>.onmousemove = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><strong>点击弹出拖拽登录框</strong></li>
+</ol>
+<blockquote>
+<p>window.innerWidth 页面的宽</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 点击弹出登录框</span></span><br><span class="line"><span class="keyword">var</span> link = <span class="built_in">document</span>.getElementById(<span class="string">"link"</span>);</span><br><span class="line"><span class="keyword">var</span> login = <span class="built_in">document</span>.getElementById(<span class="string">"login"</span>)</span><br><span class="line">link.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> login = <span class="built_in">document</span>.getElementById(<span class="string">"login"</span>);</span><br><span class="line">  <span class="keyword">var</span> bg = <span class="built_in">document</span>.getElementById(<span class="string">"bg"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 2 拖拽</span></span><br><span class="line"><span class="comment">// 2.1 鼠标按下</span></span><br><span class="line"><span class="keyword">var</span> title = <span class="built_in">document</span>.getElementById(<span class="string">"title"</span>);</span><br><span class="line">title.onmousedown = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  e = e || event;</span><br><span class="line">  <span class="comment">// 计算鼠标在盒子中的坐标</span></span><br><span class="line">  <span class="keyword">var</span> x = e.pageX - login.offsetLeft;</span><br><span class="line">  <span class="keyword">var</span> y = e.pageY - login.offsetTop;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 2.2 鼠标移动</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  e = e || event;</span><br><span class="line">  <span class="comment">// 计算盒子在页面上的坐标</span></span><br><span class="line">  <span class="keyword">var</span> loginX = e.pageX - x;</span><br><span class="line">  <span class="keyword">var</span> loginY = e.pageY - y;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 控制盒子的移动范围</span></span><br><span class="line">  <span class="keyword">if</span>(loginX &lt; <span class="number">0</span> )&#123;</span><br><span class="line">      loginX = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(loginY &lt; <span class="number">21</span>)&#123;</span><br><span class="line">      loginY = <span class="number">21</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 如何获取页面和盒子的大小</span></span><br><span class="line">  <span class="comment">// 盒子的大小</span></span><br><span class="line">  <span class="comment">// login.offsetWidth</span></span><br><span class="line">  <span class="comment">// 页面的大小？ window.innerWidth</span></span><br><span class="line">  <span class="keyword">if</span>(loginX &gt; <span class="built_in">window</span>.innerWidth - login.offsetWidth - <span class="number">21</span>)&#123;</span><br><span class="line">      loginX = <span class="built_in">window</span>.innerWidth - login.offsetWidth <span class="number">-21</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span>(loginY &gt; <span class="built_in">window</span>.innerHeight - login.offsetHeigh)&#123;</span><br><span class="line">        loginY = <span class="built_in">window</span>.innerHeight - login.offsetHeight;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">  login.style.left = loginX + <span class="number">256</span> + <span class="string">"px"</span>;</span><br><span class="line">  login.style.top = loginY - <span class="number">140</span> + <span class="string">"px"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 鼠标弹起，移除鼠标移动事件</span></span><br><span class="line"><span class="built_in">document</span>.onmouseup = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">document</span>.onmousemove = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><strong>放大镜</strong></li>
+</ol>
+<blockquote>
+<p>onmouseover和onmouseout 会有事件冒泡<br>onmouseenter和onmouseleave 不会触发冒泡</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"small"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/small.jpg"</span> <span class="attr">width</span>=<span class="string">"350"</span> <span class="attr">alt</span>=<span class="string">""</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mask"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"big"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/big.jpg"</span> <span class="attr">width</span>=<span class="string">"800"</span> <span class="attr">alt</span>=<span class="string">""</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 0 获取所需要操作的元素</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 小盒子</span></span><br><span class="line"><span class="keyword">var</span> smallBox = box.children[<span class="number">0</span>];</span><br><span class="line"><span class="comment">// 大盒子</span></span><br><span class="line"><span class="keyword">var</span> bigBox = box.children[<span class="number">1</span>];</span><br><span class="line"><span class="comment">// 小照片</span></span><br><span class="line"><span class="keyword">var</span> smallImg = smallBox.children[<span class="number">0</span>];</span><br><span class="line"><span class="comment">// 遮罩层</span></span><br><span class="line"><span class="keyword">var</span> mask = smallBox.children[<span class="number">1</span>];</span><br><span class="line"><span class="comment">// 大图片</span></span><br><span class="line"><span class="keyword">var</span> bigImg = bigBox.children[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1 鼠标移动到小盒子上 显示遮盖的层 显示大图</span></span><br><span class="line"></span><br><span class="line">smallBox.onmouseover = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  mask.style.display = <span class="string">"block"</span>;</span><br><span class="line">  bigBox.style.display = <span class="string">"block"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">smallBox.onmouseout = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  mask.style.display = <span class="string">"none"</span>;</span><br><span class="line">  bigBox.style.display = <span class="string">"none"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2 鼠标在小盒子中移动的时候，遮盖层跟着鼠标移动</span></span><br><span class="line"></span><br><span class="line">smallBox.onmousemove = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  e= e||event;</span><br><span class="line">  <span class="comment">// 获取鼠标在小盒子中的坐标</span></span><br><span class="line">  <span class="keyword">var</span> x = getPage(e).pageX - box.offsetLeft;</span><br><span class="line">  <span class="keyword">var</span> y = getPage(e).pageY - box.offsetTop;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 让鼠标到mask中点</span></span><br><span class="line">  x -= mask.offsetWidth/<span class="number">2</span>;</span><br><span class="line">  y -+ mask.offsetHeight/<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 控制x和y范围</span></span><br><span class="line">  x = x &lt; <span class="number">0</span> ? <span class="number">0</span> : x;</span><br><span class="line">  y = y &lt; <span class="number">0</span> ? <span class="number">0</span> : y;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> maxX = smallBox.offsetWidth - mask.offsetWidth;</span><br><span class="line">  <span class="keyword">var</span> maxY = smallBox.offsetHeight - mask.offsetHeight;</span><br><span class="line">  x = x &gt; maxX ? maxX : x;</span><br><span class="line">  y = y &gt; maxY ? maxY : y;</span><br><span class="line">  </span><br><span class="line">  mask.style.left = x + <span class="string">"px"</span>;</span><br><span class="line">  mask.style.top = y + <span class="string">"px"</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 3 显示对应的大图部分</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 计算大图的偏移量</span></span><br><span class="line">  <span class="comment">// mask移动的距离/大图移动的距离 = mask最大能够移动的距离/大图片最大能移动的距离</span></span><br><span class="line">  <span class="comment">// 大图片移动的距离 = mask移动的距离 * 大图片最大能够移动的距离 / mask最大能够移动的距离</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 大图片能够移动的最大距离</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> bigMaxX = bigImg.offsetWidth - bigBox.offsetWidth;</span><br><span class="line">  <span class="keyword">var</span> bigMaxY = bigImg.offsetWidth - bigBox.offsetHeight;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> bigImgX = x * bigMaxX/maxX;</span><br><span class="line">  <span class="keyword">var</span> bigImgY = y * bigMaxY/maxY;</span><br><span class="line">  </span><br><span class="line">  bigImg.style.left = -bigImgX + <span class="string">"px"</span>;</span><br><span class="line">  bigImg.style.top = -bigImgY + <span class="string">"px"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li><strong>模拟滚动条</strong></li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span> <span class="attr">id</span>=<span class="string">"content"</span>&gt;</span></span><br><span class="line">      这里写文本信息</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"scroll"</span> <span class="attr">id</span>=<span class="string">"scroll"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bar"</span> <span class="attr">id</span>=<span class="string">"bar"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 0 获取元素</span></span><br><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line"><span class="keyword">var</span> content = <span class="built_in">document</span>.getElementById(<span class="string">"content"</span>);</span><br><span class="line"><span class="keyword">var</span> scroll = <span class="built_in">document</span>.getElementById(<span class="string">"scroll"</span>);</span><br><span class="line"><span class="keyword">var</span> bar = <span class="built_in">document</span>.getElementById(<span class="string">"bar"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1 根据内容大小计算滚动条</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// box的高度/content的高度 = bar的高度/scroll的高度</span></span><br><span class="line"><span class="comment">// 整个内容的大小</span></span><br><span class="line"><span class="keyword">var</span> barHeight = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">if</span>(content.scrollHeight &gt; box.offsetHeight)&#123;</span><br><span class="line">    barHeight = box.offsetHeight / content.scrollHeight * scroll.offsetHeight;</span><br><span class="line">&#125;</span><br><span class="line">bar.style.height = barHeight + <span class="string">"px"</span>;</span><br><span class="line"><span class="comment">// 2. 拖动滚动条</span></span><br><span class="line"><span class="comment">// 2.1 鼠标在bar上按下的时候，计算鼠标在bar中的位置</span></span><br><span class="line">bar.onmousedown = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  e = e || event;</span><br><span class="line">  <span class="comment">// 鼠标在bar中的位置</span></span><br><span class="line">  <span class="keyword">var</span> barY = getPage(e).pageY - bar.offsetTop - box.offsetTop;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 2.2 鼠标在页面中移动的时候，计算bar在父容器中的坐标</span></span><br><span class="line">  <span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    e= e || event;</span><br><span class="line">    <span class="comment">// bar在父容器中的位置</span></span><br><span class="line">    <span class="keyword">var</span> y = getPage(e).pageY - barY - box.offsetTop;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 限制y不能越界</span></span><br><span class="line">    y = y &lt; <span class="number">0</span> ? <span class="number">0</span> : y;</span><br><span class="line">    <span class="comment">// bar最大能移动的距离</span></span><br><span class="line">    <span class="keyword">var</span> barMaxY = scroll.offsetHeight - barHeight;</span><br><span class="line">    y = y &gt; barMaxY ? barMaxY : y;</span><br><span class="line">    </span><br><span class="line">    bar.style.top = y + <span class="string">"px"</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 3. 当滚动条滚动的时候，移动内容</span></span><br><span class="line">    <span class="comment">// bar移动的距离 / 内容移动的距离 = bar最大移动的距离 / 内容最大移动的距离</span></span><br><span class="line">    <span class="comment">// 内容移动的距离 = bar移动的距离 * 内容最大移动的距离 / bar最大移动的距离</span></span><br><span class="line">    <span class="comment">// 内容最大移动的距离</span></span><br><span class="line">    <span class="keyword">var</span> contentMaxY = content.scrollHeight - box.offsetHeight;</span><br><span class="line">    <span class="keyword">var</span> contentY = contentMaxY / barMaxY;</span><br><span class="line">    content.style.top = - contentY + <span class="string">"px"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当鼠标弹起的时候，移除移动的事件</span></span><br><span class="line"><span class="built_in">document</span>.onmouseup = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">document</span>.onmousemove = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-12-动画"><a href="#3-12-动画" class="headerlink" title="3.12 动画"></a>3.12 动画</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>);</span><br><span class="line"><span class="comment">// 只生成一个div执行动画的定时器</span></span><br><span class="line"><span class="keyword">var</span> timerId = <span class="literal">null</span>;</span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line">  <span class="keyword">var</span> box1 = <span class="built_in">document</span>.getElementById(<span class="string">"box1"</span>);</span><br><span class="line">  animate(box,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    animate(box1);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="comment">// animate(box1);</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 封装函数 只生成一个div执行动画的定时器(把定时器放到element中)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">animate</span>(<span class="params">element,callback</span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 判断之前是否开启了定时器</span></span><br><span class="line">  <span class="keyword">if</span>(element.timerId)&#123;</span><br><span class="line">      clearInterval(element.timerId);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 让每一个执行动画的元素，记录自己的定时器</span></span><br><span class="line">  element.timerId = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 目标位置</span></span><br><span class="line">    <span class="keyword">var</span> target = <span class="number">1000</span>;</span><br><span class="line">    <span class="comment">// 当前坐标</span></span><br><span class="line">    <span class="keyword">var</span> current = element.offsetLeft;</span><br><span class="line">    <span class="comment">// 进步</span></span><br><span class="line">    <span class="keyword">var</span> step = <span class="number">10</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 当当前位置&gt;目标位置step应该是负数</span></span><br><span class="line">    <span class="keyword">if</span>(current &gt; target)&#123;</span><br><span class="line">        step = - <span class="built_in">Math</span>.abs(step);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 编码要避免硬编码</span></span><br><span class="line">    <span class="comment">// if(current &gt;= 500)</span></span><br><span class="line">    <span class="comment">// 如果当前位置和目标位置的差小鱼step，就认为到达目标位置</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">Math</span>.abs(current - target) &lt;= <span class="built_in">Math</span>.abs(step))&#123;</span><br><span class="line">        element.style.left = target + <span class="string">"px"</span>;</span><br><span class="line">        clearInterval(element.timerId);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 回调函数</span></span><br><span class="line">    <span class="keyword">if</span>(callback)&#123;</span><br><span class="line">        callback()</span><br><span class="line">    &#125;</span><br><span class="line">    current += step;</span><br><span class="line">    element.style.left = current + <span class="string">"px"</span>;</span><br><span class="line">  &#125;,<span class="number">20</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年01月20日 18:53</p>
+        <p>原始链接： <a class="post-url" href="/2019/01/14/WebApi2/" title="WebApi2">http://linjiad.github.io/2019/01/14/WebApi2/</a></p>
+        <footer>
+            <a href="http://linjiad.github.io">
+                <img src="/images/logo.png" alt="linjiad">
+                linjiad
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/weixin.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/weixin.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/zhifubao.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://linjiad.github.io/2019/01/14/WebApi2/&title=《WebApi2》 — linjiad_个人博客&pic=http://linjiad.github.ioimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://linjiad.github.io/2019/01/14/WebApi2/&title=《WebApi2》 — linjiad_个人博客&source=这个人很懒什么也没写" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://linjiad.github.io/2019/01/14/WebApi2/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《WebApi2》 — linjiad_个人博客&url=http://linjiad.github.io/2019/01/14/WebApi2/&via=http://linjiad.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://linjiad.github.io/2019/01/14/WebApi2/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://linjiad.github.io/2019/01/14/WebApi2/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/js/" class="color3">js</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-BOM"><span class="post-toc-text">3 BOM</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-概念"><span class="post-toc-text">3.1 概念</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-对话框"><span class="post-toc-text">3.2 对话框</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-页面加载和关闭"><span class="post-toc-text">3.3 页面加载和关闭</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-4-定时器"><span class="post-toc-text">3.4 定时器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-5-内存中数据存储"><span class="post-toc-text">3.5 内存中数据存储</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-6-移动div"><span class="post-toc-text">3.6 移动div</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-7-location对象"><span class="post-toc-text">3.7 location对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-8-history对象"><span class="post-toc-text">3.8 history对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-9-navigator对象"><span class="post-toc-text">3.9 navigator对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-9-offsetWidth和offsetLeft"><span class="post-toc-text">3.9 offsetWidth和offsetLeft</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-10-offset-scroll-client"><span class="post-toc-text">3.10 offset/scroll/client</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-11-案例"><span class="post-toc-text">3.11 案例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-12-动画"><span class="post-toc-text">3.12 动画</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/01/20/JS高级 /" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          JS高级
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/01/13/mui/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">mui</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'linjiad',
+            repo: 'linjiad.github.io',
+            oauth: {
+                client_id: '9b8f5415215f1aef0b2c',
+                client_secret: 'dea7335a3cd2d8e380b0279a5f1f7245797579d7',
+            },
+        })
+        gitment.render('comments')
+    </script>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 linjiad<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://linjiad.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Linux服务器/">Linux服务器</a><a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/产品文档/">产品文档</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a><a class="category-link" href="/categories/运维/">运维</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/Ionic/" style="font-size: 15px;">Ionic</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js/" style="font-size: 12.5px;">js</a> <a href="/tags/nodeppt/" style="font-size: 15px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/产品/" style="font-size: 17.5px;">产品</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/混合开发/" style="font-size: 10px;">混合开发</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/Ionic/" style="font-size: 15px;">Ionic</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js/" style="font-size: 12.5px;">js</a> <a href="/tags/nodeppt/" style="font-size: 15px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/产品/" style="font-size: 17.5px;">产品</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/混合开发/" style="font-size: 10px;">混合开发</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

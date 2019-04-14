@@ -104,14 +104,14 @@
       <div class="outer">
         <section id="main" class="body-wrap">
   
-    <article id="post-hexo2" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Nginx服务1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/11/hexo2/"  >个人微博——hexo(二)</a>
+      <a class="article-title" href="/2018/11/10/Nginx服务1/"  >Nginx服务1</a>
     </h1>
   
 
@@ -119,7 +119,7 @@
               <span class="header-cate">
                 <i class="fa fa-map-marker"></i>
                   
-                  <a href="/categories/博客/">博客</a>
+                  <a href="/categories/Linux服务器/">Linux服务器</a>
                   
               </span>
           
@@ -128,15 +128,23 @@
     <div class="article-entry " itemprop="articleBody">
       
         <div class="article-img">
-            <a href="/2018/05/11/hexo2/" >
+            <a href="/2018/11/10/Nginx服务1/" >
                 
-                <img src="http://linjiad.github.io/2018/05/11/hexo2/menu.png" alt="个人微博——hexo(二)" title="个人微博——hexo(二)">
+                <img src="http://linjiad.github.io/2018/11/10/Nginx服务1/menu.jpg" alt="Nginx服务1" title="Nginx服务1">
                 
             </a>
         </div>
         <div class="article-feed">
             <p>
-                4.配置_config.yml4.1 _config.yml常用结构说明直接上我的配置吧12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576...
+                0前期准备0.1 安装基础环境
+yum -y install gcc gcc-c++ autoconf pcre-devel make automake
+
+
+yum -y install wget httpd-tools vim
+
+0.2建立根目录
+进入系统后，在目录下建立了一个linjiad的文件夹，命令是 mkdir linjiad。
+进入 linjiad文件夹 ,命...
             </p>
         </div>
       
@@ -146,19 +154,19 @@
         
         <ul class="article-footer-menu">
             
-                <li><i class="fa fa-calendar"></i>2018-05-11</li>
+                <li><i class="fa fa-calendar"></i>2018-11-10</li>
             
             
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/hexo/" class="color5">hexo</a>
+    <a href="/tags/环境部署/" class="color5">环境部署</a>
       
   </li>
 
         </ul>
         
-            <a href="/2018/05/11/hexo2/#more" class="article-more-link" >more&gt;&gt;</a>
+            <a href="/2018/11/10/Nginx服务1/#more" class="article-more-link" >more&gt;&gt;</a>
         
     </footer>
   </div>
@@ -166,14 +174,14 @@
 
 
   
-    <article id="post-nodeppt1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-npm包管理服务器" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/11/nodeppt1/"  >nodeppt(一)</a>
+      <a class="article-title" href="/2018/11/10/npm包管理服务器/"  >npm包管理服务器</a>
     </h1>
   
 
@@ -181,7 +189,7 @@
               <span class="header-cate">
                 <i class="fa fa-map-marker"></i>
                   
-                  <a href="/categories/产品办公/">产品办公</a>
+                  <a href="/categories/Linux服务器/">Linux服务器</a>
                   
               </span>
           
@@ -190,18 +198,20 @@
     <div class="article-entry " itemprop="articleBody">
       
         <div class="article-img">
-            <a href="/2018/05/11/nodeppt1/" >
+            <a href="/2018/11/10/npm包管理服务器/" >
                 
-                <img src="http://linjiad.github.io/2018/05/11/nodeppt1/menu.png" alt="nodeppt(一)" title="nodeppt(一)">
+                <img src="http://linjiad.github.io/2018/11/10/npm包管理服务器/menu.jpg" alt="npm包管理服务器" title="npm包管理服务器">
                 
             </a>
         </div>
         <div class="article-feed">
             <p>
-                是时候放弃微软的PPT,改用一款够装X够D的利器，nodeppt
-0.导言0.1 nodeppt好处基于markdown编写,支持HTML混编对于程序员来说更方便
-1.开始1.1 安装前准备不多说了，既然是nodeppt，顾名思义需要安装node，去官网下载即可,好无悬念下一步下一步，安装成功后再控制台查看版本，出现版本号即为安装成功。
-1.2 安装nodepptnode...
+                npm包管理，搭建自己前端的私库
+0前期准备0.1 安装node环境首先介绍一下，可以购买云服务器，也可以自己搭建一个虚机。这里我购买的是腾讯云，购买就不多说了，购买之后下过如下之后去node官网下载node包，下载linux版之后放到linux下面某个目录，根据个人喜好之后进行解压
+
+解压  tar xf  node-v10.9.0-linux-x64.tar.xz
+
+...
             </p>
         </div>
       
@@ -211,19 +221,537 @@
         
         <ul class="article-footer-menu">
             
-                <li><i class="fa fa-calendar"></i>2018-05-11</li>
+                <li><i class="fa fa-calendar"></i>2018-11-10</li>
             
             
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/nodeppt/" class="color3">nodeppt</a>
+    <a href="/tags/环境部署/" class="color5">环境部署</a>
       
   </li>
 
         </ul>
         
-            <a href="/2018/05/11/nodeppt1/#more" class="article-more-link" >more&gt;&gt;</a>
+            <a href="/2018/11/10/npm包管理服务器/#more" class="article-more-link" >more&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-商业模式新生代" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/26/商业模式新生代/"  >商业模式新生代</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/前端技术/">前端技术</a>
+                  
+              </span>
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2018/05/26/商业模式新生代/" >
+                
+                <img src="http://linjiad.github.io/2018/05/26/商业模式新生代/menu.png" alt="商业模式新生代" title="商业模式新生代">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                这本书讲述了商业模式，好像是废话，不多说了看看本书的结构吧
+1商业模式画布1.1商业模式定义商业模式描述了企业如何创造价值、传递价值和获取价值的基本原理。本书提供一个了商业模式的框架，它使得我们能够描述和思组织、竞争对手和其他企业的商业模式。该框架提供了一种描述商业模式的共同语言，有了它方便我们分析其他企业的商业模式并寻找商业上的创新。通过9个基本构造块就可以很好地描述并...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2018-05-26</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/CSS3/" class="color5">CSS3</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2018/05/26/商业模式新生代/#more" class="article-more-link" >more&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-weex" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/24/weex/"  >weex</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/前端技术/">前端技术</a>
+                  
+              </span>
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2018/05/24/weex/" >
+                
+                <img src="http://linjiad.github.io/2018/05/24/weex/menu.png" alt="weex" title="weex">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                0.安装0.1 安装nodejs这个不多说了不会的面壁吧。
+0.2 安装weex-toolkit这个是个坑啊，官方给出的安装是
+
+npm install weex-toolkit -g
+
+不过这个安装可能会各种失败，失败之后再安装就无法安装了。即使再用淘宝镜像。那怎么办呢？首先我们需要卸载一下weex-toolkit
+
+npm uninstall weex-toolkit...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2018-05-24</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/weex/" class="color5">weex</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2018/05/24/weex/#more" class="article-more-link" >more&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-Swagger2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/21/Swagger2/"  >Swagger2</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/后端技术/">后端技术</a>
+                  
+              </span>
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2018/05/21/Swagger2/" >
+                
+                <img src="http://linjiad.github.io/2018/05/21/Swagger2/menu.png" alt="Swagger2" title="Swagger2">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                Swagger2主要解决接口文档，有了它妈妈再也不用担心接口太多不方便管理了，只需要在写代码时候简单加入些注解即可，方便简单。
+0.安装pom文件直接在pom中用Maven下载jar包12345678910&lt;dependency&gt;    &lt;groupId&gt;io.springfox&lt;/groupId&gt;    &lt;artifactId&...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2018-05-21</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/swagger2/" class="color4">swagger2</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2018/05/21/Swagger2/#more" class="article-more-link" >more&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-jQuery生成二维码" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/18/jQuery生成二维码/"  >jQuery生成二维码</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/前端技术/">前端技术</a>
+                  
+              </span>
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2018/05/18/jQuery生成二维码/" >
+                
+                <img src="http://linjiad.github.io/images/banner.jpg" alt="jQuery生成二维码" title="jQuery生成二维码">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                还是扫描二维码登录的需求，既然和二维码相关肯定需要实现二维码生成啦！
+0安装生成二维码的包不止一种，这里一个坑 qrcode 包，他也可以生成二维码，但是很难设置二维码大小，颜色等，强烈不建议安装这个。我已经掉坑里过。那么推荐使用jquery.qrcode。
+
+npm install jquery.qrcode -s
+
+这里前提是需要安装jquery并且在webpack中...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2018-05-18</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/jQuery/" class="color2">jQuery</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2018/05/18/jQuery生成二维码/#more" class="article-more-link" >more&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-websocket" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/18/websocket/"  >websocket+Springboot</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/前端技术/">前端技术</a>
+                  
+              </span>
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2018/05/18/websocket/" >
+                
+                <img src="http://linjiad.github.io/2018/05/18/websocket/menu.png" alt="websocket+Springboot" title="websocket+Springboot">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                今天要做一个手机扫描登录，功能拆分，需要websocket推送信息到页面，不废话了直接开始吧。
+0.导言0.1什么是websocket它的最大特点就是，服务器可以主动向客户端推送信息，客户端也可以主动向服务器发送信息，是真正的双向平等对话，属于服务器推送技术的一种。
+0.2准备都需要什么准备呢？毫无疑问需要客户端（浏览器），服务端（后台），这里后台我们用的是Springb...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2018-05-18</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/websocket/" class="color5">websocket</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2018/05/18/websocket/#more" class="article-more-link" >more&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-css3-grid网格化布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/17/css3-grid网格化布局/"  >css3-grid网格化布局</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/前端技术/">前端技术</a>
+                  
+              </span>
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2018/05/17/css3-grid网格化布局/" >
+                
+                <img src="http://linjiad.github.io/2018/05/17/css3-grid网格化布局/menu.jpg" alt="css3-grid网格化布局" title="css3-grid网格化布局">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                1.第一个 Grid 布局CSS Grid 布局由两个核心组成部分是: wrapper（父元素）和 items（子元素）。下面是一个 wrapper 元素，内部包含6个 items ：HTML部分12345678&lt;div class=&quot;wrapper&quot;&gt;  &lt;div&gt;1&lt;/div&gt;  &lt;div&gt;2&lt;...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2018-05-17</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/CSS3/" class="color5">CSS3</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2018/05/17/css3-grid网格化布局/#more" class="article-more-link" >more&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-echarts-字符云" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/17/echarts-字符云/"  >echarts-字符云</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/前端技术/">前端技术</a>
+                  
+              </span>
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2018/05/17/echarts-字符云/" >
+                
+                <img src="http://linjiad.github.io/2018/05/17/echarts-字符云/menu.png" alt="echarts-字符云" title="echarts-字符云">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                首先要说下，从echarts2.0之后，字符云就被分离出来，需要独自安装
+1.安装1.1安装其他安装不说了，单独说下需要安装echarts和echarts-wordcloud
+
+npm install echarts-wordcloud -s
+
+1.2引用在总的js中123let echarts = require(&apos;echarts&apos;);window....
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2018-05-17</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/echarts/" class="color3">echarts</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2018/05/17/echarts-字符云/#more" class="article-more-link" >more&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-css3-文字特效和背景透明" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/16/css3-文字特效和背景透明/"  >css3-文字特效和背景透明</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/前端技术/">前端技术</a>
+                  
+              </span>
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2018/05/16/css3-文字特效和背景透明/" >
+                
+                <img src="http://linjiad.github.io/2018/05/16/css3-文字特效和背景透明/menu.png" alt="css3-文字特效和背景透明" title="css3-文字特效和背景透明">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                直接上图，需要用CSS3实现这样的效果
+1.html部分html这里需要一个  标签包含  之后每组字都是自己的  之所以是div是需要给每组字限定大小。1234567891011&lt;ul&gt;          &lt;li class = &quot;li_title&quot;&gt;&lt;div&gt;公司名称&lt;/div&gt;&lt;div&gt;...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2018-05-16</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/CSS3/" class="color5">CSS3</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2018/05/16/css3-文字特效和背景透明/#more" class="article-more-link" >more&gt;&gt;</a>
         
     </footer>
   </div>
@@ -234,7 +762,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/3/"><< Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    <a class="extend prev" rel="prev" href="/page/3/"><< Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next >></a>
   </nav>
 </section>
         
@@ -256,7 +784,7 @@
       <p>
         Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
         Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
-      &copy; 2018 linjiad<br>
+      &copy; 2019 linjiad<br>
       </p>
     </div>
   </div>
@@ -292,7 +820,7 @@
             <a class="category-link" href="/categories/Linux服务器/">Linux服务器</a><a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/产品文档/">产品文档</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a><a class="category-link" href="/categories/运维/">运维</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 15px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/产品/" style="font-size: 17.5px;">产品</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+            <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/Ionic/" style="font-size: 15px;">Ionic</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js/" style="font-size: 12.5px;">js</a> <a href="/tags/nodeppt/" style="font-size: 15px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/产品/" style="font-size: 17.5px;">产品</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/混合开发/" style="font-size: 10px;">混合开发</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -325,7 +853,7 @@
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/nodeppt/" style="font-size: 15px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/产品/" style="font-size: 17.5px;">产品</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+            <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/Ionic/" style="font-size: 15px;">Ionic</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js/" style="font-size: 12.5px;">js</a> <a href="/tags/nodeppt/" style="font-size: 15px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/产品/" style="font-size: 17.5px;">产品</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/混合开发/" style="font-size: 10px;">混合开发</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
         </div>
     </div>
 </div>

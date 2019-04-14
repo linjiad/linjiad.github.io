@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>WebApi | linjiad_个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="梧桐更兼细雨到黄昏点点滴滴" />
+  
+  <meta name="description" content="0.介绍0.1介绍浏览器提供的一套操作浏览器功能和页面元素的API（BOM和DOM）MDN-Web API 0.2组成结构 ECMAScript-JavaScript的核心定义了javaScrip的语法规范javaScrip的核心，描述了语言的基本语法和数据类型，ECMAScript是一套标准，定义了一种语言的标准与具体实现无关  BOM浏览器对象模型一套操作浏览器功能的API通过BOM可以操作浏">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WebApi">
+<meta property="og:url" content="http://linjiad.github.io/2019/01/07/WebApi/index.html">
+<meta property="og:site_name" content="linjiad_个人博客">
+<meta property="og:description" content="0.介绍0.1介绍浏览器提供的一套操作浏览器功能和页面元素的API（BOM和DOM）MDN-Web API 0.2组成结构 ECMAScript-JavaScript的核心定义了javaScrip的语法规范javaScrip的核心，描述了语言的基本语法和数据类型，ECMAScript是一套标准，定义了一种语言的标准与具体实现无关  BOM浏览器对象模型一套操作浏览器功能的API通过BOM可以操作浏">
+<meta property="og:locale" content="JS">
+<meta property="og:image" content="http://linjiad.github.io/2019/01/07/WebApi/01.jpg">
+<meta property="og:image" content="http://linjiad.github.io/2019/01/07/WebApi/01.png">
+<meta property="og:image" content="http://linjiad.github.io/2019/01/07/WebApi/05.jpg">
+<meta property="og:image" content="http://linjiad.github.io/2019/01/07/WebApi/03.jpg">
+<meta property="og:image" content="http://linjiad.github.io/2019/01/07/WebApi/04.jpg">
+<meta property="og:updated_time" content="2019-01-14T13:06:06.279Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WebApi">
+<meta name="twitter:description" content="0.介绍0.1介绍浏览器提供的一套操作浏览器功能和页面元素的API（BOM和DOM）MDN-Web API 0.2组成结构 ECMAScript-JavaScript的核心定义了javaScrip的语法规范javaScrip的核心，描述了语言的基本语法和数据类型，ECMAScript是一套标准，定义了一种语言的标准与具体实现无关  BOM浏览器对象模型一套操作浏览器功能的API通过BOM可以操作浏">
+<meta name="twitter:image" content="http://linjiad.github.io/2019/01/07/WebApi/01.jpg">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">云销雨霁彩彻区明</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        云销雨霁彩彻区明
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        林花谢了春红太匆匆
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="linjiad_个人微博" target="_blank" href="//linjiad.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/linjiad">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-WebApi" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      WebApi
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/前端技术/">前端技术</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-01-07
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="0-介绍"><a href="#0-介绍" class="headerlink" title="0.介绍"></a>0.介绍</h2><h3 id="0-1介绍"><a href="#0-1介绍" class="headerlink" title="0.1介绍"></a>0.1介绍</h3><p>浏览器提供的一套操作浏览器功能和页面元素的API（BOM和DOM）<br><a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener">MDN-Web API</a></p>
+<h3 id="0-2组成结构"><a href="#0-2组成结构" class="headerlink" title="0.2组成结构"></a>0.2组成结构</h3><ul>
+<li><p>ECMAScript-JavaScript的核心<br>定义了javaScrip的语法规范<br>javaScrip的核心，描述了语言的基本语法和数据类型，ECMAScript是一套标准，定义了一种语言的标准与具体实现无关</p>
+</li>
+<li><p>BOM浏览器对象模型<br>一套操作浏览器功能的API<br>通过BOM可以操作浏览器窗口，比如：弹出窗，控制浏览器跳转，获取分辨率等</p>
+</li>
+<li><p>DOM文档对象模型<br>一套操作页面元素的API<br>DOM可以把HTML看作是文档树，通过DOM提供的API可以对树上的节点进行操作</p>
+</li>
+</ul>
+<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><h3 id="1-1-DOM概念"><a href="#1-1-DOM概念" class="headerlink" title="1.1 DOM概念"></a>1.1 DOM概念</h3><p>文档对象模型（Document Object Model，简称DOM），是W3C组织推荐的处理可扩展标志语言的标准编程接口。在网页上，组织页面（或文档）的对象被组织在一个树形结构中，用来表示文档中对象的标准模型就称为DOM。<br>DOM是一种基于树的API文档，他在处理过程中整个文档都加载到内存中。<br>DOM文档树模型如下<br><img src="/2019/01/07/WebApi/01.jpg" alt="如图所示"></p>
+<ul>
+<li>文档：一个网页可以成为文档</li>
+<li>节点：网页中的所有内容都是节点（标签，属性，文本，注释等）</li>
+<li>元素：网页中的标签</li>
+<li>属性：标签的属性</li>
+</ul>
+<p>DOM经常进行的操作</p>
+<ul>
+<li>获取元素</li>
+<li>对元素进行操作（设置其属性或调用其防范）</li>
+<li>动态创建元素</li>
+<li>事件（给元素绑定事件）</li>
+</ul>
+<h3 id="1-2-document获取标签"><a href="#1-2-document获取标签" class="headerlink" title="1.2 document获取标签"></a>1.2 document获取标签</h3><p><code>HTML是从上向下加载，如果把js写在head中,在HTML还没有加载完全就去获取dom元素会找不到</code></p>
+<blockquote>
+<p>console.dir(box) 输出对象</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</span><br><span class="line"><span class="comment">// 输出的是元素对应的标签内容</span></span><br><span class="line"><span class="built_in">console</span>.log(box)</span><br><span class="line"><span class="comment">// 打印对象</span></span><br><span class="line"><span class="built_in">console</span>.dir(box)</span><br></pre></td></tr></table></figure>
+<p>获取对象类型两个方法</p>
+<ul>
+<li>typeof<br>typeof不能获取对象的具体类型，获取对象类型始终返回object</li>
+<li><p>construction<br>对象.construction可以获取到具体对象</p>
+</li>
+<li><p><strong>根据id获取元素</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">'main'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(div)</span><br><span class="line"><span class="comment">// 获取到的数据类型HTMLDivElement，对象都是有类型的</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>根据标签名称获取元素</strong><br>返回的是节点集合</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> divs = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; divs.length;i++)&#123;</span><br><span class="line">    <span class="keyword">var</span> div = divs[i];</span><br><span class="line">    <span class="built_in">console</span>.log(div)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>根据name获取元素</strong><br>返回的是节点集合</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> divs = <span class="built_in">document</span>.getElementsByName(<span class="string">'sex'</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; divs.length;i++)&#123;</span><br><span class="line">    <span class="keyword">var</span> div = divs[i];</span><br><span class="line">    <span class="built_in">console</span>.log(div)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>根据class获取元素</strong><br>返回的是节点集合<br><code>这个是IE9以后才支持的（class是关键字，所以采用classname）</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> divs = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'sex'</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; divs.length;i++)&#123;</span><br><span class="line">    <span class="keyword">var</span> div = divs[i];</span><br><span class="line">    <span class="built_in">console</span>.log(div)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>HTML5中获取元素</strong><br>在HTML5中新增的元素获取方法querySelector</p>
+</li>
+</ul>
+<p>查找一个元素，如果多个只返回第一个<br>querySelector<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// class="lover"</span></span><br><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.querySelector(<span class="string">'.lover'</span>)</span><br><span class="line"><span class="comment">// 获取p元素</span></span><br><span class="line"><span class="keyword">var</span> node = <span class="built_in">document</span>.querySelector(<span class="string">"p"</span>);</span><br><span class="line"><span class="comment">// 通过id属性取得元素</span></span><br><span class="line"><span class="keyword">var</span> oBox = <span class="built_in">document</span>.querySelector(<span class="string">'#box'</span>);</span><br><span class="line"><span class="comment">//通过属性选择器取得元素</span></span><br><span class="line"><span class="keyword">var</span> oTest = body.querySelector(<span class="string">'[title="test"]'</span>);</span><br><span class="line"><span class="comment">// 获取class=”lover” 的第一个p元素</span></span><br><span class="line"><span class="keyword">var</span> node = <span class="built_in">document</span>.querySelector(<span class="string">"p.lover"</span>);</span><br><span class="line"><span class="comment">// 获取第一个带target属性的a元素</span></span><br><span class="line"><span class="keyword">var</span> node = <span class="built_in">document</span>.querySelector(<span class="string">"a[target]"</span>);</span><br><span class="line"><span class="comment">// 获取第一个输入框</span></span><br><span class="line"><span class="keyword">var</span> node = <span class="built_in">document</span>.querySelector(<span class="string">"input[type=text]"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>查找多个元素<br>querySelectorAll<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//取得所有div元素</span></span><br><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.querySelectorAll(<span class="string">"div"</span>)</span><br><span class="line"><span class="comment">//取得所有class为"in"的元素</span></span><br><span class="line"><span class="keyword">var</span> oIn = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.in'</span>);</span><br><span class="line"><span class="comment">//取得title属性为test的元素</span></span><br><span class="line"><span class="keyword">var</span> oTest = body.querySelectorAll(<span class="string">'[title="test"]'</span>);</span><br><span class="line"><span class="comment">//取得body元素</span></span><br><span class="line"><span class="keyword">var</span> body = <span class="built_in">document</span>.querySelectorAll(<span class="string">"body"</span>)[<span class="number">0</span>]</span><br></pre></td></tr></table></figure></p>
+<p>总而言之，这个方法相对于上面方法就是取多个</p>
+<h3 id="1-3-绑定事件"><a href="#1-3-绑定事件" class="headerlink" title="1.3 绑定事件"></a>1.3 绑定事件</h3><p>事件的三要素：</p>
+<ul>
+<li>事件源（谁能触发事件）</li>
+<li>事件名称（怎么能触发，点击还是经过等）</li>
+<li>事件处理函数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 获取超链接</span><br><span class="line">var link = documentById(&apos;link&apos;);</span><br><span class="line">// 注册事件</span><br><span class="line">link.onclick = function()&#123;</span><br><span class="line">    alert(&apos;hello&apos;)</span><br><span class="line">    // 取消后续内容的执行</span><br><span class="line">    return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>案例</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.获取元素</span></span><br><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>);</span><br><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</span><br><span class="line"><span class="comment">// isShow记录box的显示和隐藏 true显示false隐藏</span></span><br><span class="line"><span class="keyword">var</span> isShow = <span class="literal">true</span>;</span><br><span class="line"><span class="comment">// 2.给按钮注册事件</span></span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 当前box是显示的状态</span></span><br><span class="line">    <span class="keyword">if</span>(isShow)&#123;</span><br><span class="line">        <span class="comment">// 3 控制div的显示隐藏（这里需要写一个class样式为隐藏）</span></span><br><span class="line">        box.className = <span class="string">'hidden'</span></span><br><span class="line">        <span class="comment">// 修改按钮上的文字</span></span><br><span class="line">        btn.value = <span class="string">'显示'</span>;</span><br><span class="line">        isShow = <span class="literal">false</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        box.className = <span class="string">'show'</span></span><br><span class="line">        btn.value = <span class="string">'隐藏'</span>;</span><br><span class="line">        isShow = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-4-this"><a href="#1-4-this" class="headerlink" title="1.4 this"></a>1.4 this</h3><ul>
+<li><p>函数中的this<br>window对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法中的this<br>调用该方法的对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name:<span class="string">'zs'</span>,</span><br><span class="line">    say:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.say();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>构造函数中的this<br>当前对象</p>
+</li>
+<li><p>事件处理函数中的this<br>触发事件的对象，事件源</p>
+</li>
+</ul>
+<p><strong>案例</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.获取所有a标签对应的元素</span></span><br><span class="line"><span class="keyword">var</span> imagegallert = documentById(<span class="string">'imagegallery'</span>);</span><br><span class="line"><span class="keyword">var</span> links = imagegallert.getElementsByTagName(<span class="string">'a'</span>);</span><br><span class="line"><span class="comment">// 2.给所有的a元素注册点击事件</span></span><br><span class="line"><span class="keyword">var</span> i=<span class="number">0</span>,len = links.length;</span><br><span class="line"><span class="keyword">for</span>(; i&lt;len; i++)&#123;</span><br><span class="line">    <span class="comment">// 获取当前元素</span></span><br><span class="line">    <span class="keyword">var</span> link = link [i];</span><br><span class="line">    link.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">// 3.切换图片和文字</span></span><br><span class="line">        <span class="keyword">var</span> image = <span class="built_in">document</span>.getElementById(<span class="string">"image"</span>);</span><br><span class="line">        <span class="keyword">var</span> des = <span class="built_in">document</span>.getElementById(<span class="string">"des"</span>);</span><br><span class="line">        <span class="comment">// 设置图片这里触发事件的时候（被点击时）i已经是4了，所以需要用this</span></span><br><span class="line">        <span class="comment">// image.src = link.href;</span></span><br><span class="line">        image.src = <span class="keyword">this</span>.href;</span><br><span class="line">        <span class="comment">// 设置文字这里触发事件的时候（被点击时）i已经是4了，所以需要用this</span></span><br><span class="line">        <span class="comment">// des.innerText = link.title;</span></span><br><span class="line">        des.innerText = <span class="keyword">this</span>.title;</span><br><span class="line">        <span class="comment">// 取消默认行行为</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="1-5-innerHTML和innerText"><a href="#1-5-innerHTML和innerText" class="headerlink" title="1.5 innerHTML和innerText"></a>1.5 innerHTML和innerText</h3><ol>
+<li><p><strong>获取标签之间的内容</strong></p>
+<ul>
+<li>innerHTML获取内容的时候，会把标签也获取到</li>
+<li>innerText获取内容的时候会把标签过滤掉</li>
+</ul>
+</li>
+<li><p><strong>设置标签之间的内容</strong></p>
+<ul>
+<li>innerHTML设置内容的时候，会把特殊字符进行标签化处理</li>
+<li>innerText不会进行标签化处理  </li>
+</ul>
+</li>
+<li><p><strong>案例</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">box.innerHTML = <span class="string">"linjia&lt;b&gt;d&lt;/b&gt;&lt;p&gt;这是一个段落&lt;/p&gt;"</span></span><br><span class="line">box.innerHTML = <span class="string">"linjia&amp;lt;b&amp;gt;d&amp;lt;/b&amp;gt;&amp;lt;p&amp;gt;这是一个段落&amp;lt;/p&amp;gt;"</span></span><br><span class="line">box.innerText = <span class="string">"linjia&lt;b&gt;d&lt;/b&gt;&lt;p&gt;这是一个段落&lt;/p&gt;"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>&lt; &lt;</li>
+<li>&lt; &gt;</li>
+<li>&amp;nbsp 空格</li>
+<li>&copy; @</li>
+</ul>
+</li>
+</ol>
+<p><code>innerHTML 不是标准的DOM属性</code><br><code>innerText 最早IE中增加的属性，老版本的firefox不支持此属性，老版本的firefox用的是textContent</code></p>
+<ol start="4">
+<li><strong>案例</strong><br>写一个函数，处理innerText和textContent的兼容性问题<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取元素之间的内容</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getInnerText</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 判断element是否支持innerText</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> element.innerHTML === <span class="string">"string"</span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> element.innerHTML;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> element.textContent;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 设置元素之间的内容</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setInnerText</span>(<span class="params">element,content</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 判断element是否支持innerText</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> element.innerHTML === <span class="string">"string"</span>)&#123;</span><br><span class="line">      element.innerHTML = content;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      element.textContent = content;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h3 id="1-6-表单元素属性"><a href="#1-6-表单元素属性" class="headerlink" title="1.6 表单元素属性"></a>1.6 表单元素属性</h3><ol>
+<li><p><strong>设置文本框中的内容</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 设置文本框中的内容</span></span><br><span class="line"><span class="keyword">var</span> inputs = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"input"</span>);</span><br><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>,len = inputs.length;</span><br><span class="line"><span class="keyword">for</span>(;i &lt;len;i++)&#123;</span><br><span class="line">    <span class="comment">// 获取集合中的元素</span></span><br><span class="line">    <span class="keyword">var</span> input = inputs[i];</span><br><span class="line">    <span class="comment">// 判断当前的input是否是文本框</span></span><br><span class="line">    <span class="keyword">if</span>(input.type === <span class="string">"text"</span>)&#123;</span><br><span class="line">        input.value = i + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 点击按钮获取文本框中的内容，并用|分割形成一个新的字符串</span></span><br><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>);</span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 找到所有的文本框，获取文本框的值</span></span><br><span class="line">  <span class="keyword">var</span> str = <span class="string">''</span>;</span><br><span class="line">  <span class="comment">// 定义数组，避免拼接字符串耗费性能</span></span><br><span class="line">  <span class="keyword">var</span> arr = [];</span><br><span class="line">  <span class="keyword">for</span> (i = <span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">      <span class="keyword">var</span> input = inputs[i];</span><br><span class="line">      <span class="comment">// 判断是否是文本框</span></span><br><span class="line">      <span class="keyword">if</span>(input.type !== <span class="string">"text"</span>)&#123;</span><br><span class="line">          <span class="keyword">continue</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// str += input.value + "|";</span></span><br><span class="line">      arr.push(input.value);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// str = str.substr(0,str.length - 1);</span></span><br><span class="line">  str = arr.join(<span class="string">"|"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>切换图片</strong></p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 记录索引 默认是0</span></span><br><span class="line"><span class="keyword">var</span> index = <span class="number">0</span> ;</span><br><span class="line"><span class="comment">// 1 给按钮注册事件</span></span><br><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>);</span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> img = <span class="built_in">document</span>.getElementById(<span class="string">"img"</span>);</span><br><span class="line">  <span class="comment">// 2 切换到下一张</span></span><br><span class="line">  index ++;</span><br><span class="line">  img.src = arr[index];</span><br><span class="line">  <span class="comment">// 3 如果是最后一张切换到第一张</span></span><br><span class="line">  <span class="keyword">if</span>(index === arr.length - <span class="number">1</span>)&#123;</span><br><span class="line">      index = <span class="number">-1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><p><strong>检测用户名密码</strong><br>检验用户名是3-6位，密码是6-8位，如果不满足条件要求高亮显示</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1 给登录按钮注册点击事件</span></span><br><span class="line"><span class="keyword">var</span>  btnLogin = <span class="built_in">document</span>.getElementById(<span class="string">"btnLogin"</span>);</span><br><span class="line">btnLogin.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 检测用户名是否是3-6位，不满足要求高亮显示文本框</span></span><br><span class="line">    <span class="comment">// 文本框对应元素</span></span><br><span class="line">    <span class="keyword">var</span> texName = <span class="built_in">document</span>.getElementById(<span class="string">"name"</span>);</span><br><span class="line">    <span class="keyword">if</span>(texName.value.length &lt; <span class="number">3</span> || texName.value.length &gt; <span class="number">6</span>)&#123;</span><br><span class="line">        <span class="comment">// 文本框高亮显示（这里需要先定义css）</span></span><br><span class="line">        texName.className = <span class="string">'bg'</span>;</span><br><span class="line">        <span class="comment">// 阻止表单提交</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        texName.className = <span class="string">''</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 3 密码是否是6-8位 不满足高亮显示</span></span><br><span class="line">    <span class="keyword">var</span> texPwd = <span class="built_in">document</span>.getElementById(<span class="string">"pwd"</span>);</span><br><span class="line">        <span class="keyword">if</span>(texPwd.value.length &lt; <span class="number">6</span> || texPwd.value.length &gt; <span class="number">8</span>)&#123;</span><br><span class="line">            <span class="comment">// 文本框高亮显示（这里需要先定义css）</span></span><br><span class="line">            texPwd.className = <span class="string">'bg'</span>;</span><br><span class="line">            <span class="comment">// 阻止表单提交</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            texPwd.className = <span class="string">''</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>输入框默认值</strong><br>当文本框获得焦点的时候onfocus,如果文本框中的内容是《请输入搜索关键字》则清空文本框，设置黑色字体</p>
+<blockquote>
+<p>onfocus 获得焦点事件</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>onblur 失去焦点事件</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 提取公共方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">my$</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">document</span>.getElementById(id);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> tXtSearch = my$(<span class="string">"tetSearch"</span>);</span><br><span class="line"><span class="comment">// 当文本框获得焦点的时候</span></span><br><span class="line">tXtSearch.onfocus = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 判断当前文本框中的文字</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">this</span>.value === <span class="string">"请输入搜索关键字"</span>)&#123;</span><br><span class="line">      <span class="keyword">this</span>.value = <span class="string">''</span>;</span><br><span class="line">      <span class="keyword">this</span>.className = <span class="string">''</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当失去焦点时候，如果文本框中的内容为空则设置文本框内容为《请输入搜索关键字》</span></span><br><span class="line">tXtSearch.onblur = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 判断当前文本框中的文字</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">this</span>.value.length === <span class="number">0</span>)&#123;</span><br><span class="line">      <span class="keyword">this</span>.value = <span class="string">'请输入搜索关键字'</span>;</span><br><span class="line">      <span class="keyword">this</span>.className = <span class="string">'gray'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li><strong>checkbox全选，反选</strong></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 点击全员按钮（父的checkbox）的时候，让子的checkbox的选中状态跟其保持一致</span></span><br><span class="line"><span class="keyword">var</span> j_cbAll = <span class="built_in">document</span>.getElementById(<span class="string">"j_cbAll"</span>);</span><br><span class="line"><span class="comment">// 1.2 让所有的子checkbox的选中状态和父checkbox保持一致</span></span><br><span class="line">  <span class="keyword">var</span> checkboxs = <span class="built_in">document</span>.querySelectorAll(<span class="string">"#j_tb input[type=checkbox]"</span>);</span><br><span class="line">  <span class="keyword">var</span> i = <span class="number">0</span>,len = checkboxs.length;</span><br><span class="line">j_cbAll.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (;i &lt; len;i++)&#123;</span><br><span class="line">      <span class="comment">// 获取每一个checkbox</span></span><br><span class="line">      <span class="keyword">var</span> checkbox = checkboxs[i];</span><br><span class="line">      <span class="comment">// 让每一个checkbox的选中状态和父checkbox保持一致</span></span><br><span class="line">      checkbox.checked = <span class="keyword">this</span>.checked;</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 给所有的子的checkbox注册点击事件，点击子的checkbox，如果有一个没被选中，则父checkbox也不被选中</span></span><br><span class="line"><span class="comment">// 2.1 给所有的子checkbox注册点击事件</span></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i &lt; len;i++)&#123;</span><br><span class="line">    <span class="comment">// 获取每一个checkbox</span></span><br><span class="line">    <span class="keyword">var</span> checkbox = checkboxs[i];</span><br><span class="line">    <span class="comment">// 注册点击事件</span></span><br><span class="line">    checkbox.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 2.2 如果有一个子的checkbox没有被选中，父的checkbox也不被选中</span></span><br><span class="line">      <span class="comment">//假设所有子checkbox都被选中了</span></span><br><span class="line">      <span class="keyword">var</span> isAllChecked = <span class="literal">true</span>;</span><br><span class="line">      <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; len;i++)&#123;</span><br><span class="line">          <span class="comment">// 获取每一个子的checkbox</span></span><br><span class="line">          checkbox = checkboxs[i];</span><br><span class="line">          <span class="comment">// 判断选中状态</span></span><br><span class="line">          <span class="keyword">if</span>(!checkbox.checked)&#123;</span><br><span class="line">              <span class="comment">// 如果checkbox没有被选中，设置isAllChecked false</span></span><br><span class="line">              isAllChecked = <span class="literal">false</span>;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 设置父checkbox的选中状态</span></span><br><span class="line">      j_cbAll.checked = isAllChecked;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 3. 反选</span></span><br><span class="line"><span class="comment">// 3.1 给反选按钮注册点击事件</span></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 3.2遍历所有子的checkbox，对其进行反选</span></span><br><span class="line">  <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; len;i++)&#123;</span><br><span class="line">       <span class="comment">// 获取每一个子的checkbox</span></span><br><span class="line">       checkbox = checkboxs[i];</span><br><span class="line">       checkbox.checked = !checkbox.checked;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>写到这里会有问题，当反选时无法控制父checkbox<br>所以我们把父checkbox的方法单独拿出来，修改代码如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 点击全员按钮（父的checkbox）的时候，让子的checkbox的选中状态跟其保持一致</span></span><br><span class="line"><span class="keyword">var</span> j_cbAll = <span class="built_in">document</span>.getElementById(<span class="string">"j_cbAll"</span>);</span><br><span class="line"><span class="comment">// 1.2 让所有的子checkbox的选中状态和父checkbox保持一致</span></span><br><span class="line">  <span class="keyword">var</span> checkboxs = <span class="built_in">document</span>.querySelectorAll(<span class="string">"#j_tb input[type=checkbox]"</span>);</span><br><span class="line">  <span class="keyword">var</span> i = <span class="number">0</span>,len = checkboxs.length;</span><br><span class="line">j_cbAll.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (;i &lt; len;i++)&#123;</span><br><span class="line">      <span class="comment">// 获取每一个checkbox</span></span><br><span class="line">      <span class="keyword">var</span> checkbox = checkboxs[i];</span><br><span class="line">      <span class="comment">// 让每一个checkbox的选中状态和父checkbox保持一致</span></span><br><span class="line">      checkbox.checked = <span class="keyword">this</span>.checked;</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 给所有的子的checkbox注册点击事件，点击子的checkbox，如果有一个没被选中，则父checkbox也不被选中</span></span><br><span class="line"><span class="comment">// 2.1 给所有的子checkbox注册点击事件</span></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i &lt; len;i++)&#123;</span><br><span class="line">    <span class="comment">// 获取每一个checkbox</span></span><br><span class="line">    <span class="keyword">var</span> checkbox = checkboxs[i];</span><br><span class="line">    <span class="comment">// 注册点击事件</span></span><br><span class="line">    checkbox.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 调用公共方法控制父checkbox</span></span><br><span class="line">      singleChecked();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 3. 反选</span></span><br><span class="line"><span class="comment">// 3.1 给反选按钮注册点击事件</span></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 3.2遍历所有子的checkbox，对其进行反选</span></span><br><span class="line">  <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; len;i++)&#123;</span><br><span class="line">       <span class="comment">// 获取每一个子的checkbox</span></span><br><span class="line">       checkbox = checkboxs[i];</span><br><span class="line">       checkbox.checked = !checkbox.checked;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 调用公共方法控制父checkbox</span></span><br><span class="line">  singleChecked();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 单独提炼出控制父节点方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">singleChecked</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 2.2 如果有一个子的checkbox没有被选中，父的checkbox也不被选中</span></span><br><span class="line">        <span class="comment">//假设所有子checkbox都被选中了</span></span><br><span class="line">        <span class="keyword">var</span> isAllChecked = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; len;i++)&#123;</span><br><span class="line">            <span class="comment">// 获取每一个子的checkbox</span></span><br><span class="line">            checkbox = checkboxs[i];</span><br><span class="line">            <span class="comment">// 判断选中状态</span></span><br><span class="line">            <span class="keyword">if</span>(!checkbox.checked)&#123;</span><br><span class="line">                <span class="comment">// 如果checkbox没有被选中，设置isAllChecked false</span></span><br><span class="line">                isAllChecked = <span class="literal">false</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 设置父checkbox的选中状态</span></span><br><span class="line">        j_cbAll.checked = isAllChecked;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-7-自定义属性"><a href="#1-7-自定义属性" class="headerlink" title="1.7 自定义属性"></a>1.7 自定义属性</h3><ul>
+<li>getAttribute() 获取标签内属性</li>
+<li>setAttribute() 设置标签内属性</li>
+<li>removeAttribute() 删除标签内属性</li>
+<li>与element.属性的区别：上诉三个方法用于获取任意的行内元素</li>
+</ul>
+<p><strong>案例</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span> <span class="attr">stuId</span>=<span class="string">"1"</span>&gt;</span>张三<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line"><span class="comment">// 这个是无法获取stuId的值（undefined）【在IE中可以，但是在chrome中不可以】</span></span><br><span class="line"><span class="comment">//console.log(box.stuId);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// var o =&#123;&#125;；</span></span><br><span class="line"><span class="comment">// console.log(o.a);// 当访问对象不存在的属性，返回undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取标签对应的自定义属性</span></span><br><span class="line"><span class="built_in">console</span>.log(box.getAttribute(<span class="string">"stuId"</span>));</span><br><span class="line"><span class="comment">// 也可以获取标签本身具有的属性</span></span><br><span class="line"><span class="built_in">console</span>.log(box.getAttribute(<span class="string">"id"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置标签对应的自定义属性</span></span><br><span class="line">box.setAttribute(<span class="string">"test"</span>,<span class="string">"hello"</span>);</span><br><span class="line"><span class="comment">// 也可以设置标签本身具有的属性</span></span><br><span class="line">box.setAttribute(<span class="string">"class"</span>,<span class="string">"bg"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除属性</span></span><br><span class="line">box.removeAttribute(<span class="string">"test"</span>);</span><br><span class="line">box.removeAttribute(<span class="string">"class"</span>);</span><br><span class="line"><span class="comment">// 不可以设置标签的自定义属性（在浏览器标签中看不到），但是box对象本身具有了abc属性</span></span><br><span class="line">box.abc = <span class="string">"hello"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(box.abc);</span><br></pre></td></tr></table></figure>
+<h3 id="1-8-操作样式"><a href="#1-8-操作样式" class="headerlink" title="1.8 操作样式"></a>1.8 操作样式</h3><blockquote>
+<p>设置style仅仅是操作style的样式并不能改变class写好的样式</p>
+</blockquote>
+<ul>
+<li>设置样式类（需要提前写class）</li>
+<li>设置style</li>
+<li>设置style.cssText</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line"><span class="comment">// 1 设置类样式</span></span><br><span class="line">box.className = <span class="string">"box"</span>;</span><br><span class="line"><span class="comment">// 2 设置style</span></span><br><span class="line"><span class="comment">// console.dir(box);可以看到里面有style属性，并且style属性中是一个json，其中每个属性都是string类型</span></span><br><span class="line">box.style.width = <span class="string">"200px"</span>;</span><br><span class="line">box.style.height = <span class="string">"200px"</span>;</span><br><span class="line">box.style.backgroundColor = <span class="string">"yellow"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// cssText 获取标签的style属性中的字符串</span></span><br><span class="line"><span class="comment">// console.log(box.style.cssText)</span></span><br><span class="line"></span><br><span class="line">box.style.cssText = <span class="string">"width:200px;height:200px"</span>;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><strong>案例:开关灯</strong></li>
+</ol>
+<blockquote>
+<p>document.body.style</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 给按钮注册事件</span></span><br><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>);</span><br><span class="line"><span class="comment">// 记录开关灯</span></span><br><span class="line"><span class="keyword">var</span> isOpen = <span class="literal">true</span>;</span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(isOpen)&#123;</span><br><span class="line">      <span class="comment">// 如果当前是开灯状态，关灯</span></span><br><span class="line">      <span class="comment">// 2 修改body的背景颜色</span></span><br><span class="line">      <span class="built_in">document</span>.body.style.backgroundColor = <span class="string">"black"</span>;</span><br><span class="line">      <span class="keyword">this</span>.value = <span class="string">"开灯"</span>;</span><br><span class="line">      isOpen = <span class="literal">false</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="built_in">document</span>.body.style.backgroundColor = <span class="string">""</span>;</span><br><span class="line">            <span class="keyword">this</span>.value = <span class="string">"关灯"</span>;</span><br><span class="line">            isOpen = <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><strong>案例:鼠标经过显示二维码图片</strong></li>
+</ol>
+<blockquote>
+<p>鼠标经过的事件 onmouseover 鼠标离开事件 onmouseout</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取nodeSmall注册事件 鼠标经过的事件 onmouseover 鼠标离开事件 onmouseout</span></span><br><span class="line"><span class="keyword">var</span> node_small = <span class="built_in">document</span>.getElementById(<span class="string">"node_small"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 鼠标经过显示二维码</span></span><br><span class="line">node_small.onmousemove = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 把class为hide替换成show</span></span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">"er"</span>).className =  <span class="built_in">document</span>.getElementById(<span class="string">"er"</span>).className.replace(<span class="string">'hide'</span>,<span class="string">'show'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 鼠标离开隐藏二维码</span></span><br><span class="line">node_small.onmouseout = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 把class为show替换成hide</span></span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">"er"</span>).className =  <span class="built_in">document</span>.getElementById(<span class="string">"er"</span>).className.replace(<span class="string">'show'</span>,<span class="string">'hide'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><strong>案例:移动方块</strong></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line">  </span><br><span class="line">  box.style.width = <span class="string">"200px"</span>;</span><br><span class="line">  box.style.height = <span class="string">"200px"</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 改成绝对定位</span></span><br><span class="line">  box.style.position = <span class="string">"absolute"</span>;</span><br><span class="line">  box.style.left = <span class="string">"200px"</span>;</span><br><span class="line">  box.style.top = <span class="string">"200px"</span>;</span><br><span class="line">  </span><br><span class="line">  box.style.backgroundColor = <span class="string">"yellow"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li><strong>案例:输入框输入时高亮</strong></li>
+</ol>
+<blockquote>
+<p>.onfocus获得焦点   .onblur 失去焦点</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 给所有的文本框注册事件  获取焦点的事件</span></span><br><span class="line"><span class="comment">// 当文本框获得焦点之后 高亮显示 失去焦点  恢复</span></span><br><span class="line"><span class="keyword">var</span> texts = <span class="built_in">document</span>.querySelectorAll(<span class="string">"input[type=text]"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>,len text.length;</span><br><span class="line"><span class="keyword">for</span>(;i &lt; len;i++)&#123;</span><br><span class="line">    <span class="keyword">var</span> text = texts[i];</span><br><span class="line">    text.onfocus = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 高亮显示</span></span><br><span class="line">      <span class="keyword">this</span>.style.backgroundColor = <span class="string">'lightgray'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 失去焦点</span></span><br><span class="line">    text.onblur=<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.style.backgroundColor = <span class="string">''</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li><strong>案例:各行变色，鼠标放上变高亮</strong></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 隔行变色 奇数red 偶数 green</span></span><br><span class="line"><span class="comment">// 获取所有的li</span></span><br><span class="line"><span class="keyword">var</span> list =<span class="built_in">document</span>.querySelectorAll(<span class="string">"#mv li"</span>);</span><br><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>,len = lists.length;</span><br><span class="line"><span class="comment">// 存储改变之前的背景</span></span><br><span class="line"><span class="keyword">var</span> bg;</span><br><span class="line"><span class="keyword">for</span>(;i &lt; len;i++)&#123;</span><br><span class="line">    <span class="comment">// 判断i是奇数还是偶数</span></span><br><span class="line">    <span class="keyword">if</span>(i%<span class="number">2</span> === <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="comment">// i是从0开始的，奇数行颜色</span></span><br><span class="line">        list[i].style.backgroundColor = <span class="string">'red'</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        list[i].style.backgroundColor = <span class="string">'green'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 鼠标放上显示高亮</span></span><br><span class="line">    list[i].onmouseover = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 鼠标放到li上高亮显示</span></span><br><span class="line">      bg = <span class="keyword">this</span>.style.backgroundColor;</span><br><span class="line">      <span class="keyword">this</span>.style.backgroundColor = <span class="string">'yellow'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 鼠标离开不高亮</span></span><br><span class="line">    list[i].onmouseout = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 鼠标离开li还原原来的颜色</span></span><br><span class="line">      <span class="keyword">this</span>.style.backgroundColor = bg;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li><strong>案例:切换TAB</strong></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 鼠标放到tab栏上高亮显示，其他tab取消高亮显示</span></span><br><span class="line"><span class="comment">// 1.1 获取hd中所有的span（标题栏中）。注册鼠标经过时间</span></span><br><span class="line"><span class="keyword">var</span> spans = <span class="built_in">document</span>.querySelectorAll(<span class="string">"#hd span"</span>)</span><br><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>,len = spans.length;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(;i &lt; len;i++)&#123;</span><br><span class="line">    <span class="keyword">var</span> span = spans[i];</span><br><span class="line">    <span class="comment">// 注册事件</span></span><br><span class="line">    span.onmouseover = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 取消所有span的高亮显示</span></span><br><span class="line">      <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; len; i++)&#123;</span><br><span class="line">          spans[i].className = <span class="string">''</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 1.2 高亮显示这个</span></span><br><span class="line">      <span class="keyword">this</span>.className = <span class="string">'current'</span>;</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 2 当tab栏高亮显示的时候。找到对应的详细内容显示，其他详细内容隐藏</span></span><br><span class="line">      <span class="comment">// 2.1 给span记录索引</span></span><br><span class="line">      <span class="comment">// 2.2 挡鼠标经过span的时候，获取span的索引</span></span><br><span class="line">      <span class="keyword">var</span> index = <span class="built_in">parseInt</span>(<span class="keyword">this</span>.getAttribute(<span class="string">"index"</span>));</span><br><span class="line">      <span class="comment">// 2.3 根据索引找详细内容的div显示其他的隐藏</span></span><br><span class="line">      <span class="keyword">var</span> divs = <span class="built_in">document</span>.querySelectorAll(<span class="string">"#bd div"</span>);</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 让所有的详细内容的div隐藏</span></span><br><span class="line">      <span class="keyword">var</span> divLen = divs.length;</span><br><span class="line">      <span class="keyword">for</span>(i = <span class="number">0</span>;i&lt;divLen;i++)&#123;</span><br><span class="line">          <span class="keyword">var</span> div = divs[i];</span><br><span class="line">          div.className = <span class="string">""</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 当前模块对应的div显示</span></span><br><span class="line">      divs[index].className = <span class="string">"current"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="1-9-节点操作"><a href="#1-9-节点操作" class="headerlink" title="1.9 节点操作"></a>1.9 节点操作</h3><p>想要构建如图所示的结构<br><img src="/2019/01/07/WebApi/01.png" alt="如图所示"></p>
+<ul>
+<li>元素节点</li>
+<li>nodeName 标签的名称</li>
+<li>nodeType 节点的类型 1 元素节点</li>
+<li>nodeValue 当是元素节点的时候nodeValue始终是null</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 元素节点</span></span><br><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line"><span class="built_in">console</span>.dir(box);</span><br><span class="line"><span class="comment">// 元素节点</span></span><br><span class="line"><span class="comment">// nodeName 标签的名称</span></span><br><span class="line"><span class="comment">// nodeType 节点的类型 1 元素节点</span></span><br><span class="line"><span class="comment">// nodeValue 当是元素节点的时候nodeValue始终是null</span></span><br><span class="line"><span class="comment">//////////////////////////////////</span></span><br><span class="line"><span class="keyword">var</span> attr = box.getAttributeNode(<span class="string">"id"</span>);</span><br><span class="line"><span class="built_in">console</span>.dir(attr);</span><br><span class="line"><span class="comment">// 属性节点</span></span><br><span class="line"><span class="comment">// 获取属性节点</span></span><br><span class="line"><span class="comment">// nodeName 标签的名称</span></span><br><span class="line"><span class="comment">// nodeType 节点的类型 2 属性节点</span></span><br><span class="line"><span class="comment">// nodeValue 属性的值</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><strong>模拟DOM文档的结构</strong></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 模拟DOM文档的结构</span></span><br><span class="line"><span class="comment">// 属性 id className nodeName nodeType nodeValue</span></span><br><span class="line"><span class="comment">// 构建构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Node</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 当不传参的时候 options是undefined</span></span><br><span class="line">  <span class="comment">// 这样options.id会报错</span></span><br><span class="line">  <span class="comment">// 给默认值</span></span><br><span class="line">  options = options || &#123;&#125;;</span><br><span class="line">  <span class="keyword">this</span>.id = options.id || <span class="string">""</span>;</span><br><span class="line">  <span class="keyword">this</span>.className = options.className || <span class="string">""</span>;</span><br><span class="line">  <span class="keyword">this</span>.nodeName = options.nodeName || <span class="string">""</span>;</span><br><span class="line">  <span class="keyword">this</span>.nodeType = options.nodeType || <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">this</span>.nodeValue = options.nodeValue || <span class="literal">null</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 设置一个属性记录子元素</span></span><br><span class="line">  <span class="keyword">this</span>.children = [];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 1. html元素</span></span><br><span class="line"><span class="keyword">var</span> html = <span class="keyword">new</span> Node(&#123;</span><br><span class="line">    nodeName:<span class="string">"HTML"</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 2. head元素</span></span><br><span class="line"><span class="keyword">var</span> head = <span class="keyword">new</span> Node(&#123;</span><br><span class="line">    nodeName:<span class="string">"HEAD"</span></span><br><span class="line">&#125;);</span><br><span class="line">html.children.push(head);</span><br><span class="line"><span class="comment">// 3. body元素</span></span><br><span class="line"><span class="keyword">var</span> body = <span class="keyword">new</span> Node(&#123;</span><br><span class="line">    nodeName:<span class="string">"BODY"</span></span><br><span class="line">&#125;);</span><br><span class="line">html.children.push(body);</span><br><span class="line"><span class="comment">// 4. div元素</span></span><br><span class="line"><span class="keyword">var</span> div = <span class="keyword">new</span> Node(&#123;</span><br><span class="line">    id: <span class="string">"box"</span>,</span><br><span class="line">    nodeName:<span class="string">"DIV"</span></span><br><span class="line">&#125;);</span><br><span class="line">body.children.push(div);</span><br><span class="line"><span class="comment">// 5. p元素</span></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Node(&#123;</span><br><span class="line">    id:<span class="string">"p"</span>,</span><br><span class="line">    nodeName:<span class="string">"P"</span></span><br><span class="line">&#125;);</span><br><span class="line">body.children.push(p);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.dir(html);</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><strong>获取子节点</strong></li>
+</ol>
+<ul>
+<li>childNodes 所有子节点</li>
+<li>children  子元素</li>
+<li>parentNode 父元素</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line"><span class="comment">// 获取box中所有的子节点</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; box.childNodes.length;i++)&#123;</span><br><span class="line">    <span class="comment">// 便利所有的子节点，找到里面的元素nodeType === 1的是子元素</span></span><br><span class="line">    <span class="keyword">if</span>(box.childNodes[i].nodeType === <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(box.childNodes[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取子元素</span></span><br><span class="line"><span class="built_in">console</span>.log(box.children);</span><br><span class="line"><span class="comment">// 获取父元素</span></span><br><span class="line"><span class="built_in">console</span>.log(box.parentNode);</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><strong>获取第一个/最后一个节点</strong></li>
+</ol>
+<ul>
+<li>.firstChild 第一个子节点</li>
+<li>.firstElementChild 第一个子元素</li>
+<li>.lastChild 最后一个子节点</li>
+<li>.lastElementChild 最后一个子元素</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ul = <span class="built_in">document</span>.getElementById(<span class="string">"ul"</span>);</span><br><span class="line"><span class="comment">// 获取第一个子节点</span></span><br><span class="line"><span class="built_in">console</span>.dir(ul.firstChild);</span><br><span class="line"><span class="comment">// 获取第一个子元素</span></span><br><span class="line"><span class="built_in">console</span>.dir(ul.firstElementChild);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取最后一个子节点</span></span><br><span class="line"><span class="built_in">console</span>.dir(ul.lastChild);</span><br><span class="line"><span class="comment">// 获取最后一个子元素</span></span><br><span class="line"><span class="built_in">console</span>.dir(ul.lastElementChild);</span><br></pre></td></tr></table></figure>
+<p>由于firstElementChild存在兼容性问题，我们可以自己封装一个方法来解决兼容性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getFirstElementChild</span>(<span class="params">parent</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 如果当前浏览器支持firstElementChild</span></span><br><span class="line">  <span class="keyword">if</span>(parent.firstElementChild)&#123;</span><br><span class="line">      <span class="keyword">return</span> parent.firstElementChild;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 否则用下面的办法</span></span><br><span class="line">  <span class="keyword">var</span> node,nodes = parent.childNodes,i = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (node = nodes[i++])&#123;</span><br><span class="line">      <span class="keyword">if</span>(node.nodeType === <span class="number">1</span>)&#123;</span><br><span class="line">          <span class="keyword">return</span> node;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li><strong>获取兄弟节点</strong></li>
+</ol>
+<ul>
+<li>.nextSibling 下一个兄弟节点</li>
+<li>.nextElementSibling 下一个兄弟元素</li>
+<li>.previousSibling 上一个兄弟节点</li>
+<li>.previousElementSibling 上一个兄弟元素</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取下一个兄弟节点</span></span><br><span class="line"><span class="built_in">console</span>.log(li.nextSibling)</span><br><span class="line"><span class="comment">// 获取下一个兄弟元素</span></span><br><span class="line"><span class="built_in">console</span>.log(li.nextElementSibling)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取上一个兄弟节点</span></span><br><span class="line"><span class="built_in">console</span>.log(li.previousSibling)</span><br><span class="line"><span class="comment">// 获取上一个兄弟元素(存在兼容性问题)</span></span><br><span class="line"><span class="built_in">console</span>.log(li.previousElementSibling)</span><br></pre></td></tr></table></figure>
+<h3 id="2-0-a标签href"><a href="#2-0-a标签href" class="headerlink" title="2.0 a标签href"></a>2.0 a标签href</h3><blockquote>
+<p>href=”javascript:void(0)”</p>
+</blockquote>
+<p>这里有两部分首先是javascript表示我下面要说的都是用js来解析<br>还有其他如下</p>
+<ul>
+<li>javascript: 用js来解析<ul>
+<li><code>&lt;a href=&quot;javascript:void(0)&quot;&gt;首页&lt;/a&gt;</code></li>
+</ul>
+</li>
+<li>http：下面是连接，连接跳转<ul>
+<li><code>&lt;a href=&quot;http://www.baidu.com&quot;&gt;首页&lt;/a&gt;</code></li>
+</ul>
+</li>
+<li>mailto： 下面是邮箱<ul>
+<li><code>&lt;a href=&quot;mailto://xxx@xx.com&quot;&gt;首页&lt;/a&gt;</code></li>
+</ul>
+</li>
+<li>tel： 下面是手机号码拨打电话（在手机上使用）<ul>
+<li><code>&lt;a href=&quot;tel://00000&gt;首页&lt;/a&gt;</code></li>
+</ul>
+</li>
+</ul>
+<p>void 关键字 void会执行（）里面的语句表达式，总是返回undefined<br>就是什么都不做</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> r = <span class="keyword">void</span>(<span class="number">1</span>+<span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(r);</span><br></pre></td></tr></table></figure>
+<p>案例：高亮显示列表，并屏蔽a标签的点击事件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取menu中所有的a</span></span><br><span class="line"><span class="keyword">var</span> menu = <span class="built_in">document</span>.getElementById(<span class="string">"menu"</span>);</span><br><span class="line"><span class="comment">// 获取第一个ul的方法有以下集中</span></span><br><span class="line"><span class="comment">// menu.children[0]</span></span><br><span class="line"><span class="comment">// menu.getElementsByTagName("ul")[0];</span></span><br><span class="line"><span class="comment">// menu.firstElementChild</span></span><br><span class="line"><span class="comment">// 获取ul</span></span><br><span class="line"><span class="keyword">var</span> ul = menu.firstElementChild;</span><br><span class="line"><span class="keyword">var</span> list = ul.children;</span><br><span class="line"><span class="comment">// 遍历li</span></span><br><span class="line"><span class="keyword">var</span> i = <span class="number">0</span> ;len = list.length;</span><br><span class="line"><span class="keyword">for</span>(;i &lt; len;i++)&#123;</span><br><span class="line">    <span class="comment">// 获取li中的a</span></span><br><span class="line">    <span class="keyword">var</span> link = list[i].firstElementChild;</span><br><span class="line">    <span class="comment">// 注册事件 linkClick后面不带小括号(表示吧方法传递过来，待括号表示把返回值传递过来)</span></span><br><span class="line">    link.onclick = linkClick;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 事件处理函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">linkClick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 取消所有li的高亮显示</span></span><br><span class="line">  <span class="keyword">for</span>(i = <span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">      list[i].className = <span class="string">""</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 当前a标签对应的li高亮显示</span></span><br><span class="line">  <span class="keyword">this</span>.parentNode.className = <span class="string">"current"</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-1-document-write"><a href="#2-1-document-write" class="headerlink" title="2.1 document.write()"></a>2.1 document.write()</h3><p>把整个页面都重写，只剩下write中的内容</p>
+<ul>
+<li>性能问题<ul>
+<li>innerHTML方法由于会对字符串进行解析，需要避免在循环内多次使用。</li>
+<li>可以借助字符串或数组的方式进行替换，再设置给innerHTML</li>
+<li>优化后与document.createElement性能相近</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 点击按钮</span></span><br><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>);</span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 如果在事件中使用document.write会把整个页面覆盖</span></span><br><span class="line">  <span class="built_in">document</span>.write(<span class="string">"新设置的内容&lt;p&gt;标签也可以生成&lt;/p&gt;"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>innerText具有兼容性问题，这里我们下一个函数，处理兼容性问题</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取元素之间的内容</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getInnerText</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 判断element是否支持innerText</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span>  element.innerText === <span class="string">"string"</span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> element.innerText;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> element.textContent;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置元素之间的内容</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setInnerText</span>(<span class="params">element,content</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 判断element是否支持innerText</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span>  element.innerText === <span class="string">"string"</span>)&#123;</span><br><span class="line">      element.innerText = content;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      element.textContent = content;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>对比性能</strong></p>
+<ol>
+<li><strong>第一种方法（循环innerHTML）</strong><blockquote>
+<p><code>console.time(&#39;flag&#39;)</code><br><code>console.timeEnd(&#39;flag&#39;)</code><br>查询开始到结束的时间</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.time(<span class="string">'flag'</span>)</span><br><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line"><span class="keyword">var</span> data = [<span class="string">'zs'</span>,<span class="string">'ls'</span>,<span class="string">'ww'</span>];</span><br><span class="line">box.innerHTML = <span class="string">'&lt;ul&gt;'</span></span><br><span class="line"><span class="comment">// 遍历数据生成li</span></span><br><span class="line">data.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// forEach遍历数组，参数是一个函数</span></span><br><span class="line">    <span class="comment">// 这个函数有两个参数，第一个参数是数组中的元素，第二个参数是索引</span></span><br><span class="line">    box.innerHTML +=<span class="string">'&lt;li&gt;'</span>+item+<span class="string">'&lt;/li&gt;'</span>;</span><br><span class="line">    </span><br><span class="line">  </span><br><span class="line">&#125;)</span><br><span class="line">box.innerHTML +=<span class="string">'&lt;/ul&gt;'</span></span><br><span class="line"><span class="comment">// 输出执行time和timeEnd之间代码所消耗的时间</span></span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'flag'</span>)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><strong>第二种方法(利用数组innerHTML)</strong></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.time(<span class="string">'flag'</span>)</span><br><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line"><span class="keyword">var</span> data = [<span class="string">'zs'</span>,<span class="string">'ls'</span>,<span class="string">'ww'</span>];</span><br><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line">arr.push(<span class="string">'&lt;ul&gt;'</span>)</span><br><span class="line"><span class="comment">// 遍历数据生成li</span></span><br><span class="line">data.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>) </span>&#123;</span><br><span class="line">  arr.push(<span class="string">'&lt;li&gt;'</span>+item+<span class="string">'&lt;/li&gt;'</span>);</span><br><span class="line">&#125;)</span><br><span class="line">arr.push(<span class="string">'&lt;/ul&gt;'</span>)</span><br><span class="line">box.innerHTML = arr.join(<span class="string">""</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'flag'</span>)</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><strong>第三种方法(利用document.createElement)</strong></li>
+</ol>
+<blockquote>
+<p>.removeChild() 移除元素<br> var r = confirm(“是否确定删除？”);<br> .appendChild() 添加子节点<br> document.createElement 创建节点</p>
+</blockquote>
+<p>下面我们实现一个表格Table<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数据行中的数据</span></span><br><span class="line"><span class="keyword">var</span> bodyData = [</span><br><span class="line">    &#123;<span class="attr">name</span>:<span class="string">'zs'</span>,<span class="attr">subject</span>:<span class="string">'语文'</span>,score：<span class="number">100</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">name</span>:<span class="string">'ls'</span>,<span class="attr">subject</span>:<span class="string">'数学'</span>,score：<span class="number">80</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">name</span>:<span class="string">'sdb'</span>,<span class="attr">subject</span>:<span class="string">'英语'</span>,score：<span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">name</span>:<span class="string">'gw'</span>,<span class="attr">subject</span>:<span class="string">'体育'</span>,score：<span class="number">19</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">name</span>:<span class="string">'bzr'</span>,<span class="attr">subject</span>:<span class="string">'数学'</span>,score：<span class="number">50</span>&#125;,</span><br><span class="line">]</span><br><span class="line"><span class="comment">// 表头数据</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> headData = [<span class="string">"姓名"</span>，<span class="string">"科目"</span>,<span class="string">"成绩"</span>,<span class="string">"操作"</span>]；</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1.表头</span></span><br><span class="line"><span class="keyword">var</span> table = <span class="built_in">document</span>.createElement(<span class="string">"table"</span>);</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"box"</span>).appendChild(table);</span><br><span class="line"><span class="comment">// 设置table样式</span></span><br><span class="line">table.border = <span class="string">"1px"</span>;</span><br><span class="line">table.width = <span class="string">"500px"</span>;</span><br><span class="line">table.cellSpacing = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> tead = <span class="built_in">document</span>.createElement(<span class="string">"tead"</span>);</span><br><span class="line">table.appendChild(tead);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> tr = <span class="built_in">document</span>.createElement(<span class="string">"tr"</span>);</span><br><span class="line">tead.appendChild(tr);</span><br><span class="line"><span class="comment">// 设置tr样式</span></span><br><span class="line">tr.style.height = <span class="string">"50px"</span>;</span><br><span class="line">tr.style.backgroundColor = <span class="string">"lightgray"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成表头中的列</span></span><br><span class="line">headData.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> th = <span class="built_in">document</span>.createElement(<span class="string">'th'</span>);</span><br><span class="line">  tr.appendChild(th);</span><br><span class="line">  th.innerText = item;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 数据行</span></span><br><span class="line"><span class="keyword">var</span> tbody = <span class="built_in">document</span>.createElement(<span class="string">"tbody"</span>);</span><br><span class="line">table.appendChild(tbody);</span><br><span class="line"><span class="comment">// 设置数据行的内容居中</span></span><br><span class="line">tbody.style.textAlign = <span class="string">"center"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 遍历数据</span></span><br><span class="line">bodyData.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 创建行</span></span><br><span class="line">  <span class="comment">// 便利对象</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> item)&#123;</span><br><span class="line">      <span class="keyword">var</span> td = <span class="built_in">document</span>.createElement(<span class="string">"td"</span>);</span><br><span class="line">      tr.appendChild(td);</span><br><span class="line">      td.innerText = item[key];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 操作的列</span></span><br><span class="line">    td = <span class="built_in">document</span>.createElement(<span class="string">"td"</span>);</span><br><span class="line">    tr.appendChild(td);</span><br><span class="line">    <span class="comment">// 创建删除超链接</span></span><br><span class="line">    <span class="keyword">var</span> link = <span class="built_in">document</span>.createElement(<span class="string">"a"</span>);</span><br><span class="line">    link.href = <span class="string">"javascript:void(0)"</span>;</span><br><span class="line">    td.appendChild(link);</span><br><span class="line">    link.innerText = <span class="string">"删除"</span>;</span><br><span class="line">    <span class="comment">// 给link注册删除事件</span></span><br><span class="line">    link.onclick = linkClick;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 事件处理函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">linkClick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 提示</span></span><br><span class="line">  <span class="keyword">var</span> r = confirm(<span class="string">"是否确定删除？"</span>);</span><br><span class="line">  <span class="keyword">if</span>(r)&#123;</span><br><span class="line">      <span class="comment">// 删除</span></span><br><span class="line">      <span class="comment">// 获取点击按钮所在的行</span></span><br><span class="line">      <span class="keyword">var</span> tr = <span class="keyword">this</span>.parentNode.parentNode;</span><br><span class="line">      </span><br><span class="line">      tbody.removeChild(tr);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol start="4">
+<li><strong>测试3种方式</strong></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  d1 = +<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; <span class="number">1000</span>; i ++)&#123;</span><br><span class="line">    <span class="built_in">document</span>.body.innerHTML += <span class="string">'&lt;div style="width:100px;height:2px:border:1px solid blue;"&gt;&lt;/div&gt;'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> d2 = +<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(d2 - d1);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  d1 = +<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; <span class="number">1000</span>; i ++)&#123;</span><br><span class="line">    arr.push(<span class="string">'&lt;div style="width:100px;height:2px:border:1px solid blue;"&gt;&lt;/div&gt;'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.body.innerHTML = array.join(<span class="string">""</span>);</span><br><span class="line"><span class="keyword">var</span> d2 = +<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(d2 - d1);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  d1 = +<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; <span class="number">1000</span>; i ++)&#123;</span><br><span class="line">    <span class="keyword">var</span> div = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span><br><span class="line">    div.style.width=<span class="string">"100px"</span>;</span><br><span class="line">    div.style.height = <span class="string">"2px"</span>;</span><br><span class="line">    div.style.border = <span class="string">"1px solid red"</span></span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(div);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.body.innerHTML = array.join(<span class="string">""</span>);</span><br><span class="line"><span class="keyword">var</span> d2 = +<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(d2 - d1);</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-操作节点"><a href="#2-2-操作节点" class="headerlink" title="2.2 操作节点"></a>2.2 操作节点</h3><blockquote>
+<p>insertBefore(div1,div2) 在div2前插入div1<br>removeChild(div) 删除div节点<br>replaceChild(div1,div2) 把div2替换成div1</p>
+</blockquote>
+<p>在ul中第三个位置之前插入li<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ul = <span class="built_in">document</span>.getElementById(<span class="string">"ul"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> li = <span class="built_in">document</span>.createElement(<span class="string">"li"</span>);</span><br><span class="line"></span><br><span class="line">li.innerText = <span class="string">"测试"</span>;</span><br><span class="line">ul.insertBefore(li,ul.children[<span class="number">2</span>])</span><br></pre></td></tr></table></figure></p>
+<p>替换元素<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ul = <span class="built_in">document</span>.getElementById(<span class="string">"ul"</span>);</span><br><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span><br><span class="line">div.innerText = <span class="string">"div"</span>;</span><br><span class="line">ul.replaceChild(div,ul.children[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure></p>
+<p>删除ul中所有li</p>
+<blockquote>
+<p>如果使用<code>innerHtml=&quot;&quot;</code>,不会删除元素身上的事件对应的函数，容易造成内存泄漏</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ul = <span class="built_in">document</span>.getElementById(<span class="string">"ul"</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0.</span>len = ul.children.length;i&lt;len;i++)&#123;</span><br><span class="line">    <span class="keyword">var</span> li = ul.children[i];</span><br><span class="line">    ul.removeChild(li);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>案例：权限选择</strong></p>
+<blockquote>
+<p><code>&lt;select id=&quot;select&quot; multiple=&quot;multiple&quot;&gt;</code> </p>
+</blockquote>
+<blockquote>
+<p>这里还有第一点需要说明,循环document.get出list的时候，如果删除了其中一个。document.get的length会改变，里面的元素会重新创建索引，这时候在删除第二个（刚才删除第一个）实际上删除的是刚才的第三个</p>
+</blockquote>
+<blockquote>
+<p>如果appendChild是其他地方的元素，在appendChild的同时原来的元素就没有了</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 存放所有权限的列表</span></span><br><span class="line"><span class="keyword">var</span> all = <span class="built_in">document</span>.getElementById(<span class="string">"all"</span>);</span><br><span class="line"><span class="comment">// 存放选中的权限列表</span></span><br><span class="line"><span class="keyword">var</span> select = <span class="built_in">document</span>.getElementById(<span class="string">"select"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1.全选</span></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"bt1"</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> i = <span class="number">0</span>,len = all.children.length;</span><br><span class="line">  <span class="keyword">for</span>(;i &lt; len ; i++)&#123;</span><br><span class="line">      <span class="keyword">var</span> li = all.children[<span class="number">0</span>];</span><br><span class="line">      select.appendChild(li);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 2. 全不选</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 选择选中的选项</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"bt3"</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(i = <span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">      <span class="keyword">var</span> li = all.children[i];</span><br><span class="line">      <span class="comment">// 判断li是否选中</span></span><br><span class="line">      <span class="keyword">if</span>(li.selected)&#123;</span><br><span class="line">          select.appendChild(li)</span><br><span class="line">          i --;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4.移除选中的选项</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="2-3-注册事件"><a href="#2-3-注册事件" class="headerlink" title="2.3 注册事件"></a>2.3 注册事件</h3><p>注册事件的三种方式</p>
+<ol>
+<li><strong>onclick</strong><br>如果有一个元素两次onclick，第二次会覆盖第一次。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line">box.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"点击后执行"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 取消点击</span></span><br><span class="line">box.onclick = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><strong>addEventListenner(W3C标准)</strong></li>
+</ol>
+<blockquote>
+<p>box.addEventListener(“click”,eventCode,false)</p>
+</blockquote>
+<ul>
+<li>第一个参数 事件名称（不带on）</li>
+<li>第二个参数 事件处理函数</li>
+<li>第三个参数 事件冒泡（false）/事件捕获（true）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line">box.addEventListener(<span class="string">"click"</span>,eventCode,<span class="literal">false</span>);</span><br><span class="line"><span class="comment">// 取消点击</span></span><br><span class="line">box.removeEventListener(<span class="string">"click"</span>,eventCode,<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">eventCode</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"点击后执行"</span>)</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// 这里的this是触发事件的对象</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><strong>attachEvent(IE9以前)</strong></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line">box.attachEvent(<span class="string">"onclick"</span>.enentCode);</span><br><span class="line"><span class="comment">// 取消点击</span></span><br><span class="line">box.detachEvent(<span class="string">"onclick"</span>.enentCode);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">eventCode</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"点击后执行"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注册和移除事件处理兼容性问题</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注册事件</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>  <span class="title">addEventListener</span>(<span class="params">element,eventName,callback</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(element.addEventListener)&#123;</span><br><span class="line">        element.addEventListener(eventName,callback,<span class="literal">false</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(element.attachEvent)&#123;</span><br><span class="line">        element.attachEvent(<span class="string">"on"</span> + eventName,callback);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        element[<span class="string">"on"</span> + eventName] = callback;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 移除事件</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeEventListener</span>(<span class="params">element,eventName,callback</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(element.removeEventListener)&#123;</span><br><span class="line">     element.removeEventListener(eventName,callback,<span class="literal">false</span>);</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(element.attachEvent)&#123;</span><br><span class="line">     element.detachEvent(<span class="string">"on"</span> + eventName,callback);</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">     element[<span class="string">"on"</span> + eventName] = <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="2-4-事件流（冒泡-捕获）"><a href="#2-4-事件流（冒泡-捕获）" class="headerlink" title="2.4 事件流（冒泡/ 捕获）"></a>2.4 事件流（冒泡/ 捕获）</h3><p>DOM标准采用捕获+冒泡。两种事件流都会触发DOM的所有对象，从document对象开始，也在document对象结束。<br><img src="/2019/01/07/WebApi/05.jpg" alt="如图所示"><br>事件的三个阶段/事件流</p>
+<ol>
+<li>事件捕获阶段</li>
+<li>目标阶段</li>
+<li>冒泡阶段</li>
+</ol>
+<ul>
+<li><p>冒泡型事件流：事件的传播是从最特定的事件目标到最不特定的事件目标。即从DOM树的叶子到根。【推荐】</p>
+</li>
+<li><p>捕获型事件流：事件的传播是从最不特定的事件目标到最特定的事件目标。即从DOM树的根到叶子</p>
+</li>
+</ul>
+<blockquote>
+<p>阻止事件冒泡 e.stopPropagation();</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myDiv"</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在冒泡型事件流中click事件传播顺序为<code>&lt;div&gt;—》&lt;body&gt;—》&lt;html&gt;—》document</code><br>在捕获型事件流中click事件传播顺序为<code>document—》&lt;html&gt;—》&lt;body&gt;—》&lt;div&gt;</code><br><img src="/2019/01/07/WebApi/03.jpg" alt="如图所示"><img src="/2019/01/07/WebApi/04.jpg" alt="如图所示"></p>
+<h3 id="2-5-事件委托"><a href="#2-5-事件委托" class="headerlink" title="2.5 事件委托"></a>2.5 事件委托</h3><p>把本来应该li做的事情，转交给父元素来做（事件冒泡）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ul = <span class="built_in">document</span>.getElementById(<span class="string">"ul"</span>);</span><br><span class="line">ul.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 当事件发生的时候，系统会把事件发生时候的一些数据传递给事件处理函数</span></span><br><span class="line">  <span class="comment">// e事件对象（事件参数）</span></span><br><span class="line">  <span class="comment">// e.target 真正触发事件的对象 li</span></span><br><span class="line">  e.target.style.backgroundColor = <span class="string">"red"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-6-事件对象属性和方法"><a href="#2-6-事件对象属性和方法" class="headerlink" title="2.6 事件对象属性和方法"></a>2.6 事件对象属性和方法</h3><ul>
+<li>event.type 获取事件类型</li>
+<li>clientX/clientY 所有浏览器都支持，窗口位置</li>
+<li>pageX/pageY IE8以前不支持，页面未知</li>
+<li>event.target||event.srcElement用于获取触发事件的元素</li>
+</ul>
+<p>获取是什么事件触发的方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  box = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line">box.onclick = fn;</span><br><span class="line">box.onmousemove = fn;</span><br><span class="line">box.onmouseout = fn;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// e有兼容性问题，IE9以前不支持</span></span><br><span class="line">  <span class="comment">// ie老版本获取事件对象的方式window.event</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 处理兼容性问题</span></span><br><span class="line">  e = e || <span class="built_in">window</span>.event;</span><br><span class="line">  <span class="keyword">switch</span> (e.type)&#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="string">"click"</span>:</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">"点击事件"</span>);</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="string">"mouseover"</span>:</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">"鼠标经过"</span>);</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="string">"mouseout"</span>:</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">"鼠标离开"</span>);</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>案例：根据鼠标位置改变图片位置</strong></p>
+<blockquote>
+<p>这里有个坑，<code>document.onmousemove</code>和<code>document.body.onmousemove</code>的区别<br>body有效范围是bodyn内部元素的范围，这里就是图片那么大的范围</p>
+</blockquote>
+<blockquote>
+<p>clientX和clientY互殴的是鼠标在可视区域中的位置<br>pagX和pagY获取的是在页面中的位置<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> img = <span class="built_in">document</span>.getElementById(<span class="string">"img"</span>);</span><br><span class="line"><span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  e = e || <span class="built_in">window</span>.event;</span><br><span class="line">  </span><br><span class="line">  img.style.position = <span class="string">"absolute"</span>;</span><br><span class="line">  <span class="comment">// img.style.left = e.clientX + "px";</span></span><br><span class="line">  <span class="comment">// img.style.top = e.clientY + "px";</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 获取鼠标在页面中的位置</span></span><br><span class="line">  img.style.left = e.pageX + <span class="string">"px"</span>;</span><br><span class="line">  img.style.top = e.pageY + <span class="string">"px"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>如果上下左右有滚动条时<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> img = <span class="built_in">document</span>.getElementById(<span class="string">"img"</span>);</span><br><span class="line"><span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  e = e || <span class="built_in">window</span>.event;</span><br><span class="line">  img.style.position = <span class="string">"absolute"</span>;</span><br><span class="line">  img.style.left = getPage(e).pageX + <span class="string">"px"</span>;</span><br><span class="line">  img.style.top  = getPage(e).pageY + <span class="string">"px"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 获取鼠标在页面上的坐标</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPage</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span>&#123;</span><br><span class="line">        pageX:e.clientX + getScroll().scrollLeft,</span><br><span class="line">        pageY:e.clientY + getScroll().scrollTop</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取页面滚出去的距离（处理兼容性）</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getScroll</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span>&#123;</span><br><span class="line">      scrollTop:<span class="built_in">document</span>.documentElement.scrollTop || <span class="built_in">document</span>.body.scrollTop,</span><br><span class="line">      scrollLeft:<span class="built_in">document</span>.documentElement.scrollLeft || <span class="built_in">document</span>.body.scrollLeft,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-7-阻止事件传播方式"><a href="#2-7-阻止事件传播方式" class="headerlink" title="2.7 阻止事件传播方式"></a>2.7 阻止事件传播方式</h3><ul>
+<li>标准方式：event.stopPropagation();</li>
+<li>IE低版本：event.cancelBubble = true; 标准中已废弃</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> link = <span class="built_in">document</span>.getElementById(<span class="string">"link"</span>);</span><br><span class="line">link.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  alert(<span class="string">"点击了"</span>);</span><br><span class="line">  <span class="comment">// 阻止默认行为</span></span><br><span class="line">  <span class="comment">// return false；</span></span><br><span class="line">  e.preventDefault();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>event.stopPropagation()用法介绍</p>
+<ul>
+<li>该方法将停止事件的传播，阻止它被分派到其他 Document 节点。在事件传播的任何阶段都可以调用它。</li>
+</ul>
+</li>
+<li><p>event.preventDefault()用法介绍</p>
+<ul>
+<li>将通知 Web 浏览器不要执行与事件关联的默认动作（如果存在这样的动作）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-7-常用的鼠标键盘事件"><a href="#2-7-常用的鼠标键盘事件" class="headerlink" title="2.7 常用的鼠标键盘事件"></a>2.7 常用的鼠标键盘事件</h3><ul>
+<li>onmouseup 鼠标按键放开时触发</li>
+<li>onmousedown 鼠标按键按下触发</li>
+<li>onmousemove 鼠标移动触发</li>
+<li>onkeyup 键盘按下触发（这个阻止方法执行，否则down来不及）</li>
+<li>onkeydown 键盘按键抬起触发</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> txt = <span class="built_in">document</span>.getElementById(<span class="string">"txt"</span>);</span><br><span class="line">txt.onkeydown = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 键盘码</span></span><br><span class="line">  <span class="built_in">console</span>.log(e.keyCode);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span>(e.keyCode === <span class="number">65</span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>想让用户按下空格input光标换到下一个input</p>
+<blockquote>
+<p>use strict</p>
+</blockquote>
+<p><em>第一种思路把keyCode改成9</em><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"></span><br><span class="line">a = <span class="number">5</span>;<span class="comment">// 严格模式下必须先声明变量再使用</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">// 严格模式下this是undefined</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> texts = <span class="built_in">document</span>.querySelectorAll(<span class="string">"input[type = text]"</span>;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> i=<span class="number">0</span>,len = texts.length;</span><br><span class="line"><span class="keyword">for</span>(;i&lt;len;i++)&#123;</span><br><span class="line">    <span class="keyword">var</span> txt = texts[i];</span><br><span class="line">    txt.onkeydown = txtKeydown;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">txtKeydown</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 13回车 9 tab</span></span><br><span class="line">  <span class="keyword">if</span>(e.keyCode === <span class="number">13</span>)&#123;</span><br><span class="line">      e.keyCode = <span class="number">9</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果加了严格模式会报错，因为keyCode是只读属性</p>
+<p>当在文本框中按下回车，让下一个文本框获取焦点</p>
+<blockquote>
+<p>nextElement.focus();</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> texts = <span class="built_in">document</span>.querySelectorAll(<span class="string">"input[type = text]"</span>;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> i=<span class="number">0</span>,len = texts.length;</span><br><span class="line"><span class="keyword">for</span>(;i&lt;len;i++)&#123;</span><br><span class="line">    <span class="keyword">var</span> txt = texts[i];</span><br><span class="line">    txt.onkeydown = txtKeydown;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">txtKeydown</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 当在文本框中按下回车，让下一个文本框获取焦点</span></span><br><span class="line">  <span class="keyword">var</span> nextElement = <span class="keyword">this</span>.nextElementSibling;</span><br><span class="line">  <span class="keyword">if</span>(nextElement)&#123;</span><br><span class="line">      nextElement.focus();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年01月14日 21:06</p>
+        <p>原始链接： <a class="post-url" href="/2019/01/07/WebApi/" title="WebApi">http://linjiad.github.io/2019/01/07/WebApi/</a></p>
+        <footer>
+            <a href="http://linjiad.github.io">
+                <img src="/images/logo.png" alt="linjiad">
+                linjiad
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/weixin.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/weixin.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/zhifubao.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://linjiad.github.io/2019/01/07/WebApi/&title=《WebApi》 — linjiad_个人博客&pic=http://linjiad.github.ioimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://linjiad.github.io/2019/01/07/WebApi/&title=《WebApi》 — linjiad_个人博客&source=这个人很懒什么也没写" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://linjiad.github.io/2019/01/07/WebApi/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《WebApi》 — linjiad_个人博客&url=http://linjiad.github.io/2019/01/07/WebApi/&via=http://linjiad.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://linjiad.github.io/2019/01/07/WebApi/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://linjiad.github.io/2019/01/07/WebApi/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/js/" class="color3">js</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0-介绍"><span class="post-toc-text">0.介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-1介绍"><span class="post-toc-text">0.1介绍</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0-2组成结构"><span class="post-toc-text">0.2组成结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM"><span class="post-toc-text">DOM</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-DOM概念"><span class="post-toc-text">1.1 DOM概念</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-document获取标签"><span class="post-toc-text">1.2 document获取标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-绑定事件"><span class="post-toc-text">1.3 绑定事件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-4-this"><span class="post-toc-text">1.4 this</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-5-innerHTML和innerText"><span class="post-toc-text">1.5 innerHTML和innerText</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-6-表单元素属性"><span class="post-toc-text">1.6 表单元素属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-7-自定义属性"><span class="post-toc-text">1.7 自定义属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-8-操作样式"><span class="post-toc-text">1.8 操作样式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-9-节点操作"><span class="post-toc-text">1.9 节点操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-0-a标签href"><span class="post-toc-text">2.0 a标签href</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-document-write"><span class="post-toc-text">2.1 document.write()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-操作节点"><span class="post-toc-text">2.2 操作节点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-注册事件"><span class="post-toc-text">2.3 注册事件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-4-事件流（冒泡-捕获）"><span class="post-toc-text">2.4 事件流（冒泡/ 捕获）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-5-事件委托"><span class="post-toc-text">2.5 事件委托</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-6-事件对象属性和方法"><span class="post-toc-text">2.6 事件对象属性和方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-7-阻止事件传播方式"><span class="post-toc-text">2.7 阻止事件传播方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-7-常用的鼠标键盘事件"><span class="post-toc-text">2.7 常用的鼠标键盘事件</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/01/07/产品设计2/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          产品设计2
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/12/24/NodeJs3/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">NodeJs3</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'linjiad',
+            repo: 'linjiad.github.io',
+            oauth: {
+                client_id: '9b8f5415215f1aef0b2c',
+                client_secret: 'dea7335a3cd2d8e380b0279a5f1f7245797579d7',
+            },
+        })
+        gitment.render('comments')
+    </script>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 linjiad<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://linjiad.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Linux服务器/">Linux服务器</a><a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/产品文档/">产品文档</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a><a class="category-link" href="/categories/运维/">运维</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/Ionic/" style="font-size: 15px;">Ionic</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js/" style="font-size: 12.5px;">js</a> <a href="/tags/nodeppt/" style="font-size: 15px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/产品/" style="font-size: 17.5px;">产品</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/混合开发/" style="font-size: 10px;">混合开发</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/Ionic/" style="font-size: 15px;">Ionic</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js/" style="font-size: 12.5px;">js</a> <a href="/tags/nodeppt/" style="font-size: 15px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/产品/" style="font-size: 17.5px;">产品</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/混合开发/" style="font-size: 10px;">混合开发</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ionic-03 | linjiad_个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="梧桐更兼细雨到黄昏点点滴滴" />
+  
+  <meta name="description" content="9 上拉下拉9.1 上拉scroll首先写一个列表再写一个下拉的画面  threshold 距离底部多少处罚方法 (ionInfinite) 监听方法 loadingSpinner 下拉的图标 loadingText 下拉的文字1234567891011&amp;lt;ion-list&amp;gt;    &amp;lt;ion-item *ngFor=&quot;let item of data&quot;&amp;gt;      &amp;#123">
+<meta name="keywords" content="Ionic">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ionic-03">
+<meta property="og:url" content="http://linjiad.github.io/2019/04/09/ionic-03/index.html">
+<meta property="og:site_name" content="linjiad_个人博客">
+<meta property="og:description" content="9 上拉下拉9.1 上拉scroll首先写一个列表再写一个下拉的画面  threshold 距离底部多少处罚方法 (ionInfinite) 监听方法 loadingSpinner 下拉的图标 loadingText 下拉的文字1234567891011&amp;lt;ion-list&amp;gt;    &amp;lt;ion-item *ngFor=&quot;let item of data&quot;&amp;gt;      &amp;#123">
+<meta property="og:locale" content="JS">
+<meta property="og:updated_time" content="2019-04-14T00:12:44.474Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ionic-03">
+<meta name="twitter:description" content="9 上拉下拉9.1 上拉scroll首先写一个列表再写一个下拉的画面  threshold 距离底部多少处罚方法 (ionInfinite) 监听方法 loadingSpinner 下拉的图标 loadingText 下拉的文字1234567891011&amp;lt;ion-list&amp;gt;    &amp;lt;ion-item *ngFor=&quot;let item of data&quot;&amp;gt;      &amp;#123">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">云销雨霁彩彻区明</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        云销雨霁彩彻区明
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        林花谢了春红太匆匆
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="linjiad_个人微博" target="_blank" href="//linjiad.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/linjiad">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-ionic-03" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      ionic-03
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/前端技术/">前端技术</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-04-09
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="9-上拉下拉"><a href="#9-上拉下拉" class="headerlink" title="9 上拉下拉"></a>9 上拉下拉</h2><h3 id="9-1-上拉scroll"><a href="#9-1-上拉scroll" class="headerlink" title="9.1 上拉scroll"></a>9.1 上拉scroll</h3><p>首先写一个列表<br>再写一个下拉的画面</p>
+<ul>
+<li>threshold 距离底部多少处罚方法</li>
+<li>(ionInfinite) 监听方法</li>
+<li>loadingSpinner 下拉的图标</li>
+<li>loadingText 下拉的文字<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-item</span> *<span class="attr">ngFor</span>=<span class="string">"let item of data"</span>&gt;</span></span><br><span class="line">      &#123;&#123;item&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ion-list</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ion-infinite-scroll</span> <span class="attr">threshold</span>=<span class="string">"100px"</span> (<span class="attr">ionInfinite</span>)=<span class="string">"loadData($event)"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ion-infinite-scroll-content</span></span></span><br><span class="line"><span class="tag">              <span class="attr">loadingSpinner</span>=<span class="string">"bubbles"</span></span></span><br><span class="line"><span class="tag">              <span class="attr">loadingText</span>=<span class="string">"Loading more data..."</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ion-infinite-scroll-content</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ion-infinite-scroll</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>引入下拉组件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; IonInfiniteScroll &#125; <span class="keyword">from</span> <span class="string">'@ionic/angular'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>初始化数据<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public data: any[] = [];</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> i = <span class="number">0</span>; i &lt; <span class="number">20</span>; i ++) &#123;</span><br><span class="line">            <span class="keyword">this</span>.data.push(<span class="string">`这是第<span class="subst">$&#123;i&#125;</span>条数据`</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>下拉事件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">loadData(event) &#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">const</span> i = <span class="number">0</span> ; i &lt; <span class="number">10</span>; i ++) &#123;</span><br><span class="line">                <span class="keyword">this</span>.data.push(<span class="string">`这是第<span class="subst">$&#123;i&#125;</span>条数据`</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'Done'</span>);</span><br><span class="line">            event.target.complete();</span><br><span class="line">        &#125;, <span class="number">500</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里有BUG，第一次可以下拉，第二次不行</p>
+<p>所以必须调用<br><code>event.target.complete();</code><br>所以在html中需要这样调<br><code>(ionInfinite)=&quot;loadData($event)&quot;</code></p>
+<hr>
+<h3 id="9-2-关闭上拉"><a href="#9-2-关闭上拉" class="headerlink" title="9.2 关闭上拉"></a>9.2 关闭上拉</h3><p>event.target.disabled = true;</p>
+<p><strong>1. 下拉到极限关闭下拉</strong><br>需要在下拉事件中添加判断<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">loadData(event) &#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">const</span> i = <span class="number">0</span> ; i &lt; <span class="number">10</span>; i ++) &#123;</span><br><span class="line">                <span class="keyword">this</span>.data.push(<span class="string">`这是第<span class="subst">$&#123;i&#125;</span>条数据`</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'Done'</span>);</span><br><span class="line">            event.target.complete();</span><br><span class="line">            <span class="comment">// 当大于1000条时关闭下拉</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.data.length === <span class="number">1000</span>) &#123;</span><br><span class="line">                event.target.disabled = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, <span class="number">500</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>2. 按钮关闭下拉</strong><br>首先我们定义一个按钮</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-button</span> (<span class="attr">click</span>)=<span class="string">"toggleInfiniteScroll()"</span>&gt;</span>关闭下拉<span class="tag">&lt;/<span class="name">ion-button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>为了获取到下拉，我们需要下拉的id<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-infinite-scroll</span> #<span class="attr">myInfiniteScroll</span> <span class="attr">threshold</span>=<span class="string">"100px"</span> (<span class="attr">ionInfinite</span>)=<span class="string">"loadData($event)"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-infinite-scroll-content</span></span></span><br><span class="line"><span class="tag">            <span class="attr">loadingSpinner</span>=<span class="string">"bubbles"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">loadingText</span>=<span class="string">"Loading more data..."</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-infinite-scroll-content</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ion-infinite-scroll</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>在js中引入获取id的包,并且通过id获取dom<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component , ViewChild &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line">@ViewChild(<span class="string">'myInfiniteScroll'</span>) infiniteScroll: IonInfiniteScroll;</span><br></pre></td></tr></table></figure></p>
+<p>写点击事件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 关闭就打开，打开就关闭</span></span><br><span class="line">toggleInfiniteScroll() &#123;</span><br><span class="line">        <span class="keyword">this</span>.infiniteScroll.disabled = !<span class="keyword">this</span>.infiniteScroll.disabled;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="9-3-请求后台数据"><a href="#9-3-请求后台数据" class="headerlink" title="9.3 请求后台数据"></a>9.3 请求后台数据</h3><p><strong>1. 首先在app.module.ts 中引入并加载数据请求模块</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;HttpClientModule&#125; <span class="keyword">from</span> <span class="string">'@angular/common/http'</span>;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [AppComponent], <span class="comment">// 声明组件</span></span><br><span class="line">  entryComponents: [], <span class="comment">// 配置不会再模板中使用的组件</span></span><br><span class="line">  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule], <span class="comment">// 配置项目所需要的模块</span></span><br><span class="line">  providers: [ <span class="comment">// 配置项目所需要的服务</span></span><br><span class="line">    StatusBar,</span><br><span class="line">    SplashScreen,</span><br><span class="line">    &#123; <span class="attr">provide</span>: RouteReuseStrategy, <span class="attr">useClass</span>: IonicRouteStrategy &#125;</span><br><span class="line">  ],</span><br><span class="line">  bootstrap: [AppComponent] <span class="comment">// 项目启动的组件</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p><strong>2. 创建一个请求服务</strong></p>
+<blockquote>
+<p>ionic g service services/httpservice</p>
+</blockquote>
+<p><strong>3. 在服务中引用并注入</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Injectable &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;HttpClient&#125; <span class="keyword">from</span> <span class="string">'@angular/common/http'</span>;</span><br><span class="line">@Injectable(&#123;</span><br><span class="line">  providedIn: <span class="string">'root'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpserviceService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(public http: HttpClient) &#123; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>4. 封装get方法</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">get(api) &#123;</span><br><span class="line">      <span class="keyword">return</span>  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resovel, err</span>) =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">this</span>.http.get(api).subscribe(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">              resovel(response);</span><br><span class="line">          &#125;, (error) =&gt; &#123;</span><br><span class="line">              err(error);</span><br><span class="line">          &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>5. 在根模块中注入服务</strong></p>
+<p>在app.module.ts 中引入并加载数刚才创建的服务</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;HttpserviceService&#125; <span class="keyword">from</span> <span class="string">'./services/httpservice.service'</span>;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [AppComponent], <span class="comment">// 声明组件</span></span><br><span class="line">  entryComponents: [], <span class="comment">// 配置不会再模板中使用的组件</span></span><br><span class="line">  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule], <span class="comment">// 配置项目所需要的模块</span></span><br><span class="line">  providers: [ <span class="comment">// 配置项目所需要的服务</span></span><br><span class="line">    StatusBar,</span><br><span class="line">    SplashScreen,</span><br><span class="line">    HttpserviceService,</span><br><span class="line">    &#123; <span class="attr">provide</span>: RouteReuseStrategy, <span class="attr">useClass</span>: IonicRouteStrategy &#125;</span><br><span class="line">  ],</span><br><span class="line">  bootstrap: [AppComponent] <span class="comment">// 项目启动的组件</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>6. 应用</strong><br>在需要的地方引入服务并注入<br>之后写一个请求方法如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;HttpserviceService&#125; <span class="keyword">from</span> <span class="string">'../services/httpservice.service'</span>;</span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-tab4'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./tab4.page.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./tab4.page.scss'</span>],</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Tab4Page</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(public httpserviceService: HttpserviceService) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">    <span class="keyword">this</span>.getData();</span><br><span class="line">  &#125;</span><br><span class="line">  getData() &#123;</span><br><span class="line">    <span class="keyword">const</span> api = <span class="string">'http://www.phonegap100.com/appapi.php?a=getPortalList&amp;catid=20&amp;page=1'</span>;</span><br><span class="line">    <span class="keyword">this</span>.httpserviceService.get(api).then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(response);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="9-4-上拉请求更多"><a href="#9-4-上拉请求更多" class="headerlink" title="9.4 上拉请求更多"></a>9.4 上拉请求更多</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-content</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ion-list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-item</span> *<span class="attr">ngFor</span>=<span class="string">"let item of list"</span>&gt;</span></span><br><span class="line">      &#123;&#123;item.title&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ion-list</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> *<span class="attr">ngIf</span>=<span class="string">"hasmore"</span>&gt;</span>---------我也是有底线的---------<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ion-infinite-scroll</span> <span class="attr">threshold</span>=<span class="string">"10%"</span> (<span class="attr">ionInfinite</span>)=<span class="string">"loadData($event)"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-infinite-scroll-content</span></span></span><br><span class="line"><span class="tag">            <span class="attr">loadingSpinner</span>=<span class="string">"bubbles"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">loadingText</span>=<span class="string">"Loading more data..."</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ion-infinite-scroll-content</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ion-infinite-scroll</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-content</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>js逻辑<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit, NgZone  &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>; <span class="comment">// 这里还需要引入强制刷新</span></span><br><span class="line"><span class="keyword">import</span> &#123;HttpserviceService&#125; <span class="keyword">from</span> <span class="string">'../services/httpservice.service'</span>;</span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-tab4'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./tab4.page.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./tab4.page.scss'</span>],</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Tab4Page</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line">  public list: any[] = []; <span class="comment">// 展现列表</span></span><br><span class="line">  public page: any = <span class="number">1</span>; <span class="comment">// 页面计数</span></span><br><span class="line">  public hasmore: any = <span class="literal">true</span>; <span class="comment">// 底部提示</span></span><br><span class="line">  <span class="keyword">constructor</span>(public httpserviceService: HttpserviceService) &#123;</span><br><span class="line">    <span class="keyword">this</span>.getData(); <span class="comment">// 初始化的时候就请求数据</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit() &#123;&#125;</span><br><span class="line">  getData(event= <span class="literal">false</span>) &#123; <span class="comment">// 判断是下拉的还是初始化的</span></span><br><span class="line">    <span class="keyword">const</span> api = <span class="string">'http://www.phonegap100.com/appapi.php?a=getPortalList&amp;catid=20&amp;page='</span> + <span class="keyword">this</span>.page;<span class="comment">// 动态页码参数</span></span><br><span class="line">    <span class="keyword">this</span>.httpserviceService.get(api).then(<span class="function">(<span class="params">response: any</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.ngZone.run(<span class="function"><span class="params">()</span> =&gt;</span> &#123; <span class="comment">// 强制刷新页面</span></span><br><span class="line">          <span class="keyword">this</span>.list = [...this.list, ...response.result]; <span class="comment">// 拼接数据</span></span><br><span class="line">          <span class="keyword">this</span>.page ++; <span class="comment">// 页面+1</span></span><br><span class="line">          (event) ? event.target.complete() : event = <span class="literal">false</span>; <span class="comment">// 判断是下拉的请求还是初始化的请求，如果是下拉则关闭下拉</span></span><br><span class="line">          <span class="comment">// 判断下一页是否有数据</span></span><br><span class="line">          <span class="keyword">if</span> (response.result.length &lt; <span class="number">20</span>) &#123;</span><br><span class="line">              event.target.disabled = <span class="literal">true</span>; <span class="comment">// 禁止再拉了</span></span><br><span class="line">              <span class="keyword">this</span>.hasmore = <span class="literal">false</span>; <span class="comment">// 让底部的提示显示</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">    loadData(event) &#123; <span class="comment">// 下拉触发方法</span></span><br><span class="line">        <span class="keyword">this</span>.getData(event);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="9-5-下拉"><a href="#9-5-下拉" class="headerlink" title="9.5 下拉"></a>9.5 下拉</h3><ul>
+<li>ionRefresh 触发的方法</li>
+<li>pullingText 下拉时候提示文字</li>
+<li>pullingIcon 下来时候提示图标</li>
+<li>refreshingText 下拉中的文字（手指放开后）</li>
+<li>refreshingSpinner 下拉中的图标（手指放开后）<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-refresher</span> <span class="attr">slot</span>=<span class="string">"fixed"</span> (<span class="attr">ionRefresh</span>)=<span class="string">"doRefresh($event)"</span> <span class="attr">text</span>=<span class="string">"客官别急"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ion-refresher-content</span></span></span><br><span class="line"><span class="tag">    <span class="attr">pullingIcon</span>=<span class="string">"arrow-dropdown"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">pullingText</span>=<span class="string">"Pull to refresh"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">refreshingSpinner</span>=<span class="string">"circles"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">refreshingText</span>=<span class="string">"Refreshing..."</span></span></span><br><span class="line"><span class="tag">    &gt;</span><span class="tag">&lt;/<span class="name">ion-refresher-content</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ion-refresher</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>下拉方法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">doRefresh(event) &#123;</span><br><span class="line">      setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">         setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">10</span>; i &lt; <span class="number">20</span>; i++) &#123;</span><br><span class="line">             <span class="keyword">this</span>.list.unshift(&#123;</span><br><span class="line">                 title: i,</span><br><span class="line">             &#125;);</span><br><span class="line">           &#125;</span><br><span class="line">         &#125;)</span><br><span class="line">          event.target.complete(); <span class="comment">// 与上拉相同都需要关闭</span></span><br><span class="line">      &#125;, <span class="number">2000</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="10-路由跳转"><a href="#10-路由跳转" class="headerlink" title="10 路由跳转"></a>10 路由跳转</h2><h3 id="10-1-普通路由跳转"><a href="#10-1-普通路由跳转" class="headerlink" title="10.1 普通路由跳转"></a>10.1 普通路由跳转</h3><p>匹配的是路由中的path<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-button</span> [<span class="attr">routerLink</span>]=<span class="string">"['/pinfo']"</span>&gt;</span></span><br><span class="line">    跳转到详情</span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ion-button</span> <span class="attr">color</span>=<span class="string">"primary"</span> <span class="attr">routerLink</span>=<span class="string">"/button"</span>&gt;</span></span><br><span class="line">    跳转到按钮页面</span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="10-2-跳转传值"><a href="#10-2-跳转传值" class="headerlink" title="10.2 跳转传值"></a>10.2 跳转传值</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-button</span> <span class="attr">color</span>=<span class="string">"primary"</span> <span class="attr">routerLink</span>=<span class="string">"/button"</span> [<span class="attr">queryParams</span>]=<span class="string">"&#123;cid:cid ,aid:'1234'&#125;"</span>&gt;</span></span><br><span class="line">    跳转到按钮页面</span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在跳转页面中接收值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; ActivatedRoute &#125; <span class="keyword">from</span> <span class="string">'@angular/router'</span>; <span class="comment">// 引入对应模块</span></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-button'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./button.page.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./button.page.scss'</span>],</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">ButtonPage</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(public route:ActivatedRoute) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">      <span class="keyword">this</span>.route.queryParams.subscribe(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123; <span class="comment">// 获取传过来的值</span></span><br><span class="line">          <span class="built_in">console</span>.log(data);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="10-3-返回上一页"><a href="#10-3-返回上一页" class="headerlink" title="10.3 返回上一页"></a>10.3 返回上一页</h3><p>正常情况下返回上一页没有问题</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-buttons</span> <span class="attr">slot</span>=<span class="string">"start"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ion-back-button</span> <span class="attr">defaultHref</span>=<span class="string">"/tabs/tab1"</span> <span class="attr">text</span>=<span class="string">"返回"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-back-button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-buttons</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>如果在tab2中用这个的话会出现BUG</code><br>返回会返回到tab1<br>在这时候我们需要用到<strong>NavController</strong>来返回上一页</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-buttons</span> <span class="attr">slot</span>=<span class="string">"start"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ion-button</span> (<span class="attr">click</span>)=<span class="string">"goBack()"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ion-icon</span> <span class="attr">slot</span>=<span class="string">"icon-only"</span> <span class="attr">name</span>=<span class="string">"arrow-back"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-icon</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ion-button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-buttons</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">goBack() &#123;</span><br><span class="line">    <span class="comment">// tthis.nav.back(); 返回历史记录的上一页</span></span><br><span class="line">    <span class="keyword">this</span>.nav.navigateBack(<span class="string">'/tabs/tab2'</span>); <span class="comment">// 跳转到指定页面</span></span><br><span class="line">    <span class="comment">// this.nav.navigateRoot('/tabs/tab2'); 直接回到根</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年04月14日 08:12</p>
+        <p>原始链接： <a class="post-url" href="/2019/04/09/ionic-03/" title="ionic-03">http://linjiad.github.io/2019/04/09/ionic-03/</a></p>
+        <footer>
+            <a href="http://linjiad.github.io">
+                <img src="/images/logo.png" alt="linjiad">
+                linjiad
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/weixin.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/weixin.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/zhifubao.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://linjiad.github.io/2019/04/09/ionic-03/&title=《ionic-03》 — linjiad_个人博客&pic=2019/04/09/Ionic-03/menu.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://linjiad.github.io/2019/04/09/ionic-03/&title=《ionic-03》 — linjiad_个人博客&source=这个人很懒什么也没写" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://linjiad.github.io/2019/04/09/ionic-03/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ionic-03》 — linjiad_个人博客&url=http://linjiad.github.io/2019/04/09/ionic-03/&via=http://linjiad.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://linjiad.github.io/2019/04/09/ionic-03/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://linjiad.github.io/2019/04/09/ionic-03/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/Ionic/" class="color1">Ionic</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#9-上拉下拉"><span class="post-toc-text">9 上拉下拉</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#9-1-上拉scroll"><span class="post-toc-text">9.1 上拉scroll</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#9-2-关闭上拉"><span class="post-toc-text">9.2 关闭上拉</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#9-3-请求后台数据"><span class="post-toc-text">9.3 请求后台数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#9-4-上拉请求更多"><span class="post-toc-text">9.4 上拉请求更多</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#9-5-下拉"><span class="post-toc-text">9.5 下拉</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#10-路由跳转"><span class="post-toc-text">10 路由跳转</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#10-1-普通路由跳转"><span class="post-toc-text">10.1 普通路由跳转</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#10-2-跳转传值"><span class="post-toc-text">10.2 跳转传值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#10-3-返回上一页"><span class="post-toc-text">10.3 返回上一页</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/02/ionic-02/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">ionic-02</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'linjiad',
+            repo: 'linjiad.github.io',
+            oauth: {
+                client_id: '9b8f5415215f1aef0b2c',
+                client_secret: 'dea7335a3cd2d8e380b0279a5f1f7245797579d7',
+            },
+        })
+        gitment.render('comments')
+    </script>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 linjiad<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://linjiad.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Linux服务器/">Linux服务器</a><a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/产品文档/">产品文档</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a><a class="category-link" href="/categories/运维/">运维</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/Ionic/" style="font-size: 15px;">Ionic</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js/" style="font-size: 12.5px;">js</a> <a href="/tags/nodeppt/" style="font-size: 15px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/产品/" style="font-size: 17.5px;">产品</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/混合开发/" style="font-size: 10px;">混合开发</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/Ionic/" style="font-size: 15px;">Ionic</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js/" style="font-size: 12.5px;">js</a> <a href="/tags/nodeppt/" style="font-size: 15px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/产品/" style="font-size: 17.5px;">产品</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/混合开发/" style="font-size: 10px;">混合开发</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>NodeJs3 | linjiad_个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="梧桐更兼细雨到黄昏点点滴滴" />
+  
+  <meta name="description" content="8 链接数据库8.1 回顾ES6ES6对数组新增了很多方法可以用Array.prototype在浏览器中查看所有属性  find find接收一个方法作为参数，方法内部返回一个条件 find会便利所有的元素，执行你给定的带有条件返回值的函数 符合该条件的元素会作为find方法返回值 如果遍历结束还没有符合该条件的元素，则返回undefined    123456789101112131415161">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NodeJs3">
+<meta property="og:url" content="http://linjiad.github.io/2018/12/24/NodeJs3/index.html">
+<meta property="og:site_name" content="linjiad_个人博客">
+<meta property="og:description" content="8 链接数据库8.1 回顾ES6ES6对数组新增了很多方法可以用Array.prototype在浏览器中查看所有属性  find find接收一个方法作为参数，方法内部返回一个条件 find会便利所有的元素，执行你给定的带有条件返回值的函数 符合该条件的元素会作为find方法返回值 如果遍历结束还没有符合该条件的元素，则返回undefined    123456789101112131415161">
+<meta property="og:locale" content="JS">
+<meta property="og:updated_time" content="2018-12-24T03:52:05.977Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NodeJs3">
+<meta name="twitter:description" content="8 链接数据库8.1 回顾ES6ES6对数组新增了很多方法可以用Array.prototype在浏览器中查看所有属性  find find接收一个方法作为参数，方法内部返回一个条件 find会便利所有的元素，执行你给定的带有条件返回值的函数 符合该条件的元素会作为find方法返回值 如果遍历结束还没有符合该条件的元素，则返回undefined    123456789101112131415161">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">云销雨霁彩彻区明</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        云销雨霁彩彻区明
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        林花谢了春红太匆匆
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="linjiad_个人微博" target="_blank" href="//linjiad.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/linjiad">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-NodeJs3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      NodeJs3
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-12-24
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="8-链接数据库"><a href="#8-链接数据库" class="headerlink" title="8 链接数据库"></a>8 链接数据库</h2><h3 id="8-1-回顾ES6"><a href="#8-1-回顾ES6" class="headerlink" title="8.1 回顾ES6"></a>8.1 回顾ES6</h3><p>ES6对数组新增了很多方法<br>可以用Array.prototype在浏览器中查看所有属性</p>
+<ol>
+<li><strong>find</strong><ul>
+<li>find接收一个方法作为参数，方法内部返回一个条件</li>
+<li>find会便利所有的元素，执行你给定的带有条件返回值的函数</li>
+<li>符合该条件的元素会作为find方法返回值</li>
+<li>如果遍历结束还没有符合该条件的元素，则返回undefined</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> users = [</span><br><span class="line">    &#123;<span class="attr">id</span>:<span class="number">1</span>,<span class="attr">name</span>:<span class="string">'张三1'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">id</span>:<span class="number">2</span>,<span class="attr">name</span>:<span class="string">'张三2'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">id</span>:<span class="number">3</span>,<span class="attr">name</span>:<span class="string">'张三3'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">id</span>:<span class="number">4</span>,<span class="attr">name</span>:<span class="string">'张三4'</span>&#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.prototype.myFind = <span class="function"><span class="keyword">function</span>(<span class="params">conditionFunc</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>;i&lt; <span class="keyword">this</span>.length;i++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(conditionFunc(<span class="keyword">this</span>[i],i))&#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">this</span>[i]</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ret - users.myFind(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> item.id === <span class="number">4</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ret)</span><br></pre></td></tr></table></figure>
+<h3 id="8-2-关系和非关系型数据库"><a href="#8-2-关系和非关系型数据库" class="headerlink" title="8.2 关系和非关系型数据库"></a>8.2 关系和非关系型数据库</h3><ul>
+<li>所有的关系型数据库都需要通过sql语言来操作</li>
+<li>所有的关系型数据库在操作之前都需要设计表结构</li>
+<li>数据表支持约束<ul>
+<li>唯一的</li>
+<li>主键</li>
+<li>默认值</li>
+<li>非空</li>
+</ul>
+</li>
+<li>非关系型数据库非常灵活</li>
+<li>有的关系型数据库就是key-value键值对</li>
+<li>MongoDB是长得最像关系型数据库的非关系型数据库<ul>
+<li>数据库-》数据库</li>
+<li>数据表-》集合（数组）</li>
+<li>表记录-》（文档对象）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="8-3-Mongod数据库基本操作"><a href="#8-3-Mongod数据库基本操作" class="headerlink" title="8.3 Mongod数据库基本操作"></a>8.3 Mongod数据库基本操作</h3><p>Mongod的安装和其他操作可以看另一篇文章</p>
+<ol>
+<li><strong>启动和关闭数据库</strong><br>启动： </li>
+</ol>
+<p>mongod默认使用，执行mongod命令所处盘符目录下的/data/db作为自己的数据存储<br>所以在第一次执行该命令之前先自己手动建立一个data/db</p>
+<blockquote>
+<p>mongod</p>
+</blockquote>
+<p>如果想要修改默认的数据存储牡蛎可以</p>
+<blockquote>
+<p>mongod –dppath=数据存储目录路径</p>
+</blockquote>
+<p>停止：</p>
+<blockquote>
+<p>在开启服务的控制台，直接Ctrl+c即可停止<br>或者直接关闭开启服务控制台也可以</p>
+</blockquote>
+<ol start="2">
+<li><strong>连接和退出数据库</strong></li>
+</ol>
+<p>连接：<br>默认连接本机的MongoDB服务</p>
+<blockquote>
+<p>mongo</p>
+</blockquote>
+<p>退出：<br>在连接状态下输入exit退出连接</p>
+<blockquote>
+<p>exit</p>
+</blockquote>
+<hr>
+<h3 id="8-4-mongoose"><a href="#8-4-mongoose" class="headerlink" title="8.4 mongoose"></a>8.4 mongoose</h3><p>mongoose是Node连接mongo的包，<a href="https://mongoosejs.com/" target="_blank" rel="noopener">查看官网</a></p>
+<ol>
+<li>起步<br>安装<blockquote>
+<p>npm i mongoose</p>
+</blockquote>
+</li>
+</ol>
+<p>下面是官网的示例<br>hello world:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>);</span><br><span class="line">mongoose.connect(<span class="string">'mongodb://localhost/test'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Cat = mongoose.model(<span class="string">'Cat'</span>, &#123; <span class="attr">name</span>: <span class="built_in">String</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> kitty = <span class="keyword">new</span> Cat(&#123; <span class="attr">name</span>: <span class="string">'Zildjian'</span> &#125;);</span><br><span class="line">kitty.save().then(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'meow'</span>));</span><br></pre></td></tr></table></figure></p>
+<p>下面我们自己写一个demo</p>
+<ul>
+<li>连接数据库</li>
+<li>设计文档结构（表结构） </li>
+<li>将文档结构发布为模型</li>
+<li>开始操作<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>);</span><br><span class="line"><span class="comment">// 1.连接数据库</span></span><br><span class="line"><span class="comment">// 指定连接的数据库不需要存在，当你插入第一条数据之后就会自动被创建出来</span></span><br><span class="line">mongoose.connect(<span class="string">'mongodb://localhost/itcast'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 设计集合结构（表结构）</span></span><br><span class="line"><span class="comment">// 字段名称就是表结构中的属性名称</span></span><br><span class="line"><span class="comment">// 约束的目的就是为了保证数据的完整性，不要有脏数据</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> userSchema = <span class="keyword">new</span> Schema(&#123;</span><br><span class="line">    username:&#123;</span><br><span class="line">        type:<span class="built_in">String</span>, <span class="comment">// 数据类型</span></span><br><span class="line">        required:ture <span class="comment">//必须有</span></span><br><span class="line">    &#125;,</span><br><span class="line">    password:&#123;</span><br><span class="line">        type:<span class="built_in">String</span>,</span><br><span class="line">        required:<span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    email:&#123;</span><br><span class="line">        type: <span class="built_in">String</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 将文档结构发布为模型</span></span><br><span class="line"><span class="comment">// mongoose.model方法就是用来将一个框架发布为model</span></span><br><span class="line"><span class="comment">//  第一个参数：传入一个大写单词单数字符串来表示你的数据库名称</span></span><br><span class="line"><span class="comment">//              mongoose会自动将大写名词的单字符串生成小写复数的集合名称</span></span><br><span class="line"><span class="comment">//              例如这里的User最终会变成users集合名称</span></span><br><span class="line"><span class="comment">//  第二个参数：架构Schema</span></span><br><span class="line"><span class="comment">//  返回值：模型构造函数</span></span><br><span class="line"><span class="keyword">var</span> User = mongoose.model(<span class="string">'User'</span>,userSchema)</span><br><span class="line"><span class="comment">// 4. 当我们有了模型构造函数之后，就可以使用这个构造函数对users集合中的数据进行操作</span></span><br><span class="line"><span class="keyword">var</span> admin = <span class="keyword">new</span> User(&#123;</span><br><span class="line">    username:<span class="string">'admin'</span>,</span><br><span class="line">    password:<span class="string">'123456'</span>,</span><br><span class="line">    email:<span class="string">'admin@163.com'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">admin.save(<span class="function"><span class="keyword">function</span>(<span class="params">err,ret</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(err)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'保存失败'</span>)</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'保存成功'</span>)</span><br><span class="line">      <span class="built_in">console</span>.log(ret)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="2">
+<li><p><strong>增加数据</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> admin = <span class="keyword">new</span> User(&#123;</span><br><span class="line">    username:<span class="string">'admin'</span>,</span><br><span class="line">    password:<span class="string">'123456'</span>,</span><br><span class="line">    email:<span class="string">'admin@163.com'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">admin.save(<span class="function"><span class="keyword">function</span>(<span class="params">err,ret</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(err)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'保存失败'</span>)</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'保存成功'</span>)</span><br><span class="line">      <span class="built_in">console</span>.log(ret)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>查询</strong></p>
+</li>
+</ol>
+<ul>
+<li><p>查询所有</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">User.find(<span class="function"><span class="keyword">function</span>(<span class="params">err,ret</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(err)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'查询失败'</span>)</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(ret)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>按条件查询所有</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">User.find(&#123;</span><br><span class="line">    username:<span class="string">'admin'</span>,</span><br><span class="line">    password:<span class="string">'123456'</span>,</span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">err,ret</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(err)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'查询失败'</span>)</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(ret)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>按条件查询一个</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">User.findOne(&#123;</span><br><span class="line">    username:<span class="string">'admin'</span>,</span><br><span class="line">    password:<span class="string">'123456'</span>,</span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">err,ret</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(err)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'查询失败'</span>)</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(ret)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="string">`</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>4 <strong>删除</strong><br>根据条件删除所有：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">User.remove(&#123;</span><br><span class="line">    username:<span class="string">'admin'</span>,</span><br><span class="line">    password:<span class="string">'123456'</span>,</span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">err,ret</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(err)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'删除失败'</span>)</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'删除成功'</span>)</span><br><span class="line">      <span class="built_in">console</span>.log(ret)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>根据条件删除一个：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Model.findOneAndRemove(conditions,[options],[callback])</span><br></pre></td></tr></table></figure></p>
+<p>根据id删除一个：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Model.findByIdAndRemove(id,[options],[callback])</span><br></pre></td></tr></table></figure></p>
+<p>4 <strong>更新数据</strong><br>根据条件更新所有<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Model.update(conditions,doc,[options],[callback])</span><br></pre></td></tr></table></figure></p>
+<p>根据条件更新一个<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Model.findOneAndUpdate([conditions],[update],[options],[callback])</span><br></pre></td></tr></table></figure></p>
+<p>根据id更新一个<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">User.findByIdAndUpdate(<span class="string">'23213123123123'</span>,&#123;</span><br><span class="line">   password:<span class="string">'1234'</span>,</span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">err,ret</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(err)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'更新失败'</span>)</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'更新成功'</span>)</span><br><span class="line">      <span class="built_in">console</span>.log(ret)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="8-5-更新项目为数据库存储"><a href="#8-5-更新项目为数据库存储" class="headerlink" title="8.5 更新项目为数据库存储"></a>8.5 更新项目为数据库存储</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>)</span><br><span class="line">mongoose.connect(<span class="string">'mongodb://localhost/itcast'</span>)</span><br><span class="line"><span class="keyword">var</span> Schema = mongoose.Schema</span><br><span class="line"><span class="keyword">var</span> studentSchema = <span class="keyword">new</span> Schema(&#123;</span><br><span class="line">    name:&#123;</span><br><span class="line">      type:<span class="built_in">String</span>,</span><br><span class="line">      required:<span class="literal">true</span>  </span><br><span class="line">    &#125;,</span><br><span class="line">    gender:&#123;</span><br><span class="line">        type:<span class="built_in">Number</span>,</span><br><span class="line">        enum:[<span class="number">0</span>,<span class="number">1</span>],</span><br><span class="line">        <span class="keyword">default</span>:<span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line">    age:&#123;</span><br><span class="line">        type:<span class="built_in">Number</span>,</span><br><span class="line">        required:<span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    hobbies:&#123;</span><br><span class="line">        type:<span class="built_in">String</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = mongoose.model(<span class="string">'Student'</span>,studentSchema);</span><br></pre></td></tr></table></figure>
+<p>渲染学生列表页面修改<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">'/students'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">  Student.find(<span class="function"><span class="keyword">function</span>(<span class="params">err,students</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err)&#123;</span><br><span class="line">        <span class="keyword">return</span> res.status(<span class="number">500</span>).send(<span class="string">'Server error'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    res.render(<span class="string">'index.html'</span>,&#123;</span><br><span class="line">        students:students</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>处理添加学生<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">router.post(<span class="string">'/students/new'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">new</span> Student(req,body).save(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err)&#123;</span><br><span class="line">       <span class="keyword">return</span> res.status(<span class="number">500</span>).send(<span class="string">'Server error'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    res.redirect(<span class="string">'/students'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="8-6-连接Mysql"><a href="#8-6-连接Mysql" class="headerlink" title="8.6 连接Mysql"></a>8.6 连接Mysql</h3><p>应用的包名称为mysql</p>
+<blockquote>
+<p>npm install mysql<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mysql = <span class="built_in">require</span>(<span class="string">'mysql'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1.创建连接</span></span><br><span class="line"><span class="keyword">var</span> connection = mysql.createConnection(&#123;</span><br><span class="line">    host:<span class="string">'localhost'</span>, <span class="comment">// 地址</span></span><br><span class="line">    user:<span class="string">'me'</span>, <span class="comment">// 账户</span></span><br><span class="line">    password:<span class="string">'***'</span>, <span class="comment">// 密码</span></span><br><span class="line">    database:<span class="string">'xxx'</span> <span class="comment">// 数据库名</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 2. 连接数据库</span></span><br><span class="line">connection.connet();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 执行数据操作(增删改查所有语句都在这里执行)</span></span><br><span class="line">connection.query(<span class="string">'SQL语句'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">error,results,fields</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(error) <span class="keyword">throw</span> error;</span><br><span class="line">    <span class="built_in">console</span>.log(results[<span class="number">0</span>].solution)</span><br><span class="line">  </span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 4. 关闭连接</span></span><br><span class="line">connection.end();</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="9-回调函数"><a href="#9-回调函数" class="headerlink" title="9 回调函数"></a>9 回调函数</h2><h3 id="9-1-回调地狱"><a href="#9-1-回调地狱" class="headerlink" title="9.1 回调地狱"></a>9.1 回调地狱</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line">fs.readFile(<span class="string">'./data/a.txt'</span>,<span class="string">'utf8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(err)&#123;</span><br><span class="line">      <span class="comment">// 抛出异常</span></span><br><span class="line">      <span class="comment">//  1. 阻止程序的执行</span></span><br><span class="line">      <span class="comment">//  2. 把错误消息打印到控制台</span></span><br><span class="line">      <span class="keyword">throw</span> err</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;)</span><br><span class="line">fs.readFile(<span class="string">'./data/b.txt'</span>,<span class="string">'utf8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(err)&#123;</span><br><span class="line">      <span class="keyword">throw</span> err</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;)</span><br><span class="line">fs.readFile(<span class="string">'./data/c.txt'</span>,<span class="string">'utf8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(err)&#123;</span><br><span class="line">      <span class="keyword">throw</span> err</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">如果想一个一个执行只能嵌套，影响美观</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>js</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line">fs.readFile(<span class="string">'./data/a.txt'</span>,<span class="string">'utf8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(err)&#123;</span><br><span class="line">      <span class="comment">// 抛出异常</span></span><br><span class="line">      <span class="comment">//  1. 阻止程序的执行</span></span><br><span class="line">      <span class="comment">//  2. 把错误消息打印到控制台</span></span><br><span class="line">      <span class="keyword">throw</span> err</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">  fs.readFile(<span class="string">'./data/b.txt'</span>,<span class="string">'utf8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err)&#123;</span><br><span class="line">        <span class="keyword">throw</span> err</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">    fs.readFile(<span class="string">'./data/c.txt'</span>,<span class="string">'utf8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(err)&#123;</span><br><span class="line">          <span class="keyword">throw</span> err</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">console</span>.log(data);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="9-2-Promise"><a href="#9-2-Promise" class="headerlink" title="9.2 Promise"></a>9.2 Promise</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line"><span class="comment">// 创建Promise容器</span></span><br><span class="line"><span class="comment">// 1. 给别人一个承诺</span></span><br><span class="line"><span class="comment">// Promise容器一旦创建，就开始执行里面的代码</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>)</span><br><span class="line">  fs.readFile(<span class="string">'./data/a.txt'</span>,<span class="string">'utf8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(err)&#123;</span><br><span class="line">            <span class="keyword">throw</span> err</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">3</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(data);</span><br><span class="line">      &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年12月24日 11:52</p>
+        <p>原始链接： <a class="post-url" href="/2018/12/24/NodeJs3/" title="NodeJs3">http://linjiad.github.io/2018/12/24/NodeJs3/</a></p>
+        <footer>
+            <a href="http://linjiad.github.io">
+                <img src="/images/logo.png" alt="linjiad">
+                linjiad
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/weixin.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/weixin.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/zhifubao.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://linjiad.github.io/2018/12/24/NodeJs3/&title=《NodeJs3》 — linjiad_个人博客&pic=http://linjiad.github.ioimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://linjiad.github.io/2018/12/24/NodeJs3/&title=《NodeJs3》 — linjiad_个人博客&source=这个人很懒什么也没写" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://linjiad.github.io/2018/12/24/NodeJs3/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NodeJs3》 — linjiad_个人博客&url=http://linjiad.github.io/2018/12/24/NodeJs3/&via=http://linjiad.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://linjiad.github.io/2018/12/24/NodeJs3/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://linjiad.github.io/2018/12/24/NodeJs3/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-链接数据库"><span class="post-toc-text">8 链接数据库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-1-回顾ES6"><span class="post-toc-text">8.1 回顾ES6</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-2-关系和非关系型数据库"><span class="post-toc-text">8.2 关系和非关系型数据库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-3-Mongod数据库基本操作"><span class="post-toc-text">8.3 Mongod数据库基本操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-4-mongoose"><span class="post-toc-text">8.4 mongoose</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-5-更新项目为数据库存储"><span class="post-toc-text">8.5 更新项目为数据库存储</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-6-连接Mysql"><span class="post-toc-text">8.6 连接Mysql</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#9-回调函数"><span class="post-toc-text">9 回调函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#9-1-回调地狱"><span class="post-toc-text">9.1 回调地狱</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#9-2-Promise"><span class="post-toc-text">9.2 Promise</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/01/07/WebApi/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          WebApi
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/12/21/webpack3-X/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">webpack3.X</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'linjiad',
+            repo: 'linjiad.github.io',
+            oauth: {
+                client_id: '9b8f5415215f1aef0b2c',
+                client_secret: 'dea7335a3cd2d8e380b0279a5f1f7245797579d7',
+            },
+        })
+        gitment.render('comments')
+    </script>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 linjiad<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://linjiad.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Linux服务器/">Linux服务器</a><a class="category-link" href="/categories/产品办公/">产品办公</a><a class="category-link" href="/categories/产品文档/">产品文档</a><a class="category-link" href="/categories/前端技术/">前端技术</a><a class="category-link" href="/categories/博客/">博客</a><a class="category-link" href="/categories/后端技术/">后端技术</a><a class="category-link" href="/categories/运维/">运维</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/Ionic/" style="font-size: 15px;">Ionic</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js/" style="font-size: 12.5px;">js</a> <a href="/tags/nodeppt/" style="font-size: 15px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/产品/" style="font-size: 17.5px;">产品</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/混合开发/" style="font-size: 10px;">混合开发</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/HTML/" style="font-size: 12.5px;">HTML</a> <a href="/tags/Ionic/" style="font-size: 15px;">Ionic</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/echarts/" style="font-size: 12.5px;">echarts</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js/" style="font-size: 12.5px;">js</a> <a href="/tags/nodeppt/" style="font-size: 15px;">nodeppt</a> <a href="/tags/swagger2/" style="font-size: 10px;">swagger2</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/产品/" style="font-size: 17.5px;">产品</a> <a href="/tags/前端服务/" style="font-size: 10px;">前端服务</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/混合开发/" style="font-size: 10px;">混合开发</a> <a href="/tags/环境部署/" style="font-size: 20px;">环境部署</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
